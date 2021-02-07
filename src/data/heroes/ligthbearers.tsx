@@ -1,6 +1,7 @@
-import { Attribute, Class, Faction, Hero } from "./model";
+import { Attribute, Class, Faction, Hero } from "../../model/heroes";
 
 export const Estrilda: Hero = {
+  id: "ESTRILDA",
   name: "Estrilda",
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
@@ -8,6 +9,7 @@ export const Estrilda: Hero = {
 };
 
 export const Belinda: Hero = {
+  id: "BELINDA",
   name: "Belinda",
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
@@ -15,6 +17,7 @@ export const Belinda: Hero = {
 };
 
 export const Raine: Hero = {
+  id: "RAINE",
   name: "Raine",
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
@@ -22,6 +25,7 @@ export const Raine: Hero = {
 };
 
 export const Fawkes: Hero = {
+  id: "FAWKES",
   name: "Fawkes",
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
@@ -29,6 +33,7 @@ export const Fawkes: Hero = {
 };
 
 export const Lucius: Hero = {
+  id: "LUCIUS",
   name: "Lucius",
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
@@ -36,6 +41,7 @@ export const Lucius: Hero = {
 };
 
 export const Thane: Hero = {
+  id: "THANE",
   name: "Thane",
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
@@ -43,6 +49,7 @@ export const Thane: Hero = {
 };
 
 export const Hendrik: Hero = {
+  id: "HENDRIK",
   name: "Hendrik",
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
@@ -50,6 +57,7 @@ export const Hendrik: Hero = {
 };
 
 export const Rowan: Hero = {
+  id: "ROWAN",
   name: "Rowan",
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
@@ -57,6 +65,7 @@ export const Rowan: Hero = {
 };
 
 export const Gwyneth: Hero = {
+  id: "GWYNETH",
   name: "Gwyneth",
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
@@ -64,6 +73,7 @@ export const Gwyneth: Hero = {
 };
 
 export const Rosaline: Hero = {
+  id: "ROSALINE",
   name: "Rosaline",
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
@@ -71,6 +81,7 @@ export const Rosaline: Hero = {
 };
 
 export const Cecilia: Hero = {
+  id: "CECILIA",
   name: "Cecilia",
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
@@ -78,6 +89,7 @@ export const Cecilia: Hero = {
 };
 
 export const Rigby: Hero = {
+  id: "RIGBY",
   name: "Rigby",
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
@@ -85,6 +97,7 @@ export const Rigby: Hero = {
 };
 
 export const Oscar: Hero = {
+  id: "Oscar",
   name: "Oscar",
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,

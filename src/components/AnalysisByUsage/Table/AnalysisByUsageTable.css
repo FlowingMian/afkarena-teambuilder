@@ -1,0 +1,14 @@
+.AnalysisByUsageTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.AnalysisByUsageTableRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.AnalysisByUsageTableCell {
+  width: 75px;
+  text-align: center;
+}

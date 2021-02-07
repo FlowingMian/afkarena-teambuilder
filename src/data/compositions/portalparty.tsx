@@ -1,4 +1,4 @@
-import { Composition } from '../../model/compositions';
+import { Composition} from '../../model/compositions';
 import * as Role from '../../model/role';
 import * as Ligthbearers from '../heroes/ligthbearers'
 import * as Maulers from '../heroes/maulers'
@@ -8,18 +8,21 @@ import * as Celestials from '../heroes/celestials'
 import * as Hypogeans from '../heroes/hypogeans'
 import * as Dimensional from '../heroes/dimensionals'
 
-const fivePull: Composition = {
-    id: 'FIVEPULL',
-    name: '5-Pull',
+const portalParty: Composition = {
+    id: 'PORTALPARTY',
+    name: 'Portal Party',
     coreHeroes: {
         role: Role.Core,
         heroes : [
             {
-                hero: Wilders.Eironn
+                hero: Wilders.Pippa,
+                requiredSignature: 20,
+                requiredFurniture: 3
             },
             {
-                hero: Maulers.Skriath,
-            requiredFurniture: 3
+                hero: Graveborns.Oden,
+                requiredSignature: 20,
+                requiredFurniture: 3
             }
         ]
     },
@@ -28,19 +31,10 @@ const fivePull: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Wilders.Saurus
+                    hero: Graveborns.Ferael
                 },
                 {
-                    hero: Graveborns.Thoran
-                },
-                {
-                    hero: Maulers.Drez
-                },
-                {
-                    hero: Celestials.Flora
-                },
-                {
-                    hero: Ligthbearers.Gwyneth
+                    hero: Graveborns.Izold
                 },
                 {
                     hero: Dimensional.JOKER
@@ -49,20 +43,22 @@ const fivePull: Composition = {
                     hero: Hypogeans.Lucretia
                 },
                 {
-                    hero: Graveborns.Oden
-                },
-                {
                     hero: Maulers.Satrana
                 },
                 {
-                    hero: Maulers.Safiya,
-                    recommended: true
+                    hero: Wilders.Saurus
+                },
+                {
+                    hero: Graveborns.Torne
+                },
+                {
+                    hero: Celestials.Wukong,
                 },
                 {
                     hero: Hypogeans.Zolrath
                 },
                 {
-                    hero: Maulers.Khasos
+                    hero: Maulers.Drez
                 }
             ]
         },
@@ -73,26 +69,22 @@ const fivePull: Composition = {
                     hero: Celestials.Zaphrael
                 },
                 {
-                    hero: Wilders.Nemora
+                    hero: Hypogeans.Ezizh
                 },
                 {
                     hero: Wilders.Gorvo
                 },
                 {
+                    hero: Dimensional.Nakoruru
+                },
+                {
+                    hero: Wilders.Nemora
+                },
+                {
                     hero: Celestials.Orthos
                 },
                 {
-                    hero: Wilders.Pippa
-                },
-                {
                     hero: Wilders.Tasi
-                },
-                {
-                    hero: Maulers.Tidus,
-                    recommended: true
-                },
-                {
-                    hero: Dimensional.QUEEN
                 }
             ]
 
@@ -101,16 +93,13 @@ const fivePull: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Graveborns.Theowyn
+                    hero: Celestials.Talene
                 },
                 {
                     hero: Ligthbearers.Rowan
-                },
+                } ,
                 {
-                    hero: Maulers.Brutus
-                },
-                {
-                    hero: Celestials.Zaphrael
+                    hero: Graveborns.Thoran
                 },
                 {
                     hero: Celestials.Alna
@@ -119,18 +108,20 @@ const fivePull: Composition = {
                     hero: Maulers.Anoki
                 },
                 {
-                    hero: Wilders.Lorsan
+                    hero: Celestials.Athalia
+                } ,
+                {
+                    hero: Ligthbearers.Cecilia
                 },
                 {
-                    hero: Wilders.Lyca,
-                    recommended: true
+                    hero: Maulers.Skreg
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    hero: Graveborns.Theowyn
                 }
             ]
         }
     ]
 };
 
-export default fivePull;
+export default portalParty;

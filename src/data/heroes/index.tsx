@@ -1,4 +1,4 @@
-import { Hero } from "./model";
+import { Hero } from "../../model/heroes";
 import lightbearers from "./ligthbearers";
 import maulers from "./maulers";
 import wilders from "./wilders";

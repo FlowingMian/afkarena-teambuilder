@@ -1,0 +1,9 @@
+.HeroCategory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.HeroCategoryName{
+  width: 100px;
+}

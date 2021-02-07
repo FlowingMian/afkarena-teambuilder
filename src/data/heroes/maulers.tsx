@@ -1,6 +1,7 @@
-import { Attribute, Class, Faction, Hero } from "./model";
+import { Attribute, Class, Faction, Hero } from "../../model/heroes";
 
 export const Brutus: Hero = {
+  id: "BRUTUS",
   name: "Brutus",
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -8,6 +9,7 @@ export const Brutus: Hero = {
 };
 
 export const Khasos: Hero = {
+  id: "KHASOS",
   name: "Khasos",
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -15,6 +17,7 @@ export const Khasos: Hero = {
 };
 
 export const Vurk: Hero = {
+  id: "VURK",
   name: "Vurk",
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -22,6 +25,7 @@ export const Vurk: Hero = {
 };
 
 export const Numisu: Hero = {
+  id: "NUMISU",
   name: "Numisu",
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -29,6 +33,7 @@ export const Numisu: Hero = {
 };
 
 export const Skreg: Hero = {
+  id: "SKREG",
   name: "Skreg",
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -36,6 +41,7 @@ export const Skreg: Hero = {
 };
 
 export const Warek: Hero = {
+  id: "WAREK",
   name: "Warek",
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -43,6 +49,7 @@ export const Warek: Hero = {
 };
 
 export const Antandra: Hero = {
+  id: "ANTANDRA",
   name: "Antandra",
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -50,6 +57,7 @@ export const Antandra: Hero = {
 };
 
 export const Safiya: Hero = {
+  id: "SAFIYA",
   name: "Safiya",
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -57,6 +65,7 @@ export const Safiya: Hero = {
 };
 
 export const Satrana: Hero = {
+  id: "SATRANA",
   name: "Satrana",
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -64,6 +73,7 @@ export const Satrana: Hero = {
 };
 
 export const Tidus: Hero = {
+  id: "TIDUS",
   name: "Tidus",
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -71,6 +81,7 @@ export const Tidus: Hero = {
 };
 
 export const Drez: Hero = {
+  id: "DREZ",
   name: "Drez",
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -78,6 +89,7 @@ export const Drez: Hero = {
 };
 
 export const Skriath: Hero = {
+  id: "SKRIATH",
   name: "Skriath",
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -85,6 +97,7 @@ export const Skriath: Hero = {
 };
 
 export const Anoki: Hero = {
+  id: "ANOKI",
   name: "Anoki",
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -92,6 +105,7 @@ export const Anoki: Hero = {
 };
 
 export const Kren: Hero = {
+  id: "KREN",
   name: "Kren",
   faction: Faction.Mauler,
   attribute: Attribute.Agility,

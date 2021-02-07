@@ -1,6 +1,7 @@
-import { Attribute, Class, Faction, Hero } from "./model";
+import { Attribute, Class, Faction, Hero } from "../../model/heroes";
 
 export const Nakoruru: Hero = {
+  id: "NAKORURU",
   name: "Nakoruru",
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
@@ -8,6 +9,7 @@ export const Nakoruru: Hero = {
 };
 
 export const Arthur: Hero = {
+  id: "ARTHUR",
   name: "Arthur",
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
@@ -15,6 +17,7 @@ export const Arthur: Hero = {
 };
 
 export const Ukyo: Hero = {
+  id: "UKYO",
   name: "Ukyo",
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
@@ -22,6 +25,7 @@ export const Ukyo: Hero = {
 };
 
 export const Ezio: Hero = {
+  id: "EZIO",
   name: "Ezio",
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
@@ -29,6 +33,7 @@ export const Ezio: Hero = {
 };
 
 export const Albedo: Hero = {
+  id: "ALBEBO",
   name: "Albedo",
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
@@ -36,6 +41,7 @@ export const Albedo: Hero = {
 };
 
 export const Ainz: Hero = {
+  id: "AINZ",
   name: "Ainz Ooal Gown",
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
@@ -43,6 +49,7 @@ export const Ainz: Hero = {
 };
 
 export const QUEEN: Hero = {
+  id: "QUEEN",
   name: "QUEEN",
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
@@ -50,6 +57,7 @@ export const QUEEN: Hero = {
 };
 
 export const JOKER: Hero = {
+  id: "JOKER",
   name: "JOKER",
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,

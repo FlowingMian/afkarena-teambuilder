@@ -1,6 +1,7 @@
-import { Attribute, Class, Faction, Hero } from "./model";
+import { Attribute, Class, Faction, Hero } from "../../model/heroes";
 
 export const Nemora: Hero = {
+  id: "NEMORA",
   name: "Nemora",
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -8,6 +9,7 @@ export const Nemora: Hero = {
 };
 
 export const Kaz: Hero = {
+  id: "KAZ",
   name: "Kaz",
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
@@ -15,6 +17,7 @@ export const Kaz: Hero = {
 };
 
 export const Lyca: Hero = {
+  id: "LYCA",
   name: "Lyca",
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
@@ -22,6 +25,7 @@ export const Lyca: Hero = {
 };
 
 export const Tasi: Hero = {
+  id: "TASI",
   name: "Tasi",
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -29,6 +33,7 @@ export const Tasi: Hero = {
 };
 
 export const Ulmus: Hero = {
+  id: "ULMUS",
   name: "Ulmus",
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -36,6 +41,7 @@ export const Ulmus: Hero = {
 };
 
 export const Seirus: Hero = {
+  id: "SEIRUS",
   name: "Seirus",
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -43,6 +49,7 @@ export const Seirus: Hero = {
 };
 
 export const Eironn: Hero = {
+  id: "EIRONN",
   name: "Eironn",
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
@@ -50,6 +57,7 @@ export const Eironn: Hero = {
 };
 
 export const Gorvo: Hero = {
+  id: "GORVO",
   name: "Gorvo",
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -57,6 +65,7 @@ export const Gorvo: Hero = {
 };
 
 export const Lorsan: Hero = {
+  id: "LORSAN",
   name: "Lorsan",
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -64,6 +73,7 @@ export const Lorsan: Hero = {
 };
 
 export const Saurus: Hero = {
+  id: "SAURUS",
   name: "Saurus",
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -71,6 +81,7 @@ export const Saurus: Hero = {
 };
 
 export const Solise: Hero = {
+  id: "SOLISE",
   name: "Solise",
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -78,6 +89,7 @@ export const Solise: Hero = {
 };
 
 export const Pippa: Hero = {
+  id: "PIPPA",
   name: "Pippa",
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,

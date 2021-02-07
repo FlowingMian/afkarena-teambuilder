@@ -1,4 +1,4 @@
-import { Hero } from "../data/heroes/model";
+import { Hero } from "../../../model/heroes";
 import "./HeroBox.css";
 
 type HeroBoxProps = {
@@ -8,7 +8,7 @@ type HeroBoxProps = {
 function HeroBox({ hero }: HeroBoxProps) {
   return (
     <div className="Portrait">
-      <img src={`../data/heroes/portraits/${hero.name}.webp`} alt={hero.name} />
+      <img src={hero.portraitURL} alt={hero.name} />
     </div>
   );
 }

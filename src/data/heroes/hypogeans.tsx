@@ -1,6 +1,7 @@
-import { Attribute, Class, Faction, Hero } from "./model";
+import { Attribute, Class, Faction, Hero } from "../../model/heroes";
 
 export const Ezizh: Hero = {
+  id: "EZIZH",
   name: "Ezizh",
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
@@ -8,6 +9,7 @@ export const Ezizh: Hero = {
 };
 
 export const Mehira: Hero = {
+  id: "MEHIRA",
   name: "Mehira",
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
@@ -15,6 +17,7 @@ export const Mehira: Hero = {
 };
 
 export const Zolrath: Hero = {
+  id: "ZOLRATH",
   name: "Zolrath",
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
@@ -22,6 +25,7 @@ export const Zolrath: Hero = {
 };
 
 export const Khazard: Hero = {
+  id: "KAZHARD",
   name: "Khazard",
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
@@ -29,6 +33,7 @@ export const Khazard: Hero = {
 };
 
 export const Mezoth: Hero = {
+  id: "MEZOTH",
   name: "Mezoth",
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
@@ -36,6 +41,7 @@ export const Mezoth: Hero = {
 };
 
 export const Lucretia: Hero = {
+  id: "LUCRETIA",
   name: "Lucretia",
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
@@ -43,6 +49,7 @@ export const Lucretia: Hero = {
 };
 
 export const Mortas: Hero = {
+  id: "MORTAS",
   name: "Mortas",
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
