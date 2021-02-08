@@ -1,4 +1,3 @@
-import { Flex } from "rebass";
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
 import "./CompositionBox.css";

@@ -1,4 +1,4 @@
-import { Box, Image } from "rebass";
+import { Box, Image } from "@chakra-ui/react"
 import { Hero } from "../../model/heroes";
 
 type HeroBoxProps = {
@@ -7,16 +7,11 @@ type HeroBoxProps = {
 
 function HeroBox({ hero }: HeroBoxProps) {
   return (
-    <Box p={1}
-      width='50px'
-      height='50px'
-      backgroundColor='rgba(255, 255, 255, 0.125)'
-    >
+    <Box backgroundColor='rgba(0, 0, 0, 0.125)'>
       <Image 
         src={hero.portraitURL}
         alt={hero.name}
-        width="50px"
-        height="50px"
+        boxSize="50px"
       />
     </Box>
   );

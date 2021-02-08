@@ -1,5 +1,5 @@
 import { Composition } from "../../model/compositions";
-import {Flex } from 'rebass'
+import {Flex } from '@chakra-ui/react'
 import CompositionDetails from "./CompositionDetails";
 
 type CompositionListProps = {

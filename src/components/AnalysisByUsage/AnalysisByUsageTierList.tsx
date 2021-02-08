@@ -1,7 +1,7 @@
 import HeroCategory from "../Hero/HeroCategory";
 import { Tier } from "./model/Tier";
 import { UsageResult } from "./model/UsageResult";
-import { Card, Flex } from "rebass";
+import { Box, Flex } from "@chakra-ui/react";
 
 type AnalysisByUsageTierListProps = {
   usageResult: UsageResult;
@@ -50,11 +50,11 @@ function AnalysisByUsageTierList({ usageResult }: AnalysisByUsageTierListProps) 
   const tierRows = [globalFlex, coreOrFlex, coreOrNiche, flex, niche, neverUsed]
     .map(tier => <HeroCategory name={tier.name} heroes={tier.heroes} />);
 
-  return (<Card>
+  return (<Box>
       <Flex flexDirection="column">
         {tierRows}
       </Flex>
-    </Card>
+    </Box>
   )
 }
 

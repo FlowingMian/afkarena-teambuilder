@@ -1,4 +1,4 @@
-import { Box, Card, Flex } from "rebass";
+import { Table, Thead, Th, Tbody, Tr, Td } from "@chakra-ui/react"
 import HeroBox from "../Hero/HeroBox";
 import { UsageResult } from "./model/UsageResult";
 
@@ -9,22 +9,31 @@ type AnalysisByUsageTableProps = {
 function AnalysisByUsageTable({ usageResult }: AnalysisByUsageTableProps) {
 
   const rows = usageResult.heroUsageResults.map(ur => {
-    return <Flex flexDirection="row">
-      <HeroBox hero={ur.hero} />
-      <Box width={75}>
+    return <Tr>
+      <Td><HeroBox hero={ur.hero} /></Td>
+      <Td>
         {ur.coreCompositions.length} ({Math.round(ur.coreCompositions.length * 100 / usageResult.compositionCount)}%)
-      </Box>
-      <Box width={75}>
+      </Td>
+      <Td>
       {ur.flexCompositions.length} ({Math.round(ur.flexCompositions.length * 100 / usageResult.compositionCount)}%)
-      </Box>
-    </Flex>
+      </Td>
+    </Tr>
   });
 
-  return <Card>
-      <Flex flexDirection="column">
-      {rows}
-    </Flex>
-  </Card>
+  return (
+    <Table size="sm">
+      <Thead>
+        <Tr>
+          <Th>Hero</Th>
+          <Th width={75}>Core</Th>
+          <Th width={75}>Flex</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows}
+      </Tbody>
+      </Table>
+  )
 }
 
 export default AnalysisByUsageTable;

@@ -1,24 +1,29 @@
 
-import { Card, Flex, Heading } from "rebass";
+import { Box, Wrap, WrapItem, Heading } from "@chakra-ui/react";
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
+import { BoxCardProps} from '../style'
 
 type CompositionDetailsProps = {
   composition: Composition;
 };
 
 function CompositionDetails({ composition }: CompositionDetailsProps) {
-  const coreHeroBoxes = <HeroCategory name={composition.coreHeroes.role.name} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />;
-  const flexHeroBoxes = composition.flexHeroes.map(cc => <HeroCategory name={cc.role.name} heroes={cc.heroes.map(hr => hr.hero)} />);
+  const coreHeroBoxes = (<WrapItem>
+    <HeroCategory name={composition.coreHeroes.role.name} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
+  </WrapItem>);
+  const flexHeroBoxes = composition.flexHeroes.map(cc => <WrapItem>
+    <HeroCategory name={cc.role.name} heroes={cc.heroes.map(hr => hr.hero)} /></WrapItem>
+  );
 
   return (
-    <Card>
-      <Flex flexDirection="column">
-        <Heading>{composition.name}</Heading>
+    <Box {...BoxCardProps}>
+      <Heading size="lg">{composition.name}</Heading>
+      <Wrap direction="column">
         {coreHeroBoxes}
         {flexHeroBoxes}
-      </Flex>
-    </Card>
+      </Wrap>
+    </Box>
   );
 }
 

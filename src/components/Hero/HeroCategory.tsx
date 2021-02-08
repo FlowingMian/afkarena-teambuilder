@@ -1,5 +1,5 @@
 import { Hero } from "../../model/heroes";
-import { Flex, Heading } from "rebass";
+import { Flex, Heading } from "@chakra-ui/react";
 import HeroList from "./HeroList";
 
 type HeroCategoryProps = {
@@ -10,10 +10,7 @@ type HeroCategoryProps = {
 
 function HeroCategory({ name, heroes }: HeroCategoryProps) {
   return <Flex flexDirection="row">
-      <Heading 
-        fontSize={1}
-        width={120}
-      >
+      <Heading size="xs" minWidth="150px">
         {name}
       </Heading>
       <HeroList heroes={heroes}/>

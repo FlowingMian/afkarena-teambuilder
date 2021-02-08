@@ -1,4 +1,4 @@
-import { Box, Flex } from "rebass";
+import { Wrap, WrapItem } from "@chakra-ui/react"
 import { Hero } from "../../model/heroes";
 import HeroBox from "./HeroBox";
 
@@ -7,12 +7,12 @@ type HeroListProps = {
 };
 
 function HeroList({ heroes }: HeroListProps) {
-  const heroesList = heroes.map((h) => <Box margin="1px"><HeroBox key={h.id} hero={h}/></Box>);
+  const heroesList = heroes.map((h) => <WrapItem><HeroBox key={h.id} hero={h}/></WrapItem>);
 
   return (
-    <Flex flexDirection="row" flexWrap="wrap">
+    <Wrap flexDirection="row" flexWrap="wrap">
       {heroesList}
-    </Flex>
+    </Wrap>
   );
 }
 

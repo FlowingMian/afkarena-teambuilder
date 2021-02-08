@@ -1,10 +1,11 @@
+import { Box, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import { Composition } from "../../model/compositions";
 import { Hero } from "../../model/heroes";
 import { UsageResult } from "./model/UsageResult";
 import { HeroUsageResult } from "./model/HeroUsageResult";
 import AnalysisByUsageTierList from "./AnalysisByUsageTierList";
 import AnalysisByUsageTable from "./AnalysisByUsageTable";
-import { Flex } from "rebass";
+import { BoxCardProps } from "../style";
 
 type AnalysisByUsageProps = {
   heroes: Array<Hero>;
@@ -34,10 +35,23 @@ function AnalysisByUsage({heroes, compositions}: AnalysisByUsageProps) {
   );
 
   return (
-    <Flex flexDirection="row">
-      <AnalysisByUsageTierList usageResult={usageResult} />
-      <AnalysisByUsageTable usageResult={usageResult} />
-    </Flex>
+    <Box {...BoxCardProps}>
+      <Tabs>
+        <TabList>
+          <Tab>Tier List</Tab>
+          <Tab>Table</Tab>
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>
+          < AnalysisByUsageTierList usageResult={usageResult} />
+          </TabPanel>
+          <TabPanel>
+          <AnalysisByUsageTable usageResult={usageResult} />
+          </TabPanel>
+      </TabPanels>
+    </Tabs>
+  </Box>
   );
 }
 
