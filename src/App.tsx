@@ -1,8 +1,8 @@
 import React from "react";
 import heroes from "./data/heroes";
 import compositions from "./data/compositions";
-import HeroList from "./components/Hero/HeroList/HeroList";
-import CompositionList from "./components/Composition/CompositionList/CompositionList";
+import HeroList from "./components/Hero/HeroList";
+import CompositionList from "./components/Composition/CompositionList";
 import AnalysisByUsage from "./components/AnalysisByUsage/AnalysisByUsage";
 import "./App.css";
 

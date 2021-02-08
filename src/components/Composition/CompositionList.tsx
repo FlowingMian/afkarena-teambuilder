@@ -1,6 +1,6 @@
-import { Composition } from "../../../model/compositions";
-import CompositionDetails from "../CompositionDetails/CompositionDetails";
-import './CompositionList.css'
+import { Composition } from "../../model/compositions";
+import {Flex } from 'rebass'
+import CompositionDetails from "./CompositionDetails";
 
 type CompositionListProps = {
   compositions: Array<Composition>;
@@ -9,7 +9,9 @@ type CompositionListProps = {
 function CompositionList({ compositions }: CompositionListProps) {
   const compositionBoxes = compositions.map((c) => <CompositionDetails key={c.id} composition={c} />);
 
-  return <div className="CompositionList">{compositionBoxes}</div>;
+  return <Flex flexDirection="column">
+    {compositionBoxes}
+  </Flex>;
 }
 
 export default CompositionList;

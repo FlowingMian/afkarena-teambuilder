@@ -2,9 +2,9 @@ import { Composition } from "../../model/compositions";
 import { Hero } from "../../model/heroes";
 import { UsageResult } from "./model/UsageResult";
 import { HeroUsageResult } from "./model/HeroUsageResult";
-import AnalysisByUsageTierList from "./TierList/AnalysisByUsageTierList";
-import AnalysisByUsageTable from "./Table/AnalysisByUsageTable";
-import "./AnalysisByUsage.css";
+import AnalysisByUsageTierList from "./AnalysisByUsageTierList";
+import AnalysisByUsageTable from "./AnalysisByUsageTable";
+import { Flex } from "rebass";
 
 type AnalysisByUsageProps = {
   heroes: Array<Hero>;
@@ -34,10 +34,10 @@ function AnalysisByUsage({heroes, compositions}: AnalysisByUsageProps) {
   );
 
   return (
-    <div className="AnalysisByUsage">
+    <Flex flexDirection="row">
       <AnalysisByUsageTierList usageResult={usageResult} />
       <AnalysisByUsageTable usageResult={usageResult} />
-    </div>
+    </Flex>
   );
 }
 

@@ -1,6 +1,6 @@
-import HeroBox from "../../Hero/HeroBox/HeroBox";
-import { UsageResult } from "../model/UsageResult";
-import './AnalysisByUsageTable.css'
+import { Box, Card, Flex } from "rebass";
+import HeroBox from "../Hero/HeroBox";
+import { UsageResult } from "./model/UsageResult";
 
 type AnalysisByUsageTableProps = {
   usageResult: UsageResult;
@@ -9,20 +9,22 @@ type AnalysisByUsageTableProps = {
 function AnalysisByUsageTable({ usageResult }: AnalysisByUsageTableProps) {
 
   const rows = usageResult.heroUsageResults.map(ur => {
-    return <div className="AnalysisByUsageTableRow">
+    return <Flex flexDirection="row">
       <HeroBox hero={ur.hero} />
-      <div className="AnalysisByUsageTableCell">
+      <Box width={75}>
         {ur.coreCompositions.length} ({Math.round(ur.coreCompositions.length * 100 / usageResult.compositionCount)}%)
-      </div>
-      <div className="AnalysisByUsageTableCell">
+      </Box>
+      <Box width={75}>
       {ur.flexCompositions.length} ({Math.round(ur.flexCompositions.length * 100 / usageResult.compositionCount)}%)
-      </div>
-    </div>
+      </Box>
+    </Flex>
   });
 
-  return <div className="AnalysisByUsageTable">
-     {rows}
-  </div>;
+  return <Card>
+      <Flex flexDirection="column">
+      {rows}
+    </Flex>
+  </Card>
 }
 
 export default AnalysisByUsageTable;

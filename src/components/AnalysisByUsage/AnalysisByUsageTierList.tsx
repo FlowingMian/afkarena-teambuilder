@@ -1,7 +1,7 @@
-import HeroCategory from "../../Hero/HeroCategory/HeroCategory";
-import { Tier } from "./Tier";
-import { UsageResult } from "../model/UsageResult";
-import './AnalysisByUsageTierList.css'
+import HeroCategory from "../Hero/HeroCategory";
+import { Tier } from "./model/Tier";
+import { UsageResult } from "./model/UsageResult";
+import { Card, Flex } from "rebass";
 
 type AnalysisByUsageTierListProps = {
   usageResult: UsageResult;
@@ -50,10 +50,11 @@ function AnalysisByUsageTierList({ usageResult }: AnalysisByUsageTierListProps) 
   const tierRows = [globalFlex, coreOrFlex, coreOrNiche, flex, niche, neverUsed]
     .map(tier => <HeroCategory name={tier.name} heroes={tier.heroes} />);
 
-  return (
-    <div className='AnalysisByUsageTierList'>
-      {tierRows}
-    </div>
+  return (<Card>
+      <Flex flexDirection="column">
+        {tierRows}
+      </Flex>
+    </Card>
   )
 }
 

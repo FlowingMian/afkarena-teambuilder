@@ -1,7 +1,7 @@
-import compositions from "../../../data/compositions";
-import { Composition } from "../../../model/compositions";
-import HeroCategory from "../../Hero/HeroCategory/HeroCategory";
-import "./CompositionDetails.css";
+
+import { Card, Flex, Heading } from "rebass";
+import { Composition } from "../../model/compositions";
+import HeroCategory from "../Hero/HeroCategory";
 
 type CompositionDetailsProps = {
   composition: Composition;
@@ -12,11 +12,13 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
   const flexHeroBoxes = composition.flexHeroes.map(cc => <HeroCategory name={cc.role.name} heroes={cc.heroes.map(hr => hr.hero)} />);
 
   return (
-    <div className="CompositionDetails">
-      <div className="CompositionDetailsName">{composition.name}</div>
-      {coreHeroBoxes}
-      {flexHeroBoxes}
-    </div>
+    <Card>
+      <Flex flexDirection="column">
+        <Heading>{composition.name}</Heading>
+        {coreHeroBoxes}
+        {flexHeroBoxes}
+      </Flex>
+    </Card>
   );
 }
 

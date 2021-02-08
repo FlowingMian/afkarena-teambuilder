@@ -1,4 +1,3 @@
-import { Composition } from "../../../model/compositions";
 import { Hero } from "../../../model/heroes";
 
 export class Tier {
