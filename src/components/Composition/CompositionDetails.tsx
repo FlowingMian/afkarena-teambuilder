@@ -9,11 +9,11 @@ type CompositionDetailsProps = {
 };
 
 function CompositionDetails({ composition }: CompositionDetailsProps) {
-  const coreHeroBoxes = (<WrapItem>
+  const coreHeroBoxes = (<WrapItem key={composition.coreHeroes.role.id}>
     <HeroCategory name={composition.coreHeroes.role.name} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
   </WrapItem>);
-  const flexHeroBoxes = composition.flexHeroes.map(cc => <WrapItem>
-    <HeroCategory name={cc.role.name} heroes={cc.heroes.map(hr => hr.hero)} /></WrapItem>
+  const flexHeroBoxes = composition.flexHeroes.map(cr => <WrapItem key={cr.role.id}>
+    <HeroCategory name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} /></WrapItem>
   );
 
   return (

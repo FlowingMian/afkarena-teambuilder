@@ -9,13 +9,13 @@ type AnalysisByUsageTableProps = {
 function AnalysisByUsageTable({ usageResult }: AnalysisByUsageTableProps) {
 
   const rows = usageResult.heroUsageResults.map(ur => {
-    return <Tr>
+    return <Tr key={ur.hero.id}>
       <Td><HeroBox hero={ur.hero} /></Td>
       <Td>
         {ur.coreCompositions.length} ({Math.round(ur.coreCompositions.length * 100 / usageResult.compositionCount)}%)
       </Td>
       <Td>
-      {ur.flexCompositions.length} ({Math.round(ur.flexCompositions.length * 100 / usageResult.compositionCount)}%)
+        {ur.flexCompositions.length} ({Math.round(ur.flexCompositions.length * 100 / usageResult.compositionCount)}%)
       </Td>
     </Tr>
   });

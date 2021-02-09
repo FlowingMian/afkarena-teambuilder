@@ -1,6 +1,5 @@
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
-import "./CompositionBox.css";
 
 type CompositionBoxProps = {
   composition: Composition;

@@ -7,7 +7,7 @@ type HeroListProps = {
 };
 
 function HeroList({ heroes }: HeroListProps) {
-  const heroesList = heroes.map((h) => <WrapItem><HeroBox key={h.id} hero={h}/></WrapItem>);
+  const heroesList = heroes.map((h) => <WrapItem key={h.id}><HeroBox hero={h}/></WrapItem>);
 
   return (
     <Wrap flexDirection="row" flexWrap="wrap">

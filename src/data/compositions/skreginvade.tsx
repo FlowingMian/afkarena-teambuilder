@@ -98,29 +98,6 @@ const skregInvade: Composition = {
                 }
             ]
 
-        },
-        {
-            role: Role.CrowdControl,
-            heroes : [
-                {
-                    hero: Ligthbearers.Estrilda
-                },
-                {
-                    hero: Celestials.Zaphrael
-                },
-                {
-                    hero: Dimensional.Ukyo
-                },
-                {
-                    hero: Hypogeans.Khazard
-                },
-                {
-                    hero: Maulers.Tidus
-                },
-                {
-                    hero: Maulers.Kren
-                }
-            ]
         }
     ]
 };

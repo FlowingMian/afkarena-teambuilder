@@ -9,7 +9,7 @@ type HeroCategoryProps = {
 };
 
 function HeroCategory({ name, heroes }: HeroCategoryProps) {
-  return <Flex flexDirection="row">
+  return <Flex flexDirection="row" alignItems="center">
       <Heading size="xs" minWidth="150px">
         {name}
       </Heading>

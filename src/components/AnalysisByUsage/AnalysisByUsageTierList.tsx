@@ -1,7 +1,7 @@
 import HeroCategory from "../Hero/HeroCategory";
 import { Tier } from "./model/Tier";
 import { UsageResult } from "./model/UsageResult";
-import { Box, Flex } from "@chakra-ui/react";
+import { Wrap, WrapItem } from "@chakra-ui/react";
 
 type AnalysisByUsageTierListProps = {
   usageResult: UsageResult;
@@ -48,13 +48,12 @@ function AnalysisByUsageTierList({ usageResult }: AnalysisByUsageTierListProps) 
   });
 
   const tierRows = [globalFlex, coreOrFlex, coreOrNiche, flex, niche, neverUsed]
-    .map(tier => <HeroCategory name={tier.name} heroes={tier.heroes} />);
+    .map(tier => <WrapItem key={tier.name}><HeroCategory name={tier.name} heroes={tier.heroes} /></WrapItem>);
 
-  return (<Box>
-      <Flex flexDirection="column">
-        {tierRows}
-      </Flex>
-    </Box>
+  return (
+    <Wrap direction="column">
+      {tierRows}
+    </Wrap>
   )
 }
 
