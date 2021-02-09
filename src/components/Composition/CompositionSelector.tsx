@@ -1,13 +1,14 @@
-import { Composition } from "../../model/compositions";
-import { Flex, FormControl, Switch } from '@chakra-ui/react'
-import CompositionDetails from "./CompositionDetails";
-import CompositionBox from "./CompositionBox";
-import { ChangeEvent } from "react";
 
-type selectedComposition  = Composition & { selected: boolean }
+import { Flex, FormControl, Switch } from '@chakra-ui/react'
+import { Composition } from '../../model/compositions';
+import CompositionBox from "./CompositionBox";
+
+export interface SelectedComposition extends Composition {
+  selected: boolean
+};
 
 type CompositionSelectorProps = {
-  compositions: Array<selectedComposition>;
+  compositions: Array<SelectedComposition>;
   onChange:(compositionId:string, value:boolean) => void
 };
 

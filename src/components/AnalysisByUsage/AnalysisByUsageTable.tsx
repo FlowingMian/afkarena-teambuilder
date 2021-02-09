@@ -1,6 +1,6 @@
 import { Table, Thead, Th, Tbody, Tr, Td } from "@chakra-ui/react"
 import HeroBox from "../Hero/HeroBox";
-import { UsageResult } from "./model/UsageResult";
+import { UsageResult } from "./model";
 
 type AnalysisByUsageTableProps = {
   usageResult: UsageResult;

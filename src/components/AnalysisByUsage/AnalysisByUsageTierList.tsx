@@ -1,6 +1,5 @@
 import HeroCategory from "../Hero/HeroCategory";
-import { Tier } from "./model/Tier";
-import { UsageResult } from "./model/UsageResult";
+import { UsageResult, Tier } from "./model";
 import { Wrap, WrapItem } from "@chakra-ui/react";
 
 type AnalysisByUsageTierListProps = {

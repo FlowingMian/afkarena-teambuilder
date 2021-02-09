@@ -1,12 +1,7 @@
-import { Hero } from "./heroes";
-import { Role } from "./role";
+import { Hero } from './heroes';
+import { Role } from './role';
 
 export enum Artifact {}
-
-export  interface CompositionRole {
-  role: Role;
-  heroes: Array<HeroRequirement>;
-}
 
 export interface HeroRequirement {
   hero: Hero;
@@ -14,6 +9,11 @@ export interface HeroRequirement {
   requiredSignature?: Number;
   requiredFurniture?: Number;
   requiredArtifact?: Artifact;
+}
+
+export interface CompositionRole {
+  role: Role;
+  heroes: Array<HeroRequirement>;
 }
 
 export interface Composition {
