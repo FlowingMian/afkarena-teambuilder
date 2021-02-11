@@ -2,7 +2,7 @@
 import { Box, Wrap, WrapItem, Heading } from "@chakra-ui/react";
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
-import { BoxCardProps} from '../style'
+import { BoxCardStyle } from '../../theme/styles';
 
 type CompositionDetailsProps = {
   composition: Composition;
@@ -17,7 +17,7 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
   );
 
   return (
-    <Box {...BoxCardProps}>
+    <Box {...BoxCardStyle}>
       <Heading size="lg">{composition.name}</Heading>
       <Wrap direction="column">
         {coreHeroBoxes}

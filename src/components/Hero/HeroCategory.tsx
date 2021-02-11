@@ -4,13 +4,12 @@ import HeroList from "./HeroList";
 
 type HeroCategoryProps = {
   name: string;
-  icon?:string
   heroes: Array<Hero>;
 };
 
 function HeroCategory({ name, heroes }: HeroCategoryProps) {
   return <Flex flexDirection="row" alignItems="center">
-      <Heading size="xs" minWidth="150px">
+      <Heading size="xs" minWidth="120px">
         {name}
       </Heading>
       <HeroList heroes={heroes}/>

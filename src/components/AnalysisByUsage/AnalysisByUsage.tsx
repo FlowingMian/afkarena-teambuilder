@@ -1,9 +1,9 @@
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button, Progress, Fade, useDisclosure, Wrap, WrapItem } from '@chakra-ui/react';
 import { useState } from 'react';
 import { Composition } from '../../model/compositions';
 import { Hero } from '../../model/heroes';
 import { HeroUsageResult, UsageResult } from './model';
-import { BoxCardProps } from '../style';
+import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
 import CompositionSelector, { SelectedComposition } from '../Composition/CompositionSelector';
 import AnalysisByUsageResults from './AnalysisByUsageResults';
 
@@ -18,42 +18,77 @@ function AnalysisByUsage({ heroes, compositions }: AnalysisByUsageProps) {
   const defaultSelection = compositions.map((c) => ({ ...c, selected: true } as SelectedComposition));
   const [selectedCompositions, setSelectedCompositions] = useState<Array<SelectedComposition>>(defaultSelection);
 
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   function setCompositionSelection(compositionId:string, value:boolean) {
-    const composition = selectedCompositions.find((c) => c.id === compositionId) as Composition & {selected:boolean};
-    composition.selected = value;
-    setSelectedCompositions(selectedCompositions);
+    setSelectedCompositions(selectedCompositions.map((c) => {
+      if (c.id === compositionId) {
+        return {
+          ...c,
+          selected: value
+        }
+      }
+      return c;
+    }));
   }
 
-  function calculateHeroUsage() {
-    const heroUsagesResults = new Map(heroes.map((h): [Hero, HeroUsageResult] => [h, new HeroUsageResult(h)]));
+  function resetSelection() {
+    setSelectedCompositions(compositions.map((c) => ({ ...c, selected: true } as SelectedComposition)));
+  }
 
-    selectedCompositions
-      .filter((composition) => composition.selected)
-      .forEach((composition) => {
-        composition.coreHeroes.heroes.forEach((hr) => {
-          const heroUsageResult = heroUsagesResults.get(hr.hero) as HeroUsageResult;
-          heroUsageResult.coreCompositions.push(composition);
-        });
-        composition.flexHeroes.forEach((cc) => {
-          cc.heroes.forEach((hr) => {
+
+  function calculateHeroUsage() {
+    onClose();
+
+    if (usageResult === undefined) {
+     setUsageResult(new UsageResult(0, []));
+    }
+
+    setTimeout(() => {
+      const heroUsagesResults = new Map(heroes.map((h): [Hero, HeroUsageResult] => [h, new HeroUsageResult(h)]));
+
+      selectedCompositions
+        .filter((composition) => composition.selected)
+        .forEach((composition) => {
+          composition.coreHeroes.heroes.forEach((hr) => {
             const heroUsageResult = heroUsagesResults.get(hr.hero) as HeroUsageResult;
-            heroUsageResult.flexCompositions.push(composition);
+            heroUsageResult.coreCompositions.push(composition);
+          });
+          composition.flexHeroes.forEach((cc) => {
+            cc.heroes.forEach((hr) => {
+              const heroUsageResult = heroUsagesResults.get(hr.hero) as HeroUsageResult;
+              heroUsageResult.flexCompositions.push(composition);
+            });
           });
         });
-      });
 
-    setUsageResult(new UsageResult(
-      selectedCompositions.length,
-      Array.from(heroUsagesResults.values()).sort((ur1, ur2) => ur2.coreCompositions.length - ur1.coreCompositions.length || ur2.flexCompositions.length - ur1.flexCompositions.length),
-    ));
+      setUsageResult(new UsageResult(
+        selectedCompositions.length,
+        Array.from(heroUsagesResults.values()).sort((ur1, ur2) => ur2.coreCompositions.length - ur1.coreCompositions.length || ur2.flexCompositions.length - ur1.flexCompositions.length),
+      ));
+      onOpen();
+    }, 500 );
   }
 
   return (
-    <Box {...BoxCardProps}>
-      <CompositionSelector compositions={selectedCompositions} onChange={setCompositionSelection} />
-      <Button onClick={calculateHeroUsage}>Calculate hero usage</Button>
-      <AnalysisByUsageResults usageResult={usageResult} />
-    </Box>
+    <div>
+      <Box {...BoxControlsStyle}>
+        {/* current Date.now() key to force a rerender (see https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key)*/}
+        <CompositionSelector compositions={selectedCompositions} onChange={setCompositionSelection} key={Date.now()}/>
+        <Wrap mt='4'>
+          <WrapItem><Button variant='solid' onClick={calculateHeroUsage}>Calculate hero usage</Button></WrapItem>
+          <WrapItem><Button variant='outline' onClick={resetSelection}>Reset selection</Button></WrapItem>
+        </Wrap>
+      </Box>
+      <Box {...BoxResultsStyle}>
+        <Fade in={!isOpen && usageResult !== undefined} unmountOnExit>
+          <Progress isIndeterminate/>
+        </Fade>
+        <Fade in={isOpen}>
+          <AnalysisByUsageResults usageResult={usageResult} />
+        </Fade>
+      </Box>
+    </div>
   );
 }
 
