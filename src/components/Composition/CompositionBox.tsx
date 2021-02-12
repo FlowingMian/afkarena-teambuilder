@@ -7,7 +7,7 @@ type CompositionBoxProps = {
 
 function CompositionBox({ composition }: CompositionBoxProps) {
   return (
-    <HeroCategory name={composition.name} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
+    <HeroCategory name={composition.name} charactericticsDistribution={false} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
   );
 }
 

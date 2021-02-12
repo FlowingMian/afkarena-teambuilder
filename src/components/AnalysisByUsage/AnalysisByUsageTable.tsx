@@ -32,7 +32,7 @@ function AnalysisByUsageTable({ usageResult }: AnalysisByUsageTableProps) {
       <Tbody>
         {rows}
       </Tbody>
-      </Table>
+    </Table>
   )
 }
 

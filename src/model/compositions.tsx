@@ -6,8 +6,8 @@ export enum Artifact {}
 export interface HeroRequirement {
   hero: Hero;
   recommended?: boolean
-  requiredSignature?: Number;
-  requiredFurniture?: Number;
+  requiredSignature?: 1 | 10 | 20 | 30 ;
+  requiredFurniture?: 3 | 9;
   requiredArtifact?: Artifact;
 }
 

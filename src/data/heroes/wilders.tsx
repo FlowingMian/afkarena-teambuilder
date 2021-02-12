@@ -1,4 +1,7 @@
-import { Attribute, Class, Faction, Hero } from "../../model/heroes";
+import { Hero } from "../../model/heroes";
+import * as Faction from '../characteristics/factions';
+import * as Attribute from '../characteristics/attributes';
+import * as Class from '../characteristics/classes';
 
 export const Nemora: Hero = {
   id: "NEMORA",
