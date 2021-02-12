@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider, HStack } from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
 import {BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 import heroes from "./data/heroes";
@@ -11,6 +11,7 @@ import { BoxCardStyle } from './theme/styles';
 import theme from "./theme";
 import Navbar from "./components/Layout/Navbar";
 import Content from "./components/Layout/Content";
+import CharactericticsDistribution from "./components/Characteristic/HeroCharacteristicsTable";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               </Route>
               <Route path="/heroes">
                 <Box {...BoxCardStyle}>
+                  <CharactericticsDistribution heroes={heroes}/>
                   <HeroList heroes={heroes} />
                 </Box>
               </Route>

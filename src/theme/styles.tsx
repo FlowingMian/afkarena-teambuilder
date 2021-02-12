@@ -1,5 +1,3 @@
-import { background } from "@chakra-ui/react";
-
 export const BoxControlsStyle = {
     p: "6",
     m: "0",

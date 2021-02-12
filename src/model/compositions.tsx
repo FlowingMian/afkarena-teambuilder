@@ -1,5 +1,5 @@
+import { Role } from './characteristics';
 import { Hero } from './heroes';
-import { Role } from './role';
 
 export enum Artifact {}
 

@@ -10,7 +10,7 @@ export const Mauler:Faction = {
 };
 export const Wilder:Faction = {
     id: 'WILDER',
-    name: '  Wilder'
+    name: 'Wilder'
 };
 export const Graveborn:Faction = {
     id: 'GRAVEBORN',
@@ -18,7 +18,7 @@ export const Graveborn:Faction = {
 };
 export const Celestial:Faction = {
     id: 'CELESTIAL',
-    name: ' Celestial'
+    name: 'Celestial'
 };
 export const Hypogean:Faction = {
     id: 'HYPOGEAN',

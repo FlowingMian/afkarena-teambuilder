@@ -10,13 +10,13 @@ export class CharactericticsDistribution {
     attributes: Map<Attribute, number>;
 
     constructor() {
-        this.factions = new Map(Factions.map((f): [Faction, number] => [f, 0]));
+        this.factions = new Map(Factions.map((c): [Faction, number] => [c, 0]));
         this.classes = new Map(Classes.map((c): [Class, number] => [c, 0]));
-        this.attributes = new Map(Attributes.map((a): [Attribute, number] => [a, 0]));
+        this.attributes = new Map(Attributes.map((c): [Attribute, number] => [c, 0]));
       }
 }
 
-export function getCharactericticsDistribution(heroes:Array<Hero>):CharactericticsDistribution {
+export function getHeroCharactericticsDistribution(heroes:Array<Hero>):CharactericticsDistribution {
     const characteristicsDistribution = new CharactericticsDistribution();
     heroes.forEach(h => {
         characteristicsDistribution.factions.set(h.faction, characteristicsDistribution.factions.get(h.faction) as number + 1);

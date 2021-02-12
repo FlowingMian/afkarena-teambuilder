@@ -8,7 +8,7 @@ type AnalysisByUsageResultsProps = {
 };
 
 function AnalysisByUsageResults({ usageResult }: AnalysisByUsageResultsProps) {
-    return usageResult ? (<Tabs>
+    return usageResult ? (<Tabs isLazy>
         <TabList>
           <Tab>Tier List</Tab>
           <Tab>Table</Tab>

@@ -1,6 +1,7 @@
 import HeroCategory from "../Hero/HeroCategory";
 import { UsageResult, Tier } from "./model";
 import { Wrap, WrapItem } from "@chakra-ui/react";
+import { heatGradient } from "../../theme/colors";
 
 type AnalysisByUsageTierListProps = {
   usageResult: UsageResult;
@@ -8,46 +9,42 @@ type AnalysisByUsageTierListProps = {
 
 function AnalysisByUsageTierList({ usageResult }: AnalysisByUsageTierListProps) {
   
-  const GLOBAL_PERCENT_THRESHOLD: number = 0.5;
-  const NICHE_PERCENT_THRESHOLD: number = 0.25;
-
-  const coreOrFlex:Tier = new Tier('Core or Flex');
-  const coreOrNiche:Tier = new Tier('Core or Niche');
-  const globalFlex:Tier = new Tier('Global Flex');
-  const flex:Tier = new Tier('Flex');
-  const niche:Tier = new Tier('Niche');
-  const neverUsed:Tier = new Tier('Never used');
+  const globalFlex:Tier = new Tier('Global Flex', heatGradient[900]);
+  const coreOrFlex:Tier = new Tier('Core or Flex', heatGradient[700]);
+  const coreOrNiche:Tier = new Tier('Core or Niche', heatGradient[600]);
+  const flex:Tier = new Tier('Flex', heatGradient[500]);
+  const niche:Tier = new Tier('Niche', heatGradient[400]);
+  const neverUsed:Tier = new Tier('Never used', heatGradient[100]);
 
   usageResult.heroUsageResults.forEach(ur => {
-    const flexProportion = ur.flexCompositions.length / usageResult.compositionCount;
     let tier:Tier;
-    if (ur.coreCompositions.length > 0) {
-      if (flexProportion > NICHE_PERCENT_THRESHOLD) {
-        tier = coreOrFlex;
+    if (ur.isCore()) {
+      if (ur.isNicheFlex(usageResult.compositionCount)) {
+        tier = coreOrNiche;
       }
       else {
-        tier = coreOrNiche;
+        tier = coreOrFlex;
       }
     }
     else {
-      if (flexProportion > GLOBAL_PERCENT_THRESHOLD) {
+      if (ur.flexCompositions.size === 0) {
+        tier = neverUsed;
+      }
+      else if (ur.isGlobalFlex(usageResult.compositionCount)) {
         tier = globalFlex;
       }
-      else if (flexProportion > NICHE_PERCENT_THRESHOLD) {
-        tier = flex;
-      }
-      else if (ur.flexCompositions.length > 0) {
+      else if (ur.isNicheFlex(usageResult.compositionCount)) {
         tier = niche;
       }
       else {
-        tier = neverUsed;
+        tier = flex;
       }
     }
     tier.heroes.push(ur.hero)
   });
 
   const tierRows = [globalFlex, coreOrFlex, coreOrNiche, flex, niche, neverUsed]
-    .map(tier => <WrapItem key={tier.name}><HeroCategory name={tier.name} heroes={tier.heroes} /></WrapItem>);
+    .map(tier => <WrapItem key={tier.name}><HeroCategory name={tier.name} heroes={tier.heroes} colorScheme={tier.variant}/></WrapItem>);
 
   return (
     <Wrap direction="column">

@@ -10,7 +10,7 @@ export const Intelligence:Attribute = {
 };
 export const Agility:Attribute = {
     id: 'AGILITY',
-    name: '  Agility'
+    name: 'Agility'
 };
 
 export const Attributes: Array<Attribute> = [

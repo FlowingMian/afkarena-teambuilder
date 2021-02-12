@@ -41,15 +41,16 @@ function AnalysisByUsage({ heroes, compositions }: AnalysisByUsageProps) {
     onClose();
 
     if (usageResult === undefined) {
-     setUsageResult(new UsageResult(0, []));
+      setUsageResult(new UsageResult(0, []));
     }
 
     setTimeout(() => {
       const heroUsagesResults = new Map(heroes.map((h): [Hero, HeroUsageResult] => [h, new HeroUsageResult(h)]));
 
-      selectedCompositions
-        .filter((composition) => composition.selected)
-        .forEach((composition) => {
+      const comps = selectedCompositions
+        .filter((composition) => composition.selected);
+
+      comps.forEach((composition) => {
           composition.coreHeroes.heroes.forEach((hr) => {
             const heroUsageResult = heroUsagesResults.get(hr.hero) as HeroUsageResult;
             heroUsageResult.coreCompositions.push(composition);
@@ -57,15 +58,20 @@ function AnalysisByUsage({ heroes, compositions }: AnalysisByUsageProps) {
           composition.flexHeroes.forEach((cc) => {
             cc.heroes.forEach((hr) => {
               const heroUsageResult = heroUsagesResults.get(hr.hero) as HeroUsageResult;
-              heroUsageResult.flexCompositions.push(composition);
+              heroUsageResult.flexCompositions.set(composition, cc.role);
             });
           });
         });
 
       setUsageResult(new UsageResult(
-        selectedCompositions.length,
-        Array.from(heroUsagesResults.values()).sort((ur1, ur2) => ur2.coreCompositions.length - ur1.coreCompositions.length || ur2.flexCompositions.length - ur1.flexCompositions.length),
-      ));
+        comps.length,
+        Array.from(heroUsagesResults.values())
+          .sort((ur1, ur2) => 
+            ur2.coreCompositions.length + ur2.flexCompositions.size - ur1.coreCompositions.length - ur1.flexCompositions.size ||
+            ur2.coreCompositions.length - ur1.coreCompositions.length ||
+            ur2.flexCompositions.size - ur1.flexCompositions.size
+          )
+        ));
       onOpen();
     }, 500 );
   }
@@ -73,8 +79,7 @@ function AnalysisByUsage({ heroes, compositions }: AnalysisByUsageProps) {
   return (
     <div>
       <Box {...BoxControlsStyle}>
-        {/* current Date.now() key to force a rerender (see https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key)*/}
-        <CompositionSelector compositions={selectedCompositions} onChange={setCompositionSelection} key={Date.now()}/>
+        <CompositionSelector compositions={selectedCompositions} onChange={setCompositionSelection} key={selectedCompositions.filter((composition) => composition.selected).length}/>
         <Wrap mt='4'>
           <WrapItem><Button variant='solid' onClick={calculateHeroUsage}>Calculate hero usage</Button></WrapItem>
           <WrapItem><Button variant='outline' onClick={resetSelection}>Reset selection</Button></WrapItem>

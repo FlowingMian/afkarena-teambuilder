@@ -1,7 +1,4 @@
-export interface Role {
-  id: string;
-  name: string
-}
+import { Role } from "../../model/characteristics";
 
 export const Core:Role = {
   id: 'CORE',
@@ -62,3 +59,19 @@ export const Damage:Role = {
   id: 'DAMAGE',
   name: 'Damage',
 };
+
+
+export const Roles: Array<Role> = [
+  Core,
+  SubDPS,
+  CrowdControl,
+  Utility,
+  Tankiness,
+  Energy,
+  Enabler,
+  Sustain,
+  Displacement,
+  Buffer,
+  Protection,
+  Damage,
+];

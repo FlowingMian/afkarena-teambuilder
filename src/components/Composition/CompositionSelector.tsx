@@ -15,7 +15,7 @@ type CompositionSelectorProps = {
 function CompositionSelector({ compositions, onChange }: CompositionSelectorProps) {
 
   const compositionBoxes = compositions.map((c) => 
-    <FormControl key={c.id} maxWidth='24%' minWidth="335px" display="flex" alignItems="center" m="calc(0.5rem/2)"> 
+    <FormControl key={c.id} maxWidth='24%' minWidth="335px" display="flex" alignItems="center" m="0.25rem"> 
       <Switch defaultChecked={c.selected} mr="5px" onChange={() => onChange(c.id, !c.selected)}/>
       <CompositionBox key={c.id} composition={c} />
     </FormControl>

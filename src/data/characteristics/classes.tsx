@@ -10,7 +10,7 @@ export const Tank:Class = {
 };
 export const Ranger:Class = {
     id: 'RANGER',
-    name: '  Ranger'
+    name: 'Ranger'
 };
 export const Mage:Class = {
     id: 'MAGE',
@@ -18,7 +18,7 @@ export const Mage:Class = {
 };
 export const Support:Class = {
     id: 'SUPPORT',
-    name: ' Support'
+    name: 'Support'
 };
 
 export const Classes: Array<Class> = [
