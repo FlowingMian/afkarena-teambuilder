@@ -1,5 +1,5 @@
 import { Hero } from "../../model/heroes";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Heading, HStack } from "@chakra-ui/react";
 import HeroList from "./HeroList";
 import HeroCharacteristicsPopover from "../Characteristic/HeroCharacteristicsPopover";
 
@@ -20,16 +20,11 @@ function HeroCategory({ name, heroes, charactericticsDistribution = true, colorS
     borderRadius: 'sm',
   } : null;
 
-  return <Flex flexDirection="row" alignItems="center" 
-    minWidth="296px" width='100%' 
-    {...flexStyle}
-    >
-      <Heading size="xs" minWidth="8rem">
-        {name}
-      </Heading>
+  return <HStack minWidth="296px" {...flexStyle}>
+      <Heading size="xs" minWidth="8rem">{name}</Heading>
       {charactericticsDistribution && <HeroCharacteristicsPopover heroes={heroes}/>}
       <HeroList heroes={heroes}/>
-    </Flex>;
+    </HStack>;
 }
 
 export default HeroCategory;

@@ -1,6 +1,6 @@
 import HeroCategory from "../Hero/HeroCategory";
 import { UsageDashboardResult, Tier } from "./model";
-import { Wrap, WrapItem } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { heatGradient } from "../../theme/colors";
 import { HeroCharactericticsSelection } from "../Characteristic/HeroCharactericticsSelector";
 
@@ -48,12 +48,12 @@ function UsageDashboardTierList({ usageResult, filters }: UsageDashboardTierList
     });
 
   const tierRows = [globalFlex, coreOrFlex, coreOrNiche, flex, niche, neverUsed]
-    .map(tier => <WrapItem key={tier.name}><HeroCategory name={tier.name} heroes={tier.heroes} colorScheme={tier.variant}/></WrapItem>);
+    .map(tier => <HeroCategory key={tier.name} name={tier.name} heroes={tier.heroes} colorScheme={tier.variant}/>);
 
   return (
-    <Wrap direction="column">
+    <VStack direction="column" alignItems='stretch'>
       {tierRows}
-    </Wrap>
+    </VStack>
   )
 }
 

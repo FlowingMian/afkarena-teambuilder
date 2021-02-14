@@ -12,9 +12,11 @@ export const BoxResultsStyle = {
 }
 
 export const BoxCardStyle = {
-    p: "6",
-    m: "4",
-    background: 'white',
-    boxShadow:"sm",
-    rounded: "sm",
+    border: "2px solid",
+    borderColor: "secondary.300",
+    borderRadius: "md",
+    boxShadow: "sm",
+    padding: "0.75rem",
+    background : "primary.50",
+    minWidth: 'xs'
 }

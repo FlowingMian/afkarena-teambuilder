@@ -1,4 +1,4 @@
-import { Box, Button, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box, Button, HStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
 import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
@@ -65,10 +65,10 @@ function UsageDashboard() {
     <div>
       <Box {...BoxControlsStyle}>
         <CompositionSelector compositions={selectedCompositions} onChange={setCompositionSelection} key={selectedCompositions.filter((composition) => composition.selected).length}/>
-        <Wrap mt='4'>
-          <WrapItem><Button variant='solid' onClick={calculateHeroUsage}>Calculate hero usage</Button></WrapItem>
-          <WrapItem><Button variant='outline' onClick={resetSelection}>Reset selection</Button></WrapItem>
-        </Wrap>
+        <HStack mt='1rem'>
+          <Button variant='solid' onClick={calculateHeroUsage}>Calculate hero usage</Button>
+          <Button variant='outline' onClick={resetSelection}>Reset selection</Button>
+        </HStack>
       </Box>
       <Box {...BoxResultsStyle}>
         {usageResult && <UsageDashboardResults usageResult={usageResult} />}

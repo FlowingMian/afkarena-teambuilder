@@ -4,14 +4,15 @@ import CharactericticBox from "./CharacteristicBox";
 
 type CharacteristicTableProps = {
   characterictics: Map<Characterictic, number> | Array<Characterictic>;
+  displayName?: boolean;
 };
 
-function CharacteristicTable({ characterictics }: CharacteristicTableProps) {
+function CharacteristicTable({ characterictics, displayName = true }: CharacteristicTableProps) {
 
   const array = characterictics instanceof Map ? Array.from(characterictics.keys()) : characterictics;
   const charactericticRows =  array.map((c) => (
     <HStack key={c.id} width="100%" justifyContent='space-between'>
-      <CharactericticBox characterictic={c} />   
+      <CharactericticBox characterictic={c} displayName={displayName}/>   
       {characterictics instanceof Map && <Text>{characterictics.get(c)}</Text>}
     </HStack>
   ));

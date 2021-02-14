@@ -14,9 +14,9 @@ function HeroCharactericticsTable({heroes} : HeroCharactericticsTableProps) {
   const heroCharacteristics = getHeroCharactericticsDistribution(heroes);
 
   return <HStack alignItems='start' width='100%' justifyContent='space-between'>
-    <CharacteristicTable characterictics={heroCharacteristics.factions} />
-    <CharacteristicTable characterictics={heroCharacteristics.classes} />
-    <CharacteristicTable characterictics={heroCharacteristics.attributes} />
+    <CharacteristicTable characterictics={heroCharacteristics.factions} displayName={false}/>
+    <CharacteristicTable characterictics={heroCharacteristics.classes} displayName={false} />
+    <CharacteristicTable characterictics={heroCharacteristics.attributes} displayName={false} />
   </HStack>
 }
 

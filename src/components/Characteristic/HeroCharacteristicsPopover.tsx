@@ -10,22 +10,17 @@ type HeroCharacteristicsPopoverProps = {
 function HeroCharacteristicsPopover({ heroes }: HeroCharacteristicsPopoverProps) {
 
   return (
-    <Box width='85px'>
-      <Popover isLazy>
-
-        <PopoverTrigger>
-          <Button variant='ghost' rightIcon={<ViewIcon/>}>{heroes.length}</Button>
-        </PopoverTrigger>
-
-        <PopoverContent>
-          <PopoverArrow />
-          <PopoverBody>
-            <HeroCharactericticsTable heroes={heroes} />
-          </PopoverBody>
-        </PopoverContent>
-
-      </Popover>
-    </Box>
+    <Popover isLazy>
+      <PopoverTrigger>
+        <Button variant='ghost' rightIcon={<ViewIcon/>} minWidth='4rem' maxWidth='4rem'>{heroes.length}</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverArrow />
+        <PopoverBody background="primary.50">
+          <HeroCharactericticsTable heroes={heroes} />
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
   );
 }
 

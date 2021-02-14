@@ -2,7 +2,7 @@ import { Box, HStack, Spacer, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
-import { BoxResultsStyle } from '../../theme/styles';
+import { BoxResultsStyle, BoxCardStyle } from '../../theme/styles';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 import HeroList from '../Hero/HeroList';
@@ -22,7 +22,9 @@ function HeroDashboard() {
         <VStack alignItems='start'>
           <HeroCharactericticsSelector onChange={filterHeroes}/>
           <Spacer/>
-          <HeroCharactericticsTable heroes={selectedHeroes} />
+          <Box {...BoxCardStyle}>
+            <HeroCharactericticsTable heroes={selectedHeroes} />
+          </Box>
         </VStack>
 
         <HeroList heroes={selectedHeroes} />
