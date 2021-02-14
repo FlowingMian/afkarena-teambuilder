@@ -1,5 +1,4 @@
-import { Box, Flex, Heading } from '@chakra-ui/react'
-import { CSSObject } from '@emotion/react';
+import { Box, } from '@chakra-ui/react'
 
 const ContentStyle = {
   marginLeft: '150px'

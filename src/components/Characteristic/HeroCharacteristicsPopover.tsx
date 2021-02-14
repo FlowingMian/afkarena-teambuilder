@@ -1,13 +1,14 @@
 import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody, Box} from "@chakra-ui/react";
 import { ViewIcon } from '@chakra-ui/icons'
 import { Hero } from "../../model/heroes";
-import HeroCharacteristicsTable from "./HeroCharacteristicsTable";
+import HeroCharactericticsTable from "./HeroCharactericticsTable";
 
 type HeroCharacteristicsPopoverProps = {
   heroes: Array<Hero>;
 };
 
 function HeroCharacteristicsPopover({ heroes }: HeroCharacteristicsPopoverProps) {
+
   return (
     <Box width='85px'>
       <Popover isLazy>
@@ -19,7 +20,7 @@ function HeroCharacteristicsPopover({ heroes }: HeroCharacteristicsPopoverProps)
         <PopoverContent>
           <PopoverArrow />
           <PopoverBody>
-            <HeroCharacteristicsTable heroes={heroes}/>
+            <HeroCharactericticsTable heroes={heroes} />
           </PopoverBody>
         </PopoverContent>
 

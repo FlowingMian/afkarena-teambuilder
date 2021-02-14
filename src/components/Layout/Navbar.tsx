@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <Box {...NavbarStyle}>
       <Flex direction='column'>
-        <NavLink activeStyle={NavlinkActiveStyle} to="/tierlist">
+        <NavLink activeStyle={NavlinkActiveStyle} to="/usages">
           <Heading size="sm" p='4'>Tier List</Heading>
         </NavLink>
         <NavLink activeStyle={NavlinkActiveStyle} to="/heroes" >

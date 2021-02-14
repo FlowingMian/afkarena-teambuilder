@@ -1,26 +1,25 @@
-import { Table, Tbody, Tr, Td} from "@chakra-ui/react";
+import { VStack, HStack, Text} from "@chakra-ui/react";
 import { Characterictic } from "../../model/characteristics";
 import CharactericticBox from "./CharacteristicBox";
 
 type CharacteristicTableProps = {
-  characterictics: Map<Characterictic, number>;
+  characterictics: Map<Characterictic, number> | Array<Characterictic>;
 };
 
 function CharacteristicTable({ characterictics }: CharacteristicTableProps) {
 
-  const charactericticRows =  Array.from(characterictics.keys()).map((c) => (
-    <Tr key={c.id}>
-      <Td><CharactericticBox characterictic={c}/></Td>    
-      <Td isNumeric>{characterictics.get(c)}</Td>    
-    </Tr>
+  const array = characterictics instanceof Map ? Array.from(characterictics.keys()) : characterictics;
+  const charactericticRows =  array.map((c) => (
+    <HStack key={c.id} width="100%" justifyContent='space-between'>
+      <CharactericticBox characterictic={c} />   
+      {characterictics instanceof Map && <Text>{characterictics.get(c)}</Text>}
+    </HStack>
   ));
 
   return (
-    <Table size="xs" variant='simple'>
-      <Tbody>
+    <VStack alignItems='start'>
         {charactericticRows}
-      </Tbody>
-    </Table>
+    </VStack>
   );
 }
 

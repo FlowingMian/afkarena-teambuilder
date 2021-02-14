@@ -6,7 +6,7 @@ import { Hero } from "../../model/heroes";
 const GLOBAL_PERCENT_THRESHOLD: number = 0.5;
 const NICHE_PERCENT_THRESHOLD: number = 0.25;
 
-export class HeroUsageResult {
+export class HeroUsageDashboardResult {
     hero: Hero;
     coreCompositions: Array<Composition>;
     flexCompositions: Map<Composition, Role>;
@@ -38,11 +38,11 @@ export class HeroUsageResult {
     }
 }
 
-export class UsageResult {
+export class UsageDashboardResult {
     compositionCount: number;
-    heroUsageResults: Array<HeroUsageResult>;
+    heroUsageResults: Array<HeroUsageDashboardResult>;
   
-    constructor(compositionCount: number, heroUsageResults: Array<HeroUsageResult>) {
+    constructor(compositionCount: number, heroUsageResults: Array<HeroUsageDashboardResult>) {
       this.compositionCount = compositionCount;
       this.heroUsageResults = heroUsageResults;
     }
