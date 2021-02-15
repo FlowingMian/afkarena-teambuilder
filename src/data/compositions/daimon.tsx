@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const daimon: Composition = {
     id: 'DAIMON',
     name: 'Daimon',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/rxppdwdwpvf61.png?width=2480&format=png&auto=webp&s=5a5c8a18b9e7f0416faa6c89cc2fa5a07e3d3aaf',
     coreHeroes: {
         role: Role.Core,
         heroes : [

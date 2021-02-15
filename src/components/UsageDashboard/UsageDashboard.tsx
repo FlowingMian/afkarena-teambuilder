@@ -1,56 +1,36 @@
-import { Box, Button, HStack } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
 import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
-import CompositionSelector, { SelectedComposition } from '../Composition/CompositionSelector';
+import CompositionSelector from '../Composition/CompositionSelector';
 import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
 
 function UsageDashboard() {
+
   const [usageResult, setUsageResult] = useState<UsageDashboardResult>();
   
-  const defaultSelection = compositions.map((c) => ({ ...c, selected: true } as SelectedComposition));
-  const [selectedCompositions, setSelectedCompositions] = useState<Array<SelectedComposition>>(defaultSelection);
-
-  function setCompositionSelection(compositionId:string, value:boolean) {
-    setSelectedCompositions(selectedCompositions.map((c) => {
-      if (c.id === compositionId) {
-        return {
-          ...c,
-          selected: value
-        }
-      }
-      return c;
-    }));
-  }
-
-  function resetSelection() {
-    setSelectedCompositions(compositions.map((c) => ({ ...c, selected: true } as SelectedComposition)));
-  }
-
-
-  function calculateHeroUsage() {
+  function calculateHeroUsage(compositionIds:Array<string>) {
     const heroUsagesResults = new Map(heroes.map((h): [string, HeroUsageDashboardResult] => [h.id, new HeroUsageDashboardResult(h)]));
 
-    const comps = selectedCompositions
-      .filter((composition) => composition.selected);
+    const selectedCompositions = compositions.filter(c => compositionIds.includes(c.id));
 
-    comps.forEach((composition) => {
-        composition.coreHeroes.heroes.forEach((hr) => {
+    selectedCompositions.forEach((c) => {
+        c.coreHeroes.heroes.forEach((hr) => {
           const heroUsageResult = heroUsagesResults.get(hr.hero.id) as HeroUsageDashboardResult;
-          heroUsageResult.coreCompositions.push(composition);
+          heroUsageResult.coreCompositions.push(c);
         });
-        composition.flexHeroes.forEach((cc) => {
+        c.flexHeroes.forEach((cc) => {
           cc.heroes.forEach((hr) => {
             const heroUsageResult = heroUsagesResults.get(hr.hero.id) as HeroUsageDashboardResult;
-            heroUsageResult.flexCompositions.set(composition, cc.role);
+            heroUsageResult.flexCompositions.set(c, cc.role);
           });
         });
       });
 
     setUsageResult(new UsageDashboardResult(
-      comps.length,
+      selectedCompositions.length,
       Array.from(heroUsagesResults.values())
         .sort((ur1, ur2) => 
           // Sort by number of usage > core > flex
@@ -64,11 +44,7 @@ function UsageDashboard() {
   return (
     <div>
       <Box {...BoxControlsStyle}>
-        <CompositionSelector compositions={selectedCompositions} onChange={setCompositionSelection} key={selectedCompositions.filter((composition) => composition.selected).length}/>
-        <HStack mt='1rem'>
-          <Button variant='solid' onClick={calculateHeroUsage}>Calculate hero usage</Button>
-          <Button variant='outline' onClick={resetSelection}>Reset selection</Button>
-        </HStack>
+        <CompositionSelector onValidate={calculateHeroUsage} />
       </Box>
       <Box {...BoxResultsStyle}>
         {usageResult && <UsageDashboardResults usageResult={usageResult} />}

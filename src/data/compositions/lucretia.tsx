@@ -10,7 +10,10 @@ import * as Dimensional from '../heroes/dimensionals'
 
 const lucretia: Composition = {
     id: 'LUCRETIA',
-    name: 'Lucretia',
+    name: 'Lucretia Cheese',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/j4dtfgk1pvf61.png?width=2480&format=png&auto=webp&s=7714c6ed57f13a91509f6917af7aff31d644fa3a',
     coreHeroes: {
         role: Role.Core,
         heroes : [

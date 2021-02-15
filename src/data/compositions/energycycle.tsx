@@ -7,11 +7,13 @@ import * as Graveborns from '../heroes/graveborns'
 import * as Celestials from '../heroes/celestials'
 import * as Hypogeans from '../heroes/hypogeans'
 import * as Dimensional from '../heroes/dimensionals'
-import ainz from './ainz';
 
 const energycycle: Composition = {
     id: 'ENERGYCYCLE',
     name: 'Energy Cycle',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/6yl5v7cgpvf61.png?width=2480&format=png&auto=webp&s=e7fec64234605d3f0c338995ef112d97385d343e',
     coreHeroes: {
         role: Role.Core,
         heroes : [

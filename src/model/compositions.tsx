@@ -19,6 +19,9 @@ export interface CompositionRole {
 export interface Composition {
   id: string;
   name: string;
+  tags: Array<string>;
+  author?: string,
+  link?: string;
   coreHeroes: CompositionRole;
   flexHeroes: Array<CompositionRole>;
 }

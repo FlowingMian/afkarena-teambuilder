@@ -10,7 +10,10 @@ import * as Dimensional from '../heroes/dimensionals'
 
 const thoran: Composition = {
     id: 'THORAN',
-    name: 'Thoran',
+    name: 'Thoran Cheese',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/off9mrptovf61.png?width=2480&format=png&auto=webp&s=70ee0f40dfcff132968b2f83663d0fc7cbb6b78e',
     coreHeroes: {
         role: Role.Core,
         heroes : [

@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const stall: Composition = {
     id: 'STALL',
     name: 'Stall',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/kn01j3p3qvf61.png?width=2480&format=png&auto=webp&s=055d926d03bd84cf28c4a4581e1dd1b5d76ec358',
     coreHeroes: {
         role: Role.Core,
         heroes : [

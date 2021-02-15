@@ -8,9 +8,7 @@ import Content from "./components/Layout/Content";
 
 import UsageDashboard from "./components/UsageDashboard/UsageDashboard";
 import HeroDashboard from "./components/HeroDashboard/HeroDashboard";
-
-import CompositionList from "./components/Composition/CompositionList";
-import compositions from "./data/compositions";
+import CompositionDashboard from "./components/CompositionDashboard/CompositionDashboard";
 
 function App() {
   return (
@@ -26,7 +24,7 @@ function App() {
                 <HeroDashboard/>
               </Route>
               <Route path="/compositions">
-                <CompositionList compositions={compositions}/>
+                <CompositionDashboard/>
               </Route>
               <Route path="/">
                 <Redirect to="/usages" />

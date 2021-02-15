@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const burst: Composition = {
     id: 'BURST',
     name: 'Burst',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/gpfow7lppvf61.png?width=2480&format=png&auto=webp&s=aa185e96d955659a03094d2c081e891aa5a12a51',
     coreHeroes: {
         role: Role.Core,
         heroes : [

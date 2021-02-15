@@ -10,7 +10,10 @@ import * as Dimensional from '../heroes/dimensionals'
 
 const fivePull: Composition = {
     id: 'FIVEPULL',
-    name: '5-Pull',
+    name: 'Five Pull',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/r76h5rospvf61.png?width=2480&format=png&auto=webp&s=a3aa8d52b603bc16fc1c070132fa7f57020f2ff2',
     coreHeroes: {
         role: Role.Core,
         heroes : [

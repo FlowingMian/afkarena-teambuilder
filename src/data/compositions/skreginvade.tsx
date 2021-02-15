@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const skregInvade: Composition = {
     id: 'SKREGINVADE',
     name: 'Skreg Invade',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/a40xisl8pvf61.png?width=2480&format=png&auto=webp&s=b52c1a6975363974b363ddceaf260552a02daad3',
     coreHeroes: {
         role: Role.Core,
         heroes : [

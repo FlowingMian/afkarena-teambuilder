@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const portalParty: Composition = {
     id: 'PORTALPARTY',
     name: 'Portal Party',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/ztq7tqk8qvf61.png?width=2480&format=png&auto=webp&s=98197ae512438746fd0c035cbd7d3929af0545e5',
     coreHeroes: {
         role: Role.Core,
         heroes : [

@@ -1250,6 +1250,14 @@
   dependencies:
     "@chakra-ui/utils" "1.2.0"
 
+"@chakra-ui/icons@^1.0.5":
+  "integrity" "sha512-l8CgisPAS44ehKLw/hoHI6dfSX7pOAfylv8QkINVPEzhHwnNIg0wHzcm1cGkRXuq3DN8G0z88KmFegFFp02yiA=="
+  "resolved" "https://registry.npmjs.org/@chakra-ui/icons/-/icons-1.0.5.tgz"
+  "version" "1.0.5"
+  dependencies:
+    "@chakra-ui/icon" "1.1.1"
+    "@types/react" "^17.0.0"
+
 "@chakra-ui/image@1.0.7":
   "integrity" "sha512-GqPHBzWgvkmxuovD8sLvwO45Zh+vRa0qIKFg6mBeMwpdQh4aWHZJLw8Ln5Hh3WFRtJcIbZqKQV3dUJln8ZpQkQ=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/image/-/image-1.0.7.tgz"
@@ -2322,6 +2330,11 @@
   "integrity" "sha512-giAlZwstKbmvMk1OO7WXSj4OZ0keXAcl2TQq4LWHiiPH2ByaH7WeUzng+Qej8UPxxv+8lRTuouo0iaNDBuzIBA=="
   "resolved" "https://registry.npmjs.org/@types/html-minifier-terser/-/html-minifier-terser-5.1.1.tgz"
   "version" "5.1.1"
+
+"@types/isarray@^2.0.0":
+  "integrity" "sha512-NHg6zbZBs+BHKCFr9iQec3k6DFqNIBdAZRPdeChYG7zFn02mJ2mLjo0rBpEoBuKa64hAy8y24RJ7q0RAUujYCQ=="
+  "resolved" "https://registry.npmjs.org/@types/isarray/-/isarray-2.0.0.tgz"
+  "version" "2.0.0"
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   "integrity" "sha512-sz7iLqvVUg1gIedBOvlkxPlc8/uVzyS5OwGz1cKjXzkl3FpL3al0crU8YGU1WoHkxn0Wxbw5tyi6hvzJKNzFsw=="
@@ -3977,6 +3990,14 @@
   "integrity" "sha512-uc2Vix1frTfnuzxxu1Hp4ktSvM3QaI4oXl4ZUqL1wjTu/BGki9TrCWoqLTg/drR1KwAEarXuRFCG2Svr1GxPFw=="
   "resolved" "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-0.6.0.tgz"
   "version" "0.6.0"
+
+"class-converter@^1.1.2":
+  "integrity" "sha512-Sk1LHxkeiNFdz5IP1jUczT+GKu1Li58PExPB7jajgkyg+XluGQFCtvpsbM8vACfnh9pOPWfSQYiGO2K2D2LsjQ=="
+  "resolved" "https://registry.npmjs.org/class-converter/-/class-converter-1.1.2.tgz"
+  "version" "1.1.2"
+  dependencies:
+    "@types/isarray" "^2.0.0"
+    "isarray" "^2.0.5"
 
 "class-utils@^0.3.5":
   "integrity" "sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg=="
@@ -7051,6 +7072,11 @@
   "integrity" "sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE="
   "resolved" "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz"
   "version" "1.0.0"
+
+"isarray@^2.0.5":
+  "integrity" "sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw=="
+  "resolved" "https://registry.npmjs.org/isarray/-/isarray-2.0.5.tgz"
+  "version" "2.0.5"
 
 "isarray@0.0.1":
   "integrity" "sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8="

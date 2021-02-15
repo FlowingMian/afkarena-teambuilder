@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <VStack {...NavbarStyle} alignItems='stretch'>
       <NavLink activeStyle={NavlinkActiveStyle} to="/usages">
-        <Heading size="sm" p='4'>Tier List</Heading>
+        <Heading size="sm" p='4'>Usages</Heading>
       </NavLink>
       <NavLink activeStyle={NavlinkActiveStyle} to="/heroes" >
         <Heading size="sm" p='4'>Heroes</Heading>

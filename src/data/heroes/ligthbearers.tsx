@@ -6,6 +6,7 @@ import * as Class from '../characteristics/classes';
 export const Estrilda: Hero = {
   id: "ESTRILDA",
   name: "Estrilda",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior
@@ -14,6 +15,7 @@ export const Estrilda: Hero = {
 export const Belinda: Hero = {
   id: "BELINDA",
   name: "Belinda",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Mage
@@ -22,6 +24,7 @@ export const Belinda: Hero = {
 export const Raine: Hero = {
   id: "RAINE",
   name: "Raine",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Support
@@ -30,6 +33,7 @@ export const Raine: Hero = {
 export const Fawkes: Hero = {
   id: "FAWKES",
   name: "Fawkes",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger
@@ -38,6 +42,7 @@ export const Fawkes: Hero = {
 export const Lucius: Hero = {
   id: "LUCIUS",
   name: "Lucius",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank
@@ -46,6 +51,7 @@ export const Lucius: Hero = {
 export const Thane: Hero = {
   id: "THANE",
   name: "Thane",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger
@@ -54,6 +60,7 @@ export const Thane: Hero = {
 export const Hendrik: Hero = {
   id: "HENDRIK",
   name: "Hendrik",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank
@@ -62,6 +69,7 @@ export const Hendrik: Hero = {
 export const Rowan: Hero = {
   id: "ROWAN",
   name: "Rowan",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support
@@ -70,6 +78,7 @@ export const Rowan: Hero = {
 export const Gwyneth: Hero = {
   id: "GWYNETH",
   name: "Gwyneth",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Ranger
@@ -78,6 +87,7 @@ export const Gwyneth: Hero = {
 export const Rosaline: Hero = {
   id: "ROSALINE",
   name: "Rosaline",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support
@@ -86,6 +96,7 @@ export const Rosaline: Hero = {
 export const Cecilia: Hero = {
   id: "CECILIA",
   name: "Cecilia",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger
@@ -94,6 +105,7 @@ export const Cecilia: Hero = {
 export const Rigby: Hero = {
   id: "RIGBY",
   name: "Rigby",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior
@@ -102,6 +114,7 @@ export const Rigby: Hero = {
 export const Oscar: Hero = {
   id: "Oscar",
   name: "Oscar",
+  nickname: [],
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger

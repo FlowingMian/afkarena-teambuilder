@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const khazardWilders: Composition = {
     id: 'KHAZARDWILDERS',
     name: 'Khazard Wilders',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/brbwlsd0qvf61.png?width=2480&format=png&auto=webp&s=1839ebc0fb9ba15aa071a70976d5c206146f7308',
     coreHeroes: {
         role: Role.Core,
         heroes : [

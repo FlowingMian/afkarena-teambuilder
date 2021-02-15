@@ -11,6 +11,9 @@ import * as Dimensional from '../heroes/dimensionals'
 const gwyneth: Composition = {
     id: 'GWYNETH',
     name: 'Gwyneth',
+    tags: ['Campaign'],
+    author: 'Arty and Alpattex',
+    link: 'https://preview.redd.it/ebk7twc5pvf61.png?width=2480&format=png&auto=webp&s=22b7c89af7774ca96de906580e999d99baf380cf',
     coreHeroes: {
         role: Role.Core,
         heroes : [

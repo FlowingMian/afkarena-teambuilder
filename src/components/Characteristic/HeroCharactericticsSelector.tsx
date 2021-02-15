@@ -20,7 +20,6 @@ export class HeroCharactericticsSelection {
   }
 
   accept(hero:Hero):boolean {
-    console.log(hero, this);
     return this.factionIds.includes(hero.faction.id)
         && this.classIds.includes(hero.class.id)
         && this.attributeIds.includes(hero.attribute.id)

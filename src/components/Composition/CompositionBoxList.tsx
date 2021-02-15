@@ -4,15 +4,15 @@ import { Role } from "../../model/characteristics";
 import CompositionBox from "./CompositionBox";
 import CharactericticBox from "../Characteristic/CharacteristicBox";
 
-type CompositionListProps = {
+type CompositionBoxListProps = {
   compositions: Map<Composition, Role> | Array<Composition>;
 };
 
-function CompositionList({ compositions }: CompositionListProps) {
+function CompositionBoxList({ compositions,}: CompositionBoxListProps) {
   const array = compositions instanceof Map ? Array.from(compositions.keys()) : compositions;
   const compositionBoxes = array.map((c) => 
     <HStack key={c.id} width="100%" >
-      <CompositionBox key={c.id} composition={c} /> 
+      <CompositionBox composition={c} />
       {compositions instanceof Map && <CharactericticBox characterictic={compositions.get(c) as Role}/>}
     </HStack>
   );
@@ -22,4 +22,4 @@ function CompositionList({ compositions }: CompositionListProps) {
   </VStack>;
 }
 
-export default CompositionList;
+export default CompositionBoxList;

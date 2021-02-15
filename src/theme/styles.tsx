@@ -15,7 +15,7 @@ export const BoxCardStyle = {
     border: "2px solid",
     borderColor: "secondary.300",
     borderRadius: "md",
-    boxShadow: "sm",
+    boxShadow: "lg",
     padding: "0.75rem",
     background : "primary.50",
     minWidth: 'xs'
