@@ -1,6 +1,6 @@
 import { Composition } from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -43,7 +43,7 @@ const fivePull: Composition = {
                     hero: Celestials.Flora
                 },
                 {
-                    hero: Ligthbearers.Gwyneth
+                    hero: Lightbearers.Gwyneth
                 },
                 {
                     hero: Dimensional.JOKER
@@ -107,7 +107,7 @@ const fivePull: Composition = {
                     hero: Graveborns.Theowyn
                 },
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 },
                 {
                     hero: Maulers.Brutus

@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -36,7 +36,7 @@ const lucretia: Composition = {
                     hero: Hypogeans.Mezoth
                 },
                 {
-                    hero: Ligthbearers.Hendrik
+                    hero: Lightbearers.Hendrik
                 },
                 {
                     hero: Maulers.Skreg
@@ -56,7 +56,7 @@ const lucretia: Composition = {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 },
                 {
                     hero: Hypogeans.Ezizh
@@ -65,7 +65,7 @@ const lucretia: Composition = {
                     hero: Wilders.Lyca
                 },
                 {
-                    hero: Ligthbearers.Raine
+                    hero: Lightbearers.Raine
                 }
             ]
         },

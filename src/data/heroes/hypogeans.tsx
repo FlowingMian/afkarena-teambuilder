@@ -9,7 +9,8 @@ export const Ezizh: Hero = {
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'hypogean/ezizh.webp'
 };
 
 export const Mehira: Hero = {
@@ -18,7 +19,8 @@ export const Mehira: Hero = {
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'hypogean/mehira.webp'
 };
 
 export const Zolrath: Hero = {
@@ -27,16 +29,18 @@ export const Zolrath: Hero = {
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'hypogean/zolrath.webp'
 };
 
 export const Khazard: Hero = {
-  id: "KAZHARD",
-  name: "Khazard",
+  id: "KHAZARD",
+  name: "khazard",
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'hypogean/khazard.webp'
 };
 
 export const Mezoth: Hero = {
@@ -45,7 +49,8 @@ export const Mezoth: Hero = {
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'hypogean/mezoth.webp'
 };
 
 export const Lucretia: Hero = {
@@ -54,7 +59,8 @@ export const Lucretia: Hero = {
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'hypogean/lucretia.webp'
 };
 
 export const Mortas: Hero = {
@@ -63,7 +69,8 @@ export const Mortas: Hero = {
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'hypogean/mortas.webp'
 };
 
 const heroes: Array<Hero> = [

@@ -1,5 +1,5 @@
 import { Hero } from "../../model/heroes";
-import lightbearers from "./ligthbearers";
+import lightbearers from "./lightbearers";
 import maulers from "./maulers";
 import wilders from "./wilders";
 import graveborns from "./graveborns";

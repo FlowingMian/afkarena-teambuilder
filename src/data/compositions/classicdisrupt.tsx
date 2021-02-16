@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -82,7 +82,7 @@ const classicDisrupt: Composition = {
                     hero: Celestials.Alna
                 },
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 },
                 {
                     hero: Celestials.Talene

@@ -1,4 +1,4 @@
-import { Heading, VStack } from '@chakra-ui/react'
+import { Center, Heading, Image, Tag, VStack } from '@chakra-ui/react'
 import { NavLink } from "react-router-dom"
 import colors from '../../theme/colors';
 
@@ -22,6 +22,10 @@ const NavlinkActiveStyle = {
 function Navbar() {
   return (
     <VStack {...NavbarStyle} alignItems='stretch'>
+      <Image src='./afkarena-logo.png'/>
+      <Center mb='1rem'>
+        <Tag>TEAM BUILDER</Tag>
+      </Center>
       <NavLink activeStyle={NavlinkActiveStyle} to="/usages">
         <Heading size="sm" p='4'>Usages</Heading>
       </NavLink>

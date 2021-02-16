@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -27,7 +27,7 @@ const izold: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Ligthbearers.Fawkes
+                    hero: Lightbearers.Fawkes
                 },
                 {
                     hero: Graveborns.Ferael
@@ -77,7 +77,7 @@ const izold: Composition = {
                     hero: Hypogeans.Mezoth
                 },
                 {
-                    hero: Ligthbearers.Hendrik
+                    hero: Lightbearers.Hendrik
                 },
                 {
                     hero: Wilders.Gorvo
@@ -98,7 +98,7 @@ const izold: Composition = {
                     hero: Hypogeans.Mortas
                 },
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 },
                 {
                     hero: Hypogeans.Ezizh
@@ -107,7 +107,7 @@ const izold: Composition = {
                     hero: Wilders.Lyca
                 },
                 {
-                    hero: Ligthbearers.Raine
+                    hero: Lightbearers.Raine
                 }
             ]
         }

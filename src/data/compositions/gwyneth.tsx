@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -18,7 +18,7 @@ const gwyneth: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Ligthbearers.Gwyneth
+                hero: Lightbearers.Gwyneth
             },
             {
                 hero: Dimensional.Arthur
@@ -36,7 +36,7 @@ const gwyneth: Composition = {
                     hero: Wilders.Lorsan
                 },
                 {
-                    hero: Ligthbearers.Rosaline
+                    hero: Lightbearers.Rosaline
                 },
                 {
                     hero: Maulers.Numisu
@@ -48,10 +48,10 @@ const gwyneth: Composition = {
                     hero: Wilders.Lyca
                 },
                 {
-                    hero: Ligthbearers.Belinda
+                    hero: Lightbearers.Belinda
                 },
                 {
-                    hero: Ligthbearers.Raine
+                    hero: Lightbearers.Raine
                 }
             ]
         },
@@ -62,16 +62,16 @@ const gwyneth: Composition = {
                     hero: Celestials.Alna
                 },
                 {
-                    hero: Ligthbearers.Hendrik
+                    hero: Lightbearers.Hendrik
                 },
                 {
                     hero: Maulers.Brutus
                 },
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 },
                 {
-                    hero: Ligthbearers.Cecilia
+                    hero: Lightbearers.Cecilia
                 }
             ]
         },
@@ -82,7 +82,7 @@ const gwyneth: Composition = {
                     hero: Graveborns.Ferael
                 },
                 {
-                    hero: Ligthbearers.Cecilia
+                    hero: Lightbearers.Cecilia
                 },
                 {
                     hero: Dimensional.JOKER
@@ -97,7 +97,7 @@ const gwyneth: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Ligthbearers.Estrilda
+                    hero: Lightbearers.Estrilda
                 },
                 {
                     hero: Celestials.Zaphrael

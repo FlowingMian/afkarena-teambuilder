@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -30,7 +30,7 @@ const burst: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Ligthbearers.Gwyneth
+                    hero: Lightbearers.Gwyneth
                 },
                 {
                     hero: Dimensional.JOKER
@@ -45,7 +45,7 @@ const burst: Composition = {
                     hero: Hypogeans.Lucretia
                 },
                 {
-                    hero: Ligthbearers.Raine
+                    hero: Lightbearers.Raine
                 },
                 {
                     hero: Maulers.Safiya,
@@ -83,7 +83,7 @@ const burst: Composition = {
                     hero: Dimensional.Nakoruru
                 },
                 {
-                    hero: Ligthbearers.Estrilda
+                    hero: Lightbearers.Estrilda
                 }
             ]
 

@@ -2,23 +2,28 @@ import { Class } from "../../model/characteristics";
 
 export const Warrior:Class = {
     id: 'WARRIOR',
-    name: 'Warrior'
+    name: 'Warrior',
+    iconURL: 'class/warrior.webp'
 };
 export const Tank:Class = {
     id: 'TANK',
-    name: 'Tank'
+    name: 'Tank',
+    iconURL: 'class/tank.webp'
 };
 export const Ranger:Class = {
     id: 'RANGER',
-    name: 'Ranger'
+    name: 'Ranger',
+    iconURL: 'class/ranger.webp'
 };
 export const Mage:Class = {
     id: 'MAGE',
-    name: 'Mage'
+    name: 'Mage',
+    iconURL: 'class/mage.webp'
 };
 export const Support:Class = {
     id: 'SUPPORT',
-    name: 'Support'
+    name: 'Support',
+    iconURL: 'class/support.webp'
 };
 
 export const Classes: Array<Class> = [

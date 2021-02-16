@@ -34,8 +34,12 @@ function CompositionSelector({ onValidate }: CompositionSelectorProps) {
     onValidate(selection);
   }
 
-  function resetSelection() {
+  function selectAll() {
     setSelection(compositions.map(c => c.id));
+  }
+
+  function selectNone() {
+    setSelection([]);
   }
 
   const compositionBoxes = displayedCompositions.map((c) => 
@@ -51,8 +55,9 @@ function CompositionSelector({ onValidate }: CompositionSelectorProps) {
         {compositionBoxes}
     </Flex>;
     <HStack mt='1rem'>
-      <Button variant='solid' onClick={validateSelection}>Validate {selection.length} compositions</Button>
-      <Button variant='outline' onClick={resetSelection}>Reset selection</Button>
+      <Button variant='solid' onClick={validateSelection}>Select {selection.length} compositions</Button>
+      <Button variant='outline' onClick={selectAll}>Select all</Button>
+      <Button variant='outline' onClick={selectNone}>Select none</Button>
     </HStack>
   </VStack>
 }

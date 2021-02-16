@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -99,7 +99,7 @@ const portalParty: Composition = {
                     hero: Celestials.Talene
                 },
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 } ,
                 {
                     hero: Graveborns.Thoran
@@ -114,7 +114,7 @@ const portalParty: Composition = {
                     hero: Celestials.Athalia
                 } ,
                 {
-                    hero: Ligthbearers.Cecilia
+                    hero: Lightbearers.Cecilia
                 },
                 {
                     hero: Maulers.Skreg

@@ -9,7 +9,8 @@ export const Nemora: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'wilder/nemora.webp'
 };
 
 export const Kaz: Hero = {
@@ -18,7 +19,8 @@ export const Kaz: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'wilder/kaz.webp'
 };
 
 export const Lyca: Hero = {
@@ -27,7 +29,8 @@ export const Lyca: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'wilder/lyca.webp'
 };
 
 export const Tasi: Hero = {
@@ -36,7 +39,8 @@ export const Tasi: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'wilder/tasi.webp'
 };
 
 export const Ulmus: Hero = {
@@ -45,7 +49,8 @@ export const Ulmus: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'wilder/ulmus.webp'
 };
 
 export const Seirus: Hero = {
@@ -54,7 +59,8 @@ export const Seirus: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'wilder/seirus.webp'
 };
 
 export const Eironn: Hero = {
@@ -63,7 +69,8 @@ export const Eironn: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'wilder/eironn.webp'
 };
 
 export const Gorvo: Hero = {
@@ -72,7 +79,8 @@ export const Gorvo: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'wilder/gorvo.webp'
 };
 
 export const Lorsan: Hero = {
@@ -81,7 +89,8 @@ export const Lorsan: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'wilder/lorsan.webp'
 };
 
 export const Saurus: Hero = {
@@ -90,7 +99,8 @@ export const Saurus: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'wilder/saurus.webp'
 };
 
 export const Solise: Hero = {
@@ -99,7 +109,8 @@ export const Solise: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'wilder/solise.webp'
 };
 
 export const Pippa: Hero = {
@@ -108,7 +119,8 @@ export const Pippa: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'wilder/pippa.webp'
 };
 
 export const Respen: Hero = {
@@ -117,7 +129,8 @@ export const Respen: Hero = {
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'wilder/respen.webp'
 };
 
 const heroes: Array<Hero> = [

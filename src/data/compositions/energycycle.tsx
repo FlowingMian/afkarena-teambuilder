@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -21,7 +21,7 @@ const energycycle: Composition = {
                 hero: Celestials.ElijahLailah
             },
             {
-                hero: Ligthbearers.Rowan
+                hero: Lightbearers.Rowan
             },
             {
                 hero: Hypogeans.Ezizh
@@ -39,10 +39,7 @@ const energycycle: Composition = {
                     hero: Celestials.Alna
                 },
                 {
-                    hero: Hypogeans.Ezizh
-                },
-                {
-                    hero: Ligthbearers.Fawkes
+                    hero: Lightbearers.Fawkes
                 },
                 {
                     hero: Graveborns.Ferael
@@ -74,7 +71,7 @@ const energycycle: Composition = {
                     hero: Hypogeans.Mortas
                 },
                 {
-                    hero: Ligthbearers.Rosaline
+                    hero: Lightbearers.Rosaline
                 },
                 {
                     hero: Celestials.Wukong

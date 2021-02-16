@@ -9,7 +9,8 @@ export const Nakoruru: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'dimensional/nakoruru.webp'
 };
 
 export const Arthur: Hero = {
@@ -18,7 +19,8 @@ export const Arthur: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'dimensional/arthur.webp'
 };
 
 export const Ukyo: Hero = {
@@ -27,7 +29,8 @@ export const Ukyo: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'dimensional/ukyo.webp'
 };
 
 export const Ezio: Hero = {
@@ -36,7 +39,8 @@ export const Ezio: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'dimensional/ezio.webp'
 };
 
 export const Albedo: Hero = {
@@ -45,7 +49,8 @@ export const Albedo: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'dimensional/albedo.webp'
 };
 
 export const Ainz: Hero = {
@@ -54,7 +59,8 @@ export const Ainz: Hero = {
   nickname: ["Ainz"],
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'dimensional/ainz.webp'
 };
 
 export const QUEEN: Hero = {
@@ -63,7 +69,8 @@ export const QUEEN: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'dimensional/queen.webp'
 };
 
 export const JOKER: Hero = {
@@ -72,7 +79,8 @@ export const JOKER: Hero = {
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'dimensional/joker.webp'
 };
 
 const heroes: Array<Hero> = [

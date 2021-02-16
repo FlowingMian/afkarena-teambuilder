@@ -8,7 +8,8 @@ export const Grezhul: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'graveborn/grezhul.webp'
 };
 
 export const Shemira: Hero = {
@@ -17,7 +18,8 @@ export const Shemira: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'graveborn/shemira.webp'
 };
 
 export const Thoran: Hero = {
@@ -26,7 +28,8 @@ export const Thoran: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'graveborn/thoran.webp'
 };
 
 export const Isabella: Hero = {
@@ -35,7 +38,8 @@ export const Isabella: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'graveborn/isabella.webp'
 };
 
 export const Nara: Hero = {
@@ -44,7 +48,8 @@ export const Nara: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'graveborn/nara.webp'
 };
 
 export const Ferael: Hero = {
@@ -53,7 +58,8 @@ export const Ferael: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'graveborn/ferael.webp'
 };
 
 export const Baden: Hero = {
@@ -62,7 +68,8 @@ export const Baden: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'graveborn/baden.webp'
 };
 
 export const Kelthur: Hero = {
@@ -71,7 +78,8 @@ export const Kelthur: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'graveborn/kelthur.webp'
 };
 
 export const Silas: Hero = {
@@ -80,7 +88,8 @@ export const Silas: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'graveborn/silas.webp'
 };
 
 export const Oden: Hero = {
@@ -89,7 +98,8 @@ export const Oden: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'graveborn/oden.webp'
 };
 
 export const Izold: Hero = {
@@ -98,7 +108,8 @@ export const Izold: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'graveborn/izold.webp'
 };
 
 export const Torne: Hero = {
@@ -107,7 +118,8 @@ export const Torne: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'graveborn/torne.webp'
 };
 
 export const Daimon: Hero = {
@@ -116,7 +128,8 @@ export const Daimon: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'graveborn/daimon.webp'
 };
 
 export const Theowyn: Hero = {
@@ -125,7 +138,8 @@ export const Theowyn: Hero = {
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'graveborn/theowyn.webp'
 };
 
 const heroes: Array<Hero> = [

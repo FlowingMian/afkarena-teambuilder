@@ -9,7 +9,8 @@ export const Athalia: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'celestial/athalia.webp'
 };
 
 export const ElijahLailah: Hero = {
@@ -18,7 +19,8 @@ export const ElijahLailah: Hero = {
   nickname: ["Twins"],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'celestial/elijahlailah.webp'
 };
 
 export const Orthos: Hero = {
@@ -27,7 +29,8 @@ export const Orthos: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'celestial/orthos.webp'
 };
 
 export const Talene: Hero = {
@@ -36,7 +39,8 @@ export const Talene: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'celestial/talene.webp'
 };
 
 export const Wukong: Hero = {
@@ -45,7 +49,8 @@ export const Wukong: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'celestial/wukong.webp'
 };
 
 export const Flora: Hero = {
@@ -54,7 +59,8 @@ export const Flora: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'celestial/flora.webp'
 };
 
 export const Zaphrael: Hero = {
@@ -63,7 +69,8 @@ export const Zaphrael: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'celestial/zaphrael.webp'
 };
 
 export const Alna: Hero = {
@@ -72,7 +79,8 @@ export const Alna: Hero = {
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'celestial/alna.webp'
 };
 
 const heroes: Array<Hero> = [

@@ -15,7 +15,6 @@ function CharactericticBox({ characterictic, displayName = true }: Charactericti
         <Image 
           src={characterictic.iconURL}
           alt={characterictic.name[0]}
-          border='1px solid gray'
           boxSize={SIZE} 
         />
       </Tooltip>

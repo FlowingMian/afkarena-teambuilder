@@ -7,6 +7,7 @@ const Theme = extendTheme({
     components: {
       Tabs : ColorScheme,
       Button : ColorScheme,
+      Checkbox : ColorScheme,
       Switch : ColorScheme,
       Progress : ColorScheme,
       Tag : ColorScheme,

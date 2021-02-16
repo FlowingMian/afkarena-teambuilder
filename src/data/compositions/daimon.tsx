@@ -1,6 +1,6 @@
 import { Composition} from '../../model/compositions';
 import * as Role from '../characteristics/role';
-import * as Ligthbearers from '../heroes/ligthbearers'
+import * as Lightbearers from '../heroes/lightbearers'
 import * as Maulers from '../heroes/maulers'
 import * as Wilders from '../heroes/wilders'
 import * as Graveborns from '../heroes/graveborns'
@@ -35,7 +35,7 @@ const daimon: Composition = {
                     hero: Hypogeans.Mezoth
                 },
                 {
-                    hero: Ligthbearers.Hendrik
+                    hero: Lightbearers.Hendrik
                 },
                 {
                     hero: Celestials.Wukong
@@ -125,10 +125,10 @@ const daimon: Composition = {
                     hero: Wilders.Lyca
                 },
                 {
-                    hero: Ligthbearers.Rowan
+                    hero: Lightbearers.Rowan
                 },
                 {
-                    hero: Ligthbearers.Raine
+                    hero: Lightbearers.Raine
                 }
             ]
         }

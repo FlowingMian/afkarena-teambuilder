@@ -9,7 +9,8 @@ export const Brutus: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'mauler/brutus.webp'
 };
 
 export const Khasos: Hero = {
@@ -18,7 +19,8 @@ export const Khasos: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'mauler/khasos.webp'
 };
 
 export const Vurk: Hero = {
@@ -27,7 +29,8 @@ export const Vurk: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'mauler/vurk.webp'
 };
 
 export const Numisu: Hero = {
@@ -36,7 +39,8 @@ export const Numisu: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
-  class: Class.Support
+  class: Class.Support,
+  portraitURL: 'mauler/numisu.webp'
 };
 
 export const Skreg: Hero = {
@@ -45,7 +49,8 @@ export const Skreg: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'mauler/skreg.webp'
 };
 
 export const Warek: Hero = {
@@ -54,7 +59,8 @@ export const Warek: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'mauler/warek.webp'
 };
 
 export const Antandra: Hero = {
@@ -63,7 +69,8 @@ export const Antandra: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
-  class: Class.Warrior
+  class: Class.Warrior,
+  portraitURL: 'mauler/antandra.webp'
 };
 
 export const Safiya: Hero = {
@@ -72,7 +79,8 @@ export const Safiya: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'mauler/safiya.webp'
 };
 
 export const Satrana: Hero = {
@@ -81,7 +89,8 @@ export const Satrana: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'mauler/satrana.webp'
 };
 
 export const Tidus: Hero = {
@@ -90,7 +99,8 @@ export const Tidus: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'mauler/tidus.webp'
 };
 
 export const Drez: Hero = {
@@ -99,7 +109,8 @@ export const Drez: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'mauler/drez.webp'
 };
 
 export const Skriath: Hero = {
@@ -108,7 +119,8 @@ export const Skriath: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
-  class: Class.Mage
+  class: Class.Mage,
+  portraitURL: 'mauler/skriath.webp'
 };
 
 export const Anoki: Hero = {
@@ -117,7 +129,8 @@ export const Anoki: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
-  class: Class.Tank
+  class: Class.Tank,
+  portraitURL: 'mauler/anoki.webp'
 };
 
 export const Kren: Hero = {
@@ -126,7 +139,8 @@ export const Kren: Hero = {
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
-  class: Class.Ranger
+  class: Class.Ranger,
+  portraitURL: 'mauler/kren.webp'
 };
 
 const heroes: Array<Hero> = [

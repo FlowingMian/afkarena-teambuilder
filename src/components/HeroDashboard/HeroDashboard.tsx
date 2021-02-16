@@ -1,4 +1,4 @@
-import { Box, HStack, Spacer, VStack } from '@chakra-ui/react';
+import { Box, HStack, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
@@ -21,7 +21,6 @@ function HeroDashboard() {
       <HStack spacing="1rem" alignItems='start'>
         <VStack alignItems='start'>
           <HeroCharactericticsSelector onChange={filterHeroes}/>
-          <Spacer/>
           <Box {...BoxCardStyle}>
             <HeroCharactericticsTable heroes={selectedHeroes} />
           </Box>

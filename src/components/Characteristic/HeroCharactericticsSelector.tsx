@@ -1,5 +1,5 @@
 
-import { Box, Heading, HStack, Spacer } from '@chakra-ui/react'
+import { Box, Heading, HStack } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Attributes } from '../../data/characteristics/attributes';
 import { Classes } from '../../data/characteristics/classes';
@@ -64,7 +64,7 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps) {
       <CharacteristicTable characterictics={Factions}/>
     </Box>
 
-    <Spacer />
+    <Box width='0.5rem'/>
 
     <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={onClassChange}/>
     <Box>
@@ -72,7 +72,7 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps) {
       <CharacteristicTable characterictics={Classes}/>
     </Box>
 
-    <Spacer />
+    <Box width='0.5rem'/>
 
     <CharacteristicCheckboxGroup selection={selection.attributeIds} characterictics={Attributes} onChange={onAttributeChange}/>
     <Box>
