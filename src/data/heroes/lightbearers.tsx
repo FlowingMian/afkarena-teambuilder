@@ -2,6 +2,7 @@ import { Hero } from "../../model/heroes";
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
+import { staticDomain } from "../static";
 
 export const Estrilda: Hero = {
   id: "ESTRILDA",
@@ -10,7 +11,7 @@ export const Estrilda: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'lightbearer/estrilda.webp'
+  portraitURL: staticDomain+'lightbearer/estrilda.webp'
 };
 
 export const Belinda: Hero = {
@@ -20,7 +21,7 @@ export const Belinda: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'lightbearer/belinda.webp'
+  portraitURL: staticDomain+'lightbearer/belinda.webp'
 };
 
 export const Raine: Hero = {
@@ -30,7 +31,7 @@ export const Raine: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: 'lightbearer/raine.webp'
+  portraitURL: staticDomain+'lightbearer/raine.webp'
 };
 
 export const Fawkes: Hero = {
@@ -40,7 +41,7 @@ export const Fawkes: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'lightbearer/fawkes.webp'
+  portraitURL: staticDomain+'lightbearer/fawkes.webp'
 };
 
 export const Lucius: Hero = {
@@ -50,7 +51,7 @@ export const Lucius: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'lightbearer/lucius.webp'
+  portraitURL: staticDomain+'lightbearer/lucius.webp'
 };
 
 export const Thane: Hero = {
@@ -60,7 +61,7 @@ export const Thane: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'lightbearer/thane.webp'
+  portraitURL: staticDomain+'lightbearer/thane.webp'
 };
 
 export const Hendrik: Hero = {
@@ -70,7 +71,7 @@ export const Hendrik: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'lightbearer/hendrik.webp'
+  portraitURL: staticDomain+'lightbearer/hendrik.webp'
 };
 
 export const Rowan: Hero = {
@@ -80,7 +81,7 @@ export const Rowan: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: 'lightbearer/rowan.webp'
+  portraitURL: staticDomain+'lightbearer/rowan.webp'
 };
 
 export const Gwyneth: Hero = {
@@ -90,7 +91,7 @@ export const Gwyneth: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Ranger,
-  portraitURL: 'lightbearer/gwyneth.webp'
+  portraitURL: staticDomain+'lightbearer/gwyneth.webp'
 };
 
 export const Rosaline: Hero = {
@@ -100,7 +101,7 @@ export const Rosaline: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: 'lightbearer/rosaline.webp'
+  portraitURL: staticDomain+'lightbearer/rosaline.webp'
 };
 
 export const Cecilia: Hero = {
@@ -110,7 +111,7 @@ export const Cecilia: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'lightbearer/cecilia.webp'
+  portraitURL: staticDomain+'lightbearer/cecilia.webp'
 };
 
 export const Rigby: Hero = {
@@ -120,7 +121,7 @@ export const Rigby: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'lightbearer/rigby.webp'
+  portraitURL: staticDomain+'lightbearer/rigby.webp'
 };
 
 export const Oscar: Hero = {
@@ -130,7 +131,7 @@ export const Oscar: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'lightbearer/oscar.webp'
+  portraitURL: staticDomain+'lightbearer/oscar.webp'
 };
 
 const heroes: Array<Hero> = [

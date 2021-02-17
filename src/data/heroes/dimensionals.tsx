@@ -2,6 +2,7 @@ import { Hero } from "../../model/heroes";
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
+import { staticDomain } from "../static";
 
 export const Nakoruru: Hero = {
   id: "NAKORURU",
@@ -10,7 +11,7 @@ export const Nakoruru: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'dimensional/nakoruru.webp'
+  portraitURL: staticDomain+'dimensional/nakoruru.webp'
 };
 
 export const Arthur: Hero = {
@@ -20,7 +21,7 @@ export const Arthur: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'dimensional/arthur.webp'
+  portraitURL: staticDomain+'dimensional/arthur.webp'
 };
 
 export const Ukyo: Hero = {
@@ -30,7 +31,7 @@ export const Ukyo: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: 'dimensional/ukyo.webp'
+  portraitURL: staticDomain+'dimensional/ukyo.webp'
 };
 
 export const Ezio: Hero = {
@@ -40,7 +41,7 @@ export const Ezio: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'dimensional/ezio.webp'
+  portraitURL: staticDomain+'dimensional/ezio.webp'
 };
 
 export const Albedo: Hero = {
@@ -50,7 +51,7 @@ export const Albedo: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'dimensional/albedo.webp'
+  portraitURL: staticDomain+'dimensional/albedo.webp'
 };
 
 export const Ainz: Hero = {
@@ -60,7 +61,7 @@ export const Ainz: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'dimensional/ainz.webp'
+  portraitURL: staticDomain+'dimensional/ainz.webp'
 };
 
 export const QUEEN: Hero = {
@@ -70,7 +71,7 @@ export const QUEEN: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'dimensional/queen.webp'
+  portraitURL: staticDomain+'dimensional/queen.webp'
 };
 
 export const JOKER: Hero = {
@@ -80,7 +81,7 @@ export const JOKER: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'dimensional/joker.webp'
+  portraitURL: staticDomain+'dimensional/joker.webp'
 };
 
 const heroes: Array<Hero> = [

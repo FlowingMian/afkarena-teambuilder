@@ -3,8 +3,8 @@ import { Composition } from "../../model/compositions";
 import { Hero } from "../../model/heroes";
 
 
-const GLOBAL_PERCENT_THRESHOLD: number = 0.5;
-const NICHE_PERCENT_THRESHOLD: number = 0.25;
+export const GLOBAL_PERCENT_THRESHOLD: number = 0.5;
+export const NICHE_PERCENT_THRESHOLD: number = 0.25;
 
 export class HeroUsageDashboardResult {
     hero: Hero;
@@ -51,11 +51,13 @@ export class UsageDashboardResult {
 export class Tier {
     name: string;
     heroes: Array<Hero>;
+    description: string;
     variant: string;
 
-    constructor(name: string, variant: string) {
+    constructor(name: string, description: string, variant: string) {
       this.name = name;
       this.heroes = [];
+      this.description = description;
       this.variant = variant;
     }
 }

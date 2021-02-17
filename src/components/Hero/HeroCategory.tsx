@@ -5,7 +5,7 @@ import HeroCharacteristicsPopover from "../Characteristic/HeroCharacteristicsPop
 
 type HeroCategoryProps = {
   name: string;
-  tags?: Array<React.ReactNode>; 
+  tags?: React.ReactNode | Array<React.ReactNode>; 
   heroes: Array<Hero>;
   charactericticsDistribution?: boolean
   colorScheme?: string
@@ -22,10 +22,10 @@ function HeroCategory({ name, tags, heroes, charactericticsDistribution = true, 
   } : null;
 
   return <HStack minWidth="296px" {...flexStyle}>
-      <Box>
-        <Heading size="xs" minWidth="8rem">{name}</Heading>
+      <HStack>
+        <Heading size="xs" minWidth="7rem">{name}</Heading>
         {tags}
-      </Box>
+      </HStack>
       {charactericticsDistribution && <HeroCharacteristicsPopover heroes={heroes}/>}
       <HeroList heroes={heroes}/>
     </HStack>;

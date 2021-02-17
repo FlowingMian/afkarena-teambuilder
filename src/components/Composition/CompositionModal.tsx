@@ -1,27 +1,25 @@
 import { Composition } from "../../model/compositions";
-import {Modal, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, ModalContent, Button, useDisclosure } from '@chakra-ui/react'
+import {Modal, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, useDisclosure, IconButton } from '@chakra-ui/react'
 import { Fragment } from "react";
 import { ViewIcon } from "@chakra-ui/icons";
-import { Role } from "../../model/characteristics";
-import CompositionBoxList from "./CompositionBoxList";
+import CompositionDetails from "./CompositionDetails";
 
 type CompositionModalProps = {
-  compositions: Map<Composition, Role> | Array<Composition>;
-  label?:React.ReactNode
+  composition: Composition;
+  buttonLabel?:React.ReactNode
 };
 
-function CompositionModal({ compositions, label }: CompositionModalProps) {
+function CompositionModal({ composition, buttonLabel }: CompositionModalProps) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return <Fragment>
-    <Button variant='ghost' rightIcon={<ViewIcon/>} onClick={onOpen}>{label}</Button>
-    <Modal size="lg" isOpen={isOpen} onClose={onClose}>
+    <IconButton variant='ghost' icon={<ViewIcon/>} onClick={onOpen} aria-label="View composition" />
+    <Modal size="xl" isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Compositions</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <CompositionBoxList compositions={compositions} />
+          <CompositionDetails composition={composition} />
         </ModalBody>
       </ModalContent>
     </Modal>

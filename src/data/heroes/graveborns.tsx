@@ -2,6 +2,7 @@ import { Hero } from "../../model/heroes";
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
+import { staticDomain } from "../static";
 export const Grezhul: Hero = {
   id: "GREZHUL",
   name: "Grezhul",
@@ -9,7 +10,7 @@ export const Grezhul: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'graveborn/grezhul.webp'
+  portraitURL: staticDomain+'graveborn/grezhul.webp'
 };
 
 export const Shemira: Hero = {
@@ -19,7 +20,7 @@ export const Shemira: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'graveborn/shemira.webp'
+  portraitURL: staticDomain+'graveborn/shemira.webp'
 };
 
 export const Thoran: Hero = {
@@ -29,7 +30,7 @@ export const Thoran: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'graveborn/thoran.webp'
+  portraitURL: staticDomain+'graveborn/thoran.webp'
 };
 
 export const Isabella: Hero = {
@@ -39,7 +40,7 @@ export const Isabella: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'graveborn/isabella.webp'
+  portraitURL: staticDomain+'graveborn/isabella.webp'
 };
 
 export const Nara: Hero = {
@@ -49,7 +50,7 @@ export const Nara: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'graveborn/nara.webp'
+  portraitURL: staticDomain+'graveborn/nara.webp'
 };
 
 export const Ferael: Hero = {
@@ -59,7 +60,7 @@ export const Ferael: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'graveborn/ferael.webp'
+  portraitURL: staticDomain+'graveborn/ferael.webp'
 };
 
 export const Baden: Hero = {
@@ -69,7 +70,7 @@ export const Baden: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: 'graveborn/baden.webp'
+  portraitURL: staticDomain+'graveborn/baden.webp'
 };
 
 export const Kelthur: Hero = {
@@ -79,7 +80,7 @@ export const Kelthur: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'graveborn/kelthur.webp'
+  portraitURL: staticDomain+'graveborn/kelthur.webp'
 };
 
 export const Silas: Hero = {
@@ -89,7 +90,7 @@ export const Silas: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: 'graveborn/silas.webp'
+  portraitURL: staticDomain+'graveborn/silas.webp'
 };
 
 export const Oden: Hero = {
@@ -99,7 +100,7 @@ export const Oden: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'graveborn/oden.webp'
+  portraitURL: staticDomain+'graveborn/oden.webp'
 };
 
 export const Izold: Hero = {
@@ -109,7 +110,7 @@ export const Izold: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'graveborn/izold.webp'
+  portraitURL: staticDomain+'graveborn/izold.webp'
 };
 
 export const Torne: Hero = {
@@ -119,7 +120,7 @@ export const Torne: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'graveborn/torne.webp'
+  portraitURL: staticDomain+'graveborn/torne.webp'
 };
 
 export const Daimon: Hero = {
@@ -129,7 +130,7 @@ export const Daimon: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'graveborn/daimon.webp'
+  portraitURL: staticDomain+'graveborn/daimon.webp'
 };
 
 export const Theowyn: Hero = {
@@ -139,7 +140,7 @@ export const Theowyn: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'graveborn/theowyn.webp'
+  portraitURL: staticDomain+'graveborn/theowyn.webp'
 };
 
 const heroes: Array<Hero> = [

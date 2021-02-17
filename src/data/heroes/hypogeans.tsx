@@ -2,6 +2,7 @@ import { Hero } from "../../model/heroes";
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
+import { staticDomain } from "../static";
 
 export const Ezizh: Hero = {
   id: "EZIZH",
@@ -10,7 +11,7 @@ export const Ezizh: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
   class: Class.Support,
-  portraitURL: 'hypogean/ezizh.webp'
+  portraitURL: staticDomain+'hypogean/ezizh.webp'
 };
 
 export const Mehira: Hero = {
@@ -20,7 +21,7 @@ export const Mehira: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'hypogean/mehira.webp'
+  portraitURL: staticDomain+'hypogean/mehira.webp'
 };
 
 export const Zolrath: Hero = {
@@ -30,7 +31,7 @@ export const Zolrath: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: 'hypogean/zolrath.webp'
+  portraitURL: staticDomain+'hypogean/zolrath.webp'
 };
 
 export const Khazard: Hero = {
@@ -40,7 +41,7 @@ export const Khazard: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'hypogean/khazard.webp'
+  portraitURL: staticDomain+'hypogean/khazard.webp'
 };
 
 export const Mezoth: Hero = {
@@ -50,7 +51,7 @@ export const Mezoth: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'hypogean/mezoth.webp'
+  portraitURL: staticDomain+'hypogean/mezoth.webp'
 };
 
 export const Lucretia: Hero = {
@@ -60,7 +61,7 @@ export const Lucretia: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'hypogean/lucretia.webp'
+  portraitURL: staticDomain+'hypogean/lucretia.webp'
 };
 
 export const Mortas: Hero = {
@@ -70,7 +71,7 @@ export const Mortas: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: 'hypogean/mortas.webp'
+  portraitURL: staticDomain+'hypogean/mortas.webp'
 };
 
 const heroes: Array<Hero> = [

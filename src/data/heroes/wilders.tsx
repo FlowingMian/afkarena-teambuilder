@@ -2,6 +2,7 @@ import { Hero } from "../../model/heroes";
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
+import { staticDomain } from "../static";
 
 export const Nemora: Hero = {
   id: "NEMORA",
@@ -10,7 +11,7 @@ export const Nemora: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: 'wilder/nemora.webp'
+  portraitURL: staticDomain+'wilder/nemora.webp'
 };
 
 export const Kaz: Hero = {
@@ -20,7 +21,7 @@ export const Kaz: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'wilder/kaz.webp'
+  portraitURL: staticDomain+'wilder/kaz.webp'
 };
 
 export const Lyca: Hero = {
@@ -30,7 +31,7 @@ export const Lyca: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'wilder/lyca.webp'
+  portraitURL: staticDomain+'wilder/lyca.webp'
 };
 
 export const Tasi: Hero = {
@@ -40,7 +41,7 @@ export const Tasi: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: 'wilder/tasi.webp'
+  portraitURL: staticDomain+'wilder/tasi.webp'
 };
 
 export const Ulmus: Hero = {
@@ -50,7 +51,7 @@ export const Ulmus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'wilder/ulmus.webp'
+  portraitURL: staticDomain+'wilder/ulmus.webp'
 };
 
 export const Seirus: Hero = {
@@ -60,7 +61,7 @@ export const Seirus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'wilder/seirus.webp'
+  portraitURL: staticDomain+'wilder/seirus.webp'
 };
 
 export const Eironn: Hero = {
@@ -70,7 +71,7 @@ export const Eironn: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'wilder/eironn.webp'
+  portraitURL: staticDomain+'wilder/eironn.webp'
 };
 
 export const Gorvo: Hero = {
@@ -80,7 +81,7 @@ export const Gorvo: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'wilder/gorvo.webp'
+  portraitURL: staticDomain+'wilder/gorvo.webp'
 };
 
 export const Lorsan: Hero = {
@@ -90,7 +91,7 @@ export const Lorsan: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'wilder/lorsan.webp'
+  portraitURL: staticDomain+'wilder/lorsan.webp'
 };
 
 export const Saurus: Hero = {
@@ -100,7 +101,7 @@ export const Saurus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'wilder/saurus.webp'
+  portraitURL: staticDomain+'wilder/saurus.webp'
 };
 
 export const Solise: Hero = {
@@ -110,7 +111,7 @@ export const Solise: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'wilder/solise.webp'
+  portraitURL: staticDomain+'wilder/solise.webp'
 };
 
 export const Pippa: Hero = {
@@ -120,7 +121,7 @@ export const Pippa: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'wilder/pippa.webp'
+  portraitURL: staticDomain+'wilder/pippa.webp'
 };
 
 export const Respen: Hero = {
@@ -130,7 +131,7 @@ export const Respen: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'wilder/respen.webp'
+  portraitURL: staticDomain+'wilder/respen.webp'
 };
 
 const heroes: Array<Hero> = [

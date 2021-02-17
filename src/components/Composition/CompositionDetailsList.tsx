@@ -1,6 +1,7 @@
 import { Composition } from "../../model/compositions";
-import { Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Wrap, WrapItem } from '@chakra-ui/react'
 import CompositionDetails from "./CompositionDetails";
+import { BoxCardStyle } from "../../theme/styles";
 
 type CompositionDetailsListProps = {
   compositions: Array<Composition>;
@@ -9,7 +10,9 @@ type CompositionDetailsListProps = {
 function CompositionDetailsList({ compositions }: CompositionDetailsListProps) {
   const compositionBoxes = compositions.map((c) => 
     <WrapItem key={c.id}>
-      <CompositionDetails composition={c} />
+      <Box {...BoxCardStyle} width="34rem" minHeight="30rem">
+        <CompositionDetails composition={c} />
+      </Box>
     </WrapItem>
   );
 

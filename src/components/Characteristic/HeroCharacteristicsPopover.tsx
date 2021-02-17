@@ -1,4 +1,4 @@
-import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody, Box} from "@chakra-ui/react";
+import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody} from "@chakra-ui/react";
 import { ViewIcon } from '@chakra-ui/icons'
 import { Hero } from "../../model/heroes";
 import HeroCharactericticsTable from "./HeroCharactericticsTable";

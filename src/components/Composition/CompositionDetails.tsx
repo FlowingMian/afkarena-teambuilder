@@ -1,8 +1,7 @@
 
-import { Box, Divider, Heading, HStack, Link, Tag, VStack } from "@chakra-ui/react";
+import { Divider, Heading, HStack, Link, Tag, VStack } from "@chakra-ui/react";
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
-import { BoxCardStyle } from '../../theme/styles';
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 type CompositionDetailsProps = {
@@ -20,7 +19,6 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
     );
 
   return (
-    <Box {...BoxCardStyle} width="34rem" minHeight="30rem">
       <VStack alignItems='start'>
         <HStack>
           <Heading size="md">{composition.name}</Heading>
@@ -33,7 +31,6 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
 
         {heroCategories}
       </VStack>
-    </Box>
   );
 }
 

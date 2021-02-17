@@ -2,6 +2,7 @@ import { Hero } from "../../model/heroes";
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
+import { staticDomain } from "../static";
 
 export const Brutus: Hero = {
   id: "BRUTUS",
@@ -10,7 +11,7 @@ export const Brutus: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'mauler/brutus.webp'
+  portraitURL: staticDomain+'mauler/brutus.webp'
 };
 
 export const Khasos: Hero = {
@@ -20,7 +21,7 @@ export const Khasos: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'mauler/khasos.webp'
+  portraitURL: staticDomain+'mauler/khasos.webp'
 };
 
 export const Vurk: Hero = {
@@ -30,7 +31,7 @@ export const Vurk: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'mauler/vurk.webp'
+  portraitURL: staticDomain+'mauler/vurk.webp'
 };
 
 export const Numisu: Hero = {
@@ -40,7 +41,7 @@ export const Numisu: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: 'mauler/numisu.webp'
+  portraitURL: staticDomain+'mauler/numisu.webp'
 };
 
 export const Skreg: Hero = {
@@ -50,7 +51,7 @@ export const Skreg: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'mauler/skreg.webp'
+  portraitURL: staticDomain+'mauler/skreg.webp'
 };
 
 export const Warek: Hero = {
@@ -60,7 +61,7 @@ export const Warek: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: 'mauler/warek.webp'
+  portraitURL: staticDomain+'mauler/warek.webp'
 };
 
 export const Antandra: Hero = {
@@ -70,7 +71,7 @@ export const Antandra: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: 'mauler/antandra.webp'
+  portraitURL: staticDomain+'mauler/antandra.webp'
 };
 
 export const Safiya: Hero = {
@@ -80,7 +81,7 @@ export const Safiya: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'mauler/safiya.webp'
+  portraitURL: staticDomain+'mauler/safiya.webp'
 };
 
 export const Satrana: Hero = {
@@ -90,7 +91,7 @@ export const Satrana: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'mauler/satrana.webp'
+  portraitURL: staticDomain+'mauler/satrana.webp'
 };
 
 export const Tidus: Hero = {
@@ -100,7 +101,7 @@ export const Tidus: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Ranger,
-  portraitURL: 'mauler/tidus.webp'
+  portraitURL: staticDomain+'mauler/tidus.webp'
 };
 
 export const Drez: Hero = {
@@ -110,7 +111,7 @@ export const Drez: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'mauler/drez.webp'
+  portraitURL: staticDomain+'mauler/drez.webp'
 };
 
 export const Skriath: Hero = {
@@ -120,7 +121,7 @@ export const Skriath: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: 'mauler/skriath.webp'
+  portraitURL: staticDomain+'mauler/skriath.webp'
 };
 
 export const Anoki: Hero = {
@@ -130,7 +131,7 @@ export const Anoki: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: 'mauler/anoki.webp'
+  portraitURL: staticDomain+'mauler/anoki.webp'
 };
 
 export const Kren: Hero = {
@@ -140,7 +141,7 @@ export const Kren: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: 'mauler/kren.webp'
+  portraitURL: staticDomain+'mauler/kren.webp'
 };
 
 const heroes: Array<Hero> = [

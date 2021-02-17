@@ -1,0 +1,1 @@
+export const staticDomain:string = 'https://static-afkarena-teambuilder.s3.eu-central-1.amazonaws.com/';

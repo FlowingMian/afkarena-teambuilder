@@ -3,7 +3,7 @@ import { HeroUsageDashboardResult } from "./model";
 import { Role } from "../../model/characteristics";
 import HeroBox from "../Hero/HeroBox";
 import CharacteristicTable from "../Characteristic/CharacteristicTable";
-import CompositionModal from "../Composition/CompositionModal";
+import CompositionBoxListModal from "../Composition/CompositionBoxListModal";
 
 type UsageDashboardTableRowProps = {
   heroUsageResult: HeroUsageDashboardResult;
@@ -66,10 +66,10 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
           {usageCount} ({usagePercent}%)
       </Text></Td>
       <Td>
-        <CompositionModal compositions={heroUsageResult.coreCompositions} label={coreLabel}/>
+        <CompositionBoxListModal compositions={heroUsageResult.coreCompositions} buttonLabel={coreLabel}/>
       </Td>
       <Td>
-        <CompositionModal compositions={heroUsageResult.flexCompositions} label={flexLabel}/>
+        <CompositionBoxListModal compositions={heroUsageResult.flexCompositions} buttonLabel={flexLabel}/>
       </Td>
       <Td>
         <CharacteristicTable characterictics={roles} />

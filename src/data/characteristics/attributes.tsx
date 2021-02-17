@@ -1,19 +1,20 @@
 import { Attribute } from "../../model/characteristics";
+import { staticDomain } from "../static";
 
 export const Strength:Attribute = {
     id: 'STRENGTH',
     name: 'Strength',
-    iconURL: 'attribute/strength.webp'
+    iconURL: staticDomain+'attribute/strength.webp'
 };
 export const Intelligence:Attribute = {
     id: 'INTELLIGENCE',
     name: 'Intelligence',
-    iconURL: 'attribute/intelligence.webp'
+    iconURL: staticDomain+'attribute/intelligence.webp'
 };
 export const Agility:Attribute = {
     id: 'AGILITY',
     name: 'Agility',
-    iconURL: 'attribute/agility.webp'
+    iconURL: staticDomain+'attribute/agility.webp'
 };
 
 export const Attributes: Array<Attribute> = [
