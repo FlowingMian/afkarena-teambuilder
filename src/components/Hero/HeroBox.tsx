@@ -5,7 +5,7 @@ type HeroBoxProps = {
   hero: Hero;
 };
 
-const SIZE_SM:string = '3rem';
+const SIZE_SM:string = '2.5rem';
 const SIZE:string = '3rem';
 
 function HeroBox({ hero }: HeroBoxProps) {

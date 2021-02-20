@@ -49,7 +49,7 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
 
   return (
     <HStack wrap='wrap'>
-        <InputGroup maxWidth={['100%', '100%', '100%', '25%']}>
+        <InputGroup width='100%'>
             <InputLeftElement pointerEvents="none"children={searching ? <Spinner size="sm"/> :<SearchIcon />}/>
             <Input placeholder="Search..." onChange={event => setQuery(event.target.value)}/>
         </InputGroup>

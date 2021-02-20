@@ -1,4 +1,4 @@
-import { Box, VStack } from '@chakra-ui/react';
+import { Box, Center, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
 import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
@@ -7,6 +7,7 @@ import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
+import { ArrowUpIcon } from '@chakra-ui/icons';
 
 function UsageDashboard() {
 
@@ -49,10 +50,11 @@ function UsageDashboard() {
   
   return (<>
       <VStack {...BoxControlsStyle} alignItems='stretch'>
-        <CompositionSelector onValidate={calculateHeroUsage} openOnInit={true}/>
+        <CompositionSelector onValidate={calculateHeroUsage}/>
         <HeroCharactericticsSelector onChange={filterHeroes}/>
       </VStack>
       <Box {...BoxResultsStyle}>
+        {!usageResult && <Center><ArrowUpIcon/>Start by selecting some compositions<ArrowUpIcon/></Center>}
         {usageResult && <UsageDashboardResults usageResult={usageResult} filters={filters}/>}
       </Box>
   </>);
