@@ -1,8 +1,8 @@
-import { Box, HStack, VStack } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
-import { BoxResultsStyle, BoxCardStyle } from '../../theme/styles';
+import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 import HeroList from '../Hero/HeroList';
@@ -16,20 +16,15 @@ function HeroDashboard() {
     setSelectedHeroes(heroes.filter(h => filters.accept(h)));
   }
   
-  return (
-    <Box {...BoxResultsStyle}>
-      <HStack spacing="1rem" alignItems='start'>
-        <VStack alignItems='start'>
-          <HeroCharactericticsSelector onChange={filterHeroes}/>
-          <Box {...BoxCardStyle}>
-            <HeroCharactericticsTable heroes={selectedHeroes} />
-          </Box>
-        </VStack>
-
-        <HeroList heroes={selectedHeroes} />
-      </HStack>
-    </Box>
-  );
+  return (<>
+    <VStack {...BoxControlsStyle} alignItems='stretch'>
+      <HeroCharactericticsSelector onChange={filterHeroes}/>
+    </VStack>
+    <VStack {...BoxResultsStyle} alignItems='stretch'>
+      <HeroCharactericticsTable heroes={selectedHeroes} />
+      <HeroList heroes={selectedHeroes} />
+    </VStack>
+  </>);
 }
 
 export default HeroDashboard;

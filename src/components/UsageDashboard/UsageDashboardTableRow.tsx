@@ -1,8 +1,6 @@
 import { Tr, Td, Text } from "@chakra-ui/react"
 import { HeroUsageDashboardResult } from "./model";
-import { Role } from "../../model/characteristics";
 import HeroBox from "../Hero/HeroBox";
-import CharacteristicTable from "../Characteristic/CharacteristicTable";
 import CompositionBoxListModal from "../Composition/CompositionBoxListModal";
 
 type UsageDashboardTableRowProps = {
@@ -12,7 +10,7 @@ type UsageDashboardTableRowProps = {
 
 function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDashboardTableRowProps) {
   const baseNumberStyle = {
-    fontSize:"lg",
+    fontSize:"sm",
     fontWeight:"semibold"
   }
   function getUsageNumberColor(heroUsageResult:HeroUsageDashboardResult):Object {
@@ -47,11 +45,6 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
   const flexCount = heroUsageResult.flexCompositions.size;
   const flexPercent = Math.round(flexCount * 100 / compositionCount);
 
-  const roles = new Map<Role, number>();
-  heroUsageResult.flexCompositions.forEach((r, c) => {
-    roles.set(r, roles.has(r) ? roles.get(r) as number + 1 : 1);
-  });
-
   const coreLabel = <Text {...getCoreNumberColor(heroUsageResult)}>
     {coreCount} ({corePercent}%)
   </Text>;
@@ -70,9 +63,6 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
       </Td>
       <Td>
         <CompositionBoxListModal compositions={heroUsageResult.flexCompositions} buttonLabel={flexLabel}/>
-      </Td>
-      <Td>
-        <CharacteristicTable characterictics={roles} />
       </Td>
     </Tr>
 

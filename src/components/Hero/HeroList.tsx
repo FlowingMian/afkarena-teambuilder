@@ -10,7 +10,7 @@ function HeroList({ heroes }: HeroListProps) {
   const heroesList = heroes.map((h) => <WrapItem key={h.id}><HeroBox hero={h}/></WrapItem>);
 
   return (
-    <Wrap flexDirection="row" flexWrap="wrap">
+    <Wrap flexDirection="row" flexWrap="wrap" spacing={1}>
       {heroesList}
     </Wrap>
   );

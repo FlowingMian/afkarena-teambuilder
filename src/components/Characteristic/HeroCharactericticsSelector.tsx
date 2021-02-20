@@ -1,5 +1,5 @@
 
-import { Box, Heading, HStack } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, HStack } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Attributes } from '../../data/characteristics/attributes';
 import { Classes } from '../../data/characteristics/classes';
@@ -56,31 +56,45 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps) {
     onChange(newSelection);
   }
 
-  return <HStack alignItems='start'>
+  return (
+    <Accordion allowToggle>
+    <AccordionItem>
+      <h2>
+        <AccordionButton>
+          <Box flex="1" textAlign="left">
+            Filter heroes
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pb={4}>
+        <HStack alignItems='start'>
+          <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={Factions} onChange={onFactionChange}/>
+          <Box>
+            <Heading size="sm" mb='0.6rem'>Factions</Heading>
+            <CharacteristicTable characterictics={Factions} displayName={false}/>
+          </Box>
 
-    <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={Factions} onChange={onFactionChange}/>
-    <Box>
-      <Heading size="md" mb='0.6rem'>Factions</Heading>
-      <CharacteristicTable characterictics={Factions}/>
-    </Box>
+          <Box width='0.5rem'/>
 
-    <Box width='0.5rem'/>
+          <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={onClassChange}/>
+          <Box>
+            <Heading size="sm" mb='0.6rem'>Classes</Heading>
+            <CharacteristicTable characterictics={Classes} displayName={false}/>
+          </Box>
 
-    <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={onClassChange}/>
-    <Box>
-      <Heading size="md" mb='0.6rem'>Classes</Heading>
-      <CharacteristicTable characterictics={Classes}/>
-    </Box>
+          <Box width='0.5rem'/>
 
-    <Box width='0.5rem'/>
-
-    <CharacteristicCheckboxGroup selection={selection.attributeIds} characterictics={Attributes} onChange={onAttributeChange}/>
-    <Box>
-      <Heading size="md" mb='0.6rem'>Attributes</Heading>
-      <CharacteristicTable characterictics={Attributes}/>
-    </Box>
-
-  </HStack>
+          <CharacteristicCheckboxGroup selection={selection.attributeIds} characterictics={Attributes} onChange={onAttributeChange}/>
+          <Box>
+            <Heading size="sm" mb='0.6rem'>Attributes</Heading>
+            <CharacteristicTable characterictics={Attributes} displayName={false}/>
+          </Box>
+        </HStack>
+      </AccordionPanel>
+    </AccordionItem>
+    </Accordion>
+  )
 }
 
 export default HeroCharactericticsSelector;

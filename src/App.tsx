@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Switch, Route, Redirect } from "react-router-do
 
 import theme from "./theme";
 import Navbar from "./components/Layout/Navbar";
-import Content from "./components/Layout/Content";
 
 import UsageDashboard from "./components/UsageDashboard/UsageDashboard";
 import HeroDashboard from "./components/HeroDashboard/HeroDashboard";
@@ -15,22 +14,20 @@ function App() {
     <ChakraProvider theme={theme}>
         <Router>
           <Navbar/>
-          <Content>
-            <Switch>
-              <Route path="/usages">
-                <UsageDashboard/>
-              </Route>
-              <Route path="/heroes">
-                <HeroDashboard/>
-              </Route>
-              <Route path="/compositions">
-                <CompositionDashboard/>
-              </Route>
-              <Route path="/">
-                <Redirect to="/usages" />
-              </Route>
-            </Switch>            
-          </Content>
+          <Switch>
+            <Route path="/usages">
+              <UsageDashboard/>
+            </Route>
+            <Route path="/heroes">
+              <HeroDashboard/>
+            </Route>
+            <Route path="/compositions">
+              <CompositionDashboard/>
+            </Route>
+            <Route path="/">
+              <Redirect to="/usages" />
+            </Route>
+          </Switch>            
         </Router>
     </ChakraProvider>
   );

@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
 import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
@@ -6,11 +6,17 @@ import CompositionSelector from '../Composition/CompositionSelector';
 import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
+import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
 
 function UsageDashboard() {
 
   const [usageResult, setUsageResult] = useState<UsageDashboardResult>();
+  const [filters, setFilters] = useState<HeroCharactericticsSelection>();
   
+  function filterHeroes(filters:HeroCharactericticsSelection) {
+    setFilters(filters);
+  }
+
   function calculateHeroUsage(compositionIds:Array<string>) {
     const heroUsagesResults = new Map(heroes.map((h): [string, HeroUsageDashboardResult] => [h.id, new HeroUsageDashboardResult(h)]));
 
@@ -40,17 +46,16 @@ function UsageDashboard() {
         )
       ));
   }
-
-  return (
-    <div>
-      <Box {...BoxControlsStyle}>
-        <CompositionSelector onValidate={calculateHeroUsage} />
-      </Box>
+  
+  return (<>
+      <VStack {...BoxControlsStyle} alignItems='stretch'>
+        <CompositionSelector onValidate={calculateHeroUsage} openOnInit={true}/>
+        <HeroCharactericticsSelector onChange={filterHeroes}/>
+      </VStack>
       <Box {...BoxResultsStyle}>
-        {usageResult && <UsageDashboardResults usageResult={usageResult} />}
+        {usageResult && <UsageDashboardResults usageResult={usageResult} filters={filters}/>}
       </Box>
-    </div>
-  );
+  </>);
 }
 
 export default UsageDashboard;

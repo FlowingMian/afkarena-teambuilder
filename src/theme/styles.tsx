@@ -1,12 +1,12 @@
 export const BoxControlsStyle = {
-    p: "6",
+    p: "3",
     m: "0",
     background: 'primary.50',
     borderBottom: '1px solid lightgray',
 }
 
 export const BoxResultsStyle = {
-    p: "6",
+    p: "3",
     m: "0",
     background: 'white',
 }

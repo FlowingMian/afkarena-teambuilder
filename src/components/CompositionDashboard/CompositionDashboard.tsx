@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Heading, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import compositions from '../../data/compositions';
 import { Composition } from '../../model/compositions';
@@ -17,13 +17,13 @@ function CompositionDashboard() {
 
   return (
     <div>
-      <Box {...BoxControlsStyle}>
+      <VStack {...BoxControlsStyle} alignItems='stretch'>
         <CompositionSearch onChange={filterCompositions}/>
-      </Box>
-      <Box {...BoxResultsStyle}>
-          <Heading>{selectedCompositions.length} compositions</Heading>
+      </VStack>
+      <VStack {...BoxResultsStyle} alignItems='stretch'>
+          <Heading size='md'>{selectedCompositions.length} compositions</Heading>
           <CompositionDetailsList compositions={selectedCompositions}/>
-      </Box>
+      </VStack>
     </div>
   );
 }

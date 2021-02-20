@@ -1,54 +1,42 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, HStack, VStack, Spacer, Box } from "@chakra-ui/react"
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import UsageDashboardTierList from "./UsageDashboardTierList";
 import UsageDashboardTable from "./UsageDashboardTable";
 import { UsageDashboardResult } from './model';
-import HeroCharactericticsSelector, { HeroCharactericticsSelection } from "../Characteristic/HeroCharactericticsSelector";
-import { useState } from "react";
 import HeroCharactericticsTable from "../Characteristic/HeroCharactericticsTable";
-import { BoxCardStyle } from "../../theme/styles";
+import { HeroCharactericticsSelection } from "../Characteristic/HeroCharactericticsSelector";
 
 type UsageDashboardResultsProps = {
     usageResult: UsageDashboardResult;
+    filters: HeroCharactericticsSelection | undefined;
 };
 
-function UsageDashboardResults({ usageResult }: UsageDashboardResultsProps) {
-
-  const [filters, setFilters] = useState<HeroCharactericticsSelection>();
-  
-  function filterHeroes(filters:HeroCharactericticsSelection) {
-    setFilters(filters);
-  }
-
+function UsageDashboardResults({ usageResult, filters }: UsageDashboardResultsProps) {
   const filteredHeroes = usageResult.heroUsageResults
-    .filter(ur => !filters || filters.accept(ur.hero))
-    .map(hr => hr.hero);
+  .filter(ur => !filters || filters.accept(ur.hero))
+  .map(hr => hr.hero);
 
-  return (
-    <HStack spacing="1rem" alignItems='start'>
-      <VStack alignItems='start'>
-        <HeroCharactericticsSelector onChange={filterHeroes}/>
-        <Spacer/>
-        <Box {...BoxCardStyle}>
-          <HeroCharactericticsTable heroes={filteredHeroes} />
-        </Box>
-      </VStack>
-
-      <Tabs isLazy flexGrow={1}>
+  return (<>
+      
+      <Tabs isLazy>
           <TabList>
             <Tab>Tier List</Tab>
             <Tab>Table</Tab>
+            <Tab>Distribution</Tab>
           </TabList>
 
           <TabPanels>
             <TabPanel>
-            < UsageDashboardTierList usageResult={usageResult} filters={filters}/>
+              <UsageDashboardTierList usageResult={usageResult} filters={filters}/>
             </TabPanel>
             <TabPanel>
-            <UsageDashboardTable usageResult={usageResult} filters={filters}/>
+              <UsageDashboardTable usageResult={usageResult} filters={filters}/>
+            </TabPanel>
+            <TabPanel>
+              <HeroCharactericticsTable heroes={filteredHeroes} />
             </TabPanel>
         </TabPanels>
       </Tabs>
-    </HStack>
+      </>
   );
 }
 

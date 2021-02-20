@@ -13,7 +13,7 @@ function CompositionModal({ composition, buttonLabel }: CompositionModalProps) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return <Fragment>
-    <IconButton variant='ghost' icon={<ViewIcon/>} onClick={onOpen} aria-label="View composition" />
+    <IconButton variant='ghost' size="sm"icon={<ViewIcon/>} onClick={onOpen} aria-label="View composition" />
     <Modal size="xl" isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>

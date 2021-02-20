@@ -12,7 +12,7 @@ function HeroCharacteristicsPopover({ heroes }: HeroCharacteristicsPopoverProps)
   return (
     <Popover isLazy>
       <PopoverTrigger>
-        <Button variant='ghost' rightIcon={<ViewIcon/>} minWidth='4rem' maxWidth='4rem'>{heroes.length}</Button>
+        <Button variant='ghost' size='sm' rightIcon={<ViewIcon/>}>{heroes.length}</Button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />

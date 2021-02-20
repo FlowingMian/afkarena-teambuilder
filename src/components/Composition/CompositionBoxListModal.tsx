@@ -14,7 +14,7 @@ function CompositionBoxListModal({ compositions, buttonLabel }: CompositionBoxLi
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return <Fragment>
-    <Button variant='ghost' rightIcon={<ViewIcon/>} onClick={onOpen}>{buttonLabel}</Button>
+    <Button variant='ghost' size="sm" px={0} rightIcon={<ViewIcon/>} onClick={onOpen}>{buttonLabel}</Button>
     <Modal size="lg" isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>

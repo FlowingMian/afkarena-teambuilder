@@ -9,7 +9,7 @@ type CompositionBoxProps = {
 function CompositionBox({ composition }: CompositionBoxProps) {
   const tags = <CompositionModal composition={composition} />
   return (
-    <HeroCategory name={composition.name} tags={tags} charactericticsDistribution={false} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
+    <HeroCategory name={composition.name} tags={tags} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
   );
 }
 

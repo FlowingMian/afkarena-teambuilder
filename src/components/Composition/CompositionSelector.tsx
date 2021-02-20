@@ -1,6 +1,6 @@
 
-import { FormControl, Switch, Flex, VStack, HStack, Button } from '@chakra-ui/react'
-import { useState } from 'react';
+import { FormControl, Switch, Flex, VStack, HStack, Button, useDisclosure, Drawer, DrawerOverlay, DrawerCloseButton, DrawerHeader, DrawerContent, DrawerBody, DrawerFooter } from '@chakra-ui/react'
+import { useEffect, useState } from 'react';
 import compositions from '../../data/compositions';
 import { Composition } from '../../model/compositions';
 import CompositionBox from "./CompositionBox";
@@ -8,12 +8,19 @@ import CompositionSearch from './CompositionSearch';
 
 type CompositionSelectorProps = {
   onValidate:(compositionIds:Array<string>) => void;
+  openOnInit?:boolean;
 };
 
-function CompositionSelector({ onValidate }: CompositionSelectorProps) {
-
+function CompositionSelector({ onValidate, openOnInit = false }: CompositionSelectorProps) {
   const [displayedCompositions, setDisplayedCompositions] = useState<Array<Composition>>([]);
   const [selection, setSelection] = useState<Array<string>>(compositions.map(c => c.id));
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  useEffect(() => {
+    if (openOnInit) {
+      onOpen()
+    }
+  }, []);
 
   function filterCompositions(compositionIds:Array<string>) {
     setDisplayedCompositions(compositions.filter(c => compositionIds.includes(c.id)));
@@ -31,6 +38,7 @@ function CompositionSelector({ onValidate }: CompositionSelectorProps) {
   }
 
   function validateSelection() {
+    onClose();
     onValidate(selection);
   }
 
@@ -49,17 +57,43 @@ function CompositionSelector({ onValidate }: CompositionSelectorProps) {
     </FormControl>
   );
 
-  return <VStack alignItems='stretch'>
-    <CompositionSearch onChange={filterCompositions}/>
-    <Flex flexDirection="row" wrap="wrap">
-        {compositionBoxes}
-    </Flex>;
-    <HStack mt='1rem'>
-      <Button variant='solid' onClick={validateSelection}>Select {selection.length} compositions</Button>
-      <Button variant='outline' onClick={selectAll}>Select all</Button>
-      <Button variant='outline' onClick={selectNone}>Select none</Button>
-    </HStack>
-  </VStack>
+  return (
+    <>
+    <Button onClick={onOpen}>
+      Select compositions ({selection.length})
+    </Button>
+    <Drawer
+      isOpen={isOpen}
+      placement="top"
+      size="lg"
+      onClose={onClose}
+    >
+      <DrawerOverlay>
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Select compositions</DrawerHeader>
+
+          <DrawerBody p={1}>
+            <VStack alignItems='stretch'>
+              <CompositionSearch onChange={filterCompositions}/>
+              <Flex flexDirection="row" wrap="wrap">
+                  {compositionBoxes}
+              </Flex>;
+            </VStack>
+          </DrawerBody>
+
+          <DrawerFooter>
+            <HStack mt='1rem' wrap='wrap'>
+              <Button size="sm" variant='ghost' onClick={selectAll}>Select all</Button>
+              <Button size="sm" variant='ghost' onClick={selectNone}>Select none</Button>
+              <Button size="md" variant='solid' onClick={validateSelection}>Select {selection.length}</Button>
+            </HStack>
+          </DrawerFooter>
+        </DrawerContent>
+      </DrawerOverlay>
+    </Drawer>
+  </>
+  )
 }
 
 export default CompositionSelector;

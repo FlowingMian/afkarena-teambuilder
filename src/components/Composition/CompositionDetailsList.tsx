@@ -10,7 +10,7 @@ type CompositionDetailsListProps = {
 function CompositionDetailsList({ compositions }: CompositionDetailsListProps) {
   const compositionBoxes = compositions.map((c) => 
     <WrapItem key={c.id}>
-      <Box {...BoxCardStyle} width="34rem" minHeight="30rem">
+      <Box {...BoxCardStyle}>
         <CompositionDetails composition={c} />
       </Box>
     </WrapItem>

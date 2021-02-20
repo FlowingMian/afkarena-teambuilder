@@ -13,7 +13,7 @@ function CharacteristicCheckboxGroup({ selection, characterictics, onChange : On
   const isIndeterminate = !allChecked && selection.length > 0;
 
   function toggleAll() {
-    OnSelectionChange(allChecked ? [] : characterictics.map(c => c.id));
+    OnSelectionChange(selection.length === 0 ? characterictics.map(c => c.id) : []);
   }
 
   function onChange(e:React.ChangeEvent<HTMLInputElement>) {
@@ -28,7 +28,7 @@ function CharacteristicCheckboxGroup({ selection, characterictics, onChange : On
   }
 
   return (
-    <VStack alignItems='start' spacing="0.75rem" pt='0.2rem'>
+    <VStack alignItems='start'>
       <Checkbox isChecked={allChecked} isIndeterminate={isIndeterminate} p='2px' onChange={toggleAll}/>
       {characterictics.map((c) => <Checkbox key={c.id} value={c.id} isChecked={selection.includes(c.id)} onChange={onChange} p='2px'/>)}
     </VStack>

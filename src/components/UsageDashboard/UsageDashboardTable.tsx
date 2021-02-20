@@ -25,7 +25,7 @@ function UsageDashboardTable({ usageResult, filters }: UsageDashboardTableProps)
           <Th>Usage</Th>
           <Th>Core</Th>
           <Th>Flex</Th>
-          <Th>Flex roles</Th>
+          {/* <Th>Flex roles</Th> */}
         </Tr>
       </Thead>
       <Tbody>

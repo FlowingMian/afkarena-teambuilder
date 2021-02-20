@@ -48,14 +48,14 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
     }
 
   return (
-    <HStack>
-        <InputGroup width='25%'>
+    <HStack wrap='wrap'>
+        <InputGroup maxWidth={['100%', '100%', '100%', '25%']}>
             <InputLeftElement pointerEvents="none"children={searching ? <Spinner size="sm"/> :<SearchIcon />}/>
             <Input placeholder="Search..." onChange={event => setQuery(event.target.value)}/>
         </InputGroup>
-        <Text width='75%'>
+        <Text fontSize='xs'>
             <InfoIcon mr='0.25rem'/>
-            Try these examples : <Code>portal</Code> / <Code>Raine</Code> / <Code>Eironn-core</Code> / <Code>Skreg-flex</Code> / <Code>Silas-enabler</Code>
+            Syntax examples : <Code fontSize='xs'>portal</Code> / <Code fontSize='xs'>Eironn-core</Code> / <Code fontSize='xs'>Rowan-flex Skreg</Code> / <Code fontSize='xs'>Silas-enabler</Code>
         </Text>
     </HStack>
   );
