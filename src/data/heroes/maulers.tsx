@@ -99,7 +99,7 @@ export const Tidus: Hero = {
   name: "Tidus",
   nickname: [],
   faction: Faction.Mauler,
-  attribute: Attribute.Strength,
+  attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'mauler/tidus.webp'
 };

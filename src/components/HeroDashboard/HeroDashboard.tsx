@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react';
+import { Stack, StackDirection, useBreakpointValue, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
@@ -9,6 +9,7 @@ import HeroList from '../Hero/HeroList';
 
 
 function HeroDashboard() {
+  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' })
 
   const [selectedHeroes, setSelectedHeroes] = useState<Array<Hero>>(heroes);
   
@@ -20,10 +21,10 @@ function HeroDashboard() {
     <VStack {...BoxControlsStyle} alignItems='stretch'>
       <HeroCharactericticsSelector onChange={filterHeroes}/>
     </VStack>
-    <VStack {...BoxResultsStyle} alignItems='stretch'>
+    <Stack direction={stackDirection} alignItems='stretch' {...BoxResultsStyle} >
       <HeroCharactericticsTable heroes={selectedHeroes} />
       <HeroList heroes={selectedHeroes} />
-    </VStack>
+    </Stack>
   </>);
 }
 

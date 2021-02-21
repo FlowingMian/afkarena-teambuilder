@@ -1,5 +1,5 @@
 import { Composition } from "../../model/compositions";
-import { Box, Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Stack, StackDirection, useBreakpointValue } from '@chakra-ui/react'
 import CompositionDetails from "./CompositionDetails";
 import { BoxCardStyle } from "../../theme/styles";
 
@@ -8,17 +8,19 @@ type CompositionDetailsListProps = {
 };
 
 function CompositionDetailsList({ compositions }: CompositionDetailsListProps) {
+  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' })
+
   const compositionBoxes = compositions.map((c) => 
-    <WrapItem key={c.id}>
-      <Box {...BoxCardStyle}>
+      <Box {...BoxCardStyle} minWidth={[null, '28.5rem']} key={c.id}>
         <CompositionDetails composition={c} />
       </Box>
-    </WrapItem>
   );
 
-  return <Wrap>
-    {compositionBoxes}
-  </Wrap>;
+  return <Box width="100%" overflow='scroll'>
+    <Stack direction={stackDirection}>
+      {compositionBoxes}
+    </Stack>
+  </Box>;
 }
 
 export default CompositionDetailsList;

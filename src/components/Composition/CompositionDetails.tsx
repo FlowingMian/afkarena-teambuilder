@@ -9,7 +9,6 @@ type CompositionDetailsProps = {
 };
 
 function CompositionDetails({ composition }: CompositionDetailsProps) {
-
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
   const heroCategories = [composition.coreHeroes, ...composition.flexHeroes]
     .map(cr => <>

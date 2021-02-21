@@ -18,5 +18,4 @@ export const BoxCardStyle = {
     boxShadow: "lg",
     padding: "0.75rem",
     background : "primary.50",
-    minWidth: 'xs'
 }

@@ -89,9 +89,9 @@ function CompositionSelector({ onValidate, openOnInit = false }: CompositionSele
           <DrawerFooter>
             <HStack mt='1rem' wrap='wrap'>
               <Text size='xs'>Select</Text>
-              <Button size="sm" px={1} variant='outline' onClick={selectResults}>Results</Button>
-              <Button size="sm" px={1} variant='outline' onClick={selectAll}>All</Button>
               <Button size="sm" px={1} variant='outline' onClick={selectNone}>None</Button>
+              <Button size="sm" px={1} variant='outline' onClick={selectAll}>All</Button>
+              <Button size="sm" px={1} variant='outline' onClick={selectResults}>Results</Button>
               <Button size="sm" px={1} variant='solid' onClick={validateSelection}>Validate ({selection.length})</Button>
             </HStack>
           </DrawerFooter>

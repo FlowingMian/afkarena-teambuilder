@@ -19,7 +19,7 @@ function HeroCategory({ name, tags, heroes, colorScheme }: HeroCategoryProps) {
     borderRadius: 'sm',
   } : null;
 
-  return <HStack minWidth="296px" {...flexStyle}>
+  return <HStack minWidth="296px" width="100%" {...flexStyle}>
         <Heading size="xs" minWidth="7rem">{name}</Heading>
         {tags}
       <HeroList heroes={heroes}/>
