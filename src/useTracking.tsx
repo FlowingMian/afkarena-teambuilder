@@ -1,4 +1,4 @@
-//Srouce : https://js.plainenglish.io/google-analytics-with-react-router-and-hooks-16d403ddc528
+//Source : https://js.plainenglish.io/google-analytics-with-react-router-and-hooks-16d403ddc528
 
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -6,9 +6,11 @@ import { useHistory } from 'react-router-dom'
 declare global {
   interface Window {
     gtag?: (
-      key: string,
-      trackingId: string,
-      config: { page_path: string }
+      command: string,
+      commandParameter: string,
+      additionnalParameters: { 
+        [key: string]: any;
+      }
     ) => void
   }
 }
@@ -20,7 +22,7 @@ export const useTracking = (
 
   useEffect(() => {
     const unlisten = listen((location) => {
-      if (!window.gtag) return
+      if (!window.gtag) return;
       if (!trackingId) {
         console.log(
           'Tracking not enabled, as `trackingId` was not given and there is no `GA_MEASUREMENT_ID`.'
@@ -33,4 +35,22 @@ export const useTracking = (
 
     return unlisten
   }, [trackingId, listen])
+}
+
+export const sendSearch = (item_category:string, search_term:string) => {
+  if (!window.gtag) return;
+  window.gtag('event', 'search', {
+    item_category,
+    search_term,
+  });
+}
+
+export const sendViewItems = (item_category:string, item_ids:Array<string>) => {
+  if (!window.gtag) return;
+  window.gtag('event', 'view_item', {
+    items: item_ids.map(item_id => ({
+      item_id,
+      item_category
+    })),
+  });
 }

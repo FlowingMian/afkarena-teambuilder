@@ -3,6 +3,7 @@ import { SearchIcon } from '@chakra-ui/icons'
 import { Composition } from "../../model/compositions";
 import { useEffect, useState } from "react";
 import compositions from "../../data/compositions";
+import { sendSearch } from "../../useTracking";
 
 type CompositionSearchProps = {
     onChange:(compositionIds:Array<string>) => void;
@@ -21,6 +22,7 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
     }
 
     function runSearch() {
+        sendSearch('composition', query);
         const searchTerms = query.split(' ');
         const compositionIds = compositions
             .filter(c => query === '' || matchSearch(c, searchTerms.map(t => t.toLowerCase())))

@@ -7,6 +7,7 @@ import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
+import { sendViewItems } from '../../useTracking';
 
 function UsageDashboard() {
 
@@ -18,6 +19,7 @@ function UsageDashboard() {
   }
 
   function calculateHeroUsage(compositionIds:Array<string>) {
+    sendViewItems('composition', compositionIds);
     const heroUsagesResults = new Map(heroes.map((h): [string, HeroUsageDashboardResult] => [h.id, new HeroUsageDashboardResult(h)]));
 
     const selectedCompositions = compositions.filter(c => compositionIds.includes(c.id));
