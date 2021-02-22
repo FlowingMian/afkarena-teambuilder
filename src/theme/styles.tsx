@@ -19,3 +19,13 @@ export const BoxCardStyle = {
     padding: "0.75rem",
     background : "primary.50",
 }
+
+export const BoxQuoteStyle = {
+    borderWidth: "2px 2px 2px 15px",
+    borderColor: "secondary.300",
+    borderRadius: "md",
+    boxShadow: "lg",
+    padding: "0.75rem",
+    background : "primary.50",
+    margin: '1rem 2rem',
+}

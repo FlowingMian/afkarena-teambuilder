@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, AlertTitle, Box, Center, Heading, HStack, ListItem, Text, UnorderedList, VStack } from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Link, ListItem, UnorderedList, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
 import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
@@ -7,7 +7,6 @@ import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
-import { ArrowUpIcon } from '@chakra-ui/icons';
 
 function UsageDashboard() {
 
@@ -57,7 +56,7 @@ function UsageDashboard() {
         {!usageResult && <Center>
           <Alert 
             status="info" 
-            maxWidth='20rem'
+            width={[null, '60rem']}
             flexDirection="column"
             alignItems="start"
             fontSize="sm">
@@ -65,7 +64,7 @@ function UsageDashboard() {
                 <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
               </HStack>
               <UnorderedList>
-                <ListItem>Start by <b>selecting some compositions</b>.</ListItem>
+                <ListItem>Start by <b>selecting some compositions </b><Link href='/compositions'>(Click for more information)</Link></ListItem>
                 <ListItem>The tool will rank the heroes according to <b>their number of uses</b> in the compositions you have selected.</ListItem>
                 <ListItem>You can then <b>apply some filters</b> to narrow the results.</ListItem>
               </UnorderedList>

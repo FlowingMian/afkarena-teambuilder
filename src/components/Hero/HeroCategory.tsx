@@ -14,12 +14,11 @@ const backgroundAlpha:string = '33';
 function HeroCategory({ name, tags, heroes, colorScheme }: HeroCategoryProps) {
   const flexStyle = colorScheme ? {
     border: '1px solid '+colorScheme,
-    padding: 1,
     backgroundColor : colorScheme + backgroundAlpha,
     borderRadius: 'sm',
   } : null;
 
-  return <HStack minWidth="296px" width="100%" {...flexStyle}>
+  return <HStack width="100%" padding={1} {...flexStyle}>
         <Heading size="xs" minWidth="7rem">{name}</Heading>
         {tags}
       <HeroList heroes={heroes}/>

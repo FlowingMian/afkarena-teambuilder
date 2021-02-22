@@ -10,12 +10,19 @@ type CompositionDetailsProps = {
 
 function CompositionDetails({ composition }: CompositionDetailsProps) {
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
-  const heroCategories = [composition.coreHeroes, ...composition.flexHeroes]
+  
+  const heroCategories = [composition.coreHeroes]
+    .map(cr => <>
+      <Divider/>
+      <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} colorScheme='#FFD700'/>
+      </>
+    );
+  heroCategories.push(...composition.flexHeroes
     .map(cr => <>
       <Divider/>
       <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} />
       </>
-    );
+    ));
 
   return (
       <VStack alignItems='start'>

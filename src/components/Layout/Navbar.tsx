@@ -1,4 +1,4 @@
-import { Center, Heading, HStack, Image, Tag } from '@chakra-ui/react'
+import { Center, Heading, HStack, Image } from '@chakra-ui/react'
 import { NavLink } from "react-router-dom"
 import colors from '../../theme/colors';
 

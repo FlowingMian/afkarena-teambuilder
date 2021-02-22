@@ -1,5 +1,5 @@
-import { Code, HStack, Input, InputGroup, InputLeftElement, Spinner, Text } from "@chakra-ui/react";
-import { InfoIcon, SearchIcon } from '@chakra-ui/icons'
+import { Alert, AlertIcon, Button, HStack, Input, InputGroup, InputLeftElement, Spinner, Text, VStack } from "@chakra-ui/react";
+import { SearchIcon } from '@chakra-ui/icons'
 import { Composition } from "../../model/compositions";
 import { useEffect, useState } from "react";
 import compositions from "../../data/compositions";
@@ -48,16 +48,22 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
     }
 
   return (
-    <HStack wrap='wrap'>
+    <VStack wrap='wrap' spacing={1}>
         <InputGroup width='100%'>
             <InputLeftElement pointerEvents="none"children={searching ? <Spinner size="sm"/> :<SearchIcon />}/>
-            <Input placeholder="Search..." onChange={event => setQuery(event.target.value)}/>
+            <Input placeholder="Search..." value={query} onChange={event => setQuery(event.target.value)}/>
         </InputGroup>
-        <Text fontSize='xs'>
-            <InfoIcon mr='0.25rem'/>
-            Syntax examples : <Code fontSize='xs'>portal</Code> / <Code fontSize='xs'>Eironn-core</Code> / <Code fontSize='xs'>Rowan-flex Skreg</Code> / <Code fontSize='xs'>Silas-enabler</Code>
-        </Text>
-    </HStack>
+        <Alert status="info" fontSize="xs" p={1}>
+            <AlertIcon />
+            <HStack wrap='wrap'>
+                <Text>Syntax examples :</Text> 
+                <Button variant="link" size='sm' onClick={() => setQuery('portal')}>portal</Button>
+                <Button variant="link" size='sm' onClick={() => setQuery('Eironn-core')}>Eironn-core</Button>
+                <Button variant="link" size='sm' onClick={() => setQuery('Rowan-flex Ezio')}>Rowan-flex Ezio</Button>
+                <Button variant="link" size='sm' onClick={() => setQuery('Silas-enabler')}>Silas-enabler</Button>
+            </HStack>
+        </Alert>
+    </VStack>
   );
 }
 

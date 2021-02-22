@@ -11,7 +11,7 @@ function CompositionDetailsList({ compositions }: CompositionDetailsListProps) {
   const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' })
 
   const compositionBoxes = compositions.map((c) => 
-      <Box {...BoxCardStyle} minWidth={[null, '28.5rem']} key={c.id}>
+      <Box {...BoxCardStyle} minWidth={[null, '29rem']} key={c.id}>
         <CompositionDetails composition={c} />
       </Box>
   );
