@@ -5,7 +5,7 @@ import { Hero } from '../../model/heroes';
 import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
-import HeroList from '../Hero/HeroList';
+import HeroDetailList from '../Hero/HeroDetailList';
 
 
 function HeroDashboard() {
@@ -21,9 +21,9 @@ function HeroDashboard() {
     <VStack {...BoxControlsStyle} alignItems='stretch'>
       <HeroCharactericticsSelector onChange={filterHeroes}/>
     </VStack>
-    <Stack direction={stackDirection} alignItems='stretch' {...BoxResultsStyle} >
+    <Stack direction={stackDirection} alignItems='start' {...BoxResultsStyle} >
       <HeroCharactericticsTable heroes={selectedHeroes} />
-      <HeroList heroes={selectedHeroes} />
+      <HeroDetailList heroes={selectedHeroes} />
     </Stack>
   </>);
 }

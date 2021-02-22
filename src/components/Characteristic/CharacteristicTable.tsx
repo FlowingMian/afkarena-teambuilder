@@ -13,7 +13,7 @@ function CharacteristicTable({ characterictics, displayName = true }: Characteri
   const charactericticRows =  array.map((c) => (
     <HStack key={c.id} width="100%" justifyContent='space-between'>
       <CharactericticBox characterictic={c} displayName={displayName}/>   
-      {characterictics instanceof Map && <Text>{characterictics.get(c)}</Text>}
+      {characterictics instanceof Map && <Text fontSize="xs">{characterictics.get(c)}</Text>}
     </HStack>
   ));
 

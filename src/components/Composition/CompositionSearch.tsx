@@ -4,18 +4,27 @@ import { Composition } from "../../model/compositions";
 import { useEffect, useState } from "react";
 import compositions from "../../data/compositions";
 import { sendSearch } from "../../useTracking";
+import qs from "qs";
+import { useHistory, useLocation } from "react-router-dom";
 
 type CompositionSearchProps = {
     onChange:(compositionIds:Array<string>) => void;
   };
 
 function CompositionSearch({onChange}:CompositionSearchProps) {
-    const [query, setQuery] = useState("");
+    const history = useHistory();
+    const location = useLocation();
+    const queryParam = qs.parse(location.search, {ignoreQueryPrefix: true}).query as string || "";
+    
+    const [query, setQuery] = useState(queryParam);
     const [searching, setSearching] = useState(false);
 
     useEffect(startSearch, [query]);
 
     function startSearch() {
+        if (queryParam) {
+            history.replace(location.pathname);
+        }
         setSearching(true)
         const timeOutId = setTimeout(runSearch, 300);
         return () => clearTimeout(timeOutId);

@@ -14,10 +14,10 @@ function HeroCharactericticsTable({heroes} : HeroCharactericticsTableProps) {
   const heroCharacteristics = getHeroCharactericticsDistribution(heroes);
 
   return <Center flexShrink={0}>
-    <HStack alignItems='start' spacing="2rem">
-      <CharacteristicTable characterictics={heroCharacteristics.factions} displayName={false}/>
-      <CharacteristicTable characterictics={heroCharacteristics.classes} displayName={false} />
-      <CharacteristicTable characterictics={heroCharacteristics.attributes} displayName={false} />
+    <HStack alignItems='start' spacing="1.5rem">
+      <CharacteristicTable characterictics={heroCharacteristics.factions}/>
+      <CharacteristicTable characterictics={heroCharacteristics.classes}/>
+      <CharacteristicTable characterictics={heroCharacteristics.attributes}/>
     </HStack>
   </Center>
 }

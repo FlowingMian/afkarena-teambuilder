@@ -72,7 +72,7 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps) {
           <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={Factions} onChange={onFactionChange}/>
           <Box>
             <Heading size="sm" mb='0.6rem'>Factions</Heading>
-            <CharacteristicTable characterictics={Factions} displayName={false}/>
+            <CharacteristicTable characterictics={Factions}/>
           </Box>
 
           <Box width='0.5rem'/>
@@ -80,7 +80,7 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps) {
           <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={onClassChange}/>
           <Box>
             <Heading size="sm" mb='0.6rem'>Classes</Heading>
-            <CharacteristicTable characterictics={Classes} displayName={false}/>
+            <CharacteristicTable characterictics={Classes}/>
           </Box>
 
           <Box width='0.5rem'/>
@@ -88,7 +88,7 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps) {
           <CharacteristicCheckboxGroup selection={selection.attributeIds} characterictics={Attributes} onChange={onAttributeChange}/>
           <Box>
             <Heading size="sm" mb='0.6rem'>Attributes</Heading>
-            <CharacteristicTable characterictics={Attributes} displayName={false}/>
+            <CharacteristicTable characterictics={Attributes}/>
           </Box>
         </HStack>
       </AccordionPanel>

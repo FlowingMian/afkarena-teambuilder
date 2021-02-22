@@ -55,7 +55,7 @@ function CompositionSelector({ onValidate, openOnInit = false }: CompositionSele
   }
 
   const compositionBoxes = displayedCompositions.map((c) => 
-    <FormControl key={c.id} display="flex" alignItems="center" m={1}> 
+    <FormControl key={c.id} display="flex" alignItems="center"> 
       <Switch value={c.id} isChecked={selection.includes(c.id)} mr="5px" onChange={onChange}/>
       <CompositionBox key={c.id} composition={c} />
     </FormControl>
