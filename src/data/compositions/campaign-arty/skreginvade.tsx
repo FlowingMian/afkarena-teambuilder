@@ -1,18 +1,19 @@
-import { Composition} from '../../model/compositions';
-import * as Role from '../characteristics/role';
-import * as Lightbearers from '../heroes/lightbearers'
-import * as Maulers from '../heroes/maulers'
-import * as Wilders from '../heroes/wilders'
-import * as Graveborns from '../heroes/graveborns'
-import * as Celestials from '../heroes/celestials'
-import * as Hypogeans from '../heroes/hypogeans'
-import * as Dimensional from '../heroes/dimensionals'
+import { Composition} from '../../../model/compositions';
+import * as Role from '../../characteristics/role';
+import * as Lightbearers from '../../heroes/lightbearers'
+import * as Maulers from '../../heroes/maulers'
+import * as Wilders from '../../heroes/wilders'
+import * as Graveborns from '../../heroes/graveborns'
+import * as Celestials from '../../heroes/celestials'
+import * as Hypogeans from '../../heroes/hypogeans'
+import * as Dimensional from '../../heroes/dimensionals'
 
 const skregInvade: Composition = {
-    id: 'SKREGINVADE',
+    id: 'CAMPAIGN-ARTY-SKREGINVADE',
     name: 'Skreg Invade',
     tags: ['Campaign'],
     author: 'Arty and Alpattex',
+    updateDate: 'Feb 2021',
     link: 'https://preview.redd.it/a40xisl8pvf61.png?width=2480&format=png&auto=webp&s=b52c1a6975363974b363ddceaf260552a02daad3',
     coreHeroes: {
         role: Role.Core,

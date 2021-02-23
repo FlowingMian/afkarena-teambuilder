@@ -1,18 +1,19 @@
-import { Composition} from '../../model/compositions';
-import * as Role from '../characteristics/role';
-import * as Lightbearers from '../heroes/lightbearers'
-import * as Maulers from '../heroes/maulers'
-import * as Wilders from '../heroes/wilders'
-import * as Graveborns from '../heroes/graveborns'
-import * as Celestials from '../heroes/celestials'
-import * as Hypogeans from '../heroes/hypogeans'
-import * as Dimensional from '../heroes/dimensionals'
+import { Composition} from '../../../model/compositions';
+import * as Role from '../../characteristics/role';
+import * as Lightbearers from '../../heroes/lightbearers'
+import * as Maulers from '../../heroes/maulers'
+import * as Wilders from '../../heroes/wilders'
+import * as Graveborns from '../../heroes/graveborns'
+import * as Celestials from '../../heroes/celestials'
+import * as Hypogeans from '../../heroes/hypogeans'
+import * as Dimensional from '../../heroes/dimensionals'
 
 const gwyneth: Composition = {
-    id: 'GWYNETH',
+    id: 'CAMPAIGN-ARTY-GWYNETH',
     name: 'Gwyneth',
     tags: ['Campaign'],
     author: 'Arty and Alpattex',
+    updateDate: 'Feb 2021',
     link: 'https://preview.redd.it/ebk7twc5pvf61.png?width=2480&format=png&auto=webp&s=22b7c89af7774ca96de906580e999d99baf380cf',
     coreHeroes: {
         role: Role.Core,
@@ -70,9 +71,6 @@ const gwyneth: Composition = {
                 {
                     hero: Lightbearers.Rowan
                 },
-                {
-                    hero: Lightbearers.Cecilia
-                }
             ]
         },
         {
@@ -110,9 +108,6 @@ const gwyneth: Composition = {
                 },
                 {
                     hero: Maulers.Tidus
-                },
-                {
-                    hero: Maulers.Kren
                 }
             ]
         }

@@ -53,7 +53,7 @@ function UsageDashboardTierList({ usageResult, filters }: UsageDashboardTierList
       const description = <Tooltip label={tier.description} aria-label={tier.description}>
         <InfoIcon/>
       </Tooltip>
-      return <HeroCategory key={tier.name} name={tier.name} tags={description} heroes={tier.heroes} colorScheme={tier.variant}/>});
+      return <HeroCategory key={tier.name} name={tier.name} adornment={description} heroes={tier.heroes} colorScheme={tier.variant}/>});
 
   return (
     <VStack direction="column" alignItems='stretch'>

@@ -1,8 +1,9 @@
 
-import { Divider, Heading, HStack, Link, Tag, VStack } from "@chakra-ui/react";
+import { Divider, Flex, Heading, HStack, Link, Spacer, Tag, Text, VStack } from "@chakra-ui/react";
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import compositions from "../../data/compositions/campaign-arty";
 
 type CompositionDetailsProps = {
   composition: Composition;
@@ -30,10 +31,14 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
           <Heading size="md">{composition.name}</Heading>
           {tags}
         </HStack>
-
-        <Link href={composition.link} isExternal>
-          by {composition.author} <ExternalLinkIcon mx="2px" />
-        </Link>
+          
+        <Flex direction="row" width="100%" alignItems="end">
+          <Link href={composition.link} isExternal>
+            by {composition.author} <ExternalLinkIcon mx="2px" />
+          </Link>
+          <Spacer/>
+          <Text fontSize='xs'><span>update : </span>{composition.updateDate}</Text>
+        </Flex>
 
         {heroCategories}
       </VStack>

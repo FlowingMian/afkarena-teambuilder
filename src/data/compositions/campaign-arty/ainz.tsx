@@ -1,18 +1,19 @@
-import { Composition} from '../../model/compositions';
-import * as Role from '../characteristics/role';
-import * as Lightbearers from '../heroes/lightbearers'
-import * as Maulers from '../heroes/maulers'
-import * as Wilders from '../heroes/wilders'
-import * as Graveborns from '../heroes/graveborns'
-import * as Celestials from '../heroes/celestials'
-import * as Hypogeans from '../heroes/hypogeans'
-import * as Dimensional from '../heroes/dimensionals'
+import { Composition} from '../../../model/compositions';
+import * as Role from '../../characteristics/role';
+import * as Lightbearers from '../../heroes/lightbearers'
+import * as Maulers from '../../heroes/maulers'
+import * as Wilders from '../../heroes/wilders'
+import * as Graveborns from '../../heroes/graveborns'
+import * as Celestials from '../../heroes/celestials'
+import * as Hypogeans from '../../heroes/hypogeans'
+import * as Dimensional from '../../heroes/dimensionals'
 
 const ainz: Composition = {
-    id: 'AINZ',
+    id: 'CAMPAIGN-ARTY-AINZ',
     name: 'Ainz',
     tags: ['Campaign'],
     author: 'Arty and Alpattex',
+    updateDate: 'Feb 2021',
     link: 'https://preview.redd.it/hr5fmgcmpvf61.png?width=2480&format=png&auto=webp&s=278b881910336d4796b82cbf173ae2a0eeb376ca',
     coreHeroes: {
         role: Role.Core,

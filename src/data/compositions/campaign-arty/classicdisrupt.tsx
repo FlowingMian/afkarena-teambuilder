@@ -1,18 +1,19 @@
-import { Composition} from '../../model/compositions';
-import * as Role from '../characteristics/role';
-import * as Lightbearers from '../heroes/lightbearers'
-import * as Maulers from '../heroes/maulers'
-import * as Wilders from '../heroes/wilders'
-import * as Graveborns from '../heroes/graveborns'
-import * as Celestials from '../heroes/celestials'
-import * as Hypogeans from '../heroes/hypogeans'
-import * as Dimensional from '../heroes/dimensionals'
+import { Composition} from '../../../model/compositions';
+import * as Role from '../../characteristics/role';
+import * as Lightbearers from '../../heroes/lightbearers'
+import * as Maulers from '../../heroes/maulers'
+import * as Wilders from '../../heroes/wilders'
+import * as Graveborns from '../../heroes/graveborns'
+import * as Celestials from '../../heroes/celestials'
+import * as Hypogeans from '../../heroes/hypogeans'
+import * as Dimensional from '../../heroes/dimensionals'
 
 const classicDisrupt: Composition = {
-    id: 'CLASSICDISRUPT',
+    id: 'CAMPAIGN-ARTY-CLASSICDISRUPT',
     name: 'Classic Disrupt',
     tags: ['Campaign'],
     author: 'Arty and Alpattex',
+    updateDate: 'Feb 2021',
     link: 'https://preview.redd.it/2zry5krcpvf61.png?width=2480&format=png&auto=webp&s=8ed960ef8b38604202f3b6fadefb66b674cc7927',
     coreHeroes: {
         role: Role.Core,

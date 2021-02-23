@@ -20,8 +20,9 @@ export interface Composition {
   id: string;
   name: string;
   tags: Array<string>;
-  author?: string,
-  link?: string;
+  author: string,
+  updateDate?: string;
+  link: string;
   coreHeroes: CompositionRole;
   flexHeroes: Array<CompositionRole>;
 }

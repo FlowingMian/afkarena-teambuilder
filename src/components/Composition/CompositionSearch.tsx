@@ -62,16 +62,17 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
     <VStack wrap='wrap' spacing={1}>
         <InputGroup width='100%'>
             <InputLeftElement pointerEvents="none"children={searching ? <Spinner size="sm"/> :<SearchIcon />}/>
-            <Input placeholder="Search..." value={query} onChange={event => setQuery(event.target.value)}/>
+            <Input placeholder="Search name, tag, hero, role,..." value={query} onChange={event => setQuery(event.target.value)}/>
         </InputGroup>
         <Alert status="info" fontSize="xs" p={1}>
             <AlertIcon />
             <HStack wrap='wrap'>
                 <Text>Syntax examples :</Text> 
-                <Button variant="link" size='sm' onClick={() => setQuery('portal')}>portal</Button>
-                <Button variant="link" size='sm' onClick={() => setQuery('Eironn-core')}>Eironn-core</Button>
-                <Button variant="link" size='sm' onClick={() => setQuery('Rowan-flex Ezio')}>Rowan-flex Ezio</Button>
-                <Button variant="link" size='sm' onClick={() => setQuery('Silas-enabler')}>Silas-enabler</Button>
+                <Button variant="link" size='xs' onClick={() => setQuery('Portal')}>Portal</Button>
+                <Button variant="link" size='xs' onClick={() => setQuery('Campaign')}>Campaign</Button>
+                <Button variant="link" size='xs' onClick={() => setQuery('Eironn-core')}>Eironn-core</Button>
+                <Button variant="link" size='xs' onClick={() => setQuery('Rowan-flex Ezio')}>Rowan-flex Ezio</Button>
+                <Button variant="link" size='xs' onClick={() => setQuery('Silas-enabler')}>Silas-enabler</Button>
             </HStack>
         </Alert>
     </VStack>

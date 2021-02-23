@@ -1,18 +1,19 @@
-import { Composition} from '../../model/compositions';
-import * as Role from '../characteristics/role';
-import * as Lightbearers from '../heroes/lightbearers'
-import * as Maulers from '../heroes/maulers'
-import * as Wilders from '../heroes/wilders'
-import * as Graveborns from '../heroes/graveborns'
-import * as Celestials from '../heroes/celestials'
-import * as Hypogeans from '../heroes/hypogeans'
-import * as Dimensional from '../heroes/dimensionals'
+import { Composition} from '../../../model/compositions';
+import * as Role from '../../characteristics/role';
+import * as Lightbearers from '../../heroes/lightbearers'
+import * as Maulers from '../../heroes/maulers'
+import * as Wilders from '../../heroes/wilders'
+import * as Graveborns from '../../heroes/graveborns'
+import * as Celestials from '../../heroes/celestials'
+import * as Hypogeans from '../../heroes/hypogeans'
+import * as Dimensional from '../../heroes/dimensionals'
 
 const izold: Composition = {
-    id: 'IZOLD',
+    id: 'CAMPAIGN-ARTY-IZOLD',
     name: 'Izold Cheese',
     tags: ['Campaign'],
     author: 'Arty and Alpattex',
+    updateDate: 'Feb 2021',
     link: 'https://preview.redd.it/b2mwfsnjpvf61.png?width=2480&format=png&auto=webp&s=81b8b688fea318a708c25a21e2db72537fcac540',
     coreHeroes: {
         role: Role.Core,

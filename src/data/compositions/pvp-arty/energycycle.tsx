@@ -1,19 +1,20 @@
-import { Composition} from '../../model/compositions';
-import * as Role from '../characteristics/role';
-import * as Lightbearers from '../heroes/lightbearers'
-import * as Maulers from '../heroes/maulers'
-import * as Wilders from '../heroes/wilders'
-import * as Graveborns from '../heroes/graveborns'
-import * as Celestials from '../heroes/celestials'
-import * as Hypogeans from '../heroes/hypogeans'
-import * as Dimensional from '../heroes/dimensionals'
+import { Composition} from '../../../model/compositions';
+import * as Role from '../../characteristics/role';
+import * as Lightbearers from '../../heroes/lightbearers'
+import * as Maulers from '../../heroes/maulers'
+import * as Wilders from '../../heroes/wilders'
+import * as Graveborns from '../../heroes/graveborns'
+import * as Celestials from '../../heroes/celestials'
+import * as Hypogeans from '../../heroes/hypogeans'
+import * as Dimensional from '../../heroes/dimensionals'
 
 const energycycle: Composition = {
-    id: 'ENERGYCYCLE',
+    id: 'PVP-ARTY-ENERGYCYCLE',
     name: 'Energy Cycle',
-    tags: ['Campaign'],
+    tags: ['PvP'],
     author: 'Arty and Alpattex',
-    link: 'https://preview.redd.it/6yl5v7cgpvf61.png?width=2480&format=png&auto=webp&s=e7fec64234605d3f0c338995ef112d97385d343e',
+    updateDate: 'Jan 2021',
+    link: 'https://www.reddit.com/r/afkarena/comments/kvuvsp/comprehensive_pvp_guide_by_arty_alpattex/',
     coreHeroes: {
         role: Role.Core,
         heroes : [
@@ -39,19 +40,7 @@ const energycycle: Composition = {
                     hero: Celestials.Alna
                 },
                 {
-                    hero: Lightbearers.Fawkes
-                },
-                {
                     hero: Graveborns.Ferael
-                },
-                {
-                    hero: Hypogeans.Khazard
-                },
-                {
-                    hero: Hypogeans.Mehira
-                },
-                {
-                    hero: Hypogeans.Mezoth
                 },
                 {
                     hero: Graveborns.Oden
@@ -74,20 +63,11 @@ const energycycle: Composition = {
                     hero: Lightbearers.Rosaline
                 },
                 {
-                    hero: Celestials.Wukong
-                },
-                {
-                    hero: Dimensional.Ezio
-                },
-                {
                     hero: Dimensional.Ainz
                 },
                 {
                     hero: Dimensional.Albedo
                 },
-                {
-                    hero: Graveborns.Daimon
-                }
             ]
         },
         {
@@ -95,9 +75,6 @@ const energycycle: Composition = {
             heroes : [
                 {
                     hero: Celestials.Talene
-                },
-                {
-                    hero: Graveborns.Silas
                 },
                 {
                     hero: Wilders.Saurus
