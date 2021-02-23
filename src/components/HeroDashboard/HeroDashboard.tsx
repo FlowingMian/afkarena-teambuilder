@@ -1,11 +1,12 @@
 import { Stack, StackDirection, useBreakpointValue, VStack } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
 import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 import HeroDetailList from '../Hero/HeroDetailList';
+import { setPageTitle } from '../utils';
 
 
 function HeroDashboard() {
@@ -17,6 +18,10 @@ function HeroDashboard() {
     setSelectedHeroes(heroes.filter(h => filters.accept(h)));
   }
   
+  useEffect(() => {
+    setPageTitle("Heroes");
+  }, []);
+
   return (<>
     <VStack {...BoxControlsStyle} alignItems='stretch'>
       <HeroCharactericticsSelector onChange={filterHeroes}/>

@@ -1,5 +1,5 @@
 import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Link, ListItem, UnorderedList, VStack } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
 import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
 import CompositionSelector from '../Composition/CompositionSelector';
@@ -8,6 +8,7 @@ import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
 import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
 import { sendViewItems } from '../../useTracking';
+import { setPageTitle } from '../utils';
 
 function UsageDashboard() {
 
@@ -49,6 +50,10 @@ function UsageDashboard() {
       ));
   }
   
+  useEffect(() => {
+    setPageTitle("Usages");
+  }, []);
+
   return (<>
       <VStack {...BoxControlsStyle} alignItems='stretch'>
         <CompositionSelector onValidate={calculateHeroUsage}/>

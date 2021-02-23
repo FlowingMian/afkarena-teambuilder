@@ -1,11 +1,12 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Heading, Link, Text, VStack } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import compositions from '../../data/compositions';
 import { Composition } from '../../model/compositions';
 import { BoxControlsStyle, BoxResultsStyle, BoxQuoteStyle } from '../../theme/styles';
 import CompositionDetailsList from '../Composition/CompositionDetailsList';
 import CompositionSearch from '../Composition/CompositionSearch';
+import { setPageTitle } from '../utils';
 
 
 function CompositionDashboard() {
@@ -15,6 +16,10 @@ function CompositionDashboard() {
   function filterCompositions(compositionIds:Array<string>) {
     setSelectedCompositions(compositions.filter(c => compositionIds.includes(c.id)));
   }
+
+  useEffect(() => {
+    setPageTitle("Compositions");
+  }, []);
 
   return (
     <div>
