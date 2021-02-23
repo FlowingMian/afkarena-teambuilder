@@ -30,7 +30,7 @@ export const useTracking = (
         return
       }
 
-      window.gtag('config', trackingId, { page_path: location.pathname })
+      window.gtag('config', trackingId, { page_path: location.pathname, 'anonymize_ip': true })
     })
 
     return unlisten

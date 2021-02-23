@@ -1,5 +1,6 @@
 import { Center, Heading, HStack, Image } from '@chakra-ui/react'
 import { NavLink } from "react-router-dom"
+import { staticDomain } from '../../data/static';
 import colors from '../../theme/colors';
 
 const NavbarStyle = {
@@ -18,7 +19,7 @@ function Navbar() {
   return (
     <HStack {...NavbarStyle} alignItems='stretch'>
       <Center>
-        <Image src='./afkarena-logo.png' height='2rem'/>
+        <Image src={`${staticDomain}afkarena-logo.png`} height='2rem'/>
         <NavLink activeStyle={NavlinkActiveStyle} to="/usages">
           <Heading size="xs" p='3'>Usages</Heading>
         </NavLink>
