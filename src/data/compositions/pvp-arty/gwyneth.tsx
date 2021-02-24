@@ -14,7 +14,10 @@ const gwyneth: Composition = {
     tags: ['PvP'],
     author: 'Arty and Alpattex',
     updateDate: 'Jan 2021',
-    link: 'https://www.reddit.com/r/afkarena/comments/kvuvsp/comprehensive_pvp_guide_by_arty_alpattex/',
+    links: [{
+        label: 'Guide', 
+        url: 'https://www.reddit.com/r/afkarena/comments/kvuvsp/comprehensive_pvp_guide_by_arty_alpattex/',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

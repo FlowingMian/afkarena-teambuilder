@@ -1,4 +1,5 @@
 import { Role } from './characteristics';
+import { Link } from './common';
 import { Hero } from './heroes';
 
 export enum Artifact {}
@@ -22,7 +23,7 @@ export interface Composition {
   tags: Array<string>;
   author: string,
   updateDate?: string;
-  link: string;
+  links: Array<Link>;
   coreHeroes: CompositionRole;
   flexHeroes: Array<CompositionRole>;
 }

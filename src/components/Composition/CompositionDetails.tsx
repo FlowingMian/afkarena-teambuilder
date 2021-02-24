@@ -1,15 +1,16 @@
 
-import { Divider, Flex, Heading, HStack, Link, Spacer, Tag, Text, VStack } from "@chakra-ui/react";
+import { Divider, Flex, Heading, HStack, Spacer, Tag, Text, VStack, StackDirection, useBreakpointValue, Stack } from "@chakra-ui/react";
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import compositions from "../../data/compositions/campaign-arty";
+import LinkPopover from "../Common/LinkPopover";
 
 type CompositionDetailsProps = {
   composition: Composition;
 };
 
 function CompositionDetails({ composition }: CompositionDetailsProps) {
+  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' })
+  
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
   
   const heroCategories = [composition.coreHeroes]
@@ -33,10 +34,13 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
         </HStack>
           
         <Flex direction="row" width="100%" alignItems="end">
-          <Link href={composition.link} isExternal>
-            by {composition.author} <ExternalLinkIcon mx="2px" />
-          </Link>
+          <Stack direction={stackDirection} alignItems="start">
+            <Text>by {composition.author}</Text>
+            <LinkPopover links={composition.links}/>
+          </Stack>
+
           <Spacer/>
+
           <Text fontSize='xs'><span>update : </span>{composition.updateDate}</Text>
         </Flex>
 

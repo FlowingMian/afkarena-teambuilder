@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const daimon: Composition = {
     id: 'CAMPAIGN-ARTY-DAIMON',
     name: 'Daimon',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/rxppdwdwpvf61.png?width=2480&format=png&auto=webp&s=5a5c8a18b9e7f0416faa6c89cc2fa5a07e3d3aaf',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/rxppdwdwpvf61.png?width=2480&format=png&auto=webp&s=5a5c8a18b9e7f0416faa6c89cc2fa5a07e3d3aaf',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

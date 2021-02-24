@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const thoran: Composition = {
     id: 'CAMPAIGN-ARTY-THORAN',
     name: 'Thoran Cheese',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/off9mrptovf61.png?width=2480&format=png&auto=webp&s=70ee0f40dfcff132968b2f83663d0fc7cbb6b78e',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/off9mrptovf61.png?width=2480&format=png&auto=webp&s=70ee0f40dfcff132968b2f83663d0fc7cbb6b78e',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

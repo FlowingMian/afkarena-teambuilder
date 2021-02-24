@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const portalParty: Composition = {
     id: 'CAMPAIGN-ARTY-PORTALPARTY',
     name: 'Portal Party',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/ztq7tqk8qvf61.png?width=2480&format=png&auto=webp&s=98197ae512438746fd0c035cbd7d3929af0545e5',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/ztq7tqk8qvf61.png?width=2480&format=png&auto=webp&s=98197ae512438746fd0c035cbd7d3929af0545e5',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

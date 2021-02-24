@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const energycycle: Composition = {
     id: 'CAMPAIGN-ARTY-ENERGYCYCLE',
     name: 'Energy Cycle',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/6yl5v7cgpvf61.png?width=2480&format=png&auto=webp&s=e7fec64234605d3f0c338995ef112d97385d343e',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/6yl5v7cgpvf61.png?width=2480&format=png&auto=webp&s=e7fec64234605d3f0c338995ef112d97385d343e',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

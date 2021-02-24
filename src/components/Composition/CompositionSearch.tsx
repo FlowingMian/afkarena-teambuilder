@@ -1,5 +1,5 @@
-import { Alert, AlertIcon, Button, HStack, Input, InputGroup, InputLeftElement, Spinner, Text, VStack } from "@chakra-ui/react";
-import { SearchIcon } from '@chakra-ui/icons'
+import { Alert, AlertIcon, Button, HStack, IconButton, Input, InputGroup, InputLeftElement, InputRightElement, Spinner, Text, VStack } from "@chakra-ui/react";
+import { CloseIcon, SearchIcon } from '@chakra-ui/icons'
 import { Composition } from "../../model/compositions";
 import { useEffect, useState } from "react";
 import compositions from "../../data/compositions";
@@ -63,13 +63,16 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
         <InputGroup width='100%'>
             <InputLeftElement pointerEvents="none"children={searching ? <Spinner size="sm"/> :<SearchIcon />}/>
             <Input placeholder="Search name, tag, hero, role,..." value={query} onChange={event => setQuery(event.target.value)}/>
+            <InputRightElement>
+                <IconButton variant="ghost" size="xs" icon={<CloseIcon/>} aria-label="Clear" onClick={() => setQuery('')} />
+            </InputRightElement>
         </InputGroup>
         <Alert status="info" fontSize="xs" p={1}>
             <AlertIcon />
             <HStack wrap='wrap'>
                 <Text>Syntax examples :</Text> 
                 <Button variant="link" size='xs' onClick={() => setQuery('Portal')}>Portal</Button>
-                <Button variant="link" size='xs' onClick={() => setQuery('Campaign')}>Campaign</Button>
+                <Button variant="link" size='xs' onClick={() => setQuery('PvE')}>PvE</Button>
                 <Button variant="link" size='xs' onClick={() => setQuery('Eironn-core')}>Eironn-core</Button>
                 <Button variant="link" size='xs' onClick={() => setQuery('Rowan-flex Ezio')}>Rowan-flex Ezio</Button>
                 <Button variant="link" size='xs' onClick={() => setQuery('Silas-enabler')}>Silas-enabler</Button>

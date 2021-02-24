@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const fivePull: Composition = {
     id: 'CAMPAIGN-ARTY-FIVEPULL',
     name: 'Five Pull',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/r76h5rospvf61.png?width=2480&format=png&auto=webp&s=a3aa8d52b603bc16fc1c070132fa7f57020f2ff2',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/r76h5rospvf61.png?width=2480&format=png&auto=webp&s=a3aa8d52b603bc16fc1c070132fa7f57020f2ff2',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

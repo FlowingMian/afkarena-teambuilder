@@ -11,10 +11,17 @@ import * as Dimensional from '../../heroes/dimensionals'
 const gwyneth: Composition = {
     id: 'CAMPAIGN-ARTY-GWYNETH',
     name: 'Gwyneth',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/ebk7twc5pvf61.png?width=2480&format=png&auto=webp&s=22b7c89af7774ca96de906580e999d99baf380cf',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/ebk7twc5pvf61.png?width=2480&format=png&auto=webp&s=22b7c89af7774ca96de906580e999d99baf380cf',
+    },
+    {
+        label: 'Update', 
+        url: 'https://www.reddit.com/r/afkarena/comments/le0b0p/visual_guide_to_end_game_pve_formations_by_arty/gnua3c8/?context=3',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [
@@ -108,7 +115,13 @@ const gwyneth: Composition = {
                 },
                 {
                     hero: Maulers.Tidus
-                }
+                },
+                {
+                    hero: Wilders.Tasi
+                },
+                {
+                    hero: Dimensional.Nakoruru
+                },
             ]
         }
     ]

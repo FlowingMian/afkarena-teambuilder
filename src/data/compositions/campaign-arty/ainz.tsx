@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const ainz: Composition = {
     id: 'CAMPAIGN-ARTY-AINZ',
     name: 'Ainz',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/hr5fmgcmpvf61.png?width=2480&format=png&auto=webp&s=278b881910336d4796b82cbf173ae2a0eeb376ca',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/hr5fmgcmpvf61.png?width=2480&format=png&auto=webp&s=278b881910336d4796b82cbf173ae2a0eeb376ca',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

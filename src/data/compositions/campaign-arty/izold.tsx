@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const izold: Composition = {
     id: 'CAMPAIGN-ARTY-IZOLD',
     name: 'Izold Cheese',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/b2mwfsnjpvf61.png?width=2480&format=png&auto=webp&s=81b8b688fea318a708c25a21e2db72537fcac540',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/b2mwfsnjpvf61.png?width=2480&format=png&auto=webp&s=81b8b688fea318a708c25a21e2db72537fcac540',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [

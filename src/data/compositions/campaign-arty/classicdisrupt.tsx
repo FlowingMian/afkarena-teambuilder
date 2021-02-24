@@ -11,10 +11,13 @@ import * as Dimensional from '../../heroes/dimensionals'
 const classicDisrupt: Composition = {
     id: 'CAMPAIGN-ARTY-CLASSICDISRUPT',
     name: 'Classic Disrupt',
-    tags: ['Campaign'],
+    tags: ['PvE'],
     author: 'Arty and Alpattex',
     updateDate: 'Feb 2021',
-    link: 'https://preview.redd.it/2zry5krcpvf61.png?width=2480&format=png&auto=webp&s=8ed960ef8b38604202f3b6fadefb66b674cc7927',
+    links: [{
+        label: 'Guide', 
+        url: 'https://preview.redd.it/2zry5krcpvf61.png?width=2480&format=png&auto=webp&s=8ed960ef8b38604202f3b6fadefb66b674cc7927',
+    }],
     coreHeroes: {
         role: Role.Core,
         heroes : [
