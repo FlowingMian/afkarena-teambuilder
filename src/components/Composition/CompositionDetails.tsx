@@ -3,6 +3,7 @@ import { Divider, Flex, Heading, HStack, Spacer, Tag, Text, VStack, StackDirecti
 import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
 import LinkPopover from "../Common/LinkPopover";
+import colors from "../../theme/colors";
 
 type CompositionDetailsProps = {
   composition: Composition;
@@ -16,7 +17,7 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
   const heroCategories = [composition.coreHeroes]
     .map(cr => <>
       <Divider/>
-      <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} colorScheme='#FFD700'/>
+      <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} colorScheme={colors.gold[500]}/>
       </>
     );
   heroCategories.push(...composition.flexHeroes

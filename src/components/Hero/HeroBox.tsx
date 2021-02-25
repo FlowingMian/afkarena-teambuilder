@@ -1,16 +1,31 @@
-import { Box, Image, Tooltip } from "@chakra-ui/react"
+import { CheckIcon, LockIcon } from "@chakra-ui/icons";
+import { Box, Center, Image, position, Tooltip } from "@chakra-ui/react"
+import { State } from "../../model/common";
 import { Hero } from "../../model/heroes";
 
 type HeroBoxProps = {
   hero: Hero;
+  state?: State;
 };
 
 const SIZE_SM:string = '2.5rem';
 const SIZE:string = '3rem';
 
-function HeroBox({ hero }: HeroBoxProps) {
+function HeroBox({ hero, state = State.AVAILABLE }: HeroBoxProps) {
+  const overlayStyle = {
+    position: 'absolute' as 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'rgba(0, 0, 0, 0.75)',
+  };
+
   return (
-    <Box backgroundColor='rgba(0, 0, 0, 0.125)' width={[SIZE_SM, SIZE]} height={[SIZE_SM, SIZE]} >
+    <Box boxSize={[SIZE_SM, SIZE]}
+      position="relative"
+      boxSizing="border-box"
+      >
       <Tooltip label={hero.name} aria-label={hero.name}>
         <Image 
           src={hero.portraitURL}
@@ -18,6 +33,12 @@ function HeroBox({ hero }: HeroBoxProps) {
           boxSize={[SIZE_SM, SIZE]}
         />
       </Tooltip>
+      {state === State.SELECTED && <Center {...overlayStyle}>
+        <CheckIcon color="green.300" boxSize={['80%','80%']}/>
+      </Center>}
+      {state === State.DISABLED && <Center {...overlayStyle}>
+
+      </Center>}
     </Box>
   );
 }

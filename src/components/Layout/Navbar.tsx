@@ -23,6 +23,9 @@ function Navbar() {
         <NavLink activeStyle={NavlinkActiveStyle} to="/usages">
           <Heading size="xs" p='3'>Usages</Heading>
         </NavLink>
+        <NavLink activeStyle={NavlinkActiveStyle} to="/multifight">
+          <Heading size="xs" p='3'>Multifight</Heading>
+        </NavLink>
         <NavLink activeStyle={NavlinkActiveStyle} to="/heroes" >
           <Heading size="xs" p='3'>Heroes</Heading>
         </NavLink>
