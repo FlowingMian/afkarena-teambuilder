@@ -26,6 +26,10 @@ export function generateOpenSlot():Hero {
   }
 };
 
+export function isOpenSlot(hero:Hero) {
+  return hero.name === "Open slot";
+}
+
 
 const heroes: Array<Hero> = [
   ...lightbearers,

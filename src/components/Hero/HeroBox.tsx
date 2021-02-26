@@ -6,12 +6,13 @@ import { Hero } from "../../model/heroes";
 type HeroBoxProps = {
   hero: Hero;
   state?: State;
+  onClick?:(hero:Hero) => void;
 };
 
 const SIZE_SM:string = '2.5rem';
 const SIZE:string = '3rem';
 
-function HeroBox({ hero, state = State.AVAILABLE }: HeroBoxProps) {
+function HeroBox({ hero, state = State.AVAILABLE, onClick }: HeroBoxProps) {
   const overlayStyle = {
     position: 'absolute' as 'absolute',
     top: 0,
@@ -25,6 +26,8 @@ function HeroBox({ hero, state = State.AVAILABLE }: HeroBoxProps) {
     <Box boxSize={[SIZE_SM, SIZE]}
       position="relative"
       boxSizing="border-box"
+      onClick={onClick && (() => onClick(hero))}
+      cursor={onClick && "pointer"}
       >
       <Tooltip label={hero.name} aria-label={hero.name}>
         <Image 

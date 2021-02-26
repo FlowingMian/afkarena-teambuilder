@@ -1,10 +1,9 @@
-import { VStack } from "@chakra-ui/react"
-import { Composition } from "../../model/compositions";
-import heroes from "../../data/heroes";
 import { useEffect, useState } from "react";
-import { Hero } from "../../model/heroes";
+import { Accordion, VStack } from "@chakra-ui/react"
+import { Composition } from "../../model/compositions";
 import CompositionBuilder from "./CompositionBuilder";
 import HeroList from "../Hero/HeroList";
+import heroes from "../../data/heroes";
 import { State } from "../../model/common";
 
 type MultifightDashboardResultsProps = {
@@ -35,10 +34,12 @@ function MultifightDashboardResults({ compositions }: MultifightDashboardResults
     })));
   }
 
-  const compositionBuilders = compositions.map(c => <CompositionBuilder key={c.id} composition={c} onChange={(v) => onChange(c.id, v)}/>)
+  const compositionBuilders = compositions.map(c => <CompositionBuilder key={c.id} composition={c} heroStates={heroStates} onChange={(v) => onChange(c.id, v)}/>)
   return (
       <VStack>
-        {compositionBuilders}
+        <Accordion allowToggle={true} allowMultiple={true}>
+          {compositionBuilders}
+        </Accordion>
         <HeroList heroes={heroes} heroStates={heroStates}/>
       </VStack>
   );
