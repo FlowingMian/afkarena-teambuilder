@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const backlineDisrupt: Composition = {
     id: 'PVP-ARTY-DISRUPT',
@@ -22,10 +22,10 @@ const backlineDisrupt: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Graveborns.Nara
+                ...Graveborns.Nara
             },
             {
-                hero: Celestials.Athalia
+                ...Celestials.Athalia
             }
         ]
     },
@@ -34,13 +34,14 @@ const backlineDisrupt: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Celestials.Orthos,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Hypogeans.Mezoth
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Graveborns.Oden
                 },
             ]
         },
@@ -48,16 +49,18 @@ const backlineDisrupt: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Thoran
+                    ...Celestials.Wukong,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Wukong
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Graveborns.Daimon
+                    ...Graveborns.Daimon
                 }
             ]
         },
@@ -65,7 +68,7 @@ const backlineDisrupt: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 },
             ]
         }

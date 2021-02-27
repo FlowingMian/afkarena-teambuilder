@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const burst: Composition = {
     id: 'PVP-ARTY-BURST',
@@ -22,10 +22,10 @@ const burst: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Wilders.Eironn
+                ...Wilders.Eironn
             },
             {
-                hero: Wilders.Lyca
+                ...Wilders.Lyca
             }
         ]
     },
@@ -34,48 +34,51 @@ const burst: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Lightbearers.Gwyneth
+                    ...Wilders.Lorsan,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Kaz
+                    ...Hypogeans.Zolrath,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Lorsan
+                    ...Lightbearers.Gwyneth
                 },
                 {
-                    hero: Hypogeans.Lucretia
+                    ...Wilders.Kaz
                 },
                 {
-                    hero: Maulers.Safiya,
+                    ...Hypogeans.Lucretia
                 },
                 {
-                    hero: Wilders.Saurus
+                    ...Maulers.Safiya,
                 },
                 {
-                    hero: Hypogeans.Zolrath
-                }
+                    ...Wilders.Saurus
+                },
             ]
         },
         {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Zaphrael,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Maulers.Tidus
+                    ...Maulers.Tidus
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Lightbearers.Estrilda
+                    ...Lightbearers.Estrilda
                 },
                 {
-                    hero: Maulers.Skriath
+                    ...Maulers.Skriath
                 }
             ]
 
@@ -84,7 +87,7 @@ const burst: Composition = {
             role: Role.Tankiness,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Alna
                 } 
             ]
         }

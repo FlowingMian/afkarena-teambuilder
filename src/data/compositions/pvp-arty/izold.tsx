@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const izold: Composition = {
     id: 'PVP-ARTY-IZOLD',
@@ -22,7 +22,7 @@ const izold: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Graveborns.Izold
+                ...Graveborns.Izold
             }
         ]
     },
@@ -31,19 +31,20 @@ const izold: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Wilders.Nemora
+                    ...Wilders.Nemora
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Oden
                 }
             ]
         },
@@ -51,25 +52,27 @@ const izold: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Graveborns.Silas,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Silas
+                    ...Lightbearers.Hendrik,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Pippa
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Wilders.Pippa
                 },
                 {
-                    hero:Graveborns.Grezhul
+                    ...Graveborns.Grezhul
                 },
                 {
-                    hero:Wilders.Lorsan
+                    ...Wilders.Lorsan
                 },
                 {
-                    hero:Celestials.Talene
+                    ...Celestials.Talene
                 }
             ]
 

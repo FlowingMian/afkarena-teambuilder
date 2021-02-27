@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const stall: Composition = {
     id: 'CAMPAIGN-ARTY-STALL',
@@ -22,10 +22,10 @@ const stall: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Celestials.Talene
+                ...Celestials.Talene
             },
             {
-                hero: Celestials.Flora
+                ...Celestials.Flora
             }
         ]
     },
@@ -34,28 +34,29 @@ const stall: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Celestials.Athalia
+                    ...Celestials.Zaphrael,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Graveborns.Theowyn
+                    ...Graveborns.Theowyn
                 },
                 {
-                    hero: Wilders.Saurus
+                    ...Wilders.Saurus
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael
                 },
                 {
-                    hero: Dimensional.Ezio,
+                    ...Dimensionals.Ezio,
                 },
                 {
-                    hero: Graveborns.Daimon
+                    ...Graveborns.Daimon
                 }
             ]
         },
@@ -63,31 +64,36 @@ const stall: Composition = {
             role: Role.Tankiness,
             heroes : [
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Hypogeans.Mezoth,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Thoran
+                    ...Celestials.Orthos,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Dimensional.Arthur
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Maulers.Brutus
+                    ...Dimensionals.Arthur
                 },
                 {
-                    hero: Wilders.Gorvo
+                    ...Maulers.Brutus
                 },
                 {
-                    hero: Graveborns.Grezhul
+                    ...Wilders.Gorvo
                 },
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Graveborns.Grezhul
                 },
                 {
-                    hero: Maulers.Skreg
+                    ...Lightbearers.Hendrik
+                },
+                {
+                    ...Maulers.Skreg
                 }
             ]
 
@@ -96,19 +102,19 @@ const stall: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Oden
                 },
                 {
-                    hero: Wilders.Pippa
+                    ...Wilders.Pippa
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 } ,
                 {
-                    hero: Graveborns.Silas
+                    ...Graveborns.Silas
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi
                 } 
             ]
         }

@@ -1,91 +1,85 @@
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Divider, HStack, Tag } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { generateOpenSlot, isOpenSlot } from "../../data/heroes";
+import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Divider, Heading, HStack, Tag, VStack } from "@chakra-ui/react";
+import { generateOpenSpot, isOpenSpot } from "../../model/heroes";
 import { State } from "../../model/common";
-import { Composition } from "../../model/compositions";
-import { Hero } from "../../model/heroes";
-import colors from "../../theme/colors";
+import { Composition, HeroRequirement } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
 import HeroList from "../Hero/HeroList";
+import { Fragment } from "react";
+
 type CompositionBuilderProps = {
   composition: Composition;
-  heroStates: Map<string, State>;
-  onChange:(value: Array<string>) => void;
+  heroSelection: Map<HeroRequirement, string>;
+  onChange:(value: Array<HeroRequirement>) => void;
 };
 
-function CompositionBuilder({ composition, heroStates, onChange }: CompositionBuilderProps) {
-  useEffect(() => {
-    updateFlexHeroes(getDefaultFlexHeroes());
-  }, [composition]);
+function CompositionBuilder({ composition, heroSelection, onChange }: CompositionBuilderProps) {
 
-  const coreHeroes = composition.coreHeroes.heroes.map(hr => hr.hero);
-  const [flexHeroes, setFlexHeroes] = useState<Array<Hero>>(getDefaultFlexHeroes());
-
-  function getDefaultFlexHeroes() {
-      const defaultFlex = [];
-      while (defaultFlex.length < 5 - composition.coreHeroes.heroes.length) {
-        defaultFlex.push(generateOpenSlot())
-      }
-      return defaultFlex;
+  const coreHeroes = composition.coreHeroes.heroes;
+  const flexHeroes = Array.from(heroSelection.entries())
+    .filter(([h, cId]) => cId === composition.id)
+    .filter(([h, cId]) => !coreHeroes.includes(h))
+    .map(([h, cId]) => h);
+  while (flexHeroes.length < 5 - composition.coreHeroes.heroes.length) {
+    flexHeroes.push(generateOpenSpot())
   }
 
-  function updateFlexHeroes(flexHeroes:Array<Hero>) {
-    setFlexHeroes(flexHeroes);
-    onChange([...coreHeroes, ...flexHeroes].map(h => h.id));
-  }
-
-  function onHeroClick(hero:Hero) {
-    // Do nothing if not available
-    if (!flexHeroes.includes(hero) && heroStates.get(hero.id) ) {
+  function onHeroClick(e:React.MouseEvent, hero:HeroRequirement) {
+    // Allow clicking through open spot to toggle Accordion
+    if (isOpenSpot(hero)) {
       return;
     }
 
-    const t = [];
+    e.preventDefault();
+
+    // Do nothing if managed by another composition
+    if (Array.from(heroSelection.entries()).find(([h, c]) => h.id === hero.id && c !== composition.id)) {
+      return;
+    }
+
+    const t:Array<HeroRequirement> = [...coreHeroes];
     let done = false;
     for (let i = 0; i < flexHeroes.length; i++) {
       const h = flexHeroes[i];
-      if (h.id === hero.id) { // Remove already selected hero
+      if (h === hero) { // Remove already selected hero
         done = true;
       }
-      else if (!done && isOpenSlot(h)) { // Replace first open slot
+      else if (!done && isOpenSpot(h)) { // Replace first open spot
         t.push(hero);
         done = true;
       }
-      else { // Keep other selected hero
+      else if (!isOpenSpot(h)){ // Keep other selected hero
         t.push(h);
       }
     }
-    // if removed, fill open slots
-    while (t.length < 5 - composition.coreHeroes.heroes.length) {
-      console.log('fill');
-      t.push(generateOpenSlot())
-    }
-    updateFlexHeroes(t);
+    onChange(t);
   }
 
+  
+  const heroStates = new Map(Array.from(heroSelection, ([h, cId]) => [h.id, cId === composition.id ? State.SELECTED : State.LOCKED]));
   const heroCategories = composition.flexHeroes
-    .map(cr => <>
-      <Divider/>
-      <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} heroStates={heroStates} onClick={onHeroClick}/>
-      </>
-    );
+    .map(cr => {
+      return <Fragment key={"f_"+cr.role.id}>
+        <Divider key={"d_"+cr.role.id}/>
+        <HeroCategory key={"h_"+cr.role.id} name={cr.role.name} heroes={cr.heroes} heroStates={heroStates} onClick={onHeroClick}/>
+      </Fragment>
+    });
   
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
   return (
-      <AccordionItem>
+      <AccordionItem key={composition.id}>
         <h2>
           <AccordionButton>
-            <HStack>
-              <Box width="18rem">
-                <HeroCategory name={composition.name} tags={tags} heroes={coreHeroes} colorScheme={colors.gold[500]}/>
-              </Box>
-              <Box width="13rem">
-                <HeroList heroes={flexHeroes}/>
-              </Box>
-            </HStack>
+            <VStack flex="1" alignItems='start'>
+              <HStack>
+                <Heading size="xs">{composition.name}</Heading>
+                {tags}
+              </HStack>
+              <HeroList heroes={[...coreHeroes, ...flexHeroes]} onClick={onHeroClick}/>
+            </VStack>
+            <AccordionIcon />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>
+        <AccordionPanel p={1}>
           {heroCategories}
         </AccordionPanel>
       </AccordionItem>

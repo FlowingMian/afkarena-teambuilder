@@ -20,7 +20,7 @@ function LinkPopover({ links }: LinkPopoverProps) {
   }
   else {
     const linkElements = links.map(link => (
-      <ListItem>
+      <ListItem key={link.label}>
         <Link href={link.url} isExternal>
           {link.label} <ExternalLinkIcon mx="2px" />
         </Link>

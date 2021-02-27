@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const lucretia: Composition = {
     id: 'CAMPAIGN-ARTY-LUCRETIA',
@@ -22,7 +22,7 @@ const lucretia: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Hypogeans.Lucretia
+                ...Hypogeans.Lucretia
             }
         ]
     },
@@ -31,45 +31,49 @@ const lucretia: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Maulers.Brutus,
+                    recommended: true
                 },
                 {
-                    hero: Maulers.Brutus
+                    ...Maulers.Skriath,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Wilders.Eironn,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Maulers.Skreg
+                    ...Hypogeans.Mezoth
                 },
                 {
-                    hero: Maulers.Anoki
+                    ...Lightbearers.Hendrik
                 },
                 {
-                    hero: Maulers.Skriath
+                    ...Maulers.Skreg
                 },
                 {
-                    hero: Wilders.Eironn
-                }
+                    ...Maulers.Anoki
+                },
+                
             ]
         },
         {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Wilders.Lyca
                 },
                 {
-                    hero: Lightbearers.Raine
+                    ...Lightbearers.Raine
                 }
             ]
         },
@@ -77,19 +81,16 @@ const lucretia: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 },
                 {
-                    hero: Wilders.Lorsan
+                    ...Wilders.Lorsan
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael
                 },
                 {
-                    hero: Wilders.Eironn
-                },
-                {
-                    hero: Celestials.Athalia
+                    ...Celestials.Athalia
                 }
             ]
         },
@@ -97,19 +98,20 @@ const lucretia: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Graveborns.Nara
+                    ...Maulers.Safiya,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Maulers.Safiya
+                    ...Celestials.Zaphrael
                 },
                 {
-                    hero: Wilders.Pippa
+                    ...Wilders.Pippa
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Oden
                 }
             ]
         }

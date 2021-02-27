@@ -7,4 +7,5 @@ export enum State {
     AVAILABLE,
     DISABLED,
     SELECTED,
+    LOCKED,
 }

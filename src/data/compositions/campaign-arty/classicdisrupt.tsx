@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const classicDisrupt: Composition = {
     id: 'CAMPAIGN-ARTY-CLASSICDISRUPT',
@@ -22,7 +22,7 @@ const classicDisrupt: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Graveborns.Ferael
+                ...Graveborns.Ferael
             }
         ]
     },
@@ -31,51 +31,55 @@ const classicDisrupt: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Wilders.Gorvo
+                    ...Hypogeans.Mezoth,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Khazard
+                    ...Celestials.Orthos,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Wilders.Tasi,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Wilders.Gorvo
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Hypogeans.Khazard
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Wilders.Tasi
-                }
+                    ...Graveborns.Oden
+                },
             ]
         },
         {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Graveborns.Thoran
+                    ...Celestials.Zaphrael,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Wukong
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Celestials.Flora
+                    ...Celestials.Wukong
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Flora
                 },
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Graveborns.Daimon
+                    ...Graveborns.Daimon
                 }
             ]
         },
@@ -83,16 +87,16 @@ const classicDisrupt: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 },
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 },
                 {
-                    hero: Graveborns.Silas
+                    ...Graveborns.Silas
                 }
             ]
         }

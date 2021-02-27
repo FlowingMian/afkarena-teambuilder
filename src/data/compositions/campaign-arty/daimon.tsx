@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const daimon: Composition = {
     id: 'CAMPAIGN-ARTY-DAIMON',
@@ -22,7 +22,7 @@ const daimon: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Graveborns.Daimon,
+                ...Graveborns.Daimon,
                 requiredSignature: 20,
                 requiredFurniture: 3
             }
@@ -33,25 +33,26 @@ const daimon: Composition = {
             role: Role.Tankiness,
             heroes : [
                 {
-                    hero: Graveborns.Thoran
+                    ...Celestials.Alna,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Hypogeans.Mezoth
                 },
                 {
-                    hero: Celestials.Wukong
+                    ...Lightbearers.Hendrik
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Wukong
                 },
                 {
-                    hero: Dimensional.Arthur
+                    ...Dimensionals.Arthur
                 },
                 {
-                    hero: Maulers.Brutus
+                    ...Maulers.Brutus
                 }
             ]
         },
@@ -59,40 +60,42 @@ const daimon: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Celestials.Zaphrael
+                    ...Wilders.Tasi,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Graveborns.Ferael,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Celestials.Zaphrael
                 },
                 {
-                    hero: Wilders.Eironn
+                    ...Celestials.Orthos
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Wilders.Eironn
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Wilders.Gorvo
+                    ...Wilders.Gorvo
                 },
                 {
-                    hero: Hypogeans.Khazard
+                    ...Hypogeans.Khazard
                 },
                 {
-                    hero: Hypogeans.Mehira
+                    ...Hypogeans.Mehira
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Wilders.Nemora
+                    ...Wilders.Nemora
                 }
             ]
         },
@@ -100,25 +103,25 @@ const daimon: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 },
                 {
-                    hero: Celestials.ElijahLailah
+                    ...Celestials.ElijahLailah
                 },
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Dimensional.Ezio
+                    ...Dimensionals.Ezio
                 },
                 {
-                    hero: Wilders.Lorsan
+                    ...Wilders.Lorsan
                 } ,
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Oden
                 },
                 {
-                    hero: Graveborns.Silas
+                    ...Graveborns.Silas
                 } 
             ]
         },
@@ -126,13 +129,14 @@ const daimon: Composition = {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Wilders.Lyca
+                    ...Lightbearers.Rowan,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Wilders.Lyca
                 },
                 {
-                    hero: Lightbearers.Raine
+                    ...Lightbearers.Raine
                 }
             ]
         }

@@ -2,14 +2,15 @@ import { Hero } from "../../model/heroes";
 import { Heading, HStack, VStack } from "@chakra-ui/react";
 import HeroList from "./HeroList";
 import { State } from "../../model/common";
+import { HeroRequirement } from "../../model/compositions";
 
 type HeroCategoryProps = {
   name: string;
-  heroes: Array<Hero>;
+  heroes: Array<Hero | HeroRequirement>;
   heroStates?: Map<string, State>;
   tags?: React.ReactNode | Array<React.ReactNode>; 
   adornment?: React.ReactNode; 
-  onClick?:(hero:Hero) => void;
+  onClick?:(e:React.MouseEvent, hero:Hero | HeroRequirement) => void;
   colorScheme?: string
 };
 

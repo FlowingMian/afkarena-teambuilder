@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const skregInvade: Composition = {
     id: 'PVP-ARTY-INVADE',
@@ -22,13 +22,13 @@ const skregInvade: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Maulers.Skreg
+                ...Maulers.Skreg
             },
             {
-                hero: Maulers.Tidus
+                ...Maulers.Tidus
             },
             {
-                hero: Maulers.Numisu
+                ...Maulers.Numisu
             }
         ]
     },
@@ -37,28 +37,29 @@ const skregInvade: Composition = {
             role: Role.Damage,
             heroes : [
                 {
-                    hero: Celestials.Athalia
+                    ...Maulers.Satrana,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Kelthur
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Maulers.Antandra
+                    ...Graveborns.Kelthur
                 },
                 {
-                    hero: Maulers.Satrana
+                    ...Maulers.Antandra
                 },
                 {
-                    hero: Maulers.Drez
+                    ...Maulers.Drez
                 },
                 {
-                    hero: Maulers.Brutus
+                    ...Maulers.Brutus
                 },
                 {
-                    hero: Maulers.Vurk
+                    ...Maulers.Vurk
                 },
                 {
-                    hero: Maulers.Kren
+                    ...Maulers.Kren
                 },
             ]
         },
@@ -66,7 +67,7 @@ const skregInvade: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Lightbearers.Cecilia
+                    ...Lightbearers.Cecilia
                 },
             ]
         },
@@ -74,13 +75,14 @@ const skregInvade: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Maulers.Anoki
+                    ...Maulers.Safiya,
+                    recommended: true
                 },
                 {
-                    hero: Maulers.Skriath
+                    ...Maulers.Anoki
                 },
                 {
-                    hero: Maulers.Safiya
+                    ...Maulers.Skriath
                 },
             ]
 

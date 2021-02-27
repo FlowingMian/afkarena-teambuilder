@@ -32,11 +32,11 @@ function CompositionDashboard() {
             isExternal>
           /u/aimb defined on Reddit <ExternalLinkIcon mx="2px" />
           </Link>
-          <Box {...BoxQuoteStyle}>
-            <b>“Core”</b> here refers to function, namely working as a whole towards a <b>specific “win condition.”</b> <br/>
-            <b>“Flex”</b> here refers to heroes that capitalize on the strengths, compensate for weaknesses, or modify win conditions more directly.
-          </Box>
         </Text>
+        <Box {...BoxQuoteStyle}>
+          <b>“Core”</b> here refers to function, namely working as a whole towards a <b>specific “win condition.”</b> <br/>
+          <b>“Flex”</b> here refers to heroes that capitalize on the strengths, compensate for weaknesses, or modify win conditions more directly.
+        </Box>
       </VStack>
       <VStack {...BoxResultsStyle} alignItems='stretch'>
           <Heading size='md'>{selectedCompositions.length} compositions</Heading>

@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const gwyneth: Composition = {
     id: 'PVP-ARTY-GWYNETH',
@@ -22,13 +22,13 @@ const gwyneth: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Lightbearers.Gwyneth
+                ...Lightbearers.Gwyneth
             },
             {
-                hero: Lightbearers.Rosaline
+                ...Lightbearers.Rosaline
             },
             {
-                hero: Dimensional.Arthur
+                ...Dimensionals.Arthur
             }
         ]
     },
@@ -37,13 +37,13 @@ const gwyneth: Composition = {
             role: Role.Buffer,
             heroes : [
                 {
-                    hero: Wilders.Lorsan
+                    ...Wilders.Lorsan
                 },
                 {
-                    hero: Hypogeans.Mortas
+                    ...Hypogeans.Mortas
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Wilders.Lyca
                 },
             ]
         },
@@ -51,7 +51,7 @@ const gwyneth: Composition = {
             role: Role.Protection,
             heroes : [
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Lightbearers.Hendrik
                 },
             ]
         },
@@ -59,10 +59,11 @@ const gwyneth: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.JOKER
+                    ...Dimensionals.JOKER
                 }
             ]
 
@@ -71,13 +72,14 @@ const gwyneth: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Lightbearers.Estrilda
+                    ...Lightbearers.Estrilda,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Fawkes
+                    ...Lightbearers.Fawkes
                 },
                 {
-                    hero: Maulers.Tidus
+                    ...Maulers.Tidus
                 },
             ]
         }

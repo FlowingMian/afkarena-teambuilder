@@ -4,6 +4,7 @@ import { Composition } from "../../model/compositions";
 import HeroCategory from "../Hero/HeroCategory";
 import LinkPopover from "../Common/LinkPopover";
 import colors from "../../theme/colors";
+import { Fragment } from "react";
 
 type CompositionDetailsProps = {
   composition: Composition;
@@ -15,17 +16,18 @@ function CompositionDetails({ composition }: CompositionDetailsProps) {
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
   
   const heroCategories = [composition.coreHeroes]
-    .map(cr => <>
-      <Divider/>
-      <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} colorScheme={colors.gold[500]}/>
-      </>
+    .map(cr => <Fragment key={"f_"+cr.role.id}>
+        <Divider key={"d_"+cr.role.id}/>
+        <HeroCategory key={"h_"+cr.role.id} name={cr.role.name} heroes={cr.heroes} colorScheme={colors.gold[500]}/>
+      </Fragment>
     );
   heroCategories.push(...composition.flexHeroes
-    .map(cr => <>
-      <Divider/>
-      <HeroCategory key={cr.role.id} name={cr.role.name} heroes={cr.heroes.map(hr => hr.hero)} />
-      </>
-    ));
+    .map(cr => {
+      return <Fragment key={"f_"+cr.role.id}>
+          <Divider key={"d_"+cr.role.id}/>
+          <HeroCategory key={"h_"+cr.role.id} name={cr.role.name} heroes={cr.heroes}/>
+        </Fragment>
+    }));
 
   return (
       <VStack alignItems='start'>

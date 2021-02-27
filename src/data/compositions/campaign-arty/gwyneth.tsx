@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const gwyneth: Composition = {
     id: 'CAMPAIGN-ARTY-GWYNETH',
@@ -26,10 +26,10 @@ const gwyneth: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Lightbearers.Gwyneth
+                ...Lightbearers.Gwyneth
             },
             {
-                hero: Dimensional.Arthur
+                ...Dimensionals.Arthur
             }
         ]
     },
@@ -38,28 +38,29 @@ const gwyneth: Composition = {
             role: Role.Buffer,
             heroes : [
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Lightbearers.Rosaline,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Lorsan
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Lightbearers.Rosaline
+                    ...Wilders.Lorsan
                 },
                 {
-                    hero: Maulers.Numisu
+                    ...Maulers.Numisu
                 },
                 {
-                    hero: Hypogeans.Mortas
+                    ...Hypogeans.Mortas
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Wilders.Lyca
                 },
                 {
-                    hero: Lightbearers.Belinda
+                    ...Lightbearers.Belinda
                 },
                 {
-                    hero: Lightbearers.Raine
+                    ...Lightbearers.Raine
                 }
             ]
         },
@@ -67,16 +68,17 @@ const gwyneth: Composition = {
             role: Role.Protection,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Alna,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Lightbearers.Hendrik
                 },
                 {
-                    hero: Maulers.Brutus
+                    ...Maulers.Brutus
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 },
             ]
         },
@@ -84,16 +86,17 @@ const gwyneth: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Cecilia
+                    ...Lightbearers.Cecilia
                 },
                 {
-                    hero: Dimensional.JOKER
+                    ...Dimensionals.JOKER
                 },
                 {
-                    hero: Maulers.Kren
+                    ...Maulers.Kren
                 }
             ]
 
@@ -102,25 +105,25 @@ const gwyneth: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Lightbearers.Estrilda
+                    ...Lightbearers.Estrilda
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Zaphrael
                 },
                 {
-                    hero: Dimensional.Ukyo
+                    ...Dimensionals.Ukyo
                 },
                 {
-                    hero: Hypogeans.Khazard
+                    ...Hypogeans.Khazard
                 },
                 {
-                    hero: Maulers.Tidus
+                    ...Maulers.Tidus
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Dimensionals.Nakoruru
                 },
             ]
         }

@@ -13,8 +13,8 @@ type CompositionSearchProps = {
 
 function CompositionSearch({onChange}:CompositionSearchProps) {
     const history = useHistory();
-    const location = useLocation();
-    const queryParam = qs.parse(location.search, {ignoreQueryPrefix: true}).query as string || "";
+    const { search, pathname } = useLocation();
+    const queryParam = qs.parse(search, {ignoreQueryPrefix: true}).query as string || "";
     
     const [query, setQuery] = useState(queryParam);
     const [searching, setSearching] = useState(false);
@@ -23,7 +23,7 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
 
     function startSearch() {
         if (queryParam) {
-            history.replace(location.pathname);
+            history.replace(pathname);
         }
         setSearching(true)
         const timeOutId = setTimeout(runSearch, 300);
@@ -43,13 +43,13 @@ function CompositionSearch({onChange}:CompositionSearchProps) {
         let terms = [...composition.name.split(' ')];
         [composition.coreHeroes].forEach(c => {
             terms.push(...c.heroes
-                .flatMap(h => [h.hero.name, ...h.hero.nickname])
+                .flatMap(h => [h.name, ...h.nickname])
                 .flatMap(n => [n, n + '-' + c.role.name])
             );
         });
         [...composition.flexHeroes].forEach(c => {
             terms.push(...c.heroes
-                .flatMap(h => [h.hero.name, ...h.hero.nickname])
+                .flatMap(h => [h.name, ...h.nickname])
                 .flatMap(n => [n, n + '-' + c.role.name, n + '-flex']));
         });
         terms.push(...composition.tags);

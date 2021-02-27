@@ -11,7 +11,7 @@ function CompositionBox({ composition }: CompositionBoxProps) {
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
   const adornment = <CompositionModal composition={composition} />
   return (
-    <HeroCategory name={composition.name} tags={tags} adornment={adornment} heroes={composition.coreHeroes.heroes.map(hr => hr.hero)} />
+    <HeroCategory name={composition.name} tags={tags} adornment={adornment} heroes={composition.coreHeroes.heroes} />
   );
 }
 
