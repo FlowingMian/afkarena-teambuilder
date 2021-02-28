@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const ainz: Composition = {
     id: 'CAMPAIGN-ARTY-AINZ',
@@ -22,7 +22,8 @@ const ainz: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Dimensional.Ainz
+                ...Dimensionals.Ainz,
+                recommended: true
             }
         ]
     },
@@ -31,37 +32,38 @@ const ainz: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Celestials.Zaphrael,
+                    recommended: true
                 },
                 {
-                    hero: Maulers.Brutus
+                    ...Lightbearers.Hendrik
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Maulers.Brutus
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Dimensional.Ukyo
+                    ...Dimensionals.Ukyo
                 },
                 {
-                    hero: Graveborns.Thoran
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Hypogeans.Mezoth
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael
                 }
             ]
         },
@@ -69,32 +71,34 @@ const ainz: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Dimensional.Ezio
+                    ...Dimensionals.Arthur,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.JOKER
+                    ...Dimensionals.Albedo,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Dimensionals.Ezio
                 },
                 {
-                    hero: Maulers.Numisu
+                    ...Dimensionals.JOKER
                 },
                 {
-                    hero: Dimensional.QUEEN
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Graveborns.Silas
+                    ...Maulers.Numisu
                 },
                 {
-                    hero: Celestials.Talene
+                    ...Dimensionals.QUEEN
                 },
                 {
-                    hero: Dimensional.Arthur
+                    ...Graveborns.Silas
                 },
                 {
-                    hero: Dimensional.Albedo
-                }
+                    ...Celestials.Talene
+                },
             ]
 
         },
@@ -102,19 +106,20 @@ const ainz: Composition = {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Hypogeans.Mortas
+                    ...Lightbearers.Rowan,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Hypogeans.Mortas
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Wilders.Lyca
                 },
                 {
-                    hero: Lightbearers.Raine
+                    ...Lightbearers.Raine
                 }
             ]
         }

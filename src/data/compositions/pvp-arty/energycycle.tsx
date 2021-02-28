@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const energycycle: Composition = {
     id: 'PVP-ARTY-ENERGYCYCLE',
@@ -22,13 +22,16 @@ const energycycle: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Celestials.ElijahLailah
+                ...Celestials.ElijahLailah,
+                recommended: true
             },
             {
-                hero: Lightbearers.Rowan
+                ...Lightbearers.Rowan,
+                recommended: true
             },
             {
-                hero: Hypogeans.Ezizh
+                ...Hypogeans.Ezizh,
+                recommended: true
             }
         ]
     },
@@ -37,16 +40,17 @@ const energycycle: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Oden
                 }
             ]
         },
@@ -54,22 +58,22 @@ const energycycle: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Celestials.Athalia
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Hypogeans.Lucretia
+                    ...Hypogeans.Lucretia
                 },
                 {
-                    hero: Hypogeans.Mortas
+                    ...Hypogeans.Mortas
                 },
                 {
-                    hero: Lightbearers.Rosaline
+                    ...Lightbearers.Rosaline
                 },
                 {
-                    hero: Dimensional.Ainz
+                    ...Dimensionals.Ainz
                 },
                 {
-                    hero: Dimensional.Albedo
+                    ...Dimensionals.Albedo
                 },
             ]
         },
@@ -77,10 +81,11 @@ const energycycle: Composition = {
             role: Role.Sustain,
             heroes : [
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Saurus
+                    ...Wilders.Saurus
                 }
             ]
         }

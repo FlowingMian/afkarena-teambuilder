@@ -13,7 +13,7 @@ type UsageDashboardResultsProps = {
 function UsageDashboardResults({ usageResult, filters }: UsageDashboardResultsProps) {
   const filteredHeroes = usageResult.heroUsageResults
   .filter(ur => !filters || filters.accept(ur.hero))
-  .map(hr => hr.hero);
+  .map(ur => ur.hero);
 
   return (<>
       

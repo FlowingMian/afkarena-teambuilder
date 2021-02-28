@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const dimensional: Composition = {
     id: 'PVP-ARTY-DIMENSIONAL',
@@ -22,13 +22,16 @@ const dimensional: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Dimensional.Ainz
+                ...Dimensionals.Ainz,
+                recommended: true
             },
             {
-                hero: Dimensional.Albedo
+                ...Dimensionals.Albedo,
+                recommended: true
             },
             {
-                hero: Dimensional.Arthur
+                ...Dimensionals.Arthur,
+                recommended: true
             },
         ]
     },
@@ -37,13 +40,14 @@ const dimensional: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Dimensional.Ukyo
+                    ...Wilders.Tasi,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Dimensionals.Ukyo
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Celestials.Orthos
                 },
             ]
         },
@@ -51,25 +55,26 @@ const dimensional: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Dimensional.Ezio
+                    ...Celestials.Talene,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.JOKER
+                    ...Dimensionals.Ezio
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Dimensionals.JOKER
                 },
                 {
-                    hero: Maulers.Numisu
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Dimensional.QUEEN
+                    ...Maulers.Numisu
                 },
                 {
-                    hero: Celestials.Talene
+                    ...Dimensionals.QUEEN
                 },
                 {
-                    hero: Celestials.Flora
+                    ...Celestials.Flora
                 },
             ]
 
@@ -78,13 +83,13 @@ const dimensional: Composition = {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Hypogeans.Mortas
+                    ...Hypogeans.Mortas
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Hypogeans.Ezizh
                 },
             ]
         }

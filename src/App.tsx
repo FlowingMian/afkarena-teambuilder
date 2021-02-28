@@ -9,6 +9,7 @@ import UsageDashboard from "./components/UsageDashboard/UsageDashboard";
 import HeroDashboard from "./components/HeroDashboard/HeroDashboard";
 import CompositionDashboard from "./components/CompositionDashboard/CompositionDashboard";
 import { useTracking } from "./useTracking";
+import MultifightDashboard from "./components/MultifightDashboard/MultifightDashboard";
 
 function App() {
   useTracking('G-F2JQMGEBKC');
@@ -18,6 +19,9 @@ function App() {
     <Switch>
       <Route path="/usages">
         <UsageDashboard/>
+      </Route>
+      <Route path="/multifight">
+        <MultifightDashboard/>
       </Route>
       <Route path="/heroes">
         <HeroDashboard/>

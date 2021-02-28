@@ -56,8 +56,8 @@ export const Albedo: Hero = {
 
 export const Ainz: Hero = {
   id: "AINZ",
-  name: "Ainz Ooal Gown",
-  nickname: ["Ainz"],
+  name: "Ainz",
+  nickname: ["Ainz Ooal Gown"],
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
   class: Class.Mage,

@@ -27,12 +27,12 @@ function UsageDashboard() {
 
     selectedCompositions.forEach((c) => {
         c.coreHeroes.heroes.forEach((hr) => {
-          const heroUsageResult = heroUsagesResults.get(hr.hero.id) as HeroUsageDashboardResult;
+          const heroUsageResult = heroUsagesResults.get(hr.id) as HeroUsageDashboardResult;
           heroUsageResult.coreCompositions.push(c);
         });
         c.flexHeroes.forEach((cc) => {
           cc.heroes.forEach((hr) => {
-            const heroUsageResult = heroUsagesResults.get(hr.hero.id) as HeroUsageDashboardResult;
+            const heroUsageResult = heroUsagesResults.get(hr.id) as HeroUsageDashboardResult;
             heroUsageResult.flexCompositions.set(c, cc.role);
           });
         });

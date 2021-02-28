@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const thoran: Composition = {
     id: 'CAMPAIGN-ARTY-THORAN',
@@ -22,7 +22,8 @@ const thoran: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Graveborns.Thoran
+                ...Graveborns.Thoran,
+                recommended: true
             }
         ]
     },
@@ -31,25 +32,26 @@ const thoran: Composition = {
             role: Role.Displacement,
             heroes : [
                 {
-                    hero: Wilders.Eironn
+                    ...Graveborns.Kelthur,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Wilders.Eironn
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Wilders.Pippa
+                    ...Graveborns.Oden
                 },
                 {
-                    hero: Graveborns.Kelthur
+                    ...Wilders.Pippa
                 },
                 {
-                    hero: Maulers.Skriath
+                    ...Maulers.Skriath
                 },
             ]
         },
@@ -57,16 +59,17 @@ const thoran: Composition = {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Lightbearers.Rowan
+                    ...Wilders.Lyca,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Lightbearers.Rowan
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Lightbearers.Raine
+                    ...Lightbearers.Raine
                 }
             ]
         },
@@ -74,14 +77,16 @@ const thoran: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Celestials.Flora
+                    ...Wilders.Lorsan,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Lorsan
-                }
+                    ...Celestials.Flora
+                },
             ]
 
         }

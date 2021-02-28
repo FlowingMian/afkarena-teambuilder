@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const izold: Composition = {
     id: 'CAMPAIGN-ARTY-IZOLD',
@@ -22,7 +22,8 @@ const izold: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Graveborns.Izold
+                ...Graveborns.Izold,
+                recommended: true
             }
         ]
     },
@@ -31,31 +32,32 @@ const izold: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Lightbearers.Fawkes
+                    ...Graveborns.Ferael,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Lightbearers.Fawkes
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Graveborns.Nara
                 },
                 {
-                    hero: Wilders.Nemora
+                    ...Wilders.Nemora
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Zaphrael
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Graveborns.Oden
                 }
             ]
         },
@@ -63,34 +65,36 @@ const izold: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Graveborns.Silas,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Thoran
+                    ...Lightbearers.Hendrik,
+                    recommended: true
                 },
                 {
-                    hero: Maulers.Skreg
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Graveborns.Silas
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Wilders.Pippa
+                    ...Maulers.Skreg
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Wilders.Pippa
                 },
                 {
-                    hero: Lightbearers.Hendrik
+                    ...Hypogeans.Mezoth
                 },
                 {
-                    hero: Wilders.Gorvo
+                    ...Wilders.Gorvo
                 },
                 {
-                    hero:Maulers.Brutus
+                    ...Maulers.Brutus
                 },
                 {
-                    hero:Graveborns.Grezhul
+                    ...Graveborns.Grezhul
                 }
             ]
 
@@ -99,19 +103,20 @@ const izold: Composition = {
             role: Role.Energy,
             heroes : [
                 {
-                    hero: Hypogeans.Mortas
+                    ...Lightbearers.Rowan,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Hypogeans.Mortas
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Wilders.Lyca
                 },
                 {
-                    hero: Lightbearers.Raine
+                    ...Lightbearers.Raine
                 }
             ]
         }

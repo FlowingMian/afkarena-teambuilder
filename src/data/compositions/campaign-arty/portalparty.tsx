@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const portalParty: Composition = {
     id: 'CAMPAIGN-ARTY-PORTALPARTY',
@@ -22,12 +22,14 @@ const portalParty: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Wilders.Pippa,
+                ...Wilders.Pippa,
+                recommended: true,
                 requiredSignature: 20,
                 requiredFurniture: 3
             },
             {
-                hero: Graveborns.Oden,
+                ...Graveborns.Oden,
+                recommended: true,
                 requiredSignature: 20,
                 requiredFurniture: 3
             }
@@ -38,34 +40,34 @@ const portalParty: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Graveborns.Ferael
+                    ...Graveborns.Ferael
                 },
                 {
-                    hero: Graveborns.Izold
+                    ...Graveborns.Izold
                 },
                 {
-                    hero: Dimensional.JOKER
+                    ...Dimensionals.JOKER
                 },
                 {
-                    hero: Hypogeans.Lucretia
+                    ...Hypogeans.Lucretia
                 },
                 {
-                    hero: Maulers.Satrana
+                    ...Maulers.Satrana
                 },
                 {
-                    hero: Wilders.Saurus
+                    ...Wilders.Saurus
                 },
                 {
-                    hero: Graveborns.Torne
+                    ...Graveborns.Torne
                 },
                 {
-                    hero: Celestials.Wukong,
+                    ...Celestials.Wukong,
                 },
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Maulers.Drez
+                    ...Maulers.Drez
                 }
             ]
         },
@@ -73,26 +75,29 @@ const portalParty: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Celestials.Zaphrael
+                    ...Wilders.Gorvo,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Wilders.Nemora,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Gorvo
+                    ...Wilders.Tasi,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Celestials.Zaphrael
                 },
                 {
-                    hero: Wilders.Nemora
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Wilders.Tasi
-                }
+                    ...Celestials.Orthos
+                },
             ]
 
         },
@@ -100,31 +105,31 @@ const portalParty: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 } ,
                 {
-                    hero: Graveborns.Thoran
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Maulers.Anoki
+                    ...Maulers.Anoki
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Celestials.Athalia
                 } ,
                 {
-                    hero: Lightbearers.Cecilia
+                    ...Lightbearers.Cecilia
                 },
                 {
-                    hero: Maulers.Skreg
+                    ...Maulers.Skreg
                 },
                 {
-                    hero: Graveborns.Theowyn
+                    ...Graveborns.Theowyn
                 }
             ]
         }

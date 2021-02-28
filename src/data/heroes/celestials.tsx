@@ -16,8 +16,8 @@ export const Athalia: Hero = {
 
 export const ElijahLailah: Hero = {
   id: "ELIJAHLAILAH",
-  name: "Elijah & Lailah",
-  nickname: ["Twins"],
+  name: "Twins",
+  nickname: ["Elijah", "Lailah"],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Support,
@@ -46,7 +46,7 @@ export const Talene: Hero = {
 
 export const Wukong: Hero = {
   id: "WUKONG",
-  name: "Wu Kong",
+  name: "WuKong",
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
