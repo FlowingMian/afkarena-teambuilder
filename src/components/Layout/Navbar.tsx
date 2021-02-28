@@ -1,5 +1,5 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text } from '@chakra-ui/react'
+import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text, Tag } from '@chakra-ui/react'
 import { useEffect } from 'react';
 import { NavLink, useLocation } from "react-router-dom"
 import { staticDomain } from '../../data/static';
@@ -24,7 +24,8 @@ const navLinks = [
   },
   {
     path: '/multifight',
-    label: 'Multifight'
+    label: 'Multifight',
+    new: true,
   },
   {
     path: '/heroes',
@@ -46,7 +47,10 @@ function Navbar() {
 
   const navLinkElements = navLinks.map(nl => 
     <NavLink key={nl.label} activeStyle={NavlinkActiveStyle} to={nl.path}>
-      <Heading size="xs" p='3'>{nl.label}</Heading>
+      <HStack>
+        <Heading size="xs" p='3'>{nl.label}</Heading>
+        {nl.new && <Tag colorScheme="red">New feature!</Tag>}
+      </HStack>
     </NavLink>
   );
 

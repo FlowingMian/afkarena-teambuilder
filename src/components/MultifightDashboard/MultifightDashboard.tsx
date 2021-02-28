@@ -37,7 +37,7 @@ function MultifightDashboard() {
               </HStack>
               <UnorderedList>
                 <ListItem>Start by <b>selecting some compositions </b><Link href='/compositions'>(Click for more information)</Link></ListItem>
-                <ListItem>You can then <b>fill remaining spots</b> with heroes sill availble.</ListItem>
+                <ListItem>You can then <b>fill remaining spots</b> with heroes still availble.</ListItem>
               </UnorderedList>
           </Alert>
         </Center>}
