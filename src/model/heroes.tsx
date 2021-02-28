@@ -9,3 +9,24 @@ export interface Hero {
   class: Class;
   portraitURL?: string
 }
+
+const fakeCharacterictic = {
+  id: '',
+  name: '',
+};
+
+let openSpotId = 0;
+export function generateOpenSpot():Hero {
+  return {
+    id: "OPEN-SPOT-"+(openSpotId++),
+    name: "Open spot",
+    nickname: [],
+    faction: fakeCharacterictic,
+    attribute:fakeCharacterictic,
+    class: fakeCharacterictic
+  }
+};
+
+export function isOpenSpot(hero:Hero) {
+  return hero.name === "Open spot";
+}

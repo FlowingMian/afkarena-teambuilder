@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const khazardWilders: Composition = {
     id: 'CAMPAIGN-ARTY-KHAZARDWILDERS',
@@ -22,14 +22,9 @@ const khazardWilders: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Hypogeans.Khazard
+                ...Hypogeans.Khazard,
+                recommended: true
             },
-            {
-                hero: Wilders.Tasi
-            },
-            {
-                hero: Hypogeans.Mehira
-            }
         ]
     },
     flexHeroes: [
@@ -37,63 +32,74 @@ const khazardWilders: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Celestials.Wukong
+                    ...Wilders.Saurus,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Solise
+                    ...Celestials.Wukong
                 },
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Wilders.Solise
                 },
                 {
-                    hero: Wilders.Eironn
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Graveborns.Ferael
+                    ...Wilders.Eironn
                 },
                 {
-                    hero: Celestials.Flora
+                    ...Graveborns.Ferael
                 },
                 {
-                    hero: Dimensional.JOKER,
+                    ...Celestials.Flora
                 },
                 {
-                    hero: Wilders.Kaz
+                    ...Dimensionals.JOKER,
                 },
                 {
-                    hero: Wilders.Lyca
+                    ...Wilders.Kaz
                 },
                 {
-                    hero: Graveborns.Oden
+                    ...Wilders.Lyca
                 },
                 {
-                    hero: Wilders.Saurus
-                }
+                    ...Graveborns.Oden
+                },
             ]
         },
         {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Wilders.Pippa
+                    ...Wilders.Tasi,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Hypogeans.Mehira,
+                    recommended: true
                 },
                 {
-                    hero: Wilders.Gorvo
+                    ...Wilders.Pippa,
+                    recommended: true
                 },
                 {
-                    hero: Dimensional.Nakoruru
+                    ...Wilders.Gorvo,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Nara
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Wilders.Nemora
+                    ...Dimensionals.Nakoruru
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Graveborns.Nara
+                },
+                {
+                    ...Wilders.Nemora
+                },
+                {
+                    ...Celestials.Orthos
                 }
             ]
 
@@ -102,25 +108,25 @@ const khazardWilders: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Celestials.ElijahLailah
+                    ...Celestials.ElijahLailah
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Hypogeans.Ezizh
+                    ...Hypogeans.Ezizh
                 },
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Hypogeans.Mezoth
                 },
                 {
-                    hero: Lightbearers.Rowan
+                    ...Lightbearers.Rowan
                 },
                 {
-                    hero: Graveborns.Silas
+                    ...Graveborns.Silas
                 },
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 }
             ]
         }

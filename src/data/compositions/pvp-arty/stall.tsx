@@ -6,7 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const stall: Composition = {
     id: 'PVP-ARTY-STALL',
@@ -22,10 +22,12 @@ const stall: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Celestials.Talene
+                ...Celestials.Talene,
+                recommended: true
             },
             {
-                hero: Celestials.Flora
+                ...Celestials.Flora,
+                recommended: true
             }
         ]
     },
@@ -34,10 +36,10 @@ const stall: Composition = {
             role: Role.SubDPS,
             heroes : [
                 {
-                    hero: Wilders.Saurus
+                    ...Wilders.Saurus
                 },
                 {
-                    hero: Dimensional.Ezio,
+                    ...Dimensionals.Ezio,
                 },
             ]
         },
@@ -45,25 +47,28 @@ const stall: Composition = {
             role: Role.Tankiness,
             heroes : [
                 {
-                    hero: Hypogeans.Mezoth
+                    ...Hypogeans.Mezoth,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Celestials.Orthos,
+                    recommended: true
                 },
                 {
-                    hero: Graveborns.Thoran
+                    ...Maulers.Skreg,
+                    recommended: true
                 },
                 {
-                    hero: Celestials.Alna
+                    ...Graveborns.Thoran
                 },
                 {
-                    hero: Maulers.Skreg
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Celestials.Wukong,
+                    ...Celestials.Wukong,
                 },
                 {
-                    hero: Dimensional.Albedo,
+                    ...Dimensionals.Albedo,
                 },
             ]
 
@@ -72,10 +77,10 @@ const stall: Composition = {
             role: Role.Utility,
             heroes : [
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi
                 },
                 {
-                    hero: Wilders.Nemora
+                    ...Wilders.Nemora
                 } 
             ]
         }

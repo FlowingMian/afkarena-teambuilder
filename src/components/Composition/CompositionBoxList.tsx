@@ -2,7 +2,6 @@ import { Composition } from "../../model/compositions";
 import { HStack, VStack } from '@chakra-ui/react'
 import { Role } from "../../model/characteristics";
 import CompositionBox from "./CompositionBox";
-import CharactericticBox from "../Characteristic/CharacteristicBox";
 import CharacteristicTable from "../Characteristic/CharacteristicTable";
 
 type CompositionBoxListProps = {

@@ -6,8 +6,7 @@ import * as Wilders from '../../heroes/wilders'
 import * as Graveborns from '../../heroes/graveborns'
 import * as Celestials from '../../heroes/celestials'
 import * as Hypogeans from '../../heroes/hypogeans'
-import * as Dimensional from '../../heroes/dimensionals'
-import { Wilder } from '../../characteristics/factions';
+import * as Dimensionals from '../../heroes/dimensionals'
 
 const skregInvade: Composition = {
     id: 'CAMPAIGN-ARTY-SKREGINVADE',
@@ -27,7 +26,8 @@ const skregInvade: Composition = {
         role: Role.Core,
         heroes : [
             {
-                hero: Maulers.Skreg
+                ...Maulers.Skreg,
+                recommended: true
             }
         ]
     },
@@ -36,34 +36,40 @@ const skregInvade: Composition = {
             role: Role.Damage,
             heroes : [
                 {
-                    hero: Maulers.Antandra
+                    ...Maulers.Tidus,
+                    recommended: true
                 },
                 {
-                    hero: Hypogeans.Zolrath
+                    ...Maulers.Satrana,
+                    recommended: true
                 },
                 {
-                    hero: Maulers.Tidus
+                    ...Maulers.Kren,
+                    recommended: true
                 },
                 {
-                    hero: Lightbearers.Thane
+                    ...Maulers.Antandra
                 },
                 {
-                    hero: Wilders.Saurus
+                    ...Hypogeans.Zolrath
                 },
                 {
-                    hero: Maulers.Satrana
+                    ...Lightbearers.Thane
                 },
                 {
-                    hero: Celestials.Athalia
+                    ...Wilders.Saurus
                 },
                 {
-                    hero: Hypogeans.Lucretia
+                    ...Celestials.Athalia
                 },
                 {
-                    hero: Celestials.Flora
+                    ...Hypogeans.Lucretia
                 },
                 {
-                    hero: Maulers.Drez
+                    ...Celestials.Flora
+                },
+                {
+                    ...Maulers.Drez
                 }
             ]
         },
@@ -71,25 +77,25 @@ const skregInvade: Composition = {
             role: Role.CrowdControl,
             heroes : [
                 {
-                    hero: Lightbearers.Cecilia
+                    ...Lightbearers.Cecilia
                 },
                 {
-                    hero: Wilders.Gorvo
+                    ...Wilders.Gorvo
                 },
                 {
-                    hero: Celestials.Orthos
+                    ...Celestials.Orthos
                 },
                 {
-                    hero: Wilders.Tasi
+                    ...Wilders.Tasi
                 },
                 {
-                    hero: Wilders.Seirus
+                    ...Wilders.Seirus
                 },
                 {
-                    hero: Celestials.Zaphrael
+                    ...Celestials.Zaphrael
                 },
                 {
-                    hero: Wilders.Pippa
+                    ...Wilders.Pippa
                 }
             ]
         },
@@ -97,22 +103,22 @@ const skregInvade: Composition = {
             role: Role.Enabler,
             heroes : [
                 {
-                    hero: Celestials.Alna
+                    ...Maulers.Numisu,
+                    recommended: true
                 },
                 {
-                    hero: Maulers.Anoki
+                    ...Celestials.Alna
                 },
                 {
-                    hero: Maulers.Numisu
+                    ...Maulers.Anoki
                 },
                 {
-                    hero: Maulers.Skriath
+                    ...Maulers.Skriath
                 },
                 {
-                    hero: Celestials.Talene
+                    ...Celestials.Talene
                 }
             ]
-
         }
     ]
 };
