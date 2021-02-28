@@ -12,7 +12,7 @@ function MultifightDashboard() {
   const [selectedCompositions, setSelectedCompositions] = useState<Array<Composition>>([]);
 
   function filterCompositions(compositionIds:Array<string>) {
-    // sendViewItems('composition', compositionIds);
+    sendViewItems('composition', compositionIds);
     setSelectedCompositions(compositions.filter(c => compositionIds.includes(c.id)));
   }
   
