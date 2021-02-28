@@ -22,10 +22,12 @@ const burst: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Wilders.Eironn
+                ...Wilders.Eironn,
+                recommended: true
             },
             {
-                ...Wilders.Lyca
+                ...Wilders.Lyca,
+                recommended: true
             }
         ]
     },

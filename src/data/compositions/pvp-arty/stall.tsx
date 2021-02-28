@@ -22,10 +22,12 @@ const stall: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Celestials.Talene
+                ...Celestials.Talene,
+                recommended: true
             },
             {
-                ...Celestials.Flora
+                ...Celestials.Flora,
+                recommended: true
             }
         ]
     },

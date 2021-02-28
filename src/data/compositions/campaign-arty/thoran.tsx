@@ -22,7 +22,8 @@ const thoran: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Graveborns.Thoran
+                ...Graveborns.Thoran,
+                recommended: true
             }
         ]
     },

@@ -22,7 +22,8 @@ const classicDisrupt: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Graveborns.Ferael
+                ...Graveborns.Ferael,
+                recommended: true
             }
         ]
     },

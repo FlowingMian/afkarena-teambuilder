@@ -10,6 +10,11 @@ import Dimensionals from '../data/heroes/dimensionals'
 import * as Factions from '../data/characteristics/factions';
 
 let customCompositionId = 0;
+
+export function isCustomComposition(composition:Composition) {
+    return composition.name === "Custom composition";
+  }
+
 export default function generateCustomComposition():Composition {
     return {
         id: 'CUSTOM-COMPOSITION-'+(customCompositionId++),

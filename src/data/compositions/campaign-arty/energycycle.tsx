@@ -22,13 +22,16 @@ const energycycle: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Celestials.ElijahLailah
+                ...Celestials.ElijahLailah,
+                recommended: true
             },
             {
-                ...Lightbearers.Rowan
+                ...Lightbearers.Rowan,
+                recommended: true
             },
             {
-                ...Hypogeans.Ezizh
+                ...Hypogeans.Ezizh,
+                recommended: true
             }
         ]
     },

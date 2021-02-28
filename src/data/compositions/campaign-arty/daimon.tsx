@@ -23,6 +23,7 @@ const daimon: Composition = {
         heroes : [
             {
                 ...Graveborns.Daimon,
+                recommended: true,
                 requiredSignature: 20,
                 requiredFurniture: 3
             }

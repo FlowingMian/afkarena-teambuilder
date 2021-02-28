@@ -22,7 +22,8 @@ const lucretia: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Hypogeans.Lucretia
+                ...Hypogeans.Lucretia,
+                recommended: true
             }
         ]
     },

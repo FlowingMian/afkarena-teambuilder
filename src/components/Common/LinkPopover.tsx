@@ -9,7 +9,10 @@ type LinkPopoverProps = {
 function LinkPopover({ links }: LinkPopoverProps) {
 
   let content;
-  if (links.length === 1) {
+  if (links.length === 0) {
+    content = null;
+  }
+  else if (links.length === 1) {
     content = <LinkBox>
       <Button variant="outline" size="xs" rightIcon={<ExternalLinkIcon/>}>
         <LinkOverlay href={links[0].url} isExternal>

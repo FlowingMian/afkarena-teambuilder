@@ -22,7 +22,8 @@ const izold: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Graveborns.Izold
+                ...Graveborns.Izold,
+                recommended: true
             }
         ]
     },

@@ -26,10 +26,12 @@ const gwyneth: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Lightbearers.Gwyneth
+                ...Lightbearers.Gwyneth,
+                recommended: true
             },
             {
-                ...Dimensionals.Arthur
+                ...Dimensionals.Arthur,
+                recommended: true
             }
         ]
     },

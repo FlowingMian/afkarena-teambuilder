@@ -22,13 +22,16 @@ const dimensional: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Dimensionals.Ainz
+                ...Dimensionals.Ainz,
+                recommended: true
             },
             {
-                ...Dimensionals.Albedo
+                ...Dimensionals.Albedo,
+                recommended: true
             },
             {
-                ...Dimensionals.Arthur
+                ...Dimensionals.Arthur,
+                recommended: true
             },
         ]
     },

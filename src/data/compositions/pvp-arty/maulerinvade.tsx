@@ -22,13 +22,16 @@ const skregInvade: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Maulers.Skreg
+                ...Maulers.Skreg,
+                recommended: true
             },
             {
-                ...Maulers.Tidus
+                ...Maulers.Tidus,
+                recommended: true
             },
             {
-                ...Maulers.Numisu
+                ...Maulers.Numisu,
+                recommended: true
             }
         ]
     },

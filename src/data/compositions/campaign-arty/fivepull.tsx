@@ -22,11 +22,13 @@ const fivePull: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Wilders.Eironn
+                ...Wilders.Eironn,
+                recommended: true
             },
             {
                 ...Maulers.Skriath,
-            requiredFurniture: 3
+                recommended: true,
+                requiredFurniture: 3
             }
         ]
     },

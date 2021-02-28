@@ -11,23 +11,9 @@ const gray = {
     900: "#171923",
 };
 
-const gold = {
-    50: "#FFD700",
-    100: "#FFD700",
-    200: "#FFD700",
-    300: "#FFD700",
-    400: "#FFD700",
-    500: "#FFD700",
-    600: "#FFD700",
-    700: "#FFD700",
-    800: "#FFD700",
-    900: "#FFD700",
-};
-
 const colors = {
     primary: gray,
     secondary: gray,
-    gold,
 }
 
 export const heatGradient= {

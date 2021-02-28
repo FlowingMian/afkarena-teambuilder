@@ -22,7 +22,8 @@ const khazardWilders: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Hypogeans.Khazard
+                ...Hypogeans.Khazard,
+                recommended: true
             },
         ]
     },

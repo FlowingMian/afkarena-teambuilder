@@ -1,4 +1,4 @@
-import { AddIcon, CheckIcon, LockIcon, StarIcon } from "@chakra-ui/icons";
+import { AddIcon, CheckIcon, LockIcon } from "@chakra-ui/icons";
 import { Box, Center, Image, Tooltip } from "@chakra-ui/react"
 import { State } from "../../model/common";
 import { HeroRequirement } from "../../model/compositions";
@@ -40,13 +40,12 @@ function HeroBox({ hero, state = State.AVAILABLE, onClick }: HeroBoxProps) {
             alt={hero.name}
             boxSize={[SIZE_SM, SIZE]}
           />}
-          <Center {...(state ? overlayStyle : null)} background='rgba(0, 0, 0, 0.5)'>
+          <Center {...(state ? overlayStyle : null)} background='rgba(0, 0, 0, 0.6)'>
             {state === State.SELECTED && <CheckIcon color="green.300" boxSize={['70%','70%']}/>}
             {state === State.LOCKED && <LockIcon color="gray.300" boxSize={['50%','50%']}/>}
           </Center>
           {'recommended' in hero && hero.recommended && 
-            <Box {...overlayStyle} outline='2px solid gold' outlineOffset='-2px'>
-              <StarIcon color="gold" boxSize={['40%','40%']} ml='55%' mt={1} display='block'/>
+            <Box {...overlayStyle} outline='3px solid gold' outlineOffset='-3px'>
             </Box>
           }
         </Box>

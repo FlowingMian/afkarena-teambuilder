@@ -22,10 +22,12 @@ const backlineDisrupt: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Graveborns.Nara
+                ...Graveborns.Nara,
+                recommended: true
             },
             {
-                ...Celestials.Athalia
+                ...Celestials.Athalia,
+                recommended: true
             }
         ]
     },

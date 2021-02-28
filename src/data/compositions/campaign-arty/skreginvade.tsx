@@ -26,7 +26,8 @@ const skregInvade: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Maulers.Skreg
+                ...Maulers.Skreg,
+                recommended: true
             }
         ]
     },

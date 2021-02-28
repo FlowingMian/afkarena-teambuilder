@@ -22,7 +22,8 @@ const ainz: Composition = {
         role: Role.Core,
         heroes : [
             {
-                ...Dimensionals.Ainz
+                ...Dimensionals.Ainz,
+                recommended: true
             }
         ]
     },
