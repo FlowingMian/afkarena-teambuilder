@@ -1,12 +1,12 @@
-import { Hero } from "../../model/heroes";
+import { Hero } from '../../model/heroes';
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { staticDomain } from '../static';
 
 export const Brutus: Hero = {
-  id: "BRUTUS",
-  name: "Brutus",
+  id: 'BRUTUS',
+  name: 'Brutus',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -15,8 +15,8 @@ export const Brutus: Hero = {
 };
 
 export const Khasos: Hero = {
-  id: "KHASOS",
-  name: "Khasos",
+  id: 'KHASOS',
+  name: 'Khasos',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -25,8 +25,8 @@ export const Khasos: Hero = {
 };
 
 export const Vurk: Hero = {
-  id: "VURK",
-  name: "Vurk",
+  id: 'VURK',
+  name: 'Vurk',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -35,8 +35,8 @@ export const Vurk: Hero = {
 };
 
 export const Numisu: Hero = {
-  id: "NUMISU",
-  name: "Numisu",
+  id: 'NUMISU',
+  name: 'Numisu',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -45,8 +45,8 @@ export const Numisu: Hero = {
 };
 
 export const Skreg: Hero = {
-  id: "SKREG",
-  name: "Skreg",
+  id: 'SKREG',
+  name: 'Skreg',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -55,8 +55,8 @@ export const Skreg: Hero = {
 };
 
 export const Warek: Hero = {
-  id: "WAREK",
-  name: "Warek",
+  id: 'WAREK',
+  name: 'Warek',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -65,8 +65,8 @@ export const Warek: Hero = {
 };
 
 export const Antandra: Hero = {
-  id: "ANTANDRA",
-  name: "Antandra",
+  id: 'ANTANDRA',
+  name: 'Antandra',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -75,8 +75,8 @@ export const Antandra: Hero = {
 };
 
 export const Safiya: Hero = {
-  id: "SAFIYA",
-  name: "Safiya",
+  id: 'SAFIYA',
+  name: 'Safiya',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -85,8 +85,8 @@ export const Safiya: Hero = {
 };
 
 export const Satrana: Hero = {
-  id: "SATRANA",
-  name: "Satrana",
+  id: 'SATRANA',
+  name: 'Satrana',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -95,8 +95,8 @@ export const Satrana: Hero = {
 };
 
 export const Tidus: Hero = {
-  id: "TIDUS",
-  name: "Tidus",
+  id: 'TIDUS',
+  name: 'Tidus',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -105,8 +105,8 @@ export const Tidus: Hero = {
 };
 
 export const Drez: Hero = {
-  id: "DREZ",
-  name: "Drez",
+  id: 'DREZ',
+  name: 'Drez',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
@@ -115,8 +115,8 @@ export const Drez: Hero = {
 };
 
 export const Skriath: Hero = {
-  id: "SKRIATH",
-  name: "Skriath",
+  id: 'SKRIATH',
+  name: 'Skriath',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
@@ -125,8 +125,8 @@ export const Skriath: Hero = {
 };
 
 export const Anoki: Hero = {
-  id: "ANOKI",
-  name: "Anoki",
+  id: 'ANOKI',
+  name: 'Anoki',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
@@ -135,8 +135,8 @@ export const Anoki: Hero = {
 };
 
 export const Kren: Hero = {
-  id: "KREN",
-  name: "Kren",
+  id: 'KREN',
+  name: 'Kren',
   nickname: [],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,

@@ -1,12 +1,12 @@
-import { Hero } from "../../model/heroes";
+import { Hero } from '../../model/heroes';
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { staticDomain } from '../static';
 
 export const Ezizh: Hero = {
-  id: "EZIZH",
-  name: "Ezizh",
+  id: 'EZIZH',
+  name: 'Ezizh',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
@@ -15,8 +15,8 @@ export const Ezizh: Hero = {
 };
 
 export const Mehira: Hero = {
-  id: "MEHIRA",
-  name: "Mehira",
+  id: 'MEHIRA',
+  name: 'Mehira',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
@@ -25,8 +25,8 @@ export const Mehira: Hero = {
 };
 
 export const Zolrath: Hero = {
-  id: "ZOLRATH",
-  name: "Zolrath",
+  id: 'ZOLRATH',
+  name: 'Zolrath',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
@@ -35,8 +35,8 @@ export const Zolrath: Hero = {
 };
 
 export const Khazard: Hero = {
-  id: "KHAZARD",
-  name: "khazard",
+  id: 'KHAZARD',
+  name: 'khazard',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
@@ -45,8 +45,8 @@ export const Khazard: Hero = {
 };
 
 export const Mezoth: Hero = {
-  id: "MEZOTH",
-  name: "Mezoth",
+  id: 'MEZOTH',
+  name: 'Mezoth',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
@@ -55,8 +55,8 @@ export const Mezoth: Hero = {
 };
 
 export const Lucretia: Hero = {
-  id: "LUCRETIA",
-  name: "Lucretia",
+  id: 'LUCRETIA',
+  name: 'Lucretia',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
@@ -65,8 +65,8 @@ export const Lucretia: Hero = {
 };
 
 export const Mortas: Hero = {
-  id: "MORTAS",
-  name: "Mortas",
+  id: 'MORTAS',
+  name: 'Mortas',
   nickname: [],
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,

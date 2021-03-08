@@ -10,13 +10,13 @@ import izold from './izold';
 import gwyneth from './gwyneth';
 
 const compositions: Array<Composition> = [
-    burst,
-    energycycle,
-    stall,
-    dimensional,
-    backlineDisrupt,
-    maulerInvade,
-    izold,
-    gwyneth,
-]
+  burst,
+  energycycle,
+  stall,
+  dimensional,
+  backlineDisrupt,
+  maulerInvade,
+  izold,
+  gwyneth,
+];
 export default compositions;

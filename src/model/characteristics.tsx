@@ -1,21 +1,13 @@
 export interface Characterictic {
-    id: string;
-    name: string;
-    iconURL?:string
+  id: string;
+  name: string;
+  iconURL?:string
 }
 
-export interface Faction extends Characterictic {
+export type Faction = Characterictic
 
-}
+export type Attribute = Characterictic
 
-export interface Attribute extends Characterictic {
+export type Class = Characterictic
 
-}
-
-export interface Class extends Characterictic {
-
-}
-
-export interface Role extends Characterictic {
-
-}
+export type Role = Characterictic

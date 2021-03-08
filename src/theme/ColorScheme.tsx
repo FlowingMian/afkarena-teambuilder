@@ -1,6 +1,6 @@
 const ColorScheme = {
-    defaultProps : {
-        colorScheme: 'secondary',
-    }
+  defaultProps : {
+    colorScheme: 'secondary',
+  }
 };
 export default ColorScheme;

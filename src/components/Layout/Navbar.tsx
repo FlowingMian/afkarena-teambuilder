@@ -1,7 +1,8 @@
+import React from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text, Tag } from '@chakra-ui/react'
+import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text, Tag } from '@chakra-ui/react';
 import { useEffect } from 'react';
-import { NavLink, useLocation } from "react-router-dom"
+import { NavLink, useLocation } from 'react-router-dom';
 import { staticDomain } from '../../data/static';
 import colors from '../../theme/colors';
 
@@ -10,12 +11,12 @@ const NavbarStyle = {
   color: 'whiteAlpha.900',
   paddingLeft: '1rem',
   paddingRight: '1rem',
-}
+};
 
 const NavlinkActiveStyle = {
   backgroundColor: colors.primary[700],
   color: 'white'
-}
+};
 
 const navLinks = [
   {
@@ -37,7 +38,7 @@ const navLinks = [
   }
 ];
 
-function Navbar() {
+function Navbar():JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { pathname } = useLocation();
 

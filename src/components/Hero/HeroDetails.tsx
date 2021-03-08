@@ -1,20 +1,21 @@
-import {HStack, Image, Tooltip, Link, VStack, Center } from "@chakra-ui/react"
-import { Hero } from "../../model/heroes";
-import CharactericticBox from "../Characteristic/CharacteristicBox";
+import React from 'react';
+import {HStack, Image, Tooltip, Link, VStack } from '@chakra-ui/react';
+import { Hero } from '../../model/heroes';
+import CharactericticBox from '../Characteristic/CharacteristicBox';
 
 type HeroDetailsProps = {
   hero: Hero;
 };
 
-const SIZE_SM:string = '2.5rem';
-const SIZE:string = '3rem';
+const SIZE_SM = '2.5rem';
+const SIZE = '3rem';
 
-function HeroDetails({ hero }: HeroDetailsProps) {
+function HeroDetails({ hero }: HeroDetailsProps):JSX.Element {
 
   const detailsStyle= {
-      width: '7.8rem',
-      border: '1px solid gray',
-      paddingTop: '0.15rem',
+    width: '7.8rem',
+    border: '1px solid gray',
+    paddingTop: '0.15rem',
   };
 
   return (
@@ -27,14 +28,14 @@ function HeroDetails({ hero }: HeroDetailsProps) {
           boxSize={[SIZE_SM, SIZE]}
         />
       </Tooltip>
-        <VStack {...detailsStyle} spacing={0} justifyContent="center">
-          <HStack>
-            <CharactericticBox characterictic={hero.faction}/>
-            <CharactericticBox characterictic={hero.class}/>
-            <CharactericticBox characterictic={hero.attribute}/>
-          </HStack>
-          <Link href={`/compositions?query=${hero.name}`} fontSize="xs">View compositions</Link>
-        </VStack>
+      <VStack {...detailsStyle} spacing={0} justifyContent="center">
+        <HStack>
+          <CharactericticBox characterictic={hero.faction}/>
+          <CharactericticBox characterictic={hero.class}/>
+          <CharactericticBox characterictic={hero.attribute}/>
+        </HStack>
+        <Link href={`/compositions?query=${hero.name}`} fontSize="xs">View compositions</Link>
+      </VStack>
     </HStack>
   );
 }

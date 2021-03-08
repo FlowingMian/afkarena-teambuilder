@@ -1,11 +1,12 @@
-import { Hero } from "../../model/heroes";
+import { Hero } from '../../model/heroes';
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { staticDomain } from '../static';
+
 export const Grezhul: Hero = {
-  id: "GREZHUL",
-  name: "Grezhul",
+  id: 'GREZHUL',
+  name: 'Grezhul',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
@@ -14,8 +15,8 @@ export const Grezhul: Hero = {
 };
 
 export const Shemira: Hero = {
-  id: "SHEMIRA",
-  name: "Shemira",
+  id: 'SHEMIRA',
+  name: 'Shemira',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
@@ -24,8 +25,8 @@ export const Shemira: Hero = {
 };
 
 export const Thoran: Hero = {
-  id: "THORAN",
-  name: "Thoran",
+  id: 'THORAN',
+  name: 'Thoran',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
@@ -34,8 +35,8 @@ export const Thoran: Hero = {
 };
 
 export const Isabella: Hero = {
-  id: "ISABELLA",
-  name: "Isabella",
+  id: 'ISABELLA',
+  name: 'Isabella',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
@@ -44,8 +45,8 @@ export const Isabella: Hero = {
 };
 
 export const Nara: Hero = {
-  id: "NARA",
-  name: "Nara",
+  id: 'NARA',
+  name: 'Nara',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
@@ -54,8 +55,8 @@ export const Nara: Hero = {
 };
 
 export const Ferael: Hero = {
-  id: "FERAEL",
-  name: "Ferael",
+  id: 'FERAEL',
+  name: 'Ferael',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
@@ -64,8 +65,8 @@ export const Ferael: Hero = {
 };
 
 export const Baden: Hero = {
-  id: "BADEN",
-  name: "Baden",
+  id: 'BADEN',
+  name: 'Baden',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
@@ -74,8 +75,8 @@ export const Baden: Hero = {
 };
 
 export const Kelthur: Hero = {
-  id: "KELTHUR",
-  name: "Kelthur",
+  id: 'KELTHUR',
+  name: 'Kelthur',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
@@ -84,8 +85,8 @@ export const Kelthur: Hero = {
 };
 
 export const Silas: Hero = {
-  id: "SILAS",
-  name: "Silas",
+  id: 'SILAS',
+  name: 'Silas',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
@@ -94,8 +95,8 @@ export const Silas: Hero = {
 };
 
 export const Oden: Hero = {
-  id: "ODEN",
-  name: "Oden",
+  id: 'ODEN',
+  name: 'Oden',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
@@ -104,8 +105,8 @@ export const Oden: Hero = {
 };
 
 export const Izold: Hero = {
-  id: "IZOLD",
-  name: "Izold",
+  id: 'IZOLD',
+  name: 'Izold',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
@@ -114,8 +115,8 @@ export const Izold: Hero = {
 };
 
 export const Torne: Hero = {
-  id: "TORNE",
-  name: "Torne",
+  id: 'TORNE',
+  name: 'Torne',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
@@ -124,8 +125,8 @@ export const Torne: Hero = {
 };
 
 export const Daimon: Hero = {
-  id: "DAIMON",
-  name: "Daimon",
+  id: 'DAIMON',
+  name: 'Daimon',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
@@ -134,8 +135,8 @@ export const Daimon: Hero = {
 };
 
 export const Theowyn: Hero = {
-  id: "THEOWYN",
-  name: "Theowyn",
+  id: 'THEOWYN',
+  name: 'Theowyn',
   nickname: [],
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,

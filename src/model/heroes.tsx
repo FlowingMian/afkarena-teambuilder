@@ -1,4 +1,4 @@
-import { Attribute, Class, Faction } from "./characteristics";
+import { Attribute, Class, Faction } from './characteristics';
 
 export interface Hero {
   id: string;
@@ -18,15 +18,15 @@ const fakeCharacterictic = {
 let openSpotId = 0;
 export function generateOpenSpot():Hero {
   return {
-    id: "OPEN-SPOT-"+(openSpotId++),
-    name: "Open spot",
+    id: 'OPEN-SPOT-'+(openSpotId++),
+    name: 'Open spot',
     nickname: [],
     faction: fakeCharacterictic,
     attribute:fakeCharacterictic,
     class: fakeCharacterictic
-  }
-};
+  };
+}
 
-export function isOpenSpot(hero:Hero) {
-  return hero.name === "Open spot";
+export function isOpenSpot(hero:Hero):boolean {
+  return hero.name === 'Open spot';
 }

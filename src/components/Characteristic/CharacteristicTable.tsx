@@ -1,13 +1,14 @@
-import { VStack, HStack, Text} from "@chakra-ui/react";
-import { Characterictic } from "../../model/characteristics";
-import CharactericticBox from "./CharacteristicBox";
+import React from 'react';
+import { VStack, HStack, Text} from '@chakra-ui/react';
+import { Characterictic } from '../../model/characteristics';
+import CharactericticBox from './CharacteristicBox';
 
 type CharacteristicTableProps = {
-  characterictics: Map<Characterictic, number> | Array<Characterictic>;
+  characterictics: Map<Characterictic, number> | Array<Characterictic>;
   displayName?: boolean;
 };
 
-function CharacteristicTable({ characterictics, displayName = true }: CharacteristicTableProps) {
+function CharacteristicTable({ characterictics, displayName = true }: CharacteristicTableProps):JSX.Element {
 
   const array = characterictics instanceof Map ? Array.from(characterictics.keys()) : characterictics;
   const charactericticRows =  array.map((c) => (
@@ -19,7 +20,7 @@ function CharacteristicTable({ characterictics, displayName = true }: Characteri
 
   return (
     <VStack alignItems='start'>
-        {charactericticRows}
+      {charactericticRows}
     </VStack>
   );
 }

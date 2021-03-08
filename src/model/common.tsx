@@ -1,11 +1,11 @@
 export interface Link {
-    label:string;
-    url:string;
+  label:string;
+  url:string;
 }
 
 export enum State {
-    AVAILABLE,
-    DISABLED,
-    SELECTED,
-    LOCKED,
+  AVAILABLE,
+  DISABLED,
+  SELECTED,
+  LOCKED,
 }

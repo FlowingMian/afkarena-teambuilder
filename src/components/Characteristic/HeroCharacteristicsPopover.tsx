@@ -1,13 +1,14 @@
-import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody} from "@chakra-ui/react";
-import { ViewIcon } from '@chakra-ui/icons'
-import { Hero } from "../../model/heroes";
-import HeroCharactericticsTable from "./HeroCharactericticsTable";
+import React from 'react';
+import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody} from '@chakra-ui/react';
+import { ViewIcon } from '@chakra-ui/icons';
+import { Hero } from '../../model/heroes';
+import HeroCharactericticsTable from './HeroCharactericticsTable';
 
 type HeroCharacteristicsPopoverProps = {
   heroes: Array<Hero>;
 };
 
-function HeroCharacteristicsPopover({ heroes }: HeroCharacteristicsPopoverProps) {
+function HeroCharacteristicsPopover({ heroes }: HeroCharacteristicsPopoverProps):JSX.Element {
 
   return (
     <Popover isLazy>

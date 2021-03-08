@@ -1,6 +1,6 @@
 const Link = {
-    baseStyle: {
-        color: 'blue.600',
-    },
+  baseStyle: {
+    color: 'blue.600',
+  },
 };
 export default Link;

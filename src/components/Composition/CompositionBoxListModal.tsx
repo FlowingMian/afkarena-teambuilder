@@ -1,17 +1,18 @@
-import { Composition } from "../../model/compositions";
-import {Modal, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, ModalContent, Button, useDisclosure } from '@chakra-ui/react'
-import { Fragment } from "react";
-import { ViewIcon } from "@chakra-ui/icons";
-import { Role } from "../../model/characteristics";
-import CompositionBoxList from "./CompositionBoxList";
+import React from 'react';
+import { Composition } from '../../model/compositions';
+import {Modal, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, ModalContent, Button, useDisclosure } from '@chakra-ui/react';
+import { Fragment } from 'react';
+import { ViewIcon } from '@chakra-ui/icons';
+import { Role } from '../../model/characteristics';
+import CompositionBoxList from './CompositionBoxList';
 
 type CompositionBoxListModalProps = {
-  compositions: Map<Composition, Role> | Array<Composition>;
+  compositions: Map<Composition, Role>|Array<Composition>;
   buttonLabel?:React.ReactNode
 };
 
-function CompositionBoxListModal({ compositions, buttonLabel }: CompositionBoxListModalProps) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+function CompositionBoxListModal({ compositions, buttonLabel }: CompositionBoxListModalProps):JSX.Element {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return <Fragment>
     <Button variant='ghost' size="sm" px={0} rightIcon={<ViewIcon/>} onClick={onOpen}>{buttonLabel}</Button>
@@ -25,7 +26,7 @@ function CompositionBoxListModal({ compositions, buttonLabel }: CompositionBoxLi
         </ModalBody>
       </ModalContent>
     </Modal>
-    </Fragment>;
+  </Fragment>;
 }
 
 export default CompositionBoxListModal;

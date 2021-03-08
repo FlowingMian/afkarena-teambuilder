@@ -1,1 +1,1 @@
-export const staticDomain:string = 'https://static.appcraft.tk/';
+export const staticDomain = 'https://static.appcraft.tk/';

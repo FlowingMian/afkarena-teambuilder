@@ -1,0 +1,63 @@
+type Hero @model {
+  id: ID!
+  name: String!
+  nickname: [String]
+  faction: Faction @connection
+  attribute: Attribute @connection
+  class: Class @connection
+  portraitURL: String
+}
+
+type Faction @model {
+  id: ID!
+  name: String!
+  iconURL: String
+}
+
+type Attribute @model {
+  id: ID!
+  name: String!
+  iconURL: String
+}
+
+type Class @model {
+  id: ID!
+  name: String!
+  iconURL: String
+}
+
+type Role @model {
+  id: ID!
+  name: String!
+  iconURL: String
+}
+
+type Composition @model {
+  id: ID!
+  name: String!
+  tags: [String]
+  author: String!
+  links: [Link]!
+  coreHeroes: CompositionRole @connection
+  flexHeroes: [CompositionRole] @connection(keyName: "byComposition", fields: ["id"])
+}
+
+type CompositionRole @model
+ @key(name: "byComposition", fields: ["compositionId"]) {
+  id: ID!
+  compositionId: ID!
+  role: Role! @connection
+  heroes: [HeroRequirement]!  @connection(keyName: "byCompositionRole", fields: ["id"])
+}
+
+type HeroRequirement @model
+ @key(name: "byCompositionRole", fields: ["compositionRoleId"]) {
+  hero: Hero! @connection
+  compositionRoleId: ID!
+  recommended: Boolean
+}
+
+type Link @model {
+  label: String!
+  url: String!
+}

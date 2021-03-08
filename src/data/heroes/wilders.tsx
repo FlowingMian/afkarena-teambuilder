@@ -1,12 +1,12 @@
-import { Hero } from "../../model/heroes";
+import { Hero } from '../../model/heroes';
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { staticDomain } from '../static';
 
 export const Nemora: Hero = {
-  id: "NEMORA",
-  name: "Nemora",
+  id: 'NEMORA',
+  name: 'Nemora',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -15,8 +15,8 @@ export const Nemora: Hero = {
 };
 
 export const Kaz: Hero = {
-  id: "KAZ",
-  name: "Kaz",
+  id: 'KAZ',
+  name: 'Kaz',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
@@ -25,8 +25,8 @@ export const Kaz: Hero = {
 };
 
 export const Lyca: Hero = {
-  id: "LYCA",
-  name: "Lyca",
+  id: 'LYCA',
+  name: 'Lyca',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
@@ -35,8 +35,8 @@ export const Lyca: Hero = {
 };
 
 export const Tasi: Hero = {
-  id: "TASI",
-  name: "Tasi",
+  id: 'TASI',
+  name: 'Tasi',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -45,8 +45,8 @@ export const Tasi: Hero = {
 };
 
 export const Ulmus: Hero = {
-  id: "ULMUS",
-  name: "Ulmus",
+  id: 'ULMUS',
+  name: 'Ulmus',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -55,8 +55,8 @@ export const Ulmus: Hero = {
 };
 
 export const Seirus: Hero = {
-  id: "SEIRUS",
-  name: "Seirus",
+  id: 'SEIRUS',
+  name: 'Seirus',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -65,8 +65,8 @@ export const Seirus: Hero = {
 };
 
 export const Eironn: Hero = {
-  id: "EIRONN",
-  name: "Eironn",
+  id: 'EIRONN',
+  name: 'Eironn',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
@@ -75,8 +75,8 @@ export const Eironn: Hero = {
 };
 
 export const Gorvo: Hero = {
-  id: "GORVO",
-  name: "Gorvo",
+  id: 'GORVO',
+  name: 'Gorvo',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -85,8 +85,8 @@ export const Gorvo: Hero = {
 };
 
 export const Lorsan: Hero = {
-  id: "LORSAN",
-  name: "Lorsan",
+  id: 'LORSAN',
+  name: 'Lorsan',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -95,8 +95,8 @@ export const Lorsan: Hero = {
 };
 
 export const Saurus: Hero = {
-  id: "SAURUS",
-  name: "Saurus",
+  id: 'SAURUS',
+  name: 'Saurus',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
@@ -105,8 +105,8 @@ export const Saurus: Hero = {
 };
 
 export const Solise: Hero = {
-  id: "SOLISE",
-  name: "Solise",
+  id: 'SOLISE',
+  name: 'Solise',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -115,8 +115,8 @@ export const Solise: Hero = {
 };
 
 export const Pippa: Hero = {
-  id: "PIPPA",
-  name: "Pippa",
+  id: 'PIPPA',
+  name: 'Pippa',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
@@ -125,8 +125,8 @@ export const Pippa: Hero = {
 };
 
 export const Respen: Hero = {
-  id: "RESPEN",
-  name: "Respen",
+  id: 'RESPEN',
+  name: 'Respen',
   nickname: [],
   faction: Faction.Wilder,
   attribute: Attribute.Agility,

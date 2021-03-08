@@ -1,3 +1,4 @@
+import React from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Heading, Link, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
@@ -9,7 +10,7 @@ import CompositionSearch from '../Composition/CompositionSearch';
 import { setPageTitle } from '../utils';
 
 
-function CompositionDashboard() {
+function CompositionDashboard():JSX.Element {
 
   const [selectedCompositions, setSelectedCompositions] = useState<Array<Composition>>([]);
   
@@ -18,7 +19,7 @@ function CompositionDashboard() {
   }
 
   useEffect(() => {
-    setPageTitle("Compositions");
+    setPageTitle('Compositions');
   }, []);
 
   return (
@@ -39,8 +40,8 @@ function CompositionDashboard() {
         </Box>
       </VStack>
       <VStack {...BoxResultsStyle} alignItems='stretch'>
-          <Heading size='md'>{selectedCompositions.length} compositions</Heading>
-          <CompositionDetailsList compositions={selectedCompositions}/>
+        <Heading size='md'>{selectedCompositions.length} compositions</Heading>
+        <CompositionDetailsList compositions={selectedCompositions}/>
       </VStack>
     </div>
   );

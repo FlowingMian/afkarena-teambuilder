@@ -1,12 +1,12 @@
-import { Hero } from "../../model/heroes";
+import { Hero } from '../../model/heroes';
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { staticDomain } from '../static';
 
 export const Nakoruru: Hero = {
-  id: "NAKORURU",
-  name: "Nakoruru",
+  id: 'NAKORURU',
+  name: 'Nakoruru',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
@@ -15,8 +15,8 @@ export const Nakoruru: Hero = {
 };
 
 export const Arthur: Hero = {
-  id: "ARTHUR",
-  name: "Arthur",
+  id: 'ARTHUR',
+  name: 'Arthur',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
@@ -25,8 +25,8 @@ export const Arthur: Hero = {
 };
 
 export const Ukyo: Hero = {
-  id: "UKYO",
-  name: "Ukyo",
+  id: 'UKYO',
+  name: 'Ukyo',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
@@ -35,8 +35,8 @@ export const Ukyo: Hero = {
 };
 
 export const Ezio: Hero = {
-  id: "EZIO",
-  name: "Ezio",
+  id: 'EZIO',
+  name: 'Ezio',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
@@ -45,8 +45,8 @@ export const Ezio: Hero = {
 };
 
 export const Albedo: Hero = {
-  id: "ALBEBO",
-  name: "Albedo",
+  id: 'ALBEBO',
+  name: 'Albedo',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
@@ -55,9 +55,9 @@ export const Albedo: Hero = {
 };
 
 export const Ainz: Hero = {
-  id: "AINZ",
-  name: "Ainz",
-  nickname: ["Ainz Ooal Gown"],
+  id: 'AINZ',
+  name: 'Ainz',
+  nickname: ['Ainz Ooal Gown'],
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
@@ -65,8 +65,8 @@ export const Ainz: Hero = {
 };
 
 export const QUEEN: Hero = {
-  id: "QUEEN",
-  name: "QUEEN",
+  id: 'QUEEN',
+  name: 'QUEEN',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
@@ -75,8 +75,8 @@ export const QUEEN: Hero = {
 };
 
 export const JOKER: Hero = {
-  id: "JOKER",
-  name: "JOKER",
+  id: 'JOKER',
+  name: 'JOKER',
   nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,

@@ -1,12 +1,13 @@
-import { Wrap, WrapItem } from "@chakra-ui/react"
-import { Hero } from "../../model/heroes";
-import HeroDetails from "./HeroDetails";
+import React from 'react';
+import { Wrap, WrapItem } from '@chakra-ui/react';
+import { Hero } from '../../model/heroes';
+import HeroDetails from './HeroDetails';
 
 type HeroDetailListProps = {
   heroes: Array<Hero>;
 };
 
-function HeroDetailList({ heroes }: HeroDetailListProps) {
+function HeroDetailList({ heroes }: HeroDetailListProps):JSX.Element {
   const heroesList = heroes.map((h) => <WrapItem key={h.id}><HeroDetails hero={h}/></WrapItem>);
 
   return (

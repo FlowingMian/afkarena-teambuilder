@@ -16,19 +16,19 @@ import skregInvade from './skreginvade';
 import classicDisrupt from './classicdisrupt';
 
 const compositions: Array<Composition> = [
-    thoran,
-    lucretia,
-    gwyneth,
-    skregInvade,
-    classicDisrupt,
-    energycycle,
-    izold,
-    ainz,
-    burst,
-    fivePull,
-    daimon,
-    khazardWilders,
-    stall,
-    portalParty
-]
+  thoran,
+  lucretia,
+  gwyneth,
+  skregInvade,
+  classicDisrupt,
+  energycycle,
+  izold,
+  ainz,
+  burst,
+  fivePull,
+  daimon,
+  khazardWilders,
+  stall,
+  portalParty
+];
 export default compositions;

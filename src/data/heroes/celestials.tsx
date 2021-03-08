@@ -1,12 +1,12 @@
-import { Hero } from "../../model/heroes";
+import { Hero } from '../../model/heroes';
 import * as Faction from '../characteristics/factions';
 import * as Attribute from '../characteristics/attributes';
 import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { staticDomain } from '../static';
 
 export const Athalia: Hero = {
-  id: "ATHALIA",
-  name: "Athalia",
+  id: 'ATHALIA',
+  name: 'Athalia',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
@@ -15,9 +15,9 @@ export const Athalia: Hero = {
 };
 
 export const ElijahLailah: Hero = {
-  id: "ELIJAHLAILAH",
-  name: "Twins",
-  nickname: ["Elijah", "Lailah"],
+  id: 'ELIJAHLAILAH',
+  name: 'Twins',
+  nickname: ['Elijah', 'Lailah'],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Support,
@@ -25,8 +25,8 @@ export const ElijahLailah: Hero = {
 };
 
 export const Orthos: Hero = {
-  id: "ORTHOS",
-  name: "Orthos",
+  id: 'ORTHOS',
+  name: 'Orthos',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
@@ -35,8 +35,8 @@ export const Orthos: Hero = {
 };
 
 export const Talene: Hero = {
-  id: "TALENE",
-  name: "Talene",
+  id: 'TALENE',
+  name: 'Talene',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
@@ -45,8 +45,8 @@ export const Talene: Hero = {
 };
 
 export const Wukong: Hero = {
-  id: "WUKONG",
-  name: "WuKong",
+  id: 'WUKONG',
+  name: 'WuKong',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
@@ -55,8 +55,8 @@ export const Wukong: Hero = {
 };
 
 export const Flora: Hero = {
-  id: "FLORA",
-  name: "Flora",
+  id: 'FLORA',
+  name: 'Flora',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
@@ -65,8 +65,8 @@ export const Flora: Hero = {
 };
 
 export const Zaphrael: Hero = {
-  id: "ZAPHRAEL",
-  name: "Zaphrael",
+  id: 'ZAPHRAEL',
+  name: 'Zaphrael',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
@@ -75,8 +75,8 @@ export const Zaphrael: Hero = {
 };
 
 export const Alna: Hero = {
-  id: "ALNA",
-  name: "Alna",
+  id: 'ALNA',
+  name: 'Alna',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,

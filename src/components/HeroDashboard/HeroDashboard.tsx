@@ -1,3 +1,4 @@
+import React from 'react';
 import { Stack, StackDirection, useBreakpointValue, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import heroes from '../../data/heroes';
@@ -9,8 +10,8 @@ import HeroDetailList from '../Hero/HeroDetailList';
 import { setPageTitle } from '../utils';
 
 
-function HeroDashboard() {
-  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' })
+function HeroDashboard():JSX.Element {
+  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' });
 
   const [selectedHeroes, setSelectedHeroes] = useState<Array<Hero>>(heroes);
   
@@ -19,7 +20,7 @@ function HeroDashboard() {
   }
   
   useEffect(() => {
-    setPageTitle("Heroes");
+    setPageTitle('Heroes');
   }, []);
 
   return (<>
