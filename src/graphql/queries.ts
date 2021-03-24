@@ -191,235 +191,32 @@ export const listRoles = /* GraphQL */ `
     }
   }
 `;
-export const getComposition = /* GraphQL */ `
-  query GetComposition($id: ID!) {
-    getComposition(id: $id) {
+export const getProfile = /* GraphQL */ `
+  query GetProfile($id: ID!) {
+    getProfile(id: $id) {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }
   }
 `;
-export const listCompositions = /* GraphQL */ `
-  query ListCompositions(
-    $filter: ModelCompositionFilterInput
+export const listProfiles = /* GraphQL */ `
+  query ListProfiles(
+    $filter: ModelProfileFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCompositions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
-        tags
-        author
-        links {
-          id
-          label
-          url
-          createdAt
-          updatedAt
-        }
-        coreHeroes {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        flexHeroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getCompositionRole = /* GraphQL */ `
-  query GetCompositionRole($id: ID!) {
-    getCompositionRole(id: $id) {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listCompositionRoles = /* GraphQL */ `
-  query ListCompositionRoles(
-    $filter: ModelCompositionRoleFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCompositionRoles(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getHeroRequirement = /* GraphQL */ `
-  query GetHeroRequirement($id: ID!) {
-    getHeroRequirement(id: $id) {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listHeroRequirements = /* GraphQL */ `
-  query ListHeroRequirements(
-    $filter: ModelHeroRequirementFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listHeroRequirements(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        hero {
-          id
-          name
-          nickname
-          portraitURL
-          createdAt
-          updatedAt
-        }
-        compositionRoleId
-        recommended
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getLink = /* GraphQL */ `
-  query GetLink($id: ID!) {
-    getLink(id: $id) {
-      id
-      label
-      url
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listLinks = /* GraphQL */ `
-  query ListLinks(
-    $filter: ModelLinkFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLinks(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        label
-        url
+        readAt
+        heroCollection
+        compositions
         createdAt
         updatedAt
       }

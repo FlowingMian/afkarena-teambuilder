@@ -278,403 +278,49 @@ export const deleteRole = /* GraphQL */ `
     }
   }
 `;
-export const createComposition = /* GraphQL */ `
-  mutation CreateComposition(
-    $input: CreateCompositionInput!
-    $condition: ModelCompositionConditionInput
+export const createProfile = /* GraphQL */ `
+  mutation CreateProfile(
+    $input: CreateProfileInput!
+    $condition: ModelProfileConditionInput
   ) {
-    createComposition(input: $input, condition: $condition) {
+    createProfile(input: $input, condition: $condition) {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }
   }
 `;
-export const updateComposition = /* GraphQL */ `
-  mutation UpdateComposition(
-    $input: UpdateCompositionInput!
-    $condition: ModelCompositionConditionInput
+export const updateProfile = /* GraphQL */ `
+  mutation UpdateProfile(
+    $input: UpdateProfileInput!
+    $condition: ModelProfileConditionInput
   ) {
-    updateComposition(input: $input, condition: $condition) {
+    updateProfile(input: $input, condition: $condition) {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteComposition = /* GraphQL */ `
-  mutation DeleteComposition(
-    $input: DeleteCompositionInput!
-    $condition: ModelCompositionConditionInput
+export const deleteProfile = /* GraphQL */ `
+  mutation DeleteProfile(
+    $input: DeleteProfileInput!
+    $condition: ModelProfileConditionInput
   ) {
-    deleteComposition(input: $input, condition: $condition) {
+    deleteProfile(input: $input, condition: $condition) {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createCompositionRole = /* GraphQL */ `
-  mutation CreateCompositionRole(
-    $input: CreateCompositionRoleInput!
-    $condition: ModelCompositionRoleConditionInput
-  ) {
-    createCompositionRole(input: $input, condition: $condition) {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateCompositionRole = /* GraphQL */ `
-  mutation UpdateCompositionRole(
-    $input: UpdateCompositionRoleInput!
-    $condition: ModelCompositionRoleConditionInput
-  ) {
-    updateCompositionRole(input: $input, condition: $condition) {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteCompositionRole = /* GraphQL */ `
-  mutation DeleteCompositionRole(
-    $input: DeleteCompositionRoleInput!
-    $condition: ModelCompositionRoleConditionInput
-  ) {
-    deleteCompositionRole(input: $input, condition: $condition) {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createHeroRequirement = /* GraphQL */ `
-  mutation CreateHeroRequirement(
-    $input: CreateHeroRequirementInput!
-    $condition: ModelHeroRequirementConditionInput
-  ) {
-    createHeroRequirement(input: $input, condition: $condition) {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateHeroRequirement = /* GraphQL */ `
-  mutation UpdateHeroRequirement(
-    $input: UpdateHeroRequirementInput!
-    $condition: ModelHeroRequirementConditionInput
-  ) {
-    updateHeroRequirement(input: $input, condition: $condition) {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteHeroRequirement = /* GraphQL */ `
-  mutation DeleteHeroRequirement(
-    $input: DeleteHeroRequirementInput!
-    $condition: ModelHeroRequirementConditionInput
-  ) {
-    deleteHeroRequirement(input: $input, condition: $condition) {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createLink = /* GraphQL */ `
-  mutation CreateLink(
-    $input: CreateLinkInput!
-    $condition: ModelLinkConditionInput
-  ) {
-    createLink(input: $input, condition: $condition) {
-      id
-      label
-      url
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateLink = /* GraphQL */ `
-  mutation UpdateLink(
-    $input: UpdateLinkInput!
-    $condition: ModelLinkConditionInput
-  ) {
-    updateLink(input: $input, condition: $condition) {
-      id
-      label
-      url
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteLink = /* GraphQL */ `
-  mutation DeleteLink(
-    $input: DeleteLinkInput!
-    $condition: ModelLinkConditionInput
-  ) {
-    deleteLink(input: $input, condition: $condition) {
-      id
-      label
-      url
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }

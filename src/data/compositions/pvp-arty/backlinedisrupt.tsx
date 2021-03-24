@@ -1,5 +1,5 @@
 import { Composition} from '../../../model/compositions';
-import * as Role from '../../characteristics/role';
+import * as Role from '../../characteristics/roles';
 import * as Graveborns from '../../heroes/graveborns';
 import * as Celestials from '../../heroes/celestials';
 import * as Hypogeans from '../../heroes/hypogeans';

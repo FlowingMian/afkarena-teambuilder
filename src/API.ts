@@ -5,11 +5,11 @@
 export type CreateHeroInput = {
   id?: string | null,
   name: string,
-  nickname?: Array< string | null > | null,
+  nickname: Array< string | null >,
   portraitURL?: string | null,
-  heroFactionId?: string | null,
-  heroAttributeId?: string | null,
-  heroClassId?: string | null,
+  heroFactionId: string,
+  heroAttributeId: string,
+  heroClassId: string,
 };
 
 export type ModelHeroConditionInput = {
@@ -65,7 +65,7 @@ export type Hero = {
   __typename: "Hero",
   id?: string,
   name?: string,
-  nickname?: Array< string | null > | null,
+  nickname?: Array< string | null >,
   faction?: Faction,
   attribute?: Attribute,
   class?: Class,
@@ -220,100 +220,22 @@ export type DeleteRoleInput = {
   id?: string | null,
 };
 
-export type CreateCompositionInput = {
+export type CreateProfileInput = {
   id?: string | null,
   name: string,
-  tags?: Array< string | null > | null,
-  author: string,
-  compositionCoreHeroesId?: string | null,
+  readAt: string,
+  heroCollection: Array< string | null >,
+  compositions?: string | null,
 };
 
-export type ModelCompositionConditionInput = {
+export type ModelProfileConditionInput = {
   name?: ModelStringInput | null,
-  tags?: ModelStringInput | null,
-  author?: ModelStringInput | null,
-  and?: Array< ModelCompositionConditionInput | null > | null,
-  or?: Array< ModelCompositionConditionInput | null > | null,
-  not?: ModelCompositionConditionInput | null,
-};
-
-export type Composition = {
-  __typename: "Composition",
-  id?: string,
-  name?: string,
-  tags?: Array< string | null > | null,
-  author?: string,
-  links?:  Array<Link | null >,
-  coreHeroes?: CompositionRole,
-  flexHeroes?: ModelCompositionRoleConnection,
-  createdAt?: string,
-  updatedAt?: string,
-};
-
-export type Link = {
-  __typename: "Link",
-  id?: string,
-  label?: string,
-  url?: string,
-  createdAt?: string,
-  updatedAt?: string,
-};
-
-export type CompositionRole = {
-  __typename: "CompositionRole",
-  id?: string,
-  compositionId?: string,
-  role?: Role,
-  heroes?: ModelHeroRequirementConnection,
-  createdAt?: string,
-  updatedAt?: string,
-};
-
-export type ModelHeroRequirementConnection = {
-  __typename: "ModelHeroRequirementConnection",
-  items?:  Array<HeroRequirement | null > | null,
-  nextToken?: string | null,
-};
-
-export type HeroRequirement = {
-  __typename: "HeroRequirement",
-  id?: string,
-  hero?: Hero,
-  compositionRoleId?: string,
-  recommended?: boolean | null,
-  createdAt?: string,
-  updatedAt?: string,
-};
-
-export type ModelCompositionRoleConnection = {
-  __typename: "ModelCompositionRoleConnection",
-  items?:  Array<CompositionRole | null > | null,
-  nextToken?: string | null,
-};
-
-export type UpdateCompositionInput = {
-  id: string,
-  name?: string | null,
-  tags?: Array< string | null > | null,
-  author?: string | null,
-  compositionCoreHeroesId?: string | null,
-};
-
-export type DeleteCompositionInput = {
-  id?: string | null,
-};
-
-export type CreateCompositionRoleInput = {
-  id?: string | null,
-  compositionId: string,
-  compositionRoleRoleId: string,
-};
-
-export type ModelCompositionRoleConditionInput = {
-  compositionId?: ModelIDInput | null,
-  and?: Array< ModelCompositionRoleConditionInput | null > | null,
-  or?: Array< ModelCompositionRoleConditionInput | null > | null,
-  not?: ModelCompositionRoleConditionInput | null,
+  readAt?: ModelStringInput | null,
+  heroCollection?: ModelIDInput | null,
+  compositions?: ModelStringInput | null,
+  and?: Array< ModelProfileConditionInput | null > | null,
+  or?: Array< ModelProfileConditionInput | null > | null,
+  not?: ModelProfileConditionInput | null,
 };
 
 export type ModelIDInput = {
@@ -332,68 +254,26 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type UpdateCompositionRoleInput = {
+export type Profile = {
+  __typename: "Profile",
+  id?: string,
+  name?: string,
+  readAt?: string,
+  heroCollection?: Array< string | null >,
+  compositions?: string | null,
+  createdAt?: string,
+  updatedAt?: string,
+};
+
+export type UpdateProfileInput = {
   id: string,
-  compositionId?: string | null,
-  compositionRoleRoleId?: string | null,
+  name?: string | null,
+  readAt?: string | null,
+  heroCollection?: Array< string | null > | null,
+  compositions?: string | null,
 };
 
-export type DeleteCompositionRoleInput = {
-  id?: string | null,
-};
-
-export type CreateHeroRequirementInput = {
-  id?: string | null,
-  compositionRoleId: string,
-  recommended?: boolean | null,
-  heroRequirementHeroId: string,
-};
-
-export type ModelHeroRequirementConditionInput = {
-  compositionRoleId?: ModelIDInput | null,
-  recommended?: ModelBooleanInput | null,
-  and?: Array< ModelHeroRequirementConditionInput | null > | null,
-  or?: Array< ModelHeroRequirementConditionInput | null > | null,
-  not?: ModelHeroRequirementConditionInput | null,
-};
-
-export type ModelBooleanInput = {
-  ne?: boolean | null,
-  eq?: boolean | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-};
-
-export type UpdateHeroRequirementInput = {
-  compositionRoleId?: string | null,
-  recommended?: boolean | null,
-  heroRequirementHeroId?: string | null,
-};
-
-export type DeleteHeroRequirementInput = {
-  id?: string | null,
-};
-
-export type CreateLinkInput = {
-  id?: string | null,
-  label: string,
-  url: string,
-};
-
-export type ModelLinkConditionInput = {
-  label?: ModelStringInput | null,
-  url?: ModelStringInput | null,
-  and?: Array< ModelLinkConditionInput | null > | null,
-  or?: Array< ModelLinkConditionInput | null > | null,
-  not?: ModelLinkConditionInput | null,
-};
-
-export type UpdateLinkInput = {
-  label?: string | null,
-  url?: string | null,
-};
-
-export type DeleteLinkInput = {
+export type DeleteProfileInput = {
   id?: string | null,
 };
 
@@ -473,49 +353,20 @@ export type ModelRoleConnection = {
   nextToken?: string | null,
 };
 
-export type ModelCompositionFilterInput = {
+export type ModelProfileFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
-  tags?: ModelStringInput | null,
-  author?: ModelStringInput | null,
-  and?: Array< ModelCompositionFilterInput | null > | null,
-  or?: Array< ModelCompositionFilterInput | null > | null,
-  not?: ModelCompositionFilterInput | null,
+  readAt?: ModelStringInput | null,
+  heroCollection?: ModelIDInput | null,
+  compositions?: ModelStringInput | null,
+  and?: Array< ModelProfileFilterInput | null > | null,
+  or?: Array< ModelProfileFilterInput | null > | null,
+  not?: ModelProfileFilterInput | null,
 };
 
-export type ModelCompositionConnection = {
-  __typename: "ModelCompositionConnection",
-  items?:  Array<Composition | null > | null,
-  nextToken?: string | null,
-};
-
-export type ModelCompositionRoleFilterInput = {
-  id?: ModelIDInput | null,
-  compositionId?: ModelIDInput | null,
-  and?: Array< ModelCompositionRoleFilterInput | null > | null,
-  or?: Array< ModelCompositionRoleFilterInput | null > | null,
-  not?: ModelCompositionRoleFilterInput | null,
-};
-
-export type ModelHeroRequirementFilterInput = {
-  compositionRoleId?: ModelIDInput | null,
-  recommended?: ModelBooleanInput | null,
-  and?: Array< ModelHeroRequirementFilterInput | null > | null,
-  or?: Array< ModelHeroRequirementFilterInput | null > | null,
-  not?: ModelHeroRequirementFilterInput | null,
-};
-
-export type ModelLinkFilterInput = {
-  label?: ModelStringInput | null,
-  url?: ModelStringInput | null,
-  and?: Array< ModelLinkFilterInput | null > | null,
-  or?: Array< ModelLinkFilterInput | null > | null,
-  not?: ModelLinkFilterInput | null,
-};
-
-export type ModelLinkConnection = {
-  __typename: "ModelLinkConnection",
-  items?:  Array<Link | null > | null,
+export type ModelProfileConnection = {
+  __typename: "ModelProfileConnection",
+  items?:  Array<Profile | null > | null,
   nextToken?: string | null,
 };
 
@@ -529,31 +380,31 @@ export type CreateHeroMutation = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -570,31 +421,31 @@ export type UpdateHeroMutation = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -611,31 +462,31 @@ export type DeleteHeroMutation = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -834,466 +685,55 @@ export type DeleteRoleMutation = {
   } | null,
 };
 
-export type CreateCompositionMutationVariables = {
-  input?: CreateCompositionInput,
-  condition?: ModelCompositionConditionInput | null,
+export type CreateProfileMutationVariables = {
+  input?: CreateProfileInput,
+  condition?: ModelProfileConditionInput | null,
 };
 
-export type CreateCompositionMutation = {
-  createComposition?:  {
-    __typename: "Composition",
+export type CreateProfileMutation = {
+  createProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdateCompositionMutationVariables = {
-  input?: UpdateCompositionInput,
-  condition?: ModelCompositionConditionInput | null,
+export type UpdateProfileMutationVariables = {
+  input?: UpdateProfileInput,
+  condition?: ModelProfileConditionInput | null,
 };
 
-export type UpdateCompositionMutation = {
-  updateComposition?:  {
-    __typename: "Composition",
+export type UpdateProfileMutation = {
+  updateProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteCompositionMutationVariables = {
-  input?: DeleteCompositionInput,
-  condition?: ModelCompositionConditionInput | null,
+export type DeleteProfileMutationVariables = {
+  input?: DeleteProfileInput,
+  condition?: ModelProfileConditionInput | null,
 };
 
-export type DeleteCompositionMutation = {
-  deleteComposition?:  {
-    __typename: "Composition",
+export type DeleteProfileMutation = {
+  deleteProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type CreateCompositionRoleMutationVariables = {
-  input?: CreateCompositionRoleInput,
-  condition?: ModelCompositionRoleConditionInput | null,
-};
-
-export type CreateCompositionRoleMutation = {
-  createCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type UpdateCompositionRoleMutationVariables = {
-  input?: UpdateCompositionRoleInput,
-  condition?: ModelCompositionRoleConditionInput | null,
-};
-
-export type UpdateCompositionRoleMutation = {
-  updateCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type DeleteCompositionRoleMutationVariables = {
-  input?: DeleteCompositionRoleInput,
-  condition?: ModelCompositionRoleConditionInput | null,
-};
-
-export type DeleteCompositionRoleMutation = {
-  deleteCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type CreateHeroRequirementMutationVariables = {
-  input?: CreateHeroRequirementInput,
-  condition?: ModelHeroRequirementConditionInput | null,
-};
-
-export type CreateHeroRequirementMutation = {
-  createHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type UpdateHeroRequirementMutationVariables = {
-  input?: UpdateHeroRequirementInput,
-  condition?: ModelHeroRequirementConditionInput | null,
-};
-
-export type UpdateHeroRequirementMutation = {
-  updateHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type DeleteHeroRequirementMutationVariables = {
-  input?: DeleteHeroRequirementInput,
-  condition?: ModelHeroRequirementConditionInput | null,
-};
-
-export type DeleteHeroRequirementMutation = {
-  deleteHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type CreateLinkMutationVariables = {
-  input?: CreateLinkInput,
-  condition?: ModelLinkConditionInput | null,
-};
-
-export type CreateLinkMutation = {
-  createLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type UpdateLinkMutationVariables = {
-  input?: UpdateLinkInput,
-  condition?: ModelLinkConditionInput | null,
-};
-
-export type UpdateLinkMutation = {
-  updateLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type DeleteLinkMutationVariables = {
-  input?: DeleteLinkInput,
-  condition?: ModelLinkConditionInput | null,
-};
-
-export type DeleteLinkMutation = {
-  deleteLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -1308,31 +748,31 @@ export type GetHeroQuery = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -1352,31 +792,31 @@ export type ListHerosQuery = {
       __typename: "Hero",
       id: string,
       name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
+      nickname: Array< string | null >,
+      faction:  {
         __typename: "Faction",
         id: string,
         name: string,
         iconURL?: string | null,
         createdAt: string,
         updatedAt: string,
-      } | null,
-      attribute?:  {
+      },
+      attribute:  {
         __typename: "Attribute",
         id: string,
         name: string,
         iconURL?: string | null,
         createdAt: string,
         updatedAt: string,
-      } | null,
-      class?:  {
+      },
+      class:  {
         __typename: "Class",
         id: string,
         name: string,
         iconURL?: string | null,
         createdAt: string,
         updatedAt: string,
-      } | null,
+      },
       portraitURL?: string | null,
       createdAt: string,
       updatedAt: string,
@@ -1529,274 +969,39 @@ export type ListRolesQuery = {
   } | null,
 };
 
-export type GetCompositionQueryVariables = {
+export type GetProfileQueryVariables = {
   id?: string,
 };
 
-export type GetCompositionQuery = {
-  getComposition?:  {
-    __typename: "Composition",
+export type GetProfileQuery = {
+  getProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListCompositionsQueryVariables = {
-  filter?: ModelCompositionFilterInput | null,
+export type ListProfilesQueryVariables = {
+  filter?: ModelProfileFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListCompositionsQuery = {
-  listCompositions?:  {
-    __typename: "ModelCompositionConnection",
+export type ListProfilesQuery = {
+  listProfiles?:  {
+    __typename: "ModelProfileConnection",
     items?:  Array< {
-      __typename: "Composition",
+      __typename: "Profile",
       id: string,
       name: string,
-      tags?: Array< string | null > | null,
-      author: string,
-      links:  Array< {
-        __typename: "Link",
-        id: string,
-        label: string,
-        url: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null >,
-      coreHeroes?:  {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      flexHeroes?:  {
-        __typename: "ModelCompositionRoleConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken?: string | null,
-  } | null,
-};
-
-export type GetCompositionRoleQueryVariables = {
-  id?: string,
-};
-
-export type GetCompositionRoleQuery = {
-  getCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type ListCompositionRolesQueryVariables = {
-  filter?: ModelCompositionRoleFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListCompositionRolesQuery = {
-  listCompositionRoles?:  {
-    __typename: "ModelCompositionRoleConnection",
-    items?:  Array< {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken?: string | null,
-  } | null,
-};
-
-export type GetHeroRequirementQueryVariables = {
-  id?: string,
-};
-
-export type GetHeroRequirementQuery = {
-  getHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type ListHeroRequirementsQueryVariables = {
-  filter?: ModelHeroRequirementFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListHeroRequirementsQuery = {
-  listHeroRequirements?:  {
-    __typename: "ModelHeroRequirementConnection",
-    items?:  Array< {
-      __typename: "HeroRequirement",
-      id: string,
-      hero:  {
-        __typename: "Hero",
-        id: string,
-        name: string,
-        nickname?: Array< string | null > | null,
-        portraitURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      compositionRoleId: string,
-      recommended?: boolean | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken?: string | null,
-  } | null,
-};
-
-export type GetLinkQueryVariables = {
-  id?: string,
-};
-
-export type GetLinkQuery = {
-  getLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type ListLinksQueryVariables = {
-  filter?: ModelLinkFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListLinksQuery = {
-  listLinks?:  {
-    __typename: "ModelLinkConnection",
-    items?:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
+      readAt: string,
+      heroCollection: Array< string | null >,
+      compositions?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null > | null,
@@ -1809,31 +1014,31 @@ export type OnCreateHeroSubscription = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -1845,31 +1050,31 @@ export type OnUpdateHeroSubscription = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -1881,31 +1086,31 @@ export type OnDeleteHeroSubscription = {
     __typename: "Hero",
     id: string,
     name: string,
-    nickname?: Array< string | null > | null,
-    faction?:  {
+    nickname: Array< string | null >,
+    faction:  {
       __typename: "Faction",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    attribute?:  {
+    },
+    attribute:  {
       __typename: "Attribute",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
-    class?:  {
+    },
+    class:  {
       __typename: "Class",
       id: string,
       name: string,
       iconURL?: string | null,
       createdAt: string,
       updatedAt: string,
-    } | null,
+    },
     portraitURL?: string | null,
     createdAt: string,
     updatedAt: string,
@@ -2044,406 +1249,40 @@ export type OnDeleteRoleSubscription = {
   } | null,
 };
 
-export type OnCreateCompositionSubscription = {
-  onCreateComposition?:  {
-    __typename: "Composition",
+export type OnCreateProfileSubscription = {
+  onCreateProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdateCompositionSubscription = {
-  onUpdateComposition?:  {
-    __typename: "Composition",
+export type OnUpdateProfileSubscription = {
+  onUpdateProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeleteCompositionSubscription = {
-  onDeleteComposition?:  {
-    __typename: "Composition",
+export type OnDeleteProfileSubscription = {
+  onDeleteProfile?:  {
+    __typename: "Profile",
     id: string,
     name: string,
-    tags?: Array< string | null > | null,
-    author: string,
-    links:  Array< {
-      __typename: "Link",
-      id: string,
-      label: string,
-      url: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    coreHeroes?:  {
-      __typename: "CompositionRole",
-      id: string,
-      compositionId: string,
-      role:  {
-        __typename: "Role",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      },
-      heroes?:  {
-        __typename: "ModelHeroRequirementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null,
-    flexHeroes?:  {
-      __typename: "ModelCompositionRoleConnection",
-      items?:  Array< {
-        __typename: "CompositionRole",
-        id: string,
-        compositionId: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnCreateCompositionRoleSubscription = {
-  onCreateCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnUpdateCompositionRoleSubscription = {
-  onUpdateCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteCompositionRoleSubscription = {
-  onDeleteCompositionRole?:  {
-    __typename: "CompositionRole",
-    id: string,
-    compositionId: string,
-    role:  {
-      __typename: "Role",
-      id: string,
-      name: string,
-      iconURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    heroes?:  {
-      __typename: "ModelHeroRequirementConnection",
-      items?:  Array< {
-        __typename: "HeroRequirement",
-        id: string,
-        compositionRoleId: string,
-        recommended?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnCreateHeroRequirementSubscription = {
-  onCreateHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnUpdateHeroRequirementSubscription = {
-  onUpdateHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteHeroRequirementSubscription = {
-  onDeleteHeroRequirement?:  {
-    __typename: "HeroRequirement",
-    id: string,
-    hero:  {
-      __typename: "Hero",
-      id: string,
-      name: string,
-      nickname?: Array< string | null > | null,
-      faction?:  {
-        __typename: "Faction",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      attribute?:  {
-        __typename: "Attribute",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      class?:  {
-        __typename: "Class",
-        id: string,
-        name: string,
-        iconURL?: string | null,
-        createdAt: string,
-        updatedAt: string,
-      } | null,
-      portraitURL?: string | null,
-      createdAt: string,
-      updatedAt: string,
-    },
-    compositionRoleId: string,
-    recommended?: boolean | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnCreateLinkSubscription = {
-  onCreateLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnUpdateLinkSubscription = {
-  onUpdateLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteLinkSubscription = {
-  onDeleteLink?:  {
-    __typename: "Link",
-    id: string,
-    label: string,
-    url: string,
+    readAt: string,
+    heroCollection: Array< string | null >,
+    compositions?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,

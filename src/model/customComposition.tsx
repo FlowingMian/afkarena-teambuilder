@@ -1,5 +1,5 @@
 import { Composition} from './compositions';
-import * as Role from '../data/characteristics/role';
+import * as Role from '../data/characteristics/roles';
 import Lightbearers from '../data/heroes/lightbearers';
 import Maulers from '../data/heroes/maulers';
 import Wilders from '../data/heroes/wilders';

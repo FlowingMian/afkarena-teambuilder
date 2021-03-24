@@ -233,367 +233,40 @@ export const onDeleteRole = /* GraphQL */ `
     }
   }
 `;
-export const onCreateComposition = /* GraphQL */ `
-  subscription OnCreateComposition {
-    onCreateComposition {
+export const onCreateProfile = /* GraphQL */ `
+  subscription OnCreateProfile {
+    onCreateProfile {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateComposition = /* GraphQL */ `
-  subscription OnUpdateComposition {
-    onUpdateComposition {
+export const onUpdateProfile = /* GraphQL */ `
+  subscription OnUpdateProfile {
+    onUpdateProfile {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteComposition = /* GraphQL */ `
-  subscription OnDeleteComposition {
-    onDeleteComposition {
+export const onDeleteProfile = /* GraphQL */ `
+  subscription OnDeleteProfile {
+    onDeleteProfile {
       id
       name
-      tags
-      author
-      links {
-        id
-        label
-        url
-        createdAt
-        updatedAt
-      }
-      coreHeroes {
-        id
-        compositionId
-        role {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        heroes {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      flexHeroes {
-        items {
-          id
-          compositionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateCompositionRole = /* GraphQL */ `
-  subscription OnCreateCompositionRole {
-    onCreateCompositionRole {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateCompositionRole = /* GraphQL */ `
-  subscription OnUpdateCompositionRole {
-    onUpdateCompositionRole {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteCompositionRole = /* GraphQL */ `
-  subscription OnDeleteCompositionRole {
-    onDeleteCompositionRole {
-      id
-      compositionId
-      role {
-        id
-        name
-        iconURL
-        createdAt
-        updatedAt
-      }
-      heroes {
-        items {
-          id
-          compositionRoleId
-          recommended
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateHeroRequirement = /* GraphQL */ `
-  subscription OnCreateHeroRequirement {
-    onCreateHeroRequirement {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateHeroRequirement = /* GraphQL */ `
-  subscription OnUpdateHeroRequirement {
-    onUpdateHeroRequirement {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteHeroRequirement = /* GraphQL */ `
-  subscription OnDeleteHeroRequirement {
-    onDeleteHeroRequirement {
-      id
-      hero {
-        id
-        name
-        nickname
-        faction {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        attribute {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        class {
-          id
-          name
-          iconURL
-          createdAt
-          updatedAt
-        }
-        portraitURL
-        createdAt
-        updatedAt
-      }
-      compositionRoleId
-      recommended
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateLink = /* GraphQL */ `
-  subscription OnCreateLink {
-    onCreateLink {
-      id
-      label
-      url
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateLink = /* GraphQL */ `
-  subscription OnUpdateLink {
-    onUpdateLink {
-      id
-      label
-      url
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteLink = /* GraphQL */ `
-  subscription OnDeleteLink {
-    onDeleteLink {
-      id
-      label
-      url
+      readAt
+      heroCollection
+      compositions
       createdAt
       updatedAt
     }

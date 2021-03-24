@@ -1,10 +1,10 @@
-type Hero @model {
+type Hero @model { 
   id: ID!
   name: String!
-  nickname: [String]
-  faction: Faction @connection
-  attribute: Attribute @connection
-  class: Class @connection
+  nickname: [String]!
+  faction: Faction! @connection
+  attribute: Attribute! @connection
+  class: Class! @connection
   portraitURL: String
 }
 
@@ -32,32 +32,10 @@ type Role @model {
   iconURL: String
 }
 
-type Composition @model {
+type Profile @model {
   id: ID!
   name: String!
-  tags: [String]
-  author: String!
-  links: [Link]!
-  coreHeroes: CompositionRole @connection
-  flexHeroes: [CompositionRole] @connection(keyName: "byComposition", fields: ["id"])
-}
-
-type CompositionRole @model
- @key(name: "byComposition", fields: ["compositionId"]) {
-  id: ID!
-  compositionId: ID!
-  role: Role! @connection
-  heroes: [HeroRequirement]!  @connection(keyName: "byCompositionRole", fields: ["id"])
-}
-
-type HeroRequirement @model
- @key(name: "byCompositionRole", fields: ["compositionRoleId"]) {
-  hero: Hero! @connection
-  compositionRoleId: ID!
-  recommended: Boolean
-}
-
-type Link @model {
-  label: String!
-  url: String!
+  readAt: AWSDateTime!
+  heroCollection : [ID]!
+  compositions: AWSJSON
 }

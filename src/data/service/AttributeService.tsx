@@ -1,6 +1,6 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { ListAttributesQuery } from '../../API';
-import { Attributes } from '../../data/characteristics/attributes';
+import { Attributes } from '../characteristics/attributes';
 import { Attribute } from '../../model/characteristics';
 import { createAttribute } from '../../graphql/mutations';
 import { listAttributes } from '../../graphql/queries';

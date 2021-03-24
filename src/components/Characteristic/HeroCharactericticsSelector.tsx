@@ -2,8 +2,6 @@
 import React, { useContext } from 'react';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, HStack } from '@chakra-ui/react';
 import { useState } from 'react';
-import { Classes } from '../../data/characteristics/classes';
-import { Factions } from '../../data/characteristics/factions';
 import { Hero } from '../../model/heroes';
 import CharacteristicCheckboxGroup from './CharacteristicCheckboxGroup';
 import CharacteristicTable from './CharacteristicTable';
@@ -33,11 +31,11 @@ type CharactericticsSelectorProps = {
 
 function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps):JSX.Element {
 
-  const {attributes} = useContext(DataContext);
+  const {attributes, classes, factions} = useContext(DataContext);
   
   const [selection, setSelection] = useState<HeroCharactericticsSelection>(new HeroCharactericticsSelection(
-    Factions.map(c => c.id),
-    Classes.map(c => c.id),
+    factions.map(c => c.id),
+    classes.map(c => c.id),
     attributes.map(c => c.id)
   ));
 
@@ -72,18 +70,18 @@ function HeroCharactericticsSelector({onChange}: CharactericticsSelectorProps):J
         </h2>
         <AccordionPanel pb={4}>
           <HStack alignItems='start'>
-            <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={Factions} onChange={onFactionChange}/>
+            <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={factions} onChange={onFactionChange}/>
             <Box>
-              <Heading size="sm" mb='0.6rem'>Factions</Heading>
-              <CharacteristicTable characterictics={Factions}/>
+              <Heading size="sm" mb='0.6rem'>factions</Heading>
+              <CharacteristicTable characterictics={factions}/>
             </Box>
 
             <Box width='0.5rem'/>
 
-            <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={onClassChange}/>
+            <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={classes} onChange={onClassChange}/>
             <Box>
-              <Heading size="sm" mb='0.6rem'>Classes</Heading>
-              <CharacteristicTable characterictics={Classes}/>
+              <Heading size="sm" mb='0.6rem'>classes</Heading>
+              <CharacteristicTable characterictics={classes}/>
             </Box>
 
             <Box width='0.5rem'/>

@@ -4,8 +4,6 @@ import { Center, HStack } from '@chakra-ui/react';
 import { Hero } from '../../model/heroes';
 import CharacteristicTable from './CharacteristicTable';
 import { Attribute, Class, Faction } from '../../model/characteristics';
-import { Factions } from '../../data/characteristics/factions';
-import { Classes } from '../../data/characteristics/classes';
 import { DataContext } from '../../data/DataContext';
 
 type HeroCharactericticsTableProps = {
@@ -13,10 +11,10 @@ type HeroCharactericticsTableProps = {
 };
 
 function HeroCharactericticsTable({heroes} : HeroCharactericticsTableProps):JSX.Element {
-  const {attributes} = useContext(DataContext);
+  const {attributes, classes, factions} = useContext(DataContext);
 
-  const factionMap = new Map(Factions.map((c): [Faction, number] => [c, 0]));
-  const classMap = new Map(Classes.map((c): [Class, number] => [c, 0]));
+  const factionMap = new Map(factions.map((c): [Faction, number] => [c, 0]));
+  const classMap = new Map(classes.map((c): [Class, number] => [c, 0]));
   const attributeMap = new Map(attributes.map((c): [Attribute, number] => [c, 0]));
   
   heroes.forEach(h => {

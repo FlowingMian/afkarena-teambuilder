@@ -1,14 +1,27 @@
 
 import React, { useEffect, useState } from 'react';
-import { Attribute } from '../model/characteristics';
+import { Attribute, Class, Faction, Role } from '../model/characteristics';
+import { Hero } from '../model/heroes';
 import { fetchAttributes } from './service/AttributeService';
+import { fetchClasses } from './service/ClassService';
+import { fetchFactions } from './service/FactionService';
+import { fetchHeroes } from './service/HeroService';
+import { fetchRoles } from './service/RoleService';
 
 type DataContextProps = { 
   attributes: Array<Attribute>,
+  classes: Array<Class>,
+  factions: Array<Faction>,
+  roles: Array<Role>,
+  heroes: Array<Hero>,
 };
 
 const defaultDataContext:DataContextProps = {
   attributes: [],
+  classes: [],
+  factions: [],
+  roles: [],
+  heroes: [],
 };
 
 export const DataContext = React.createContext<DataContextProps>(defaultDataContext);
@@ -21,10 +34,14 @@ export const DataContextProvider = ({children}:DataContextProviderProps):JSX.Ele
   const [data, setData] = useState(defaultDataContext);
   
   useEffect(() =>{
-    fetchAttributes()
-      .then(attributes => {
+    Promise.all([fetchAttributes(), fetchClasses(), fetchFactions(), fetchRoles(), fetchHeroes()])
+      .then(([attributes, classes, factions, roles, heroes]) => {
         setData({
-          attributes
+          attributes,
+          classes,
+          factions,
+          roles,
+          heroes
         });
       });
   },[]);

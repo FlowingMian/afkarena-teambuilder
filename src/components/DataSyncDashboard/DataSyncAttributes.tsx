@@ -1,8 +1,7 @@
 import React from 'react';
-import { HStack, Button } from '@chakra-ui/react';
+import { HStack, Button, Heading } from '@chakra-ui/react';
 import { createAttributes } from '../../data/service/AttributeService';
 import { DataContext } from '../../data/DataContext';
-import CharacteristicTable from '../Characteristic/CharacteristicTable';
 
 function DataSyncAttribute():JSX.Element {  
 
@@ -10,8 +9,8 @@ function DataSyncAttribute():JSX.Element {
     <DataContext.Consumer>
       {({attributes}) => (
         <HStack>
-          <CharacteristicTable characterictics={attributes}/> 
-          <Button onClick={createAttributes}>Create Attributes</Button>
+          <Button onClick={createAttributes} disabled={attributes.length > 0}>Create Attributes</Button>
+          <Heading>({attributes.length})</Heading>
         </HStack>
       )}
     </DataContext.Consumer>

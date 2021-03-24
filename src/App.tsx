@@ -38,7 +38,7 @@ function App() {
         <DataSyncDashboard/>
       </Route>
       <Route path="/">
-        <Redirect to="/usages" />
+        <Redirect to="/datasync" />
       </Route>
     </Switch>            
   </>);
