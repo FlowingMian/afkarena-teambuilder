@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import UsageDashboardTierList from './UsageDashboardTierList';
 import UsageDashboardTable from './UsageDashboardTable';
 import { UsageDashboardResult } from './model';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
-import { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
+import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { ProfileContext } from '../Profile/ProfileContext';
 
 type UsageDashboardResultsProps = {
     usageResult: UsageDashboardResult;
-    filters: HeroCharactericticsSelection | undefined;
+    filters: HeroFilters | undefined;
 };
 
 function UsageDashboardResults({ usageResult, filters }: UsageDashboardResultsProps):JSX.Element {
+  const {profile} = useContext(ProfileContext);
+
   const filteredHeroes = usageResult.heroUsageResults
-    .filter(ur => !filters || filters.accept(ur.hero))
+    .filter(ur => !filters || acceptHero(filters, profile, ur.hero))
     .map(ur => ur.hero);
 
   return (<>

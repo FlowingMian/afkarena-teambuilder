@@ -1,37 +1,3 @@
-type Hero @model { 
-  id: ID!
-  name: String!
-  nickname: [String]!
-  faction: Faction! @connection
-  attribute: Attribute! @connection
-  class: Class! @connection
-  portraitURL: String
-}
-
-type Faction @model {
-  id: ID!
-  name: String!
-  iconURL: String
-}
-
-type Attribute @model {
-  id: ID!
-  name: String!
-  iconURL: String
-}
-
-type Class @model {
-  id: ID!
-  name: String!
-  iconURL: String
-}
-
-type Role @model {
-  id: ID!
-  name: String!
-  iconURL: String
-}
-
 type Profile @model {
   id: ID!
   name: String!

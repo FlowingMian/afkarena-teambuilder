@@ -1,26 +1,31 @@
 import React from 'react';
-import {HStack, Image, Tooltip, Link, VStack } from '@chakra-ui/react';
+import {HStack, Image, Tooltip, Link, Switch } from '@chakra-ui/react';
 import { Hero } from '../../model/heroes';
 import CharactericticBox from '../Characteristic/CharacteristicBox';
 
 type HeroDetailsProps = {
   hero: Hero;
+  isOwned: boolean
+  onChange:(e:React.ChangeEvent<HTMLInputElement>, hero:Hero) => void;
 };
 
 const SIZE_SM = '2.5rem';
 const SIZE = '3rem';
 
-function HeroDetails({ hero }: HeroDetailsProps):JSX.Element {
+function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element {
 
   const detailsStyle= {
-    width: '7.8rem',
     border: '1px solid gray',
-    paddingTop: '0.15rem',
+    paddingX: '0.5rem'
   };
 
   return (
-    <HStack minWidth={[SIZE_SM, SIZE]} height={[SIZE_SM, SIZE]}
-      spacing={0} alignItems='stretch'>
+    <HStack height={[SIZE_SM, SIZE]}
+      alignItems='center'
+      {...detailsStyle}
+      backgroundColor={isOwned ? 'green.100' : 'red.100'}>
+      <Switch value={hero.id} isChecked={isOwned} mr="5px" onChange={(e) => onChange(e, hero)}/>
+
       <Tooltip label={hero.name} aria-label={hero.name}>
         <Image 
           src={hero.portraitURL}
@@ -28,14 +33,14 @@ function HeroDetails({ hero }: HeroDetailsProps):JSX.Element {
           boxSize={[SIZE_SM, SIZE]}
         />
       </Tooltip>
-      <VStack {...detailsStyle} spacing={0} justifyContent="center">
-        <HStack>
-          <CharactericticBox characterictic={hero.faction}/>
-          <CharactericticBox characterictic={hero.class}/>
-          <CharactericticBox characterictic={hero.attribute}/>
-        </HStack>
-        <Link href={`/compositions?query=${hero.name}`} fontSize="xs">View compositions</Link>
-      </VStack>
+
+      <HStack>
+        <CharactericticBox characterictic={hero.faction}/>
+        <CharactericticBox characterictic={hero.class}/>
+        <CharactericticBox characterictic={hero.attribute}/>
+      </HStack>
+
+      <Link href={`/compositions?query=${hero.name}`} fontSize="sm">View compositions</Link>
     </HStack>
   );
 }

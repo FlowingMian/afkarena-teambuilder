@@ -1,4 +1,4 @@
-import { Attribute, Class, Faction } from './characteristics';
+import { Attribute, Class, Faction } from './characteristics/characteristics';
 
 export interface Hero {
   id: string;

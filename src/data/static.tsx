@@ -1,1 +1,0 @@
-export const staticDomain = 'https://static.appcraft.tk/';

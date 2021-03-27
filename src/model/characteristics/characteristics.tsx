@@ -11,3 +11,5 @@ export type Attribute = Characterictic
 export type Class = Characterictic
 
 export type Role = Characterictic
+
+export type CollectionStatus = Characterictic

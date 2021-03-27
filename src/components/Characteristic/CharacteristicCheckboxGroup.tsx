@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox, VStack,} from '@chakra-ui/react';
-import { Characterictic } from '../../model/characteristics';
+import { Characterictic } from '../../model/characteristics/characteristics';
 
 type CharacteristicCheckboxGroupProps<Characterictic> = {
   selection: Array<string>;
@@ -8,13 +8,13 @@ type CharacteristicCheckboxGroupProps<Characterictic> = {
   onChange:(value: Array<string>) => void;
 };
 
-function CharacteristicCheckboxGroup({ selection, characterictics, onChange : OnSelectionChange }: CharacteristicCheckboxGroupProps<Characterictic>):JSX.Element {
+function CharacteristicCheckboxGroup({ selection, characterictics, onChange : onSelectionChange }: CharacteristicCheckboxGroupProps<Characterictic>):JSX.Element {
 
   const allChecked = selection.length === characterictics.length;
   const isIndeterminate = !allChecked && selection.length > 0;
 
   function toggleAll() {
-    OnSelectionChange(selection.length === 0 ? characterictics.map(c => c.id) : []);
+    onSelectionChange(selection.length === 0 ? characterictics.map(c => c.id) : []);
   }
 
   function onChange(e:React.ChangeEvent<HTMLInputElement>) {
@@ -25,7 +25,7 @@ function CharacteristicCheckboxGroup({ selection, characterictics, onChange : On
     else {
       values = selection.filter(c => c !== e.target.value);
     } 
-    OnSelectionChange(values);
+    onSelectionChange(values);
   }
 
   return (

@@ -1,5 +1,5 @@
-import { Attribute } from '../../model/characteristics';
-import { staticDomain } from '../static';
+import { Attribute } from './characteristics';
+import { staticDomain } from '../common';
 
 export const Strength:Attribute = {
   id: 'STRENGTH',

@@ -3,8 +3,9 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text, Tag } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { staticDomain } from '../../data/static';
 import colors from '../../theme/colors';
+import ProfileBox from '../Profile/ProfileBox';
+import { staticDomain } from '../../model/common';
 
 const NavbarStyle = {
   backgroundColor: 'primary.700', 
@@ -77,6 +78,7 @@ function Navbar():JSX.Element {
                 <Image src={`${staticDomain}afkarena-logo.png`} height='2rem'/>
                 <Text>AFK Team</Text>
               </HStack>
+              <ProfileBox/>
             </DrawerHeader>
 
             <DrawerBody p={1}>

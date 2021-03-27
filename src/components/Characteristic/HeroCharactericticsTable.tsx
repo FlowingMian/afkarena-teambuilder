@@ -1,21 +1,22 @@
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { Center, HStack } from '@chakra-ui/react';
 import { Hero } from '../../model/heroes';
 import CharacteristicTable from './CharacteristicTable';
-import { Attribute, Class, Faction } from '../../model/characteristics';
-import { DataContext } from '../../data/DataContext';
+import { Attribute, Class, Faction } from '../../model/characteristics/characteristics';
+import { Factions } from '../../model/characteristics/factions';
+import { Classes } from '../../model/characteristics/classes';
+import { Attributes } from '../../model/characteristics/attributes';
 
 type HeroCharactericticsTableProps = {
   heroes: Array<Hero>;
 };
 
 function HeroCharactericticsTable({heroes} : HeroCharactericticsTableProps):JSX.Element {
-  const {attributes, classes, factions} = useContext(DataContext);
 
-  const factionMap = new Map(factions.map((c): [Faction, number] => [c, 0]));
-  const classMap = new Map(classes.map((c): [Class, number] => [c, 0]));
-  const attributeMap = new Map(attributes.map((c): [Attribute, number] => [c, 0]));
+  const factionMap = new Map(Factions.map((c): [Faction, number] => [c, 0]));
+  const classMap = new Map(Classes.map((c): [Class, number] => [c, 0]));
+  const attributeMap = new Map(Attributes.map((c): [Attribute, number] => [c, 0]));
   
   heroes.forEach(h => {
     factionMap.set(h.faction, factionMap.get(h.faction) as number + 1);

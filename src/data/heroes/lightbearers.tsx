@@ -1,8 +1,8 @@
 import { Hero } from '../../model/heroes';
-import * as Faction from '../characteristics/factions';
-import * as Attribute from '../characteristics/attributes';
-import * as Class from '../characteristics/classes';
-import { staticDomain } from '../static';
+import * as Faction from '../../model/characteristics/factions';
+import * as Attribute from '../../model/characteristics/attributes';
+import * as Class from '../../model/characteristics/classes';
+import { staticDomain } from '../../model/common';
 
 export const Estrilda: Hero = {
   id: 'ESTRILDA',

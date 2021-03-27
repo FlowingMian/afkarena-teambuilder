@@ -7,16 +7,17 @@ import CompositionSelector from '../Composition/CompositionSelector';
 import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
-import HeroCharactericticsSelector, { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
+import HeroFiltersSelector from '../Characteristic/HeroFiltersSelector';
 import { sendViewItems } from '../../useTracking';
 import { setPageTitle } from '../utils';
+import { HeroFilters } from '../Characteristic/HeroFilters';
 
 function UsageDashboard():JSX.Element {
 
   const [usageResult, setUsageResult] = useState<UsageDashboardResult>();
-  const [filters, setFilters] = useState<HeroCharactericticsSelection>();
+  const [filters, setFilters] = useState<HeroFilters>();
   
-  function filterHeroes(filters:HeroCharactericticsSelection) {
+  function filterHeroes(filters:HeroFilters) {
     setFilters(filters);
   }
 
@@ -58,7 +59,7 @@ function UsageDashboard():JSX.Element {
   return (<>
     <VStack {...BoxControlsStyle} alignItems='stretch'>
       <CompositionSelector onValidate={calculateHeroUsage}/>
-      <HeroCharactericticsSelector onChange={filterHeroes}/>
+      <HeroFiltersSelector onChange={filterHeroes}/>
     </VStack>
     <Box {...BoxResultsStyle}>
       {!usageResult && <Center>

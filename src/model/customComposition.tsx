@@ -1,5 +1,5 @@
 import { Composition} from './compositions';
-import * as Role from '../data/characteristics/roles';
+import * as Role from '../model/characteristics/roles';
 import Lightbearers from '../data/heroes/lightbearers';
 import Maulers from '../data/heroes/maulers';
 import Wilders from '../data/heroes/wilders';
@@ -7,7 +7,7 @@ import Graveborns from '../data/heroes/graveborns';
 import Celestials from '../data/heroes/celestials';
 import Hypogeans from '../data/heroes/hypogeans';
 import Dimensionals from '../data/heroes/dimensionals';
-import * as Factions from '../data/characteristics/factions';
+import * as Factions from '../model/characteristics/factions';
 
 let customCompositionId = 0;
 

@@ -1,4 +1,4 @@
-import { Role } from '../../model/characteristics';
+import { Role } from '../../model/characteristics/characteristics';
 import { Composition } from '../../model/compositions';
 import { Hero } from '../../model/heroes';
 

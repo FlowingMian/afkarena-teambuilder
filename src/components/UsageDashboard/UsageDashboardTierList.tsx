@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import HeroCategory from '../Hero/HeroCategory';
 import { UsageDashboardResult, Tier, GLOBAL_PERCENT_THRESHOLD, NICHE_PERCENT_THRESHOLD } from './model';
 import { Tooltip, VStack } from '@chakra-ui/react';
 import { heatGradient } from '../../theme/colors';
-import { HeroCharactericticsSelection } from '../Characteristic/HeroCharactericticsSelector';
+import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
 import { InfoIcon } from '@chakra-ui/icons';
+import { ProfileContext } from '../Profile/ProfileContext';
 
 type UsageDashboardTierListProps = {
   usageResult: UsageDashboardResult;
-  filters?:HeroCharactericticsSelection;
+  filters?:HeroFilters;
 };
 
 function UsageDashboardTierList({ usageResult, filters }: UsageDashboardTierListProps):JSX.Element {
@@ -19,9 +20,11 @@ function UsageDashboardTierList({ usageResult, filters }: UsageDashboardTierList
   const flex:Tier = new Tier('Flex', `Flex in ${NICHE_PERCENT_THRESHOLD * 100}% to ${GLOBAL_PERCENT_THRESHOLD * 100}% of compositions`, heatGradient[500]);
   const niche:Tier = new Tier('Niche', `Flex in less than ${NICHE_PERCENT_THRESHOLD * 100}% of compositions`, heatGradient[400]);
   const neverUsed:Tier = new Tier('Never used', ':\'(', heatGradient[100]);
-
+  
+  const {profile} = useContext(ProfileContext);
+  
   usageResult.heroUsageResults
-    .filter(ur => !filters || filters.accept(ur.hero))
+    .filter(ur => !filters || acceptHero(filters, profile, ur.hero))
     .forEach(ur => {
       let tier:Tier;
       if (ur.isCore()) {

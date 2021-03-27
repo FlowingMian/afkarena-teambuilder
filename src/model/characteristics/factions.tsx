@@ -1,5 +1,5 @@
-import { Faction } from '../../model/characteristics';
-import { staticDomain } from '../static';
+import { Faction } from './characteristics';
+import { staticDomain } from '../common';
 
 export const Lightbearer:Faction = {
   id: 'LIGTHBEARER',

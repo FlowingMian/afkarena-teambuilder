@@ -1,6 +1,6 @@
 import React from 'react';
 import { VStack, HStack, Text} from '@chakra-ui/react';
-import { Characterictic } from '../../model/characteristics';
+import { Characterictic } from '../../model/characteristics/characteristics';
 import CharactericticBox from './CharacteristicBox';
 
 type CharacteristicTableProps = {

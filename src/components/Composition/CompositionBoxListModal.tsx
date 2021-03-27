@@ -3,7 +3,7 @@ import { Composition } from '../../model/compositions';
 import {Modal, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, ModalContent, Button, useDisclosure } from '@chakra-ui/react';
 import { Fragment } from 'react';
 import { ViewIcon } from '@chakra-ui/icons';
-import { Role } from '../../model/characteristics';
+import { Role } from '../../model/characteristics/characteristics';
 import CompositionBoxList from './CompositionBoxList';
 
 type CompositionBoxListModalProps = {

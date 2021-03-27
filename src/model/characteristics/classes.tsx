@@ -1,5 +1,5 @@
-import { Class } from '../../model/characteristics';
-import { staticDomain } from '../static';
+import { Class } from './characteristics';
+import { staticDomain } from '../common';
 
 export const Warrior:Class = {
   id: 'WARRIOR',

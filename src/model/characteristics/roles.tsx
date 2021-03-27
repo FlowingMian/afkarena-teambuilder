@@ -1,4 +1,4 @@
-import { Role } from '../../model/characteristics';
+import { Role } from './characteristics';
 
 export const Core:Role = {
   id: 'CORE',

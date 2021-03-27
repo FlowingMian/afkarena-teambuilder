@@ -1,4 +1,4 @@
-import { Role } from './characteristics';
+import { Role } from './characteristics/characteristics';
 import { Link } from './common';
 import { Hero } from './heroes';
 

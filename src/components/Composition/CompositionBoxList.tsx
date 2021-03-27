@@ -1,7 +1,7 @@
 import React from 'react';
 import { Composition } from '../../model/compositions';
 import { HStack, VStack } from '@chakra-ui/react';
-import { Role } from '../../model/characteristics';
+import { Role } from '../../model/characteristics/characteristics';
 import CompositionBox from './CompositionBox';
 import CharacteristicTable from '../Characteristic/CharacteristicTable';
 
