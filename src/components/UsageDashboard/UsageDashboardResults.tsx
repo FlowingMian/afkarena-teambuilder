@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import UsageDashboardTierList from './UsageDashboardTierList';
 import UsageDashboardTable from './UsageDashboardTable';
 import { UsageDashboardResult } from './model';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
-import { ProfileContext } from '../Profile/ProfileContext';
+import { Profile } from '../../model/profile';
 
 type UsageDashboardResultsProps = {
-    usageResult: UsageDashboardResult;
-    filters: HeroFilters | undefined;
+  profile:Profile;
+  usageResult: UsageDashboardResult;
+  filters: HeroFilters | undefined;
 };
 
-function UsageDashboardResults({ usageResult, filters }: UsageDashboardResultsProps):JSX.Element {
-  const {profile} = useContext(ProfileContext);
+function UsageDashboardResults({ profile, usageResult, filters }: UsageDashboardResultsProps):JSX.Element {
 
   const filteredHeroes = usageResult.heroUsageResults
     .filter(ur => !filters || acceptHero(filters, profile, ur.hero))
@@ -29,10 +29,10 @@ function UsageDashboardResults({ usageResult, filters }: UsageDashboardResultsPr
 
       <TabPanels>
         <TabPanel>
-          <UsageDashboardTierList usageResult={usageResult} filters={filters}/>
+          <UsageDashboardTierList profile={profile} usageResult={usageResult} filters={filters}/>
         </TabPanel>
         <TabPanel>
-          <UsageDashboardTable usageResult={usageResult} filters={filters}/>
+          <UsageDashboardTable profile={profile} usageResult={usageResult} filters={filters}/>
         </TabPanel>
         <TabPanel>
           <HeroCharactericticsTable heroes={filteredHeroes} />

@@ -3,13 +3,19 @@ import React, { useState } from 'react';
 import { Profile } from '../../model/profile';
 
 type ProfileContextProps = { 
-  profile: Profile|null,
-  setProfile: (value:Profile) => void
+  profile: Profile,
+  updateProfile: (value:Profile) => void
 };
 const defaultProfileContext:ProfileContextProps = {
-  profile: null,
+  profile: {
+    id: '',
+    name: 'Not saved',
+    heroCollection: [],
+    compositions: {},
+    readonly: false
+  },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setProfile: () => {},
+  updateProfile: () => {},
 };
 export const ProfileContext = React.createContext<ProfileContextProps>(defaultProfileContext);
 
@@ -20,18 +26,18 @@ export const ProfileContextProvider = ({children}:ProfileContextProviderProps):J
 
   const PROFILE_KEY = 'currentProfile';
 
+  function updateProfile(profile:Profile) {
+    window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+    setState({...state, profile});
+  }
+
   const [state, setState] = useState(() => {
     const profileJson = window.localStorage.getItem(PROFILE_KEY);
-    const profile = profileJson !== null ? JSON.parse(profileJson) : null;
-    console.log('localStorage profile', profile);
+    const profile = profileJson !== null ? JSON.parse(profileJson) as Profile : defaultProfileContext.profile;
     
     return {
       profile,
-      setProfile: (profile) => {
-        console.log('save to localStorage', profile);
-        window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
-        setState({...state, profile});
-      }
+      updateProfile,
     } as ProfileContextProps;
   });
 

@@ -78,7 +78,7 @@ function Navbar():JSX.Element {
                 <Image src={`${staticDomain}afkarena-logo.png`} height='2rem'/>
                 <Text>AFK Team</Text>
               </HStack>
-              <ProfileBox/>
+              {/* <ProfileBox/> */}
             </DrawerHeader>
 
             <DrawerBody p={1}>

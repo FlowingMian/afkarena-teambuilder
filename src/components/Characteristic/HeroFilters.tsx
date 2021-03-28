@@ -9,8 +9,8 @@ export interface HeroFilters {
   collectionStatuses:Array<string>;
 }
 
-export function acceptHero(heroFilters:HeroFilters, profile:Profile|null, hero:Hero):boolean {
-  const collectionStatus = profile?.heroCollection.includes(hero.id) ? Owned : NotOwned;
+export function acceptHero(heroFilters:HeroFilters, profile:Profile, hero:Hero):boolean {
+  const collectionStatus = profile.heroCollection.includes(hero.id) ? Owned : NotOwned;
   return heroFilters.factionIds.includes(hero.faction.id)
         && heroFilters.classIds.includes(hero.class.id)
         && heroFilters.attributeIds.includes(hero.attribute.id)

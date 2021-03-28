@@ -1,52 +1,99 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useState } from 'react';
 import { Accordion, VStack, Button } from '@chakra-ui/react';
-import { Composition, HeroRequirement } from '../../model/compositions';
+import { HeroRequirement } from '../../model/compositions';
 import CompositionBuilder from './CompositionBuilder';
 import HeroList from '../Hero/HeroList';
 import heroes from '../../data/heroes';
 import { State } from '../../model/common';
-import generateCustomComposition from '../../model/customComposition';
+import generateCustomComposition, { isCustomComposition } from '../../model/customComposition';
 import { AddIcon } from '@chakra-ui/icons';
+import { ProfileContext } from '../Profile/ProfileContext';
+import { Hero } from '../../model/heroes';
+import { Profile, CompositionHeroes } from '../../model/profile';
+import compositions from '../../data/compositions';
 
 type MultifightDashboardResultsProps = {
-    compositions: Array<Composition>;
+  profile:Profile;
+  compositionHeroes: CompositionHeroes;
+  onCompositionHeroesChange: (value:CompositionHeroes) => void
 };
 
-function MultifightDashboardResults({ compositions }: MultifightDashboardResultsProps):JSX.Element {
-  const [selectedHeroesByComposition, setSelectedHeroesByComposition] = useState<Map<string, Array<HeroRequirement>>>(new Map());
+function MultifightDashboardResults({ profile, compositionHeroes, onCompositionHeroesChange }: MultifightDashboardResultsProps):JSX.Element {
+  const {updateProfile} = useContext(ProfileContext);
+
   const [heroStates, setHeroStates] = useState<Map<string,State>>(new Map());
-  const [customCompositions, setCustomCompositions] = useState<Array<Composition>>([]);
+  const [hasChanged, setHasChanged] = useState<boolean>(false);
 
-  useEffect(() => {
-    updateSelectedHeroesByComposition(new Map(compositions.map(c => [c.id, c.coreHeroes.heroes])));
-    setCustomCompositions([]);
-  }, [compositions]);
+  useEffect(calculateHeroStates, [compositionHeroes]);
 
-  function onChange(compositionId:string, heroes:Array<HeroRequirement>) {
-    updateSelectedHeroesByComposition(new Map(selectedHeroesByComposition.set(compositionId, heroes)));
+  function onSave() {
+    updateProfile({
+      ...profile,
+      compositions: compositionHeroes
+    });
+    setHasChanged(false);
   }
 
-  function updateSelectedHeroesByComposition(selection:Map<string, Array<HeroRequirement>>) {
-    setSelectedHeroesByComposition(selection);
-    setHeroStates(new Map(Array.from(selection.values()).flatMap(hs => hs.map((h): [string, State] => {
-      return [h.id, State.SELECTED];
-    }))));
+  function onChange(compositionId:string, heroes:Array<HeroRequirement>) {
+    updateSelectedHeroesByComposition({
+      ...compositionHeroes,
+      [compositionId]: heroes
+    });
   }
 
   function addCustomComposition(){
-    setCustomCompositions([...customCompositions, generateCustomComposition()]);
+    const customComposition = generateCustomComposition();
+    updateSelectedHeroesByComposition({
+      ...compositionHeroes,
+      [customComposition.id]: []
+    });
+  }
+  
+  function updateSelectedHeroesByComposition(selection:CompositionHeroes) {
+    onCompositionHeroesChange(selection);
+    setHasChanged(true);
+    calculateHeroStates();
   }
 
-  const heroSelection = new Map(Array.from(selectedHeroesByComposition.entries()).flatMap(
-    ([cId, hIds]) => hIds.map(hId => [hId, cId])
-  ));
+  const disabledHeroes = heroes
+    .filter(h => !profile.heroCollection.includes(h.id));
 
-  const compositionBuilders = [...compositions, ...customCompositions].map(c => 
+  function calculateHeroStates() {
+    const selectedMap = Object.entries(compositionHeroes)
+      .flatMap(([, hrs]) => 
+        hrs.map((hr): [string, State] => {
+          return [hr.id, State.SELECTED];
+        })
+      );
+
+    setHeroStates(new Map(
+      disabledHeroes.map(h => [h.id, State.DISABLED] as [string, State])
+        .concat(selectedMap)
+    ));
+  }
+
+  const heroSelection = new Map(
+    disabledHeroes.map(h => [h, 'DISABLED'] as [Hero|HeroRequirement, string])
+      .concat(
+        Object.entries(compositionHeroes)
+          .flatMap(([cId, hIds]) => {
+            return hIds.map(hId => [hId, cId] as [Hero|HeroRequirement, string]);
+          })
+      ));
+
+  const selectedCompositions = compositions.filter(c => Object.keys(compositionHeroes).includes(c.id));
+  const customCompositions = Object.keys(compositionHeroes)
+    .filter(c => isCustomComposition(c))
+    .map(c => generateCustomComposition(c));
+
+  const compositionBuilders = [...selectedCompositions, ...customCompositions].map(c => 
     <CompositionBuilder key={c.id} composition={c} heroSelection={heroSelection} onChange={(v) => onChange(c.id, v)}/>
   );
+  
   return (
     <VStack>
+      <Button colorScheme='red' onClick={onSave} disabled={!hasChanged}>Save Compositions</Button>
       <Accordion width="100%" allowToggle={true} allowMultiple={true}>
         {compositionBuilders}
       </Accordion>

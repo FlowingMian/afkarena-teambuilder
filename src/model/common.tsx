@@ -11,3 +11,7 @@ export enum State {
   SELECTED,
   LOCKED,
 }
+
+export function generateBase62Id():string {
+  return Math.random().toString(36).substr(2, 6);
+}

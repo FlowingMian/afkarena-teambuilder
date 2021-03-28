@@ -11,8 +11,13 @@ import HeroFiltersSelector from '../Characteristic/HeroFiltersSelector';
 import { sendViewItems } from '../../useTracking';
 import { setPageTitle } from '../utils';
 import { HeroFilters } from '../Characteristic/HeroFilters';
+import { Profile } from '../../model/profile';
 
-function UsageDashboard():JSX.Element {
+type UsageDashboardProps = {
+  profile: Profile;
+};
+
+function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
 
   const [usageResult, setUsageResult] = useState<UsageDashboardResult>();
   const [filters, setFilters] = useState<HeroFilters>();
@@ -79,7 +84,7 @@ function UsageDashboard():JSX.Element {
           </UnorderedList>
         </Alert>
       </Center>}
-      {usageResult && <UsageDashboardResults usageResult={usageResult} filters={filters}/>}
+      {usageResult && <UsageDashboardResults profile={profile} usageResult={usageResult} filters={filters}/>}
     </Box>
   </>);
 }

@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Table, Thead, Th, Tbody, Tr } from '@chakra-ui/react';
 import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
 import { UsageDashboardResult } from './model';
 import UsageDashboardTableRow from './UsageDashboardTableRow';
-import { ProfileContext } from '../Profile/ProfileContext';
+import { Profile } from '../../model/profile';
 
 type UsageDashboardTableProps = {
+  profile:Profile;
   usageResult: UsageDashboardResult;
   filters?:HeroFilters;
 };
 
-function UsageDashboardTable({ usageResult, filters }: UsageDashboardTableProps):JSX.Element {
-  const {profile} = useContext(ProfileContext);
+function UsageDashboardTable({ profile, usageResult, filters }: UsageDashboardTableProps):JSX.Element {
 
   const rows = usageResult.heroUsageResults
     .filter(ur => !filters || acceptHero(filters, profile, ur.hero))

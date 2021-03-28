@@ -7,14 +7,22 @@ import MultifightDashboardResults from './MultifightDashboardResults';
 import compositions from '../../data/compositions';
 import { sendViewItems } from '../../useTracking';
 import { setPageTitle } from '../utils';
-import { Composition } from '../../model/compositions';
+import { CompositionHeroes, Profile } from '../../model/profile';
 
-function MultifightDashboard():JSX.Element {
-  const [selectedCompositions, setSelectedCompositions] = useState<Array<Composition>>([]);
+type MultifightDashboardProps = {
+  profile: Profile;
+};
+
+function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
+
+  const [selectedCompositions, setSelectedCompositions] = useState<CompositionHeroes>(profile.compositions);
 
   function filterCompositions(compositionIds:Array<string>) {
     sendViewItems('composition', compositionIds);
-    setSelectedCompositions(compositions.filter(c => compositionIds.includes(c.id)));
+    setSelectedCompositions(compositions
+      .filter(c => compositionIds.includes(c.id))
+      .reduce((res, c) => (res[c.id] = c.coreHeroes.heroes, res), {} as CompositionHeroes)
+    );
   }
   
   useEffect(() => {
@@ -26,7 +34,7 @@ function MultifightDashboard():JSX.Element {
       <CompositionSelector onValidate={filterCompositions}/>
     </VStack>
     <Box {...BoxResultsStyle}>
-      {selectedCompositions.length === 0 && <Center>
+      {Object.keys(selectedCompositions).length === 0 && <Center>
         <Alert 
           status="info" 
           width={[null, '60rem']}
@@ -42,7 +50,9 @@ function MultifightDashboard():JSX.Element {
           </UnorderedList>
         </Alert>
       </Center>}
-      {selectedCompositions.length > 0 && <MultifightDashboardResults compositions={selectedCompositions}/>}
+      {Object.keys(selectedCompositions).length > 0 && 
+        <MultifightDashboardResults profile={profile} compositionHeroes={selectedCompositions} onCompositionHeroesChange={setSelectedCompositions}/>
+      }
     </Box>
   </>);
 }

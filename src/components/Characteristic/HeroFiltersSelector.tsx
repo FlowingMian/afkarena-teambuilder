@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, border, Box, Heading, HStack, Wrap, WrapItem } from '@chakra-ui/react';
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, Wrap, WrapItem } from '@chakra-ui/react';
 import { useState } from 'react';
 import CharacteristicCheckboxGroup from './CharacteristicCheckboxGroup';
 import CharacteristicTable from './CharacteristicTable';

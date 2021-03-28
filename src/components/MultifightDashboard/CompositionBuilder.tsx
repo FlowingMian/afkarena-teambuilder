@@ -1,6 +1,6 @@
 import React from 'react';
 import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Divider, Heading, HStack, Switch, Tag, useDisclosure, VStack } from '@chakra-ui/react';
-import { generateOpenSpot, isOpenSpot } from '../../model/heroes';
+import { generateOpenSpot, Hero, isOpenSpot } from '../../model/heroes';
 import { State } from '../../model/common';
 import { Composition, HeroRequirement } from '../../model/compositions';
 import HeroCategory from '../Hero/HeroCategory';
@@ -12,7 +12,7 @@ import LinkPopover from '../Common/LinkPopover';
 
 type CompositionBuilderProps = {
   composition: Composition;
-  heroSelection: Map<HeroRequirement, string>;
+  heroSelection: Map<Hero|HeroRequirement, string>;
   onChange:(value: Array<HeroRequirement>) => void;
 };
 
@@ -48,10 +48,12 @@ function CompositionBuilder({ composition, heroSelection, onChange }: Compositio
     onChange(t);
   }
   
-  const heroStates = new Map(Array.from(heroSelection, ([h, cId]) => [h.id, cId === composition.id ? State.SELECTED : State.LOCKED]));
+  const heroStates = new Map(Array.from(heroSelection, ([h, cId]) => {
+    return [h.id, cId === composition.id ? State.SELECTED : cId === 'DISABLED' ? State.DISABLED : State.LOCKED];
+  }));
   
   const compositionHeroes:Array<HeroRequirement> = [];
-  const heroCategories = [...isCustomComposition(composition) ? [] : [composition.coreHeroes], ...composition.flexHeroes]
+  const heroCategories = [...isCustomComposition(composition.id) ? [] : [composition.coreHeroes], ...composition.flexHeroes]
     .map(cr => {
       compositionHeroes.push(...cr.heroes);
       return <Fragment key={'f_'+cr.role.id}>
@@ -60,7 +62,7 @@ function CompositionBuilder({ composition, heroSelection, onChange }: Compositio
       </Fragment>;
     });
 
-  if (!isCustomComposition(composition)) {
+  if (!isCustomComposition(composition.id)) {
     const remainingHeroes = isOpen ? heroes.filter(h => !compositionHeroes.find(ch => h.id === ch.id)) : [];
     heroCategories.push(
       <Fragment key={'f_REMAINING'}>

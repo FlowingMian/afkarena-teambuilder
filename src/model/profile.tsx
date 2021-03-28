@@ -1,11 +1,16 @@
+import { HeroRequirement } from './compositions';
+
+export interface CompositionHeroes {
+  [key: string]:Array<HeroRequirement>;
+}
 
 export interface Profile {
   id: string,
   name: string,
-  readAt: string,
+  readAt?: string,
   heroCollection: Array<string>,
-  compositions?: string,
-  createdAt: string,
-  updatedAt: string,
+  compositions: CompositionHeroes,
+  createdAt?: string,
+  updatedAt?: string,
   readonly: boolean
 }

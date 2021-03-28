@@ -12,13 +12,17 @@ import { Profile } from '../../model/profile';
 import { ProfileContext } from '../Profile/ProfileContext';
 import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
 
-function HeroDashboard():JSX.Element {
+type HeroDashboardProps = {
+  profile: Profile;
+};
+
+function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
   const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' });
 
-  const {profile, setProfile} = useContext(ProfileContext);
+  const {updateProfile} = useContext(ProfileContext);
   
   const [selectedHeroes, setSelectedHeroes] = useState<Array<Hero>>(heroes);
-  const [heroCollection, setHeroCollection] = useState<Array<string>>(profile?.heroCollection||[]);
+  const [heroCollection, setHeroCollection] = useState<Array<string>>(profile.heroCollection||[]);
   const [hasChanged, setHasChanged] = useState<boolean>(false);
 
   function filterHeroes(filters:HeroFilters) {
@@ -39,10 +43,10 @@ function HeroDashboard():JSX.Element {
   }
 
   function onSave() {
-    setProfile({
+    updateProfile({
       ...profile,
       heroCollection
-    } as Profile);
+    });
     setHasChanged(false);
   }
 

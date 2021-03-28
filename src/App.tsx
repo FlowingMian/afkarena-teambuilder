@@ -12,7 +12,7 @@ import { useTracking } from './useTracking';
 import MultifightDashboard from './components/MultifightDashboard/MultifightDashboard';
 import Amplify from 'aws-amplify';
 import awsExports from './aws-exports';
-import { ProfileContextProvider } from './components/Profile/ProfileContext';
+import { ProfileContext, ProfileContextProvider } from './components/Profile/ProfileContext';
 Amplify.configure(awsExports);
 
 function App() {
@@ -20,23 +20,27 @@ function App() {
 
   return (<>
     <Navbar/>
-    <Switch>
-      <Route path="/usages">
-        <UsageDashboard/>
-      </Route>
-      <Route path="/multifight">
-        <MultifightDashboard/>
-      </Route>
-      <Route path="/heroes">
-        <HeroDashboard/>
-      </Route>
-      <Route path="/compositions">
-        <CompositionDashboard/>
-      </Route>
-      <Route path="/">
-        <Redirect to="/heroes" />
-      </Route>
-    </Switch>            
+    <ProfileContext.Consumer>
+      {({profile}) => 
+        <Switch>
+          <Route path="/usages">
+            <UsageDashboard profile={profile}/>
+          </Route>
+          <Route path="/multifight">
+            <MultifightDashboard profile={profile}/>
+          </Route>
+          <Route path="/heroes">
+            <HeroDashboard profile={profile}/>
+          </Route>
+          <Route path="/compositions">
+            <CompositionDashboard/>
+          </Route>
+          <Route path="/">
+            <Redirect to="/heroes" />
+          </Route>
+        </Switch>            
+      }
+    </ProfileContext.Consumer>
   </>);
 }
 

@@ -8,16 +8,15 @@ import Celestials from '../data/heroes/celestials';
 import Hypogeans from '../data/heroes/hypogeans';
 import Dimensionals from '../data/heroes/dimensionals';
 import * as Factions from '../model/characteristics/factions';
+import { generateBase62Id } from './common';
 
-let customCompositionId = 0;
-
-export function isCustomComposition(composition:Composition):boolean {
-  return composition.name === 'Custom composition';
+export function isCustomComposition(compositionId:string):boolean {
+  return compositionId.startsWith('CUSTOM-COMPOSITION') ;
 }
 
-export default function generateCustomComposition():Composition {
+export default function generateCustomComposition(id?:string):Composition {
   return {
-    id: 'CUSTOM-COMPOSITION-'+(customCompositionId++),
+    id: id ? id : 'CUSTOM-COMPOSITION-'+generateBase62Id(),
     name: 'Custom composition',
     tags: [],
     author: '',
