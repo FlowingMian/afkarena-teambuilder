@@ -134,6 +134,16 @@ export const Oscar: Hero = {
   portraitURL: staticDomain+'lightbearer/oscar.webp'
 };
 
+export const Eluard: Hero = {
+  id: 'Eluard',
+  name: 'Eluard',
+  nickname: [],
+  faction: Faction.Lightbearer,
+  attribute: Attribute.Intelligence,
+  class: Class.Mage,
+  portraitURL: staticDomain+'lightbearer/eluard.webp'
+};
+
 const heroes: Array<Hero> = [
   Estrilda,
   Belinda,
@@ -147,6 +157,7 @@ const heroes: Array<Hero> = [
   Rosaline,
   Cecilia,
   Rigby,
-  Oscar
+  Oscar,
+  Eluard
 ];
 export default heroes;
