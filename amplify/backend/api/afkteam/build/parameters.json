@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "afkteam",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-amplifybf56fd7753f04-staging-195324-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/5387dbde128303f2f9f6d52c9c730281fdc2e3ad"
+}

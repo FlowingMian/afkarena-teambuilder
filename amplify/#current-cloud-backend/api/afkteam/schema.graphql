@@ -1,0 +1,7 @@
+type Profile @model {
+  id: ID!
+  name: String!
+  readAt: AWSDateTime!
+  heroCollection : [ID]!
+  compositions: AWSJSON
+}
