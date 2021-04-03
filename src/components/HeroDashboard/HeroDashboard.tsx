@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
-import { Button, Heading, Stack, StackDirection, Text, useBreakpointValue, VStack, Wrap, WrapItem, Link } from '@chakra-ui/react';
+import { Button, Stack, StackDirection, useBreakpointValue, VStack, Wrap, WrapItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
 import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
 import HeroFiltersSelector from '../Characteristic/HeroFiltersSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
+import HeroDashboardHelp from './HeroDashboardHelp';
 import { setPageTitle } from '../utils';
 import HeroDetails from '../Hero/HeroDetails';
 import { Profile } from '../../model/profile';
 import { ProfileContext } from '../Profile/ProfileContext';
 import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
 
@@ -79,17 +79,7 @@ function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
 
       <HeroFiltersSelector onChange={filterHeroes}/>
 
-      <Heading size="sm">How are defined the Furniture items ratings?</Heading>
-      <Text fontSize="sm"><span>The source and in-depth explanations for each one come from the </span>
-        <Link 
-          href="https://www.reddit.com/r/afkarena/comments/mc774q/visual_guide_to_furniture_priorities_indepth_by/"
-          isExternal>
-        Visual Guide to Furniture Priorities In-Depth by Arty & Alpattex (update : Mar 2021) <ExternalLinkIcon mx="2px" />
-        </Link>
-      </Text>
-
-      <Heading size="sm">Why are Signature items ratings not available yet?</Heading>
-      <Text fontSize="sm">Today, there is no up-to-date and easy to implement guide about Signature items and I do not have the legitimity to create my own</Text>
+      <HeroDashboardHelp/>
 
     </VStack>
     <Stack direction={stackDirection} alignItems='start' {...BoxResultsStyle} >

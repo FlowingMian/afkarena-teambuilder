@@ -4,7 +4,6 @@ import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, Drawe
 import { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import colors from '../../theme/colors';
-import ProfileBox from '../Profile/ProfileBox';
 import { staticDomain } from '../../model/common';
 
 const NavbarStyle = {
@@ -26,7 +25,7 @@ const navLinks = [
   },
   {
     path: '/multifight',
-    label: 'Multifight',
+    label: 'Multi-fight',
     new: true,
   },
   {
@@ -78,7 +77,6 @@ function Navbar():JSX.Element {
                 <Image src={`${staticDomain}afkarena-logo.png`} height='2rem'/>
                 <Text>AFK Team</Text>
               </HStack>
-              {/* <ProfileBox/> */}
             </DrawerHeader>
 
             <DrawerBody p={1}>

@@ -8,11 +8,9 @@ type ProfileContextProps = {
 };
 const defaultProfileContext:ProfileContextProps = {
   profile: {
-    id: '',
-    name: 'Not saved',
     heroCollection: [],
     compositions: {},
-    readonly: false
+    version: 1
   },
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   updateProfile: () => {},

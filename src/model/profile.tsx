@@ -5,12 +5,13 @@ export interface CompositionHeroes {
 }
 
 export interface Profile {
-  id: string,
-  name: string,
+  id?: string,
+  name?: string,
   readAt?: string,
   heroCollection: Array<string>,
   compositions: CompositionHeroes,
   createdAt?: string,
   updatedAt?: string,
-  readonly: boolean
+  readonly?: boolean,
+  version: number,
 }

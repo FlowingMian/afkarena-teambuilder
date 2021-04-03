@@ -26,7 +26,7 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
     setRendering(true);
   }, [pathname]);
   useEffect(() => {
-    setPageTitle('Multifight');
+    setPageTitle('Multi-fight');
     setTimeout(() => {setRendering(false);}, 1);
   }, []);
 
@@ -60,7 +60,7 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
           </HStack>
           <UnorderedList>
             <ListItem>Start by <b>selecting some compositions </b><Link href='/compositions'>(Click for more information)</Link></ListItem>
-            <ListItem>You can then <b>fill remaining spots</b> with heroes still availble.</ListItem>
+            <ListItem>You can then <b>fill remaining spots</b> with heroes still available.</ListItem>
           </UnorderedList>
         </Alert>
       </Center>}

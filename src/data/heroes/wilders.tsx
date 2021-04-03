@@ -201,6 +201,21 @@ export const Respen: Hero = {
   },
 };
 
+export const Raku: Hero = {
+  id: 'RAKU',
+  name: 'Raku',
+  nickname: [],
+  faction: Faction.Wilder,
+  attribute: Attribute.Agility,
+  class: Class.Ranger,
+  portraitURL: staticDomain+'wilder/raku.png',
+  signature: Signature.UNKNOWN,
+  furniture: {
+    F3: Rating.UNKNOWN,
+    F9: Rating.UNKNOWN,
+  },
+};
+
 const heroes: Array<Hero> = [
   Nemora,
   Kaz,
@@ -214,6 +229,7 @@ const heroes: Array<Hero> = [
   Saurus,
   Solise,
   Pippa,
-  Respen
+  Respen,
+  Raku
 ];
 export default heroes;

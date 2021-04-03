@@ -32,6 +32,11 @@ export const _30:Rating = {
   name: '30',
   iconURL: <Tag size='sm' colorScheme='red' variant='solid'>30</Tag>
 };
+export const UNKNOWN:Rating = {
+  id: 'UNKNOWN',
+  name: 'Unknown',
+  iconURL: <Tag size='sm' colorScheme='gray' variant='subtle'>Unknown</Tag>
+};
 
 export const Signatures:Array<Rating> = [
   _5,
@@ -39,5 +44,6 @@ export const Signatures:Array<Rating> = [
   _15,
   _20,
   _25,
-  _30
+  _30,
+  UNKNOWN
 ];

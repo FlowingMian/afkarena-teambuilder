@@ -202,7 +202,7 @@ export const Oscar: Hero = {
 };
 
 export const Eluard: Hero = {
-  id: 'Eluard',
+  id: 'ELUARD',
   name: 'Eluard',
   nickname: [],
   faction: Faction.Lightbearer,
@@ -213,6 +213,21 @@ export const Eluard: Hero = {
   furniture: {
     F3: Rating.AVERAGE,
     F9: Rating.STRONG,
+  },
+};
+
+export const Peggy: Hero = {
+  id: 'PEGGY',
+  name: 'Peggy',
+  nickname: [],
+  faction: Faction.Lightbearer,
+  attribute: Attribute.Intelligence,
+  class: Class.Support,
+  portraitURL: staticDomain+'lightbearer/peggy.png',
+  signature: Signature.UNKNOWN,
+  furniture: {
+    F3: Rating.UNKNOWN,
+    F9: Rating.UNKNOWN,
   },
 };
 
@@ -230,6 +245,7 @@ const heroes: Array<Hero> = [
   Cecilia,
   Rigby,
   Oscar,
-  Eluard
+  Eluard,
+  Peggy
 ];
 export default heroes;

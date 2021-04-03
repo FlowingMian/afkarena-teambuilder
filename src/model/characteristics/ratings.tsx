@@ -32,6 +32,11 @@ export const VERY_WEAK:Rating = {
   name: 'Very weak',
   iconURL: <Tag size='sm' colorScheme='red' variant='solid'>Very Weak</Tag>
 };
+export const UNKNOWN:Rating = {
+  id: 'UNKNOWN',
+  name: 'Unknown',
+  iconURL: <Tag size='sm' colorScheme='gray' variant='subtle'>Unknown</Tag>
+};
 
 export const Ratings:Array<Rating> = [
   TOP_TIER,
@@ -39,5 +44,6 @@ export const Ratings:Array<Rating> = [
   GOOD,
   AVERAGE,
   WEAK,
-  VERY_WEAK
+  VERY_WEAK,
+  UNKNOWN
 ];

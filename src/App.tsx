@@ -10,10 +10,7 @@ import HeroDashboard from './components/HeroDashboard/HeroDashboard';
 import CompositionDashboard from './components/CompositionDashboard/CompositionDashboard';
 import { useTracking } from './useTracking';
 import MultifightDashboard from './components/MultifightDashboard/MultifightDashboard';
-import Amplify from 'aws-amplify';
-import awsExports from './aws-exports';
 import { ProfileContext, ProfileContextProvider } from './components/Profile/ProfileContext';
-Amplify.configure(awsExports);
 
 function App() {
   useTracking('G-F2JQMGEBKC');
