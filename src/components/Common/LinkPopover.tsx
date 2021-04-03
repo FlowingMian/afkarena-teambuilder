@@ -1,12 +1,13 @@
-import { Button, Popover, PopoverTrigger, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, UnorderedList, ListItem, Link, LinkOverlay, LinkBox} from "@chakra-ui/react"
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Link as LinkModel, } from "../../model/common";
+import React from 'react';
+import { Button, Popover, PopoverTrigger, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, UnorderedList, ListItem, Link, LinkOverlay, LinkBox} from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Link as LinkModel, } from '../../model/common';
 
 type LinkPopoverProps = {
   links: Array<LinkModel>;
 };
 
-function LinkPopover({ links }: LinkPopoverProps) {
+function LinkPopover({ links }: LinkPopoverProps):JSX.Element {
 
   let content;
   if (links.length === 0) {
@@ -19,7 +20,7 @@ function LinkPopover({ links }: LinkPopoverProps) {
           Sources
         </LinkOverlay>
       </Button>
-    </LinkBox>
+    </LinkBox>;
   }
   else {
     const linkElements = links.map(link => (
@@ -28,7 +29,7 @@ function LinkPopover({ links }: LinkPopoverProps) {
           {link.label} <ExternalLinkIcon mx="2px" />
         </Link>
       </ListItem>
-    ))
+    ));
 
     content = <Popover>
       <PopoverTrigger>
@@ -43,7 +44,7 @@ function LinkPopover({ links }: LinkPopoverProps) {
           </UnorderedList>
         </PopoverBody>
       </PopoverContent>
-    </Popover>    
+    </Popover>;    
   }
 
   return <>

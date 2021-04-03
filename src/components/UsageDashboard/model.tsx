@@ -1,10 +1,10 @@
-import { Role } from "../../model/characteristics";
-import { Composition } from "../../model/compositions";
-import { Hero } from "../../model/heroes";
+import { Role } from '../../model/characteristics/characteristics';
+import { Composition } from '../../model/compositions';
+import { Hero } from '../../model/heroes';
 
 
-export const GLOBAL_PERCENT_THRESHOLD: number = 0.5;
-export const NICHE_PERCENT_THRESHOLD: number = 0.25;
+export const GLOBAL_PERCENT_THRESHOLD = 0.5;
+export const NICHE_PERCENT_THRESHOLD = 0.25;
 
 export class HeroUsageDashboardResult {
     hero: Hero;

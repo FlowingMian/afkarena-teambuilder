@@ -1,4 +1,4 @@
-import { Role } from "../../model/characteristics";
+import { Role } from './characteristics';
 
 export const Core:Role = {
   id: 'CORE',
@@ -60,6 +60,15 @@ export const Damage:Role = {
   name: 'Damage',
 };
 
+export const Flex:Role = {
+  id: 'FLEX',
+  name: 'Flex',
+};
+
+export const Niche:Role = {
+  id: 'NICHE',
+  name: 'Niche',
+};
 
 export const Roles: Array<Role> = [
   Core,
@@ -74,4 +83,6 @@ export const Roles: Array<Role> = [
   Buffer,
   Protection,
   Damage,
+  Flex,
+  Niche,
 ];

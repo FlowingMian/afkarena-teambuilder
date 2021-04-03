@@ -1,19 +1,20 @@
-import { Tr, Td, Text } from "@chakra-ui/react"
-import { HeroUsageDashboardResult } from "./model";
-import HeroBox from "../Hero/HeroBox";
-import CompositionBoxListModal from "../Composition/CompositionBoxListModal";
+import React from 'react';
+import { Tr, Td, Text } from '@chakra-ui/react';
+import { HeroUsageDashboardResult } from './model';
+import HeroBox from '../Hero/HeroBox';
+import CompositionBoxListModal from '../Composition/CompositionBoxListModal';
 
 type UsageDashboardTableRowProps = {
   heroUsageResult: HeroUsageDashboardResult;
   compositionCount: number
 };
 
-function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDashboardTableRowProps) {
+function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDashboardTableRowProps):JSX.Element {
   const baseNumberStyle = {
-    fontSize:"sm",
-    fontWeight:"semibold"
-  }
-  function getUsageNumberColor(heroUsageResult:HeroUsageDashboardResult):Object {
+    fontSize:'sm',
+    fontWeight:'semibold'
+  };
+  function getUsageNumberColor(heroUsageResult:HeroUsageDashboardResult):Record<string, unknown> {
     if (heroUsageResult.isGlobalUsage(compositionCount)) {
       return {...baseNumberStyle, color: 'green.500'};
     }
@@ -22,7 +23,7 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
     }
     return {...baseNumberStyle, color: 'yellow.500'};
   }
-  function getFlexNumberColor(heroUsageResult:HeroUsageDashboardResult):Object {
+  function getFlexNumberColor(heroUsageResult:HeroUsageDashboardResult):Record<string, unknown> {
     if (heroUsageResult.isGlobalFlex(compositionCount)) {
       return {...baseNumberStyle, color: 'green.500'};
     }
@@ -31,7 +32,7 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
     }
     return {...baseNumberStyle, color: 'yellow.500'};
   }
-  function getCoreNumberColor(heroUsageResult:HeroUsageDashboardResult):Object {
+  function getCoreNumberColor(heroUsageResult:HeroUsageDashboardResult):Record<string, unknown> {
     if (heroUsageResult.isCore()) {
       return {...baseNumberStyle,color: 'green.500'};
     }
@@ -50,21 +51,21 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
   </Text>;
 
   const flexLabel = <Text {...getFlexNumberColor(heroUsageResult)}>
-  {flexCount} ({flexPercent}%)
-</Text>;
+    {flexCount} ({flexPercent}%)
+  </Text>;
 
   return <Tr key={heroUsageResult.hero.id}>
-      <Td><HeroBox hero={heroUsageResult.hero} /></Td>
-      <Td><Text {...getUsageNumberColor(heroUsageResult)}>
-          {usageCount} ({usagePercent}%)
-      </Text></Td>
-      <Td>
-        <CompositionBoxListModal compositions={heroUsageResult.coreCompositions} buttonLabel={coreLabel}/>
-      </Td>
-      <Td>
-        <CompositionBoxListModal compositions={heroUsageResult.flexCompositions} buttonLabel={flexLabel}/>
-      </Td>
-    </Tr>
+    <Td><HeroBox hero={heroUsageResult.hero} /></Td>
+    <Td><Text {...getUsageNumberColor(heroUsageResult)}>
+      {usageCount} ({usagePercent}%)
+    </Text></Td>
+    <Td>
+      <CompositionBoxListModal compositions={heroUsageResult.coreCompositions} buttonLabel={coreLabel}/>
+    </Td>
+    <Td>
+      <CompositionBoxListModal compositions={heroUsageResult.flexCompositions} buttonLabel={flexLabel}/>
+    </Td>
+  </Tr>;
 
 }
 

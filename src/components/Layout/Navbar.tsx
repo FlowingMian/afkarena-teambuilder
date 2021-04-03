@@ -1,21 +1,22 @@
+import React from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text, Tag } from '@chakra-ui/react'
+import { IconButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Image, useDisclosure, VStack, Text, Tag } from '@chakra-ui/react';
 import { useEffect } from 'react';
-import { NavLink, useLocation } from "react-router-dom"
-import { staticDomain } from '../../data/static';
+import { NavLink, useLocation } from 'react-router-dom';
 import colors from '../../theme/colors';
+import { staticDomain } from '../../model/common';
 
 const NavbarStyle = {
   backgroundColor: 'primary.700', 
   color: 'whiteAlpha.900',
   paddingLeft: '1rem',
   paddingRight: '1rem',
-}
+};
 
 const NavlinkActiveStyle = {
   backgroundColor: colors.primary[700],
   color: 'white'
-}
+};
 
 const navLinks = [
   {
@@ -24,7 +25,7 @@ const navLinks = [
   },
   {
     path: '/multifight',
-    label: 'Multifight',
+    label: 'Multi-fight',
     new: true,
   },
   {
@@ -37,7 +38,7 @@ const navLinks = [
   }
 ];
 
-function Navbar() {
+function Navbar():JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { pathname } = useLocation();
 

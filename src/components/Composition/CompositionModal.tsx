@@ -1,16 +1,16 @@
-import { Composition } from "../../model/compositions";
-import {Modal, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, useDisclosure, IconButton } from '@chakra-ui/react'
-import { Fragment } from "react";
-import { ViewIcon } from "@chakra-ui/icons";
-import CompositionDetails from "./CompositionDetails";
+import React from 'react';
+import { Composition } from '../../model/compositions';
+import {Modal, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, useDisclosure, IconButton } from '@chakra-ui/react';
+import { Fragment } from 'react';
+import { ViewIcon } from '@chakra-ui/icons';
+import CompositionDetails from './CompositionDetails';
 
 type CompositionModalProps = {
   composition: Composition;
-  buttonLabel?:React.ReactNode
 };
 
-function CompositionModal({ composition, buttonLabel }: CompositionModalProps) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+function CompositionModal({ composition }: CompositionModalProps):JSX.Element {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return <Fragment>
     <IconButton variant='ghost' size="sm"icon={<ViewIcon/>} onClick={onOpen} aria-label="View composition" />
@@ -23,7 +23,7 @@ function CompositionModal({ composition, buttonLabel }: CompositionModalProps) {
         </ModalBody>
       </ModalContent>
     </Modal>
-    </Fragment>;
+  </Fragment>;
 }
 
 export default CompositionModal;

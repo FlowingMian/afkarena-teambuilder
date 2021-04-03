@@ -1,87 +1,129 @@
-import { Hero } from "../../model/heroes";
-import * as Faction from '../characteristics/factions';
-import * as Attribute from '../characteristics/attributes';
-import * as Class from '../characteristics/classes';
-import { staticDomain } from "../static";
+import { Hero } from '../../model/heroes';
+import * as Faction from '../../model/characteristics/factions';
+import * as Attribute from '../../model/characteristics/attributes';
+import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
+import { staticDomain } from '../../model/common';
 
 export const Athalia: Hero = {
-  id: "ATHALIA",
-  name: "Athalia",
+  id: 'ATHALIA',
+  name: 'Athalia',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'celestial/athalia.webp'
+  portraitURL: staticDomain+'celestial/athalia.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const ElijahLailah: Hero = {
-  id: "ELIJAHLAILAH",
-  name: "Twins",
-  nickname: ["Elijah", "Lailah"],
+  id: 'ELIJAHLAILAH',
+  name: 'Twins',
+  nickname: ['Elijah', 'Lailah'],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'celestial/elijahlailah.webp'
+  portraitURL: staticDomain+'celestial/elijahlailah.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Orthos: Hero = {
-  id: "ORTHOS",
-  name: "Orthos",
+  id: 'ORTHOS',
+  name: 'Orthos',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'celestial/orthos.webp'
+  portraitURL: staticDomain+'celestial/orthos.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Talene: Hero = {
-  id: "TALENE",
-  name: "Talene",
+  id: 'TALENE',
+  name: 'Talene',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: staticDomain+'celestial/talene.webp'
+  portraitURL: staticDomain+'celestial/talene.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Wukong: Hero = {
-  id: "WUKONG",
-  name: "WuKong",
+  id: 'WUKONG',
+  name: 'WuKong',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'celestial/wukong.webp'
+  portraitURL: staticDomain+'celestial/wukong.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Flora: Hero = {
-  id: "FLORA",
-  name: "Flora",
+  id: 'FLORA',
+  name: 'Flora',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/flora.webp'
+  portraitURL: staticDomain+'celestial/flora.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Zaphrael: Hero = {
-  id: "ZAPHRAEL",
-  name: "Zaphrael",
+  id: 'ZAPHRAEL',
+  name: 'Zaphrael',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/zaphrael.webp'
+  portraitURL: staticDomain+'celestial/zaphrael.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Alna: Hero = {
-  id: "ALNA",
-  name: "Alna",
+  id: 'ALNA',
+  name: 'Alna',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'celestial/alna.webp'
+  portraitURL: staticDomain+'celestial/alna.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 const heroes: Array<Hero> = [

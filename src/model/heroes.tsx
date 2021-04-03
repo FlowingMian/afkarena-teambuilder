@@ -1,4 +1,6 @@
-import { Attribute, Class, Faction } from "./characteristics";
+import { Attribute, Class, Faction, Rating, Signature} from './characteristics/characteristics';
+import { VERY_WEAK } from './characteristics/ratings';
+import { _10 } from './characteristics/signatures';
 
 export interface Hero {
   id: string;
@@ -7,7 +9,12 @@ export interface Hero {
   faction: Faction;
   attribute: Attribute;
   class: Class;
-  portraitURL?: string
+  portraitURL?: string;
+  signature: Signature;
+  furniture: {
+    F3 : Rating,
+    F9 : Rating,
+  };
 }
 
 const fakeCharacterictic = {
@@ -18,15 +25,20 @@ const fakeCharacterictic = {
 let openSpotId = 0;
 export function generateOpenSpot():Hero {
   return {
-    id: "OPEN-SPOT-"+(openSpotId++),
-    name: "Open spot",
+    id: 'OPEN-SPOT-'+(openSpotId++),
+    name: 'Open spot',
     nickname: [],
     faction: fakeCharacterictic,
     attribute:fakeCharacterictic,
-    class: fakeCharacterictic
-  }
-};
+    class: fakeCharacterictic,
+    signature: _10,
+    furniture : {
+      F3: VERY_WEAK,
+      F9: VERY_WEAK,
+    }
+  };
+}
 
-export function isOpenSpot(hero:Hero) {
-  return hero.name === "Open spot";
+export function isOpenSpot(hero:Hero):boolean {
+  return hero.name === 'Open spot';
 }

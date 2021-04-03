@@ -1,41 +1,90 @@
-import {HStack, Image, Tooltip, Link, VStack, Center } from "@chakra-ui/react"
-import { Hero } from "../../model/heroes";
-import CharactericticBox from "../Characteristic/CharacteristicBox";
+import React from 'react';
+import {HStack, Image, Tooltip, Link, Switch, Heading, VStack, Text, Grid, GridItem, Center } from '@chakra-ui/react';
+import { Hero } from '../../model/heroes';
+import CharactericticBox from '../Characteristic/CharacteristicBox';
+import { BoxCardStyle } from '../../theme/styles';
 
 type HeroDetailsProps = {
   hero: Hero;
+  isOwned: boolean
+  onChange:(e:React.ChangeEvent<HTMLInputElement>, hero:Hero) => void;
 };
 
-const SIZE_SM:string = '2.5rem';
-const SIZE:string = '3rem';
+const SIZE = '5rem';
 
-function HeroDetails({ hero }: HeroDetailsProps) {
+function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element {
 
-  const detailsStyle= {
-      width: '7.8rem',
-      border: '1px solid gray',
-      paddingTop: '0.15rem',
+  const gridStyle= {
+    width:'100%',
+    border: '1px solid',
+    borderColor: 'secondary.300',
+    borderRadius: 'md',
+    background : 'primary.50',
+    padding:1,
+    gap:1,
   };
-
   return (
-    <HStack minWidth={[SIZE_SM, SIZE]} height={[SIZE_SM, SIZE]}
-      spacing={0} alignItems='stretch'>
-      <Tooltip label={hero.name} aria-label={hero.name}>
-        <Image 
-          src={hero.portraitURL}
-          alt={hero.name}
-          boxSize={[SIZE_SM, SIZE]}
-        />
-      </Tooltip>
-        <VStack {...detailsStyle} spacing={0} justifyContent="center">
-          <HStack>
+    <VStack {...BoxCardStyle}
+      width='20rem'
+      padding='0.25rem' 
+      backgroundColor={isOwned ? 'green.100' : 'red.100'}
+      spacing={1}
+    >
+      <Switch value={hero.id} isChecked={isOwned} onChange={(e) => onChange(e, hero)}/>
+
+      <Grid {...gridStyle}
+        templateRows="repeat(6, 1fr)"
+        templateColumns="repeat(8, 1fr)"
+      >
+
+        <GridItem rowSpan={3} colSpan={2} >
+          <Tooltip label={hero.name} aria-label={hero.name}>
+            <Image 
+              src={hero.portraitURL}
+              alt={hero.name}
+              boxSize={SIZE}
+            />
+          </Tooltip>
+        </GridItem>
+      
+        <GridItem rowSpan={1} colSpan={3} >
+          <Heading size='md'>{hero.name}</Heading>
+        </GridItem>
+
+        <GridItem rowSpan={1} colSpan={3} >
+          <HStack justifyContent='flex-end'>
             <CharactericticBox characterictic={hero.faction}/>
             <CharactericticBox characterictic={hero.class}/>
             <CharactericticBox characterictic={hero.attribute}/>
           </HStack>
-          <Link href={`/compositions?query=${hero.name}`} fontSize="xs">View compositions</Link>
-        </VStack>
-    </HStack>
+        </GridItem>
+
+        <GridItem rowSpan={2} colSpan={6}>
+          <Link href={`/compositions?query=${hero.name}`} fontSize="sm">View compositions</Link>
+        </GridItem>
+
+        <GridItem rowSpan={3} colSpan={4}>
+          <Center>
+            <VStack alignItems='start' spacing='0'>
+              <Heading size='sm'>Signature</Heading>
+              {hero.signature.iconURL}
+            </VStack>
+          </Center>
+        </GridItem>
+
+        <GridItem rowSpan={3} colSpan={4} >
+          <Center>
+            <VStack alignItems='start' spacing='0'>
+              <Heading size='sm'>Furniture</Heading>
+              <Text>3: {hero.furniture.F3.iconURL}</Text>
+              <Text>9: {hero.furniture.F9.iconURL}</Text>
+            </VStack>
+          </Center>
+        </GridItem>
+
+        
+      </Grid>
+    </VStack>
   );
 }
 

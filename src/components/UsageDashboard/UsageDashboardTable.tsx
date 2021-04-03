@@ -1,21 +1,21 @@
-import { Table, Thead, Th, Tbody, Tr } from "@chakra-ui/react"
-
-import { HeroCharactericticsSelection } from "../Characteristic/HeroCharactericticsSelector";
-import { UsageDashboardResult } from "./model";
-import UsageDashboardTableRow from "./UsageDashboardTableRow";
+import React from 'react';
+import { Table, Thead, Th, Tbody, Tr } from '@chakra-ui/react';
+import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { UsageDashboardResult } from './model';
+import UsageDashboardTableRow from './UsageDashboardTableRow';
+import { Profile } from '../../model/profile';
 
 type UsageDashboardTableProps = {
+  profile:Profile;
   usageResult: UsageDashboardResult;
-  filters?:HeroCharactericticsSelection;
+  filters?:HeroFilters;
 };
 
-function UsageDashboardTable({ usageResult, filters }: UsageDashboardTableProps) {
-
-
+function UsageDashboardTable({ profile, usageResult, filters }: UsageDashboardTableProps):JSX.Element {
 
   const rows = usageResult.heroUsageResults
-    .filter(ur => !filters || filters.accept(ur.hero))
-    .map(ur => <UsageDashboardTableRow heroUsageResult={ur} compositionCount={usageResult.compositionCount}/>);
+    .filter(ur => !filters || acceptHero(filters, profile, ur.hero))
+    .map(ur => <UsageDashboardTableRow key={ur.hero.id} heroUsageResult={ur} compositionCount={usageResult.compositionCount}/>);
 
   return (
     <Table size="sm" variant="striped">
@@ -32,7 +32,7 @@ function UsageDashboardTable({ usageResult, filters }: UsageDashboardTableProps)
         {rows}
       </Tbody>
     </Table>
-  )
+  );
 }
 
 export default UsageDashboardTable;
