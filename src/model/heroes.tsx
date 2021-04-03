@@ -1,4 +1,6 @@
-import { Attribute, Class, Faction } from './characteristics/characteristics';
+import { Attribute, Class, Faction, Rating, Signature} from './characteristics/characteristics';
+import { VERY_WEAK } from './characteristics/ratings';
+import { _10 } from './characteristics/signatures';
 
 export interface Hero {
   id: string;
@@ -7,7 +9,12 @@ export interface Hero {
   faction: Faction;
   attribute: Attribute;
   class: Class;
-  portraitURL?: string
+  portraitURL?: string;
+  signature: Signature;
+  furniture: {
+    F3 : Rating,
+    F9 : Rating,
+  };
 }
 
 const fakeCharacterictic = {
@@ -23,7 +30,12 @@ export function generateOpenSpot():Hero {
     nickname: [],
     faction: fakeCharacterictic,
     attribute:fakeCharacterictic,
-    class: fakeCharacterictic
+    class: fakeCharacterictic,
+    signature: _10,
+    furniture : {
+      F3: VERY_WEAK,
+      F9: VERY_WEAK,
+    }
   };
 }
 

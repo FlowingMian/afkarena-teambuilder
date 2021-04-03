@@ -1,30 +1,29 @@
-import { Class } from './characteristics';
-import { staticDomain } from '../common';
+import { Class, getImageIcon } from './characteristics';
 
 export const Warrior:Class = {
   id: 'WARRIOR',
   name: 'Warrior',
-  iconURL: staticDomain+'class/warrior.webp'
+  iconURL: getImageIcon('class/warrior.webp')
 };
 export const Tank:Class = {
   id: 'TANK',
   name: 'Tank',
-  iconURL: staticDomain+'class/tank.webp'
+  iconURL: getImageIcon('class/tank.webp'),
 };
 export const Ranger:Class = {
   id: 'RANGER',
   name: 'Ranger',
-  iconURL: staticDomain+'class/ranger.webp'
+  iconURL: getImageIcon('class/ranger.webp'),
 };
 export const Mage:Class = {
   id: 'MAGE',
   name: 'Mage',
-  iconURL: staticDomain+'class/mage.webp'
+  iconURL: getImageIcon('class/mage.webp'),
 };
 export const Support:Class = {
   id: 'SUPPORT',
   name: 'Support',
-  iconURL: staticDomain+'class/support.webp'
+  iconURL: getImageIcon('class/support.webp'),
 };
 
 export const Classes: Array<Class> = [

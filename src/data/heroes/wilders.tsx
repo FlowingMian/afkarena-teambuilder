@@ -2,6 +2,8 @@ import { Hero } from '../../model/heroes';
 import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
 import { staticDomain } from '../../model/common';
 
 export const Nemora: Hero = {
@@ -11,7 +13,12 @@ export const Nemora: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'wilder/nemora.webp'
+  portraitURL: staticDomain+'wilder/nemora.webp',
+  signature: Signature._15,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Kaz: Hero = {
@@ -21,7 +28,12 @@ export const Kaz: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/kaz.webp'
+  portraitURL: staticDomain+'wilder/kaz.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Lyca: Hero = {
@@ -31,7 +43,12 @@ export const Lyca: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/lyca.webp'
+  portraitURL: staticDomain+'wilder/lyca.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Tasi: Hero = {
@@ -41,7 +58,12 @@ export const Tasi: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'wilder/tasi.webp'
+  portraitURL: staticDomain+'wilder/tasi.webp',
+  signature: Signature._15,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Ulmus: Hero = {
@@ -51,7 +73,12 @@ export const Ulmus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'wilder/ulmus.webp'
+  portraitURL: staticDomain+'wilder/ulmus.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.VERY_WEAK,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Seirus: Hero = {
@@ -61,7 +88,12 @@ export const Seirus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'wilder/seirus.webp'
+  portraitURL: staticDomain+'wilder/seirus.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Eironn: Hero = {
@@ -71,7 +103,12 @@ export const Eironn: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/eironn.webp'
+  portraitURL: staticDomain+'wilder/eironn.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Gorvo: Hero = {
@@ -81,7 +118,12 @@ export const Gorvo: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'wilder/gorvo.webp'
+  portraitURL: staticDomain+'wilder/gorvo.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Lorsan: Hero = {
@@ -91,7 +133,12 @@ export const Lorsan: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'wilder/lorsan.webp'
+  portraitURL: staticDomain+'wilder/lorsan.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.VERY_WEAK,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Saurus: Hero = {
@@ -101,7 +148,12 @@ export const Saurus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'wilder/saurus.webp'
+  portraitURL: staticDomain+'wilder/saurus.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Solise: Hero = {
@@ -111,7 +163,12 @@ export const Solise: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'wilder/solise.webp'
+  portraitURL: staticDomain+'wilder/solise.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Pippa: Hero = {
@@ -121,7 +178,12 @@ export const Pippa: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'wilder/pippa.webp'
+  portraitURL: staticDomain+'wilder/pippa.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Respen: Hero = {
@@ -131,7 +193,12 @@ export const Respen: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/respen.webp'
+  portraitURL: staticDomain+'wilder/respen.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.GOOD,
+  },
 };
 
 const heroes: Array<Hero> = [

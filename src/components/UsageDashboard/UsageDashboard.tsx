@@ -12,6 +12,8 @@ import { sendViewItems } from '../../useTracking';
 import { setPageTitle } from '../utils';
 import { HeroFilters } from '../Characteristic/HeroFilters';
 import { Profile } from '../../model/profile';
+import Loader from '../Common/Loader';
+import { useLocation } from 'react-router';
 
 type UsageDashboardProps = {
   profile: Profile;
@@ -22,6 +24,21 @@ function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
   const [usageResult, setUsageResult] = useState<UsageDashboardResult>();
   const [filters, setFilters] = useState<HeroFilters>();
   
+  const [rendering, setRendering] = useState<boolean>(true);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setRendering(true);
+  }, [pathname]);
+  useEffect(() => {
+    setPageTitle('Usages');
+    setTimeout(() => {setRendering(false);}, 1);
+  }, []);
+
+  if (rendering) {
+    return <Loader/>;
+  }
+
   function filterHeroes(filters:HeroFilters) {
     setFilters(filters);
   }
@@ -56,14 +73,10 @@ function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
         )
     ));
   }
-  
-  useEffect(() => {
-    setPageTitle('Usages');
-  }, []);
 
   return (<>
     <VStack {...BoxControlsStyle} alignItems='stretch'>
-      <CompositionSelector onValidate={calculateHeroUsage}/>
+      <CompositionSelector defaultSelection={Object.keys(profile.compositions)} onValidate={calculateHeroUsage}/>
       <HeroFiltersSelector onChange={filterHeroes}/>
     </VStack>
     <Box {...BoxResultsStyle}>

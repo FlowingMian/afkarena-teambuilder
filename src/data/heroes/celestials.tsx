@@ -2,6 +2,8 @@ import { Hero } from '../../model/heroes';
 import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
 import { staticDomain } from '../../model/common';
 
 export const Athalia: Hero = {
@@ -11,7 +13,12 @@ export const Athalia: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'celestial/athalia.webp'
+  portraitURL: staticDomain+'celestial/athalia.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const ElijahLailah: Hero = {
@@ -21,7 +28,12 @@ export const ElijahLailah: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'celestial/elijahlailah.webp'
+  portraitURL: staticDomain+'celestial/elijahlailah.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Orthos: Hero = {
@@ -31,7 +43,12 @@ export const Orthos: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'celestial/orthos.webp'
+  portraitURL: staticDomain+'celestial/orthos.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Talene: Hero = {
@@ -41,7 +58,12 @@ export const Talene: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: staticDomain+'celestial/talene.webp'
+  portraitURL: staticDomain+'celestial/talene.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Wukong: Hero = {
@@ -51,7 +73,12 @@ export const Wukong: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'celestial/wukong.webp'
+  portraitURL: staticDomain+'celestial/wukong.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Flora: Hero = {
@@ -61,7 +88,12 @@ export const Flora: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/flora.webp'
+  portraitURL: staticDomain+'celestial/flora.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Zaphrael: Hero = {
@@ -71,7 +103,12 @@ export const Zaphrael: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/zaphrael.webp'
+  portraitURL: staticDomain+'celestial/zaphrael.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Alna: Hero = {
@@ -81,7 +118,12 @@ export const Alna: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'celestial/alna.webp'
+  portraitURL: staticDomain+'celestial/alna.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 const heroes: Array<Hero> = [

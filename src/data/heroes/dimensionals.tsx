@@ -2,17 +2,9 @@ import { Hero } from '../../model/heroes';
 import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
 import { staticDomain } from '../../model/common';
-
-export const Nakoruru: Hero = {
-  id: 'NAKORURU',
-  name: 'Nakoruru',
-  nickname: [],
-  faction: Faction.Dimensional,
-  attribute: Attribute.Agility,
-  class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/nakoruru.webp'
-};
 
 export const Arthur: Hero = {
   id: 'ARTHUR',
@@ -21,7 +13,12 @@ export const Arthur: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'dimensional/arthur.webp'
+  portraitURL: staticDomain+'dimensional/arthur.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Ukyo: Hero = {
@@ -31,7 +28,27 @@ export const Ukyo: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'dimensional/ukyo.webp'
+  portraitURL: staticDomain+'dimensional/ukyo.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.WEAK,
+  },
+};
+
+export const Nakoruru: Hero = {
+  id: 'NAKORURU',
+  name: 'Nakoruru',
+  nickname: [],
+  faction: Faction.Dimensional,
+  attribute: Attribute.Agility,
+  class: Class.Ranger,
+  portraitURL: staticDomain+'dimensional/nakoruru.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Ezio: Hero = {
@@ -41,7 +58,12 @@ export const Ezio: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/ezio.webp'
+  portraitURL: staticDomain+'dimensional/ezio.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Albedo: Hero = {
@@ -51,7 +73,12 @@ export const Albedo: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'dimensional/albedo.webp'
+  portraitURL: staticDomain+'dimensional/albedo.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Ainz: Hero = {
@@ -61,7 +88,12 @@ export const Ainz: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'dimensional/ainz.webp'
+  portraitURL: staticDomain+'dimensional/ainz.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const QUEEN: Hero = {
@@ -71,7 +103,12 @@ export const QUEEN: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'dimensional/queen.webp'
+  portraitURL: staticDomain+'dimensional/queen.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const JOKER: Hero = {
@@ -81,13 +118,18 @@ export const JOKER: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/joker.webp'
+  portraitURL: staticDomain+'dimensional/joker.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 const heroes: Array<Hero> = [
-  Nakoruru,
   Arthur,
   Ukyo,
+  Nakoruru,
   Ezio,
   Albedo,
   Ainz,

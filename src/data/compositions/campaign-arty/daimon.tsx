@@ -24,8 +24,6 @@ const daimon: Composition = {
       {
         ...Graveborns.Daimon,
         recommended: true,
-        requiredSignature: 20,
-        requiredFurniture: 3
       }
     ]
   },

@@ -6,9 +6,6 @@ export enum Artifact {}
 
 export interface HeroRequirement extends Hero{
   recommended?: boolean
-  requiredSignature?: 1 | 10 | 20 | 30 ;
-  requiredFurniture?: 3 | 9;
-  requiredArtifact?: Artifact;
 }
 
 export interface CompositionRole {

@@ -1,40 +1,39 @@
-import { Faction } from './characteristics';
-import { staticDomain } from '../common';
+import { Faction, getImageIcon } from './characteristics';
 
 export const Lightbearer:Faction = {
   id: 'LIGTHBEARER',
   name: 'Lightbearer',
-  iconURL: staticDomain+'faction/lightbearer.webp'
+  iconURL: getImageIcon('faction/lightbearer.webp'),
 };
 export const Mauler:Faction = {
   id: 'MAULER',
   name: 'Mauler',
-  iconURL: staticDomain+'faction/mauler.webp'
+  iconURL: getImageIcon('faction/mauler.webp'),
 };
 export const Wilder:Faction = {
   id: 'WILDER',
   name: 'Wilder',
-  iconURL: staticDomain+'faction/wilder.webp'
+  iconURL: getImageIcon('faction/wilder.webp'),
 };
 export const Graveborn:Faction = {
   id: 'GRAVEBORN',
   name: 'Graveborn',
-  iconURL: staticDomain+'faction/graveborn.webp'
+  iconURL: getImageIcon('faction/graveborn.webp'),
 };
 export const Celestial:Faction = {
   id: 'CELESTIAL',
   name: 'Celestial',
-  iconURL: staticDomain+'faction/celestial.webp'
+  iconURL: getImageIcon('faction/celestial.webp'),
 };
 export const Hypogean:Faction = {
   id: 'HYPOGEAN',
   name: 'Hypogean',
-  iconURL: staticDomain+'faction/hypogean.webp'
+  iconURL: getImageIcon('faction/hypogean.webp'),
 };
 export const Dimensional:Faction = {
   id: 'DIMENSIONAL',
   name: 'Dimensional',
-  iconURL: staticDomain+'faction/dimensional.webp'
+  iconURL: getImageIcon('faction/dimensional.webp'),
 };
 
 export const Factions: Array<Faction> = [

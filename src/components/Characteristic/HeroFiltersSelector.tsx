@@ -9,6 +9,8 @@ import { Classes } from '../../model/characteristics/classes';
 import { Attributes } from '../../model/characteristics/attributes';
 import { CollectionStatuses } from '../../model/characteristics/collectionStatuses';
 import { HeroFilters } from './HeroFilters';
+import { Ratings } from '../../model/characteristics/ratings';
+import { Signatures } from '../../model/characteristics/signatures';
 
 type HeroFiltersSelectorProps = {
   onChange:(value: HeroFilters) => void;
@@ -32,39 +34,15 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
     classIds: Classes.map(c => c.id),
     attributeIds: Attributes.map(c => c.id),
     collectionStatuses: CollectionStatuses.map(c => c.id),
+    signatures: Signatures.map(c => c.id),
+    furniture3Ratings: Ratings.map(c => c.id),
+    furniture9Ratings: Ratings.map(c => c.id),
   });
 
-  function onFactionChange(factionIds:Array<string>) {
+  function onCharacteristicChange(characteristic:string, values:Array<string>) {
     const newSelection = {
       ...selection,
-      factionIds, 
-    };
-    setSelection(newSelection);
-    onChange(newSelection);
-  }
-
-  function onClassChange(classIds:Array<string>) {
-    const newSelection = {
-      ...selection,
-      classIds, 
-    };
-    setSelection(newSelection);
-    onChange(newSelection);
-  }
-
-  function onAttributeChange(attributeIds:Array<string>) {
-    const newSelection = {
-      ...selection,
-      attributeIds, 
-    };
-    setSelection(newSelection);
-    onChange(newSelection);
-  }
-
-  function onCollectionStatusChange(collectionStatuses:Array<string>) {
-    const newSelection = {
-      ...selection,
-      collectionStatuses, 
+      [characteristic]: values, 
     };
     setSelection(newSelection);
     onChange(newSelection);
@@ -85,7 +63,7 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
           <Wrap alignItems='start'>
 
             <WrapItem {...itemStyle}>
-              <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={Factions} onChange={onFactionChange}/>
+              <CharacteristicCheckboxGroup selection={selection.factionIds} characterictics={Factions} onChange={(v) => onCharacteristicChange('factionIds', v)}/>
               <Box>
                 <Heading {...headingStyle}>Factions</Heading>
                 <CharacteristicTable characterictics={Factions}/>
@@ -93,7 +71,7 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
             </WrapItem>
 
             <WrapItem {...itemStyle}>
-              <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={onClassChange}/>
+              <CharacteristicCheckboxGroup selection={selection.classIds} characterictics={Classes} onChange={(v) => onCharacteristicChange('classIds', v)}/>
               <Box>
                 <Heading {...headingStyle}>Classes</Heading>
                 <CharacteristicTable characterictics={Classes}/>
@@ -101,7 +79,7 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
             </WrapItem>
 
             <WrapItem {...itemStyle}>
-              <CharacteristicCheckboxGroup selection={selection.attributeIds} characterictics={Attributes} onChange={onAttributeChange}/>
+              <CharacteristicCheckboxGroup selection={selection.attributeIds} characterictics={Attributes} onChange={(v) => onCharacteristicChange('attributeIds', v)}/>
               <Box>
                 <Heading {...headingStyle}>Attributes</Heading>
                 <CharacteristicTable characterictics={Attributes}/>
@@ -109,10 +87,34 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
             </WrapItem>
 
             <WrapItem {...itemStyle}>
-              <CharacteristicCheckboxGroup selection={selection.collectionStatuses} characterictics={CollectionStatuses} onChange={onCollectionStatusChange}/>
+              <CharacteristicCheckboxGroup selection={selection.collectionStatuses} characterictics={CollectionStatuses} onChange={(v) => onCharacteristicChange('collectionStatuses', v)}/>
               <Box>
                 <Heading {...headingStyle}>Collection</Heading>
                 <CharacteristicTable characterictics={CollectionStatuses}/>
+              </Box>
+            </WrapItem>
+
+            <WrapItem {...itemStyle}>
+              <CharacteristicCheckboxGroup selection={selection.furniture3Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture3Ratings', v)}/>
+              <Box>
+                <Heading {...headingStyle}>Furniture 3</Heading>
+                <CharacteristicTable characterictics={Ratings} displayName={false}/>
+              </Box>
+            </WrapItem>
+
+            <WrapItem {...itemStyle}>
+              <CharacteristicCheckboxGroup selection={selection.furniture9Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture9Ratings', v)}/>
+              <Box>
+                <Heading {...headingStyle}>Furniture 9</Heading>
+                <CharacteristicTable characterictics={Ratings} displayName={false}/>
+              </Box>
+            </WrapItem>
+
+            <WrapItem {...itemStyle}>
+              <CharacteristicCheckboxGroup selection={selection.signatures} characterictics={Signatures} onChange={(v) => onCharacteristicChange('signatures', v)}/>
+              <Box>
+                <Heading {...headingStyle}>Signature</Heading>
+                <CharacteristicTable characterictics={Signatures} displayName={false}/>
               </Box>
             </WrapItem>
 

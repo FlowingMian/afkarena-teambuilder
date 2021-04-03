@@ -1,15 +1,16 @@
+import React from 'react';
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons';
 import { CollectionStatus } from './characteristics';
-import { staticDomain } from '../common';
 
 export const Owned:CollectionStatus = {
   id: 'OWNED',
   name: 'Owned',
-  iconURL: staticDomain+'collectionStatus/owned.png'
+  iconURL: <CheckIcon color='green.500'/>,
 };
 export const NotOwned:CollectionStatus = {
   id: 'NOT_OWNED',
   name: 'Not Owned',
-  iconURL: staticDomain+'collectionStatus/notOwned.png'
+  iconURL: <CloseIcon color='red.500'/>,
 };
 
 export const CollectionStatuses: Array<CollectionStatus> = [

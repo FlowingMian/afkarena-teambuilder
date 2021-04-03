@@ -2,6 +2,8 @@ import { Hero } from '../../model/heroes';
 import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
 import { staticDomain } from '../../model/common';
 
 export const Grezhul: Hero = {
@@ -11,7 +13,12 @@ export const Grezhul: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/grezhul.webp'
+  portraitURL: staticDomain+'graveborn/grezhul.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Shemira: Hero = {
@@ -21,7 +28,12 @@ export const Shemira: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'graveborn/shemira.webp'
+  portraitURL: staticDomain+'graveborn/shemira.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Thoran: Hero = {
@@ -31,7 +43,12 @@ export const Thoran: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/thoran.webp'
+  portraitURL: staticDomain+'graveborn/thoran.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Isabella: Hero = {
@@ -41,7 +58,12 @@ export const Isabella: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'graveborn/isabella.webp'
+  portraitURL: staticDomain+'graveborn/isabella.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Nara: Hero = {
@@ -51,7 +73,12 @@ export const Nara: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'graveborn/nara.webp'
+  portraitURL: staticDomain+'graveborn/nara.webp',
+  signature: Signature._15,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Ferael: Hero = {
@@ -61,7 +88,12 @@ export const Ferael: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'graveborn/ferael.webp'
+  portraitURL: staticDomain+'graveborn/ferael.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Baden: Hero = {
@@ -71,7 +103,12 @@ export const Baden: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'graveborn/baden.webp'
+  portraitURL: staticDomain+'graveborn/baden.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.VERY_WEAK,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Kelthur: Hero = {
@@ -81,7 +118,12 @@ export const Kelthur: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'graveborn/kelthur.webp'
+  portraitURL: staticDomain+'graveborn/kelthur.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Silas: Hero = {
@@ -91,7 +133,12 @@ export const Silas: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'graveborn/silas.webp'
+  portraitURL: staticDomain+'graveborn/silas.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Oden: Hero = {
@@ -101,7 +148,12 @@ export const Oden: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'graveborn/oden.webp'
+  portraitURL: staticDomain+'graveborn/oden.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Izold: Hero = {
@@ -111,7 +163,12 @@ export const Izold: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'graveborn/izold.webp'
+  portraitURL: staticDomain+'graveborn/izold.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Torne: Hero = {
@@ -121,7 +178,12 @@ export const Torne: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/torne.webp'
+  portraitURL: staticDomain+'graveborn/torne.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Daimon: Hero = {
@@ -131,7 +193,12 @@ export const Daimon: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/daimon.webp'
+  portraitURL: staticDomain+'graveborn/daimon.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Theowyn: Hero = {
@@ -141,7 +208,12 @@ export const Theowyn: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'graveborn/theowyn.webp'
+  portraitURL: staticDomain+'graveborn/theowyn.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.GOOD,
+  },
 };
 
 const heroes: Array<Hero> = [

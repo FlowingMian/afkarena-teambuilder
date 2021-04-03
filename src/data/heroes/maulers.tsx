@@ -2,6 +2,8 @@ import { Hero } from '../../model/heroes';
 import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
 import { staticDomain } from '../../model/common';
 
 export const Brutus: Hero = {
@@ -11,7 +13,12 @@ export const Brutus: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'mauler/brutus.webp'
+  portraitURL: staticDomain+'mauler/brutus.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Khasos: Hero = {
@@ -21,7 +28,12 @@ export const Khasos: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'mauler/khasos.webp'
+  portraitURL: staticDomain+'mauler/khasos.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Vurk: Hero = {
@@ -31,7 +43,12 @@ export const Vurk: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'mauler/vurk.webp'
+  portraitURL: staticDomain+'mauler/vurk.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Numisu: Hero = {
@@ -41,7 +58,12 @@ export const Numisu: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'mauler/numisu.webp'
+  portraitURL: staticDomain+'mauler/numisu.webp',
+  signature: Signature._15,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Skreg: Hero = {
@@ -51,7 +73,12 @@ export const Skreg: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'mauler/skreg.webp'
+  portraitURL: staticDomain+'mauler/skreg.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.TOP_TIER,
+  },
 };
 
 export const Warek: Hero = {
@@ -61,7 +88,12 @@ export const Warek: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'mauler/warek.webp'
+  portraitURL: staticDomain+'mauler/warek.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Antandra: Hero = {
@@ -71,7 +103,12 @@ export const Antandra: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'mauler/antandra.webp'
+  portraitURL: staticDomain+'mauler/antandra.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Safiya: Hero = {
@@ -81,7 +118,12 @@ export const Safiya: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'mauler/safiya.webp'
+  portraitURL: staticDomain+'mauler/safiya.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.VERY_WEAK,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Satrana: Hero = {
@@ -91,7 +133,12 @@ export const Satrana: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'mauler/satrana.webp'
+  portraitURL: staticDomain+'mauler/satrana.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Tidus: Hero = {
@@ -101,7 +148,12 @@ export const Tidus: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'mauler/tidus.webp'
+  portraitURL: staticDomain+'mauler/tidus.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Drez: Hero = {
@@ -111,7 +163,12 @@ export const Drez: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'mauler/drez.webp'
+  portraitURL: staticDomain+'mauler/drez.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Skriath: Hero = {
@@ -121,7 +178,12 @@ export const Skriath: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'mauler/skriath.webp'
+  portraitURL: staticDomain+'mauler/skriath.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.TOP_TIER,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Anoki: Hero = {
@@ -131,7 +193,12 @@ export const Anoki: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'mauler/anoki.webp'
+  portraitURL: staticDomain+'mauler/anoki.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Kren: Hero = {
@@ -141,7 +208,12 @@ export const Kren: Hero = {
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'mauler/kren.webp'
+  portraitURL: staticDomain+'mauler/kren.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.GOOD,
+  },
 };
 
 const heroes: Array<Hero> = [

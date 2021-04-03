@@ -24,14 +24,10 @@ const portalParty: Composition = {
       {
         ...Wilders.Pippa,
         recommended: true,
-        requiredSignature: 20,
-        requiredFurniture: 3
       },
       {
         ...Graveborns.Oden,
         recommended: true,
-        requiredSignature: 20,
-        requiredFurniture: 3
       }
     ]
   },

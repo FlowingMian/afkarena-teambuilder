@@ -8,6 +8,8 @@ import compositions from '../../data/compositions';
 import { sendViewItems } from '../../useTracking';
 import { setPageTitle } from '../utils';
 import { CompositionHeroes, Profile } from '../../model/profile';
+import Loader from '../Common/Loader';
+import { useLocation } from 'react-router';
 
 type MultifightDashboardProps = {
   profile: Profile;
@@ -16,6 +18,22 @@ type MultifightDashboardProps = {
 function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
 
   const [selectedCompositions, setSelectedCompositions] = useState<CompositionHeroes>(profile.compositions);
+  
+  const [rendering, setRendering] = useState<boolean>(true);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setRendering(true);
+  }, [pathname]);
+  useEffect(() => {
+    setPageTitle('Multifight');
+    setTimeout(() => {setRendering(false);}, 1);
+  }, []);
+
+  if (rendering) {
+    return <Loader/>;
+  }
+
 
   function filterCompositions(compositionIds:Array<string>) {
     sendViewItems('composition', compositionIds);
@@ -24,14 +42,10 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
       .reduce((res, c) => (res[c.id] = c.coreHeroes.heroes, res), {} as CompositionHeroes)
     );
   }
-  
-  useEffect(() => {
-    setPageTitle('Multifight');
-  }, []);
 
   return (<>
     <VStack {...BoxControlsStyle} alignItems='stretch'>
-      <CompositionSelector onValidate={filterCompositions}/>
+      <CompositionSelector defaultSelection={Object.keys(profile.compositions)} onValidate={filterCompositions}/>
     </VStack>
     <Box {...BoxResultsStyle}>
       {Object.keys(selectedCompositions).length === 0 && <Center>

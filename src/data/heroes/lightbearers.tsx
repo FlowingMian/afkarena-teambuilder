@@ -2,6 +2,8 @@ import { Hero } from '../../model/heroes';
 import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
+import * as Signature from '../../model/characteristics/signatures';
+import * as Rating from '../../model/characteristics/ratings';
 import { staticDomain } from '../../model/common';
 
 export const Estrilda: Hero = {
@@ -11,7 +13,12 @@ export const Estrilda: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'lightbearer/estrilda.webp'
+  portraitURL: staticDomain+'lightbearer/estrilda.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Belinda: Hero = {
@@ -21,7 +28,12 @@ export const Belinda: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'lightbearer/belinda.webp'
+  portraitURL: staticDomain+'lightbearer/belinda.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Raine: Hero = {
@@ -31,7 +43,12 @@ export const Raine: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/raine.webp'
+  portraitURL: staticDomain+'lightbearer/raine.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.STRONG,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Fawkes: Hero = {
@@ -41,7 +58,12 @@ export const Fawkes: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/fawkes.webp'
+  portraitURL: staticDomain+'lightbearer/fawkes.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.VERY_WEAK,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Lucius: Hero = {
@@ -51,7 +73,12 @@ export const Lucius: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'lightbearer/lucius.webp'
+  portraitURL: staticDomain+'lightbearer/lucius.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.VERY_WEAK,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Thane: Hero = {
@@ -61,7 +88,12 @@ export const Thane: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/thane.webp'
+  portraitURL: staticDomain+'lightbearer/thane.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.AVERAGE,
+  },
 };
 
 export const Hendrik: Hero = {
@@ -71,7 +103,12 @@ export const Hendrik: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'lightbearer/hendrik.webp'
+  portraitURL: staticDomain+'lightbearer/hendrik.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Rowan: Hero = {
@@ -81,7 +118,12 @@ export const Rowan: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/rowan.webp'
+  portraitURL: staticDomain+'lightbearer/rowan.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Gwyneth: Hero = {
@@ -91,7 +133,12 @@ export const Gwyneth: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/gwyneth.webp'
+  portraitURL: staticDomain+'lightbearer/gwyneth.webp',
+  signature: Signature._25,
+  furniture: {
+    F3: Rating.GOOD,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Rosaline: Hero = {
@@ -101,7 +148,12 @@ export const Rosaline: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/rosaline.webp'
+  portraitURL: staticDomain+'lightbearer/rosaline.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.VERY_WEAK,
+  },
 };
 
 export const Cecilia: Hero = {
@@ -111,7 +163,12 @@ export const Cecilia: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/cecilia.webp'
+  portraitURL: staticDomain+'lightbearer/cecilia.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.STRONG,
+  },
 };
 
 export const Rigby: Hero = {
@@ -121,7 +178,12 @@ export const Rigby: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'lightbearer/rigby.webp'
+  portraitURL: staticDomain+'lightbearer/rigby.webp',
+  signature: Signature._10,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.WEAK,
+  },
 };
 
 export const Oscar: Hero = {
@@ -131,7 +193,12 @@ export const Oscar: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/oscar.webp'
+  portraitURL: staticDomain+'lightbearer/oscar.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.WEAK,
+    F9: Rating.GOOD,
+  },
 };
 
 export const Eluard: Hero = {
@@ -141,7 +208,12 @@ export const Eluard: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'lightbearer/eluard.webp'
+  portraitURL: staticDomain+'lightbearer/eluard.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.AVERAGE,
+    F9: Rating.STRONG,
+  },
 };
 
 const heroes: Array<Hero> = [

@@ -7,13 +7,14 @@ import CompositionBox from './CompositionBox';
 import CompositionSearch from './CompositionSearch';
 
 type CompositionSelectorProps = {
+  defaultSelection?: Array<string>;
   onValidate:(compositionIds:Array<string>) => void;
   openOnInit?:boolean;
 };
 
-function CompositionSelector({ onValidate, openOnInit = false }: CompositionSelectorProps):JSX.Element {
+function CompositionSelector({ defaultSelection, onValidate, openOnInit = false }: CompositionSelectorProps):JSX.Element {
   const [displayedCompositions, setDisplayedCompositions] = useState<Array<Composition>>([]);
-  const [selection, setSelection] = useState<Array<string>>([]);
+  const [selection, setSelection] = useState<Array<string>>(defaultSelection || []);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {

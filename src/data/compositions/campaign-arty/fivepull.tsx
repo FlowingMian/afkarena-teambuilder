@@ -28,7 +28,6 @@ const fivePull: Composition = {
       {
         ...Maulers.Skriath,
         recommended: true,
-        requiredFurniture: 3
       }
     ]
   },
