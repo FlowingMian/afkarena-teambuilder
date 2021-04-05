@@ -1,14 +1,13 @@
 import React from 'react';
 import { Wrap, WrapItem } from '@chakra-ui/react';
 import { State } from '../../model/common';
-import { HeroRequirement } from '../../model/compositions';
 import { Hero } from '../../model/heroes';
 import HeroBox from './HeroBox';
 
 type HeroListProps = {
-  heroes: Array<Hero | HeroRequirement>;
+  heroes: Array<Hero>;
   heroStates?: Map<string, State>;
-  onClick?:(e:React.MouseEvent, hero:Hero | HeroRequirement) => void;
+  onClick?:(e:React.MouseEvent, hero:Hero) => void;
 };
 
 function HeroList({ heroes, heroStates, onClick }: HeroListProps):JSX.Element {

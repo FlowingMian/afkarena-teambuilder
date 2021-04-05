@@ -1,7 +1,7 @@
-import { HeroRequirement } from './compositions';
+import { Hero } from './heroes';
 
 export interface CompositionHeroes {
-  [key: string]:Array<HeroRequirement>;
+  [key: string]:Array<Hero>;
 }
 
 export interface Profile {

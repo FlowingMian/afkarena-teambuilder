@@ -15,6 +15,7 @@ export interface Hero {
     F3 : Rating,
     F9 : Rating,
   };
+  recommended?: boolean;
 }
 
 const fakeCharacterictic = {

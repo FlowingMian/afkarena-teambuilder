@@ -2,7 +2,7 @@ import React from 'react';
 import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Divider, Heading, HStack, Switch, Tag, useDisclosure, VStack } from '@chakra-ui/react';
 import { generateOpenSpot, Hero, isOpenSpot } from '../../model/heroes';
 import { State } from '../../model/common';
-import { Composition, HeroRequirement } from '../../model/compositions';
+import { Composition } from '../../model/compositions';
 import HeroCategory from '../Hero/HeroCategory';
 import HeroList from '../Hero/HeroList';
 import { Fragment } from 'react';
@@ -12,8 +12,8 @@ import LinkPopover from '../Common/LinkPopover';
 
 type CompositionBuilderProps = {
   composition: Composition;
-  heroSelection: Map<Hero|HeroRequirement, string>;
-  onChange:(value: Array<HeroRequirement>) => void;
+  heroSelection: Map<Hero, string>;
+  onChange:(value: Array<Hero>) => void;
 };
 
 function CompositionBuilder({ composition, heroSelection, onChange }: CompositionBuilderProps):JSX.Element {
@@ -27,7 +27,7 @@ function CompositionBuilder({ composition, heroSelection, onChange }: Compositio
     selectedHeroes.push(generateOpenSpot());
   }
 
-  function onHeroClick(e:React.MouseEvent, hero:HeroRequirement) {
+  function onHeroClick(e:React.MouseEvent, hero:Hero) {
     // Allow clicking through open spot to toggle Accordion
     if (isOpenSpot(hero)) {
       return;
@@ -52,7 +52,7 @@ function CompositionBuilder({ composition, heroSelection, onChange }: Compositio
     return [h.id, cId === composition.id ? State.SELECTED : cId === 'DISABLED' ? State.DISABLED : State.LOCKED];
   }));
   
-  const compositionHeroes:Array<HeroRequirement> = [];
+  const compositionHeroes:Array<Hero> = [];
   const heroCategories = [...isCustomComposition(composition.id) ? [] : [composition.coreHeroes], ...composition.flexHeroes]
     .map(cr => {
       compositionHeroes.push(...cr.heroes);
