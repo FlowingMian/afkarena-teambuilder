@@ -1,5 +1,5 @@
-import { Attribute, Class, Faction, Rating, Signature} from './characteristics/characteristics';
-import { VERY_WEAK } from './characteristics/ratings';
+import { Artifact, Attribute, Class, Faction, Rating, Signature} from './characteristics/characteristics';
+import { VeryWeak } from './characteristics/ratings';
 import { _10 } from './characteristics/signatures';
 
 export interface Hero {
@@ -15,6 +15,7 @@ export interface Hero {
     F3 : Rating,
     F9 : Rating,
   };
+  artifacts?: Array<Artifact>;
   recommended?: boolean;
 }
 
@@ -34,9 +35,10 @@ export function generateOpenSpot():Hero {
     class: fakeCharacterictic,
     signature: _10,
     furniture : {
-      F3: VERY_WEAK,
-      F9: VERY_WEAK,
-    }
+      F3: VeryWeak,
+      F9: VeryWeak,
+    },
+    artifacts: [],
   };
 }
 

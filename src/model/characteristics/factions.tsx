@@ -1,39 +1,41 @@
 import { Faction, getImageIcon } from './characteristics';
 
+const DEFAULT_SIZE  = '1.25rem';
+
 export const Lightbearer:Faction = {
   id: 'LIGTHBEARER',
   name: 'Lightbearer',
-  iconURL: getImageIcon('faction/lightbearer.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/lightbearer.webp', size),
 };
 export const Mauler:Faction = {
   id: 'MAULER',
   name: 'Mauler',
-  iconURL: getImageIcon('faction/mauler.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/mauler.webp', size),
 };
 export const Wilder:Faction = {
   id: 'WILDER',
   name: 'Wilder',
-  iconURL: getImageIcon('faction/wilder.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/wilder.webp', size),
 };
 export const Graveborn:Faction = {
   id: 'GRAVEBORN',
   name: 'Graveborn',
-  iconURL: getImageIcon('faction/graveborn.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/graveborn.webp', size),
 };
 export const Celestial:Faction = {
   id: 'CELESTIAL',
   name: 'Celestial',
-  iconURL: getImageIcon('faction/celestial.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/celestial.webp', size),
 };
 export const Hypogean:Faction = {
   id: 'HYPOGEAN',
   name: 'Hypogean',
-  iconURL: getImageIcon('faction/hypogean.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/hypogean.webp', size),
 };
 export const Dimensional:Faction = {
   id: 'DIMENSIONAL',
   name: 'Dimensional',
-  iconURL: getImageIcon('faction/dimensional.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('faction/dimensional.webp', size),
 };
 
 export const Factions: Array<Faction> = [

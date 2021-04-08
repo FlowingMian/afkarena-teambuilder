@@ -4,6 +4,7 @@ import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
 import * as Rating from '../../model/characteristics/ratings';
+import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
 export const Estrilda: Hero = {
@@ -16,9 +17,10 @@ export const Estrilda: Hero = {
   portraitURL: staticDomain+'lightbearer/estrilda.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.WEAK,
+    F3: Rating.Good,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Belinda: Hero = {
@@ -31,9 +33,10 @@ export const Belinda: Hero = {
   portraitURL: staticDomain+'lightbearer/belinda.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.WEAK,
+    F3: Rating.Weak,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Raine: Hero = {
@@ -46,9 +49,10 @@ export const Raine: Hero = {
   portraitURL: staticDomain+'lightbearer/raine.webp',
   signature: Signature._10,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Strong,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Fawkes: Hero = {
@@ -61,9 +65,10 @@ export const Fawkes: Hero = {
   portraitURL: staticDomain+'lightbearer/fawkes.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.VERY_WEAK,
-    F9: Rating.WEAK,
+    F3: Rating.VeryWeak,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Lucius: Hero = {
@@ -76,9 +81,10 @@ export const Lucius: Hero = {
   portraitURL: staticDomain+'lightbearer/lucius.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.VERY_WEAK,
-    F9: Rating.WEAK,
+    F3: Rating.VeryWeak,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Waistband],
 };
 
 export const Thane: Hero = {
@@ -91,9 +97,10 @@ export const Thane: Hero = {
   portraitURL: staticDomain+'lightbearer/thane.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.AVERAGE,
+    F3: Rating.Good,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Longbow, Artifact.Eye],
 };
 
 export const Hendrik: Hero = {
@@ -106,9 +113,10 @@ export const Hendrik: Hero = {
   portraitURL: staticDomain+'lightbearer/hendrik.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.WEAK,
+    F3: Rating.Average,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Barricade, Artifact.Waistband],
 };
 
 export const Rowan: Hero = {
@@ -121,9 +129,10 @@ export const Rowan: Hero = {
   portraitURL: staticDomain+'lightbearer/rowan.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Weak,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Gwyneth: Hero = {
@@ -136,9 +145,10 @@ export const Gwyneth: Hero = {
   portraitURL: staticDomain+'lightbearer/gwyneth.webp',
   signature: Signature._25,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.WEAK,
+    F3: Rating.Good,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Longbow, Artifact.Eye],
 };
 
 export const Rosaline: Hero = {
@@ -151,9 +161,10 @@ export const Rosaline: Hero = {
   portraitURL: staticDomain+'lightbearer/rosaline.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Weak,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Cecilia: Hero = {
@@ -166,9 +177,10 @@ export const Cecilia: Hero = {
   portraitURL: staticDomain+'lightbearer/cecilia.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.STRONG,
+    F3: Rating.Average,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Shroud],
 };
 
 export const Rigby: Hero = {
@@ -181,9 +193,10 @@ export const Rigby: Hero = {
   portraitURL: staticDomain+'lightbearer/rigby.webp',
   signature: Signature._10,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.WEAK,
+    F3: Rating.Average,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Chalice],
 };
 
 export const Oscar: Hero = {
@@ -196,9 +209,10 @@ export const Oscar: Hero = {
   portraitURL: staticDomain+'lightbearer/oscar.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.GOOD,
+    F3: Rating.Weak,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Eluard: Hero = {
@@ -211,9 +225,10 @@ export const Eluard: Hero = {
   portraitURL: staticDomain+'lightbearer/eluard.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.STRONG,
+    F3: Rating.Average,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Peggy: Hero = {
@@ -226,9 +241,10 @@ export const Peggy: Hero = {
   portraitURL: staticDomain+'lightbearer/peggy.png',
   signature: Signature.UNKNOWN,
   furniture: {
-    F3: Rating.UNKNOWN,
-    F9: Rating.UNKNOWN,
+    F3: Rating.Unknown,
+    F9: Rating.Unknown,
   },
+  artifacts: [Artifact.Call],
 };
 
 const heroes: Array<Hero> = [

@@ -10,7 +10,7 @@ type HeroDetailsProps = {
   onChange:(e:React.ChangeEvent<HTMLInputElement>, hero:Hero) => void;
 };
 
-const SIZE = '5rem';
+const PORTRAIT_SIZE = '4rem';
 
 function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element {
 
@@ -23,6 +23,11 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
     padding:1,
     gap:1,
   };
+
+  const artifacts = hero.artifacts && hero.artifacts.map(a => (
+    <CharactericticBox key={a.id} characterictic={a} size='2rem'/>
+  ));
+
   return (
     <VStack {...BoxCardStyle}
       width='20rem'
@@ -34,7 +39,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
 
       <Grid {...gridStyle}
         templateRows="repeat(6, 1fr)"
-        templateColumns="repeat(8, 1fr)"
+        templateColumns="repeat(9, 1fr)"
       >
 
         <GridItem rowSpan={3} colSpan={2} >
@@ -42,12 +47,12 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
             <Image 
               src={hero.portraitURL}
               alt={hero.name}
-              boxSize={SIZE}
+              boxSize={PORTRAIT_SIZE}
             />
           </Tooltip>
         </GridItem>
       
-        <GridItem rowSpan={1} colSpan={3} >
+        <GridItem rowSpan={1} colSpan={4} >
           <Heading size='md'>{hero.name}</Heading>
         </GridItem>
 
@@ -59,30 +64,40 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
           </HStack>
         </GridItem>
 
-        <GridItem rowSpan={2} colSpan={6}>
+        <GridItem rowSpan={2} colSpan={7}>
           <Link href={`/compositions?query=${hero.name}`} fontSize="sm">View compositions</Link>
         </GridItem>
 
-        <GridItem rowSpan={3} colSpan={4}>
+        <GridItem rowSpan={3} colSpan={3}>
           <Center>
             <VStack alignItems='start' spacing='0'>
               <Heading size='sm'>Signature</Heading>
-              {hero.signature.iconURL}
+              {hero.signature.iconURL && hero.signature.iconURL()}
             </VStack>
           </Center>
         </GridItem>
 
-        <GridItem rowSpan={3} colSpan={4} >
+        <GridItem rowSpan={3} colSpan={3} >
           <Center>
             <VStack alignItems='start' spacing='0'>
               <Heading size='sm'>Furniture</Heading>
-              <Text>3: {hero.furniture.F3.iconURL}</Text>
-              <Text>9: {hero.furniture.F9.iconURL}</Text>
+              <Text>3: {hero.furniture.F3.iconURL && hero.furniture.F3.iconURL()}</Text>
+              <Text>9: {hero.furniture.F9.iconURL && hero.furniture.F9.iconURL()}</Text>
             </VStack>
           </Center>
         </GridItem>
 
-        
+        <GridItem rowSpan={3} colSpan={3} >
+          <Center>
+            <VStack alignItems='start' spacing='0'>
+              <Heading size='sm'>Artifact</Heading>
+              <HStack spacing={0}>
+                {artifacts}
+              </HStack>
+            </VStack>
+          </Center>
+        </GridItem>
+
       </Grid>
     </VStack>
   );

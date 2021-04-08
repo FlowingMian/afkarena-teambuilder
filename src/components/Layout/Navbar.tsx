@@ -26,11 +26,15 @@ const navLinks = [
   {
     path: '/multifight',
     label: 'Multi-fight',
-    new: true,
   },
   {
     path: '/heroes',
     label: 'Heroes'
+  },
+  {
+    path: '/artifacts',
+    label: 'Artifacts',
+    new: true,
   },
   {
     path: '/compositions',

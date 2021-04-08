@@ -6,7 +6,7 @@ import { staticDomain } from '../common';
 export interface Characterictic {
   id: string;
   name: string;
-  iconURL?:JSX.Element
+  iconURL?:(size?:string) => JSX.Element
 }
 
 export type Faction = Characterictic
@@ -23,6 +23,10 @@ export type Rating = Characterictic
 
 export type Signature = Characterictic
 
-export function getImageIcon(path:string):JSX.Element {
-  return <Image src={`${staticDomain}${path}`} boxSize='20px' />;  
+export interface Artifact extends Characterictic {
+  score?:number
+}
+
+export function getImageIcon(path:string, boxSize:string):JSX.Element {
+  return <Image src={`${staticDomain}${path}`} boxSize={boxSize} />;  
 } 
