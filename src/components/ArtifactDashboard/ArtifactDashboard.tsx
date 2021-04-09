@@ -23,7 +23,8 @@ type ArtifactDashboardProps = {
 
 function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
 
-  const [selection, setSelection] = useState<Array<string>>(artifactGuides.map(g => g.id));
+  const defaultSelection = artifactGuides.map(g => g.id);
+  const [selection, setSelection] = useState<Array<string>>(defaultSelection);
   const [artifactResult, setArtifactResult] = useState<Map<Hero, ArtifactGuideHero>>(new Map());
   const [filters, setFilters] = useState<HeroFilters>();
   
@@ -35,7 +36,7 @@ function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
   }, [pathname]);
   useEffect(() => {
     setPageTitle('Artifacts');
-    calculateArtifact(artifactGuides.map(g => g.id));
+    calculateArtifact(defaultSelection);
     setTimeout(() => {setRendering(false);}, 1);
   }, []);
 

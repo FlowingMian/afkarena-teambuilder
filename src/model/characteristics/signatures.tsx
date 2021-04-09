@@ -35,7 +35,7 @@ export const _30:Rating = {
   name: '30',
   iconURL: (size=DEFAULT_SIZE) => <Tag size={size} colorScheme='red' variant='solid'>30</Tag>
 };
-export const UNKNOWN:Rating = {
+export const Unknown:Rating = {
   id: 'UNKNOWN',
   name: 'Unknown',
   iconURL: (size=DEFAULT_SIZE) => <Tag size={size} colorScheme='gray' variant='subtle'>Unknown</Tag>
@@ -48,5 +48,5 @@ export const Signatures:Array<Rating> = [
   _20,
   _25,
   _30,
-  UNKNOWN
+  Unknown
 ];

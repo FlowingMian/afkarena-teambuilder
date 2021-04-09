@@ -6,7 +6,6 @@ import { Profile } from '../../model/profile';
 import { Hero } from '../../model/heroes';
 import { ArtifactGuideHero } from '../../model/artifacts';
 import { Artifacts } from '../../model/characteristics/artifacts';
-import { BoxResultsStyle } from '../../theme/styles';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 
 const DISPLAY_BEST = false;
@@ -22,7 +21,7 @@ function ArtifactDashboardTable({ profile, artifactResult , filters }: ArtifactD
   const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' });
 
   const selection = Array.from(artifactResult.entries())
-    // Override artifacts filter to accept all heroes regardles of their best Artifact
+    // Override artifacts filter to accept all heroes regardless of their best Artifact
     .filter(([hero]) => !filters || acceptHero({...filters, artifacts: Artifacts.map(a => a.id)}, profile, hero))
     // Apply artifacts filter on all ranks
     .filter(([, artifacts]) => !filters || filters.artifacts.some(artifactId => [...artifacts.rank1, ...artifacts.rank2, ...artifacts.rank3].map(a => a.id).includes(artifactId))); 

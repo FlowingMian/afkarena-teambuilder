@@ -239,7 +239,7 @@ export const Peggy: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Support,
   portraitURL: staticDomain+'lightbearer/peggy.png',
-  signature: Signature.UNKNOWN,
+  signature: Signature.Unknown,
   furniture: {
     F3: Rating.Unknown,
     F9: Rating.Unknown,

@@ -17,8 +17,7 @@ const ARTIFACT_SIZE = '3rem';
 function ArtifactDashboardTableRow({ hero, artifactResultRow, displayBest }: ArtifactDashboardTableRowProps):JSX.Element {
 
   const artifactIconSize:string|undefined = useBreakpointValue({ base: ARTIFACT_SIZE_SM, lg: ARTIFACT_SIZE });
-  console.log('artifactIconSize', artifactIconSize);
-  
+
   const bestArtifacts = hero.artifacts && hero.artifacts.map(a => (
     <CharactericticBox key={a.id} characterictic={a} size={artifactIconSize}/>
   ));

@@ -223,7 +223,7 @@ export const Raku: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'wilder/raku.png',
-  signature: Signature.UNKNOWN,
+  signature: Signature.Unknown,
   furniture: {
     F3: Rating.Unknown,
     F9: Rating.Unknown,
