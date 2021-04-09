@@ -1,6 +1,6 @@
 import React from 'react';
-import { Heading, Link, Accordion, AccordionItem, AccordionButton, Box, AccordionIcon, AccordionPanel, Text } from '@chakra-ui/react';
-import { ExternalLinkIcon, InfoIcon } from '@chakra-ui/icons';
+import { Accordion, AccordionItem, AccordionButton, Box, AccordionIcon, AccordionPanel, Text } from '@chakra-ui/react';
+import { InfoIcon } from '@chakra-ui/icons';
 
 
 function ArtifactDashboardHelp():JSX.Element {
@@ -17,7 +17,7 @@ function ArtifactDashboardHelp():JSX.Element {
         </h2>
         <AccordionPanel pb={4}>
           <Text fontSize="sm">
-            The artifact ranking is the highest of this artifat in any of the selected guide.
+            Each artifact rank for a hero is its <b>highest rank</b> in any of the selected guides.
           </Text>
         </AccordionPanel>
       </AccordionItem>

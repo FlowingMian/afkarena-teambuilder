@@ -30,17 +30,16 @@ function ArtifactDashboardTable({ profile, artifactResult , filters }: ArtifactD
   const rows = selection.map(([hero, artifacts]) => <ArtifactDashboardTableRow key={hero.id} hero={hero} artifactResultRow={artifacts} displayBest={DISPLAY_BEST}/>);
 
   return (
-    <Stack direction={stackDirection} alignItems='start' {...BoxResultsStyle} >
+    <Stack direction={stackDirection} alignItems='start'>
       <HeroCharactericticsTable heroes={Array.from(selection.map(a => a[0]))} />
       <Table size="sm" variant="striped">
         <Thead>
           <Tr>
-            <Th width='4rem'>Hero</Th>
-            <Th>Class</Th>
-            {DISPLAY_BEST && <Th>Best</Th>}
-            <Th>First</Th>
-            <Th>Second</Th>
-            <Th>Third</Th>
+            <Th>Hero</Th>
+            {DISPLAY_BEST && <Th minWidth='4rem'>Best</Th>}
+            <Th minWidth='3rem'>1st</Th>
+            <Th minWidth='3rem'>2nd</Th>
+            <Th minWidth='3rem'>3rd</Th>
           </Tr>
         </Thead>
         <Tbody>

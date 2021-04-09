@@ -123,7 +123,7 @@ function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurnit
               </Box>
             </WrapItem>}
 
-            {displayArtifact && <WrapItem {...itemStyle} width='18.4rem' >
+            {displayArtifact && <WrapItem {...itemStyle} width='11.4rem' >
               <CharacteristicCheckboxGroup selection={selection.artifacts} characterictics={Artifacts} onChange={(v) => onCharacteristicChange('artifacts', v)}/>
               <Box>
                 <Heading {...headingStyle}>Artifacts</Heading>
