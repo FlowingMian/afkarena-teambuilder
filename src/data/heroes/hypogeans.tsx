@@ -127,5 +127,5 @@ const heroes: Array<Hero> = [
   Mezoth,
   Lucretia,
   Mortas
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

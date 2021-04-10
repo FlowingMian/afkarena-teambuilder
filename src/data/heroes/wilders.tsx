@@ -246,5 +246,5 @@ const heroes: Array<Hero> = [
   Pippa,
   Respen,
   Raku
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

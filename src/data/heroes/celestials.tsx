@@ -144,5 +144,5 @@ const heroes: Array<Hero> = [
   Flora,
   Zaphrael,
   Alna
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

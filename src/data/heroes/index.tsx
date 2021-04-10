@@ -15,7 +15,6 @@ const heroes: Array<Hero> = [
   ...celestials,
   ...hypogeans,
   ...dimensionals
-]
-  .sort((a, b) => a.name.localeCompare(b.name))
-;
+].sort((a, b) => a.name.localeCompare(b.name));
+
 export default heroes;

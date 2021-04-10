@@ -246,5 +246,5 @@ const heroes: Array<Hero> = [
   Skriath,
   Anoki,
   Kren
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;
