@@ -10,6 +10,7 @@ import { setPageTitle } from '../utils';
 import { CompositionHeroes, Profile } from '../../model/profile';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
+import { isCustomComposition } from '../../model/customComposition';
 
 type MultifightDashboardProps = {
   profile: Profile;
@@ -34,13 +35,21 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
     return <Loader/>;
   }
 
-
+  
   function filterCompositions(compositionIds:Array<string>) {
     sendViewItems('composition', compositionIds);
-    setSelectedCompositions(compositions
+
+    const result = compositions
       .filter(c => compositionIds.includes(c.id))
-      .reduce((res, c) => (res[c.id] = c.coreHeroes.heroes, res), {} as CompositionHeroes)
-    );
+      .reduce((res, c) => (res[c.id] = c.coreHeroes.heroes, res), {} as CompositionHeroes);
+
+    Object.entries(selectedCompositions).forEach(([cId, heroes]) => {
+      if (compositionIds.includes(cId) || isCustomComposition(cId)) {
+        result[cId] = heroes;
+      }
+    });
+
+    setSelectedCompositions(result);
   }
 
   return (<>

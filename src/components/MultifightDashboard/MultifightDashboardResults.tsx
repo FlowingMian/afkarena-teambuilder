@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { Accordion, VStack, Button, HStack, Switch, FormLabel } from '@chakra-ui/react';
-import { HeroRequirement } from '../../model/compositions';
 import CompositionBuilder from './CompositionBuilder';
 import HeroList from '../Hero/HeroList';
 import heroes from '../../data/heroes';
@@ -23,7 +22,7 @@ function MultifightDashboardResults({ profile, compositionHeroes, onCompositionH
   const {updateProfile} = useContext(ProfileContext);
 
   const [heroStates, setHeroStates] = useState<Map<string,State>>(new Map());
-  const [heroSelection, setHeroSelection] = useState<Map<HeroRequirement|Hero,string>>(new Map());
+  const [heroSelection, setHeroSelection] = useState<Map<Hero,string>>(new Map());
   const [disableNotOwned, setDisableNotOwned] = useState<boolean>(false);
   const [hasChanged, setHasChanged] = useState<boolean>(false);
 
@@ -48,7 +47,7 @@ function MultifightDashboardResults({ profile, compositionHeroes, onCompositionH
     setHasChanged(false);
   }
 
-  function onChange(compositionId:string, heroes:Array<HeroRequirement>) {
+  function onChange(compositionId:string, heroes:Array<Hero>) {
     updateSelectedHeroesByComposition({
       ...compositionHeroes,
       [compositionId]: heroes
@@ -89,10 +88,10 @@ function MultifightDashboardResults({ profile, compositionHeroes, onCompositionH
   function calculateHeroSelection(disableNotOwned:boolean) {
     let heroSelectionEntries = Object.entries(compositionHeroes)
       .flatMap(([cId, hrs]) => {
-        return hrs.map(hId => [hId, cId] as [Hero|HeroRequirement, string]);
+        return hrs.map(hId => [hId, cId] as [Hero, string]);
       });
     if (disableNotOwned) {
-      heroSelectionEntries = heroSelectionEntries.concat(disabledHeroes.map(h => [h, 'DISABLED'] as [Hero|HeroRequirement, string]));
+      heroSelectionEntries = heroSelectionEntries.concat(disabledHeroes.map(h => [h, 'DISABLED'] as [Hero, string]));
     } 
     setHeroSelection(new Map(heroSelectionEntries));
   }

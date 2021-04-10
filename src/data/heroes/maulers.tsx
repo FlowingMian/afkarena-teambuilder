@@ -4,6 +4,7 @@ import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
 import * as Rating from '../../model/characteristics/ratings';
+import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
 export const Brutus: Hero = {
@@ -16,9 +17,10 @@ export const Brutus: Hero = {
   portraitURL: staticDomain+'mauler/brutus.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.WEAK,
+    F3: Rating.Good,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Blade, Artifact.Barricade],
 };
 
 export const Khasos: Hero = {
@@ -31,9 +33,10 @@ export const Khasos: Hero = {
   portraitURL: staticDomain+'mauler/khasos.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Average,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Vurk: Hero = {
@@ -46,9 +49,10 @@ export const Vurk: Hero = {
   portraitURL: staticDomain+'mauler/vurk.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.AVERAGE,
+    F3: Rating.Strong,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Longbow, Artifact.Eye],
 };
 
 export const Numisu: Hero = {
@@ -61,9 +65,10 @@ export const Numisu: Hero = {
   portraitURL: staticDomain+'mauler/numisu.webp',
   signature: Signature._15,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.GOOD,
+    F3: Rating.Average,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Skreg: Hero = {
@@ -76,9 +81,10 @@ export const Skreg: Hero = {
   portraitURL: staticDomain+'mauler/skreg.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.TOP_TIER,
+    F3: Rating.TopTier,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Chalice, Artifact.Waistband],
 };
 
 export const Warek: Hero = {
@@ -91,9 +97,10 @@ export const Warek: Hero = {
   portraitURL: staticDomain+'mauler/warek.webp',
   signature: Signature._10,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Weak,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Antandra: Hero = {
@@ -106,9 +113,10 @@ export const Antandra: Hero = {
   portraitURL: staticDomain+'mauler/antandra.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.STRONG,
+    F3: Rating.Good,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Safiya: Hero = {
@@ -121,9 +129,10 @@ export const Safiya: Hero = {
   portraitURL: staticDomain+'mauler/safiya.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.VERY_WEAK,
-    F9: Rating.WEAK,
+    F3: Rating.VeryWeak,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Satrana: Hero = {
@@ -136,9 +145,10 @@ export const Satrana: Hero = {
   portraitURL: staticDomain+'mauler/satrana.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.STRONG,
+    F3: Rating.Strong,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Tidus: Hero = {
@@ -151,9 +161,10 @@ export const Tidus: Hero = {
   portraitURL: staticDomain+'mauler/tidus.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.AVERAGE,
+    F3: Rating.Strong,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Shroud],
 };
 
 export const Drez: Hero = {
@@ -166,9 +177,10 @@ export const Drez: Hero = {
   portraitURL: staticDomain+'mauler/drez.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.STRONG,
+    F3: Rating.Strong,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Skriath: Hero = {
@@ -181,9 +193,10 @@ export const Skriath: Hero = {
   portraitURL: staticDomain+'mauler/skriath.webp',
   signature: Signature._10,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.WEAK,
+    F3: Rating.TopTier,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Warden],
 };
 
 export const Anoki: Hero = {
@@ -196,9 +209,10 @@ export const Anoki: Hero = {
   portraitURL: staticDomain+'mauler/anoki.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.WEAK,
+    F3: Rating.Weak,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Waistband],
 };
 
 export const Kren: Hero = {
@@ -211,9 +225,10 @@ export const Kren: Hero = {
   portraitURL: staticDomain+'mauler/kren.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.GOOD,
+    F3: Rating.Average,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Eye],
 };
 
 const heroes: Array<Hero> = [
@@ -231,5 +246,5 @@ const heroes: Array<Hero> = [
   Skriath,
   Anoki,
   Kren
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

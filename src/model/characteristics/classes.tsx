@@ -1,29 +1,31 @@
 import { Class, getImageIcon } from './characteristics';
 
+const DEFAULT_SIZE  = '1.25rem';
+
 export const Warrior:Class = {
   id: 'WARRIOR',
   name: 'Warrior',
-  iconURL: getImageIcon('class/warrior.webp')
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('class/warrior.webp', size)
 };
 export const Tank:Class = {
   id: 'TANK',
   name: 'Tank',
-  iconURL: getImageIcon('class/tank.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('class/tank.webp', size),
 };
 export const Ranger:Class = {
   id: 'RANGER',
   name: 'Ranger',
-  iconURL: getImageIcon('class/ranger.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('class/ranger.webp', size),
 };
 export const Mage:Class = {
   id: 'MAGE',
   name: 'Mage',
-  iconURL: getImageIcon('class/mage.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('class/mage.webp', size),
 };
 export const Support:Class = {
   id: 'SUPPORT',
   name: 'Support',
-  iconURL: getImageIcon('class/support.webp'),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('class/support.webp', size),
 };
 
 export const Classes: Array<Class> = [

@@ -11,6 +11,7 @@ import CompositionDashboard from './components/CompositionDashboard/CompositionD
 import { useTracking } from './useTracking';
 import MultifightDashboard from './components/MultifightDashboard/MultifightDashboard';
 import { ProfileContext, ProfileContextProvider } from './components/Profile/ProfileContext';
+import ArtifactDashboard from './components/ArtifactDashboard/ArtifactDashboard';
 
 function App() {
   useTracking('G-F2JQMGEBKC');
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/compositions">
             <CompositionDashboard/>
+          </Route>
+          <Route path="/artifacts">
+            <ArtifactDashboard profile={profile}/>
           </Route>
           <Route path="/">
             <Redirect to="/heroes" />

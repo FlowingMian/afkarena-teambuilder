@@ -2,15 +2,9 @@ import { Role } from './characteristics/characteristics';
 import { Link } from './common';
 import { Hero } from './heroes';
 
-export enum Artifact {}
-
-export interface HeroRequirement extends Hero{
-  recommended?: boolean
-}
-
 export interface CompositionRole {
   role: Role;
-  heroes: Array<HeroRequirement>;
+  heroes: Array<Hero>;
 }
 
 export interface Composition {

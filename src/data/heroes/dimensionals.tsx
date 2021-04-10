@@ -4,6 +4,7 @@ import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
 import * as Rating from '../../model/characteristics/ratings';
+import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
 export const Arthur: Hero = {
@@ -16,9 +17,10 @@ export const Arthur: Hero = {
   portraitURL: staticDomain+'dimensional/arthur.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Good,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Barricade],
 };
 
 export const Ukyo: Hero = {
@@ -31,9 +33,10 @@ export const Ukyo: Hero = {
   portraitURL: staticDomain+'dimensional/ukyo.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.WEAK,
+    F3: Rating.Weak,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Nakoruru: Hero = {
@@ -46,9 +49,10 @@ export const Nakoruru: Hero = {
   portraitURL: staticDomain+'dimensional/nakoruru.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.AVERAGE,
+    F3: Rating.Average,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Ezio: Hero = {
@@ -61,9 +65,10 @@ export const Ezio: Hero = {
   portraitURL: staticDomain+'dimensional/ezio.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.STRONG,
+    F3: Rating.Average,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Albedo: Hero = {
@@ -76,9 +81,10 @@ export const Albedo: Hero = {
   portraitURL: staticDomain+'dimensional/albedo.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.WEAK,
+    F3: Rating.Good,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Waistband],
 };
 
 export const Ainz: Hero = {
@@ -91,9 +97,10 @@ export const Ainz: Hero = {
   portraitURL: staticDomain+'dimensional/ainz.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.TOP_TIER,
+    F3: Rating.Strong,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const QUEEN: Hero = {
@@ -106,9 +113,10 @@ export const QUEEN: Hero = {
   portraitURL: staticDomain+'dimensional/queen.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.AVERAGE,
+    F3: Rating.Strong,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const JOKER: Hero = {
@@ -121,9 +129,10 @@ export const JOKER: Hero = {
   portraitURL: staticDomain+'dimensional/joker.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.AVERAGE,
+    F3: Rating.Good,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Shroud],
 };
 
 const heroes: Array<Hero> = [
@@ -135,5 +144,5 @@ const heroes: Array<Hero> = [
   Ainz,
   QUEEN,
   JOKER
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

@@ -4,6 +4,7 @@ import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
 import * as Rating from '../../model/characteristics/ratings';
+import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
 export const Ezizh: Hero = {
@@ -16,9 +17,10 @@ export const Ezizh: Hero = {
   portraitURL: staticDomain+'hypogean/ezizh.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.TOP_TIER,
+    F3: Rating.Good,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Tidebearer],
 };
 
 export const Mehira: Hero = {
@@ -31,9 +33,10 @@ export const Mehira: Hero = {
   portraitURL: staticDomain+'hypogean/mehira.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.GOOD,
+    F3: Rating.Strong,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Zolrath: Hero = {
@@ -46,9 +49,10 @@ export const Zolrath: Hero = {
   portraitURL: staticDomain+'hypogean/zolrath.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.GOOD,
+    F3: Rating.TopTier,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Carnage, Artifact.Chaos],
 };
 
 export const Khazard: Hero = {
@@ -61,9 +65,10 @@ export const Khazard: Hero = {
   portraitURL: staticDomain+'hypogean/khazard.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.WEAK,
+    F3: Rating.Strong,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Mezoth: Hero = {
@@ -76,9 +81,10 @@ export const Mezoth: Hero = {
   portraitURL: staticDomain+'hypogean/mezoth.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.STRONG,
+    F3: Rating.Strong,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Waistband],
 };
 
 export const Lucretia: Hero = {
@@ -91,9 +97,10 @@ export const Lucretia: Hero = {
   portraitURL: staticDomain+'hypogean/lucretia.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.STRONG,
+    F3: Rating.Strong,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Longbow, Artifact.Eye],
 };
 
 export const Mortas: Hero = {
@@ -106,9 +113,10 @@ export const Mortas: Hero = {
   portraitURL: staticDomain+'hypogean/mortas.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.VERY_WEAK,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.VeryWeak,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Tidebearer],
 };
 
 const heroes: Array<Hero> = [
@@ -119,5 +127,5 @@ const heroes: Array<Hero> = [
   Mezoth,
   Lucretia,
   Mortas
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

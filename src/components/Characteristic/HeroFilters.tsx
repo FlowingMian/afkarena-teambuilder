@@ -10,6 +10,7 @@ export interface HeroFilters {
   signatures:Array<string>;
   furniture3Ratings:Array<string>;
   furniture9Ratings:Array<string>;
+  artifacts:Array<string>;
 }
 
 export function acceptHero(heroFilters:HeroFilters, profile:Profile, hero:Hero):boolean {
@@ -21,5 +22,6 @@ export function acceptHero(heroFilters:HeroFilters, profile:Profile, hero:Hero):
         && heroFilters.signatures.includes(hero.signature.id)
         && heroFilters.furniture3Ratings.includes(hero.furniture.F3.id)
         && heroFilters.furniture9Ratings.includes(hero.furniture.F9.id)
+        && heroFilters.artifacts.some(artifactId => hero.artifacts.map(a => a.id).includes(artifactId))
   ;
 }

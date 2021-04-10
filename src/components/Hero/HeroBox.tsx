@@ -2,13 +2,12 @@ import React from 'react';
 import { AddIcon, CheckIcon, LockIcon } from '@chakra-ui/icons';
 import { Box, Center, Image, Tooltip } from '@chakra-ui/react';
 import { State } from '../../model/common';
-import { HeroRequirement } from '../../model/compositions';
 import { Hero, isOpenSpot } from '../../model/heroes';
 
 type HeroBoxProps = {
-  hero: Hero|HeroRequirement;
+  hero: Hero;
   state?: State;
-  onClick?:(e:React.MouseEvent, hero:Hero|HeroRequirement) => void;
+  onClick?:(e:React.MouseEvent, hero:Hero) => void;
 };
 
 const SIZE_SM = '2.5rem';
@@ -45,7 +44,7 @@ function HeroBox({ hero, state = State.AVAILABLE, onClick }: HeroBoxProps):JSX.E
             {state === State.SELECTED && <CheckIcon color="green.300" boxSize={['70%','70%']}/>}
             {state === State.LOCKED && <LockIcon color="gray.300" boxSize={['50%','50%']}/>}
           </Center>
-          {'recommended' in hero && hero.recommended && 
+          {hero.recommended && 
             <Box {...overlayStyle} outline='3px solid gold' outlineOffset='-3px'>
             </Box>
           }

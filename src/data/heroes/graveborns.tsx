@@ -4,6 +4,7 @@ import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
 import * as Rating from '../../model/characteristics/ratings';
+import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
 export const Grezhul: Hero = {
@@ -16,9 +17,10 @@ export const Grezhul: Hero = {
   portraitURL: staticDomain+'graveborn/grezhul.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.TOP_TIER,
+    F3: Rating.TopTier,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Chalice],
 };
 
 export const Shemira: Hero = {
@@ -31,9 +33,10 @@ export const Shemira: Hero = {
   portraitURL: staticDomain+'graveborn/shemira.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.WEAK,
-    F9: Rating.VERY_WEAK,
+    F3: Rating.Weak,
+    F9: Rating.VeryWeak,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Thoran: Hero = {
@@ -46,9 +49,10 @@ export const Thoran: Hero = {
   portraitURL: staticDomain+'graveborn/thoran.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.STRONG,
+    F3: Rating.Average,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Isabella: Hero = {
@@ -61,9 +65,10 @@ export const Isabella: Hero = {
   portraitURL: staticDomain+'graveborn/isabella.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.STRONG,
+    F3: Rating.TopTier,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Nara: Hero = {
@@ -76,9 +81,10 @@ export const Nara: Hero = {
   portraitURL: staticDomain+'graveborn/nara.webp',
   signature: Signature._15,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.AVERAGE,
+    F3: Rating.Good,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Ferael: Hero = {
@@ -91,9 +97,10 @@ export const Ferael: Hero = {
   portraitURL: staticDomain+'graveborn/ferael.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.TOP_TIER,
+    F3: Rating.Strong,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Baden: Hero = {
@@ -106,9 +113,10 @@ export const Baden: Hero = {
   portraitURL: staticDomain+'graveborn/baden.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.VERY_WEAK,
-    F9: Rating.STRONG,
+    F3: Rating.VeryWeak,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Kelthur: Hero = {
@@ -121,9 +129,10 @@ export const Kelthur: Hero = {
   portraitURL: staticDomain+'graveborn/kelthur.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.GOOD,
+    F3: Rating.Average,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Shroud],
 };
 
 export const Silas: Hero = {
@@ -136,9 +145,10 @@ export const Silas: Hero = {
   portraitURL: staticDomain+'graveborn/silas.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.TOP_TIER,
+    F3: Rating.TopTier,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Blade, Artifact.Call],
 };
 
 export const Oden: Hero = {
@@ -151,9 +161,10 @@ export const Oden: Hero = {
   portraitURL: staticDomain+'graveborn/oden.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.GOOD,
+    F3: Rating.TopTier,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Izold: Hero = {
@@ -166,9 +177,10 @@ export const Izold: Hero = {
   portraitURL: staticDomain+'graveborn/izold.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.AVERAGE,
+    F3: Rating.TopTier,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Torne: Hero = {
@@ -181,9 +193,10 @@ export const Torne: Hero = {
   portraitURL: staticDomain+'graveborn/torne.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.AVERAGE,
-    F9: Rating.AVERAGE,
+    F3: Rating.Average,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Waistband],
 };
 
 export const Daimon: Hero = {
@@ -196,9 +209,10 @@ export const Daimon: Hero = {
   portraitURL: staticDomain+'graveborn/daimon.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.WEAK,
+    F3: Rating.TopTier,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Call],
 };
 
 export const Theowyn: Hero = {
@@ -211,9 +225,10 @@ export const Theowyn: Hero = {
   portraitURL: staticDomain+'graveborn/theowyn.webp',
   signature: Signature._10,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.GOOD,
+    F3: Rating.Strong,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Eye],
 };
 
 const heroes: Array<Hero> = [
@@ -231,5 +246,5 @@ const heroes: Array<Hero> = [
   Torne,
   Daimon,
   Theowyn
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

@@ -4,6 +4,7 @@ import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
 import * as Rating from '../../model/characteristics/ratings';
+import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
 export const Athalia: Hero = {
@@ -16,9 +17,10 @@ export const Athalia: Hero = {
   portraitURL: staticDomain+'celestial/athalia.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.AVERAGE,
+    F3: Rating.Good,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Longbow, Artifact.Eye],
 };
 
 export const ElijahLailah: Hero = {
@@ -31,9 +33,10 @@ export const ElijahLailah: Hero = {
   portraitURL: staticDomain+'celestial/elijahlailah.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.WEAK,
+    F3: Rating.TopTier,
+    F9: Rating.Weak,
   },
+  artifacts: [Artifact.Tidebearer, Artifact.Call],
 };
 
 export const Orthos: Hero = {
@@ -46,9 +49,10 @@ export const Orthos: Hero = {
   portraitURL: staticDomain+'celestial/orthos.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.TOP_TIER,
-    F9: Rating.GOOD,
+    F3: Rating.TopTier,
+    F9: Rating.Good,
   },
+  artifacts: [Artifact.Waistband],
 };
 
 export const Talene: Hero = {
@@ -61,9 +65,10 @@ export const Talene: Hero = {
   portraitURL: staticDomain+'celestial/talene.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.STRONG,
+    F3: Rating.Strong,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Blade],
 };
 
 export const Wukong: Hero = {
@@ -76,9 +81,10 @@ export const Wukong: Hero = {
   portraitURL: staticDomain+'celestial/wukong.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.STRONG,
+    F3: Rating.Strong,
+    F9: Rating.Strong,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 export const Flora: Hero = {
@@ -91,9 +97,10 @@ export const Flora: Hero = {
   portraitURL: staticDomain+'celestial/flora.webp',
   signature: Signature._20,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.AVERAGE,
+    F3: Rating.Good,
+    F9: Rating.Average,
   },
+  artifacts: [Artifact.Eye],
 };
 
 export const Zaphrael: Hero = {
@@ -106,9 +113,10 @@ export const Zaphrael: Hero = {
   portraitURL: staticDomain+'celestial/zaphrael.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.GOOD,
-    F9: Rating.TOP_TIER,
+    F3: Rating.Good,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Windbinder],
 };
 
 export const Alna: Hero = {
@@ -121,9 +129,10 @@ export const Alna: Hero = {
   portraitURL: staticDomain+'celestial/alna.webp',
   signature: Signature._30,
   furniture: {
-    F3: Rating.STRONG,
-    F9: Rating.TOP_TIER,
+    F3: Rating.Strong,
+    F9: Rating.TopTier,
   },
+  artifacts: [Artifact.Chaos],
 };
 
 const heroes: Array<Hero> = [
@@ -135,5 +144,5 @@ const heroes: Array<Hero> = [
   Flora,
   Zaphrael,
   Alna
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

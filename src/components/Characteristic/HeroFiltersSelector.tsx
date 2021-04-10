@@ -11,12 +11,16 @@ import { CollectionStatuses } from '../../model/characteristics/collectionStatus
 import { HeroFilters } from './HeroFilters';
 import { Ratings } from '../../model/characteristics/ratings';
 import { Signatures } from '../../model/characteristics/signatures';
+import { Artifacts } from '../../model/characteristics/artifacts';
 
 type HeroFiltersSelectorProps = {
   onChange:(value: HeroFilters) => void;
+  displaySignature?:boolean;
+  displayFurniture?:boolean;
+  displayArtifact?:boolean;
 };
 
-function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Element {
+function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurniture=true, displayArtifact=true}: HeroFiltersSelectorProps):JSX.Element {
   
   const itemStyle = {
     padding: '0.2rem',
@@ -37,6 +41,7 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
     signatures: Signatures.map(c => c.id),
     furniture3Ratings: Ratings.map(c => c.id),
     furniture9Ratings: Ratings.map(c => c.id),
+    artifacts: Artifacts.map(c => c.id),
   });
 
   function onCharacteristicChange(characteristic:string, values:Array<string>) {
@@ -94,29 +99,37 @@ function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Eleme
               </Box>
             </WrapItem>
 
-            <WrapItem {...itemStyle}>
-              <CharacteristicCheckboxGroup selection={selection.furniture3Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture3Ratings', v)}/>
-              <Box>
-                <Heading {...headingStyle}>Furniture 3</Heading>
-                <CharacteristicTable characterictics={Ratings} displayName={false}/>
-              </Box>
-            </WrapItem>
-
-            <WrapItem {...itemStyle}>
-              <CharacteristicCheckboxGroup selection={selection.furniture9Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture9Ratings', v)}/>
-              <Box>
-                <Heading {...headingStyle}>Furniture 9</Heading>
-                <CharacteristicTable characterictics={Ratings} displayName={false}/>
-              </Box>
-            </WrapItem>
-
-            <WrapItem {...itemStyle}>
+            {displaySignature && <WrapItem {...itemStyle}>
               <CharacteristicCheckboxGroup selection={selection.signatures} characterictics={Signatures} onChange={(v) => onCharacteristicChange('signatures', v)}/>
               <Box>
                 <Heading {...headingStyle}>Signature</Heading>
                 <CharacteristicTable characterictics={Signatures} displayName={false}/>
               </Box>
-            </WrapItem>
+            </WrapItem>}
+
+            {displayFurniture && <WrapItem {...itemStyle}>
+              <CharacteristicCheckboxGroup selection={selection.furniture3Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture3Ratings', v)}/>
+              <Box>
+                <Heading {...headingStyle}>Furniture 3</Heading>
+                <CharacteristicTable characterictics={Ratings} displayName={false}/>
+              </Box>
+            </WrapItem>}
+
+            {displayFurniture && <WrapItem {...itemStyle}>
+              <CharacteristicCheckboxGroup selection={selection.furniture9Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture9Ratings', v)}/>
+              <Box>
+                <Heading {...headingStyle}>Furniture 9</Heading>
+                <CharacteristicTable characterictics={Ratings} displayName={false}/>
+              </Box>
+            </WrapItem>}
+
+            {displayArtifact && <WrapItem {...itemStyle} width='11.4rem' >
+              <CharacteristicCheckboxGroup selection={selection.artifacts} characterictics={Artifacts} onChange={(v) => onCharacteristicChange('artifacts', v)}/>
+              <Box>
+                <Heading {...headingStyle}>Artifacts</Heading>
+                <CharacteristicTable characterictics={Artifacts}/>
+              </Box>
+            </WrapItem>}
 
           </Wrap>
         </AccordionPanel>

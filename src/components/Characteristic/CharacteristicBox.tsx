@@ -4,14 +4,15 @@ import { Characterictic } from '../../model/characteristics/characteristics';
 
 type CharactericticBoxProps = {
   characterictic: Characterictic;
+  size?: string;
   displayName?: boolean;
 };
 
-function CharactericticBox({ characterictic, displayName = false }: CharactericticBoxProps):JSX.Element {
+function CharactericticBox({ characterictic, size, displayName = false }: CharactericticBoxProps):JSX.Element {
   return (
     <HStack spacing="0.25rem">
       {characterictic.iconURL && <Tooltip label={characterictic.name} aria-label={characterictic.name}>
-        {characterictic.iconURL}
+        {characterictic.iconURL(size)}
       </Tooltip>}
       {displayName && <Text fontSize='xs'>{characterictic.name}</Text>}
     </HStack>
