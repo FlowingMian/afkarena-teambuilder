@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Thead, Th, Tbody, Tr, Stack, useBreakpointValue, StackDirection } from '@chakra-ui/react';
-import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import ArtifactDashboardTableRow from './ArtifactDashboardTableRow';
 import { Profile } from '../../model/profile';
 import { Hero } from '../../model/heroes';

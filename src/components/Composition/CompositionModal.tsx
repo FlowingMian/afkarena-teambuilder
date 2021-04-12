@@ -1,9 +1,9 @@
 import React from 'react';
 import { Composition } from '../../model/compositions';
-import {Modal, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, useDisclosure, IconButton } from '@chakra-ui/react';
+import {Modal, ModalOverlay, ModalCloseButton, ModalBody, ModalContent, useDisclosure, IconButton, Icon } from '@chakra-ui/react';
 import { Fragment } from 'react';
-import { ViewIcon } from '@chakra-ui/icons';
 import CompositionDetails from './CompositionDetails';
+import { FiEye } from 'react-icons/fi';
 
 type CompositionModalProps = {
   composition: Composition;
@@ -12,8 +12,8 @@ type CompositionModalProps = {
 function CompositionModal({ composition }: CompositionModalProps):JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  return <Fragment>
-    <IconButton variant='ghost' size="sm"icon={<ViewIcon/>} onClick={onOpen} aria-label="View composition" />
+  return <>
+    <IconButton variant='ghost' size="sm" icon={<Icon as={FiEye} />} onClick={onOpen} aria-label="View composition" />
     <Modal size="xl" isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
@@ -23,7 +23,7 @@ function CompositionModal({ composition }: CompositionModalProps):JSX.Element {
         </ModalBody>
       </ModalContent>
     </Modal>
-  </Fragment>;
+  </>;
 }
 
 export default CompositionModal;

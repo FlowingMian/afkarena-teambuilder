@@ -1,19 +1,21 @@
 import React, { useContext } from 'react';
-import { Button, Stack, StackDirection, useBreakpointValue, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import { IconButton, Stack, StackDirection, useBreakpointValue, Wrap, WrapItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { FiSave } from 'react-icons/fi';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
-import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
-import HeroFiltersSelector from '../Characteristic/HeroFiltersSelector';
+import { BoxResultsStyle } from '../../theme/styles';
+import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 import HeroDashboardHelp from './HeroDashboardHelp';
 import { setPageTitle } from '../utils';
 import HeroDetails from '../Hero/HeroDetails';
 import { Profile } from '../../model/profile';
 import { ProfileContext } from '../Profile/ProfileContext';
-import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
+import ControlBar from '../Common/ControlBar';
 
 type HeroDashboardProps = {
   profile: Profile;
@@ -68,29 +70,21 @@ function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
     setHasChanged(false);
   }
 
-  
-
   const heroesList = selectedHeroes.map((h) => {
     return <WrapItem key={h.id}><HeroDetails hero={h} isOwned={heroCollection.includes(h.id)} onChange={onChange}/></WrapItem>;
   });
 
   return (<>
-    <VStack {...BoxControlsStyle} alignItems='stretch'>
-
+    <ControlBar>
       <HeroFiltersSelector onChange={filterHeroes}/>
-
+      <IconButton icon={<FiSave/>} aria-label='Save' onClick={onSave} colorScheme='red' disabled={!hasChanged}/>
       <HeroDashboardHelp/>
-
-    </VStack>
+    </ControlBar>
     <Stack direction={stackDirection} alignItems='start' {...BoxResultsStyle} >
       <HeroCharactericticsTable heroes={selectedHeroes} />
-      <VStack>
-        <Button colorScheme='red' onClick={onSave} disabled={!hasChanged}>Save Hero Collection</Button>
-        <Wrap flexDirection="row" flexWrap="wrap" spacing={1}>
-          {heroesList}
-        </Wrap>
-        <Button colorScheme='red' onClick={onSave} disabled={!hasChanged}>Save Hero Collection</Button>
-      </VStack>
+      <Wrap flexDirection="row" flexWrap="wrap" spacing={1}>
+        {heroesList}
+      </Wrap>
     </Stack>
   </>);
 }

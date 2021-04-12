@@ -1,54 +1,35 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Accordion, VStack, Button, HStack, Switch, FormLabel } from '@chakra-ui/react';
+import { Accordion, VStack, Button, Icon } from '@chakra-ui/react';
 import CompositionBuilder from './CompositionBuilder';
 import HeroList from '../Hero/HeroList';
 import heroes from '../../data/heroes';
 import { State } from '../../model/common';
 import generateCustomComposition, { isCustomComposition } from '../../model/customComposition';
-import { AddIcon } from '@chakra-ui/icons';
-import { ProfileContext } from '../Profile/ProfileContext';
 import { Hero } from '../../model/heroes';
 import { Profile, CompositionHeroes } from '../../model/profile';
 import compositions from '../../data/compositions';
+import { FiPlus } from 'react-icons/fi';
 
 type MultifightDashboardResultsProps = {
   profile:Profile;
   compositionHeroes: CompositionHeroes;
+  disableNotOwned: boolean;
   onCompositionHeroesChange: (value:CompositionHeroes) => void
 };
 
-function MultifightDashboardResults({ profile, compositionHeroes, onCompositionHeroesChange }: MultifightDashboardResultsProps):JSX.Element {
-  const {updateProfile} = useContext(ProfileContext);
-
+function MultifightDashboardResults({ profile, compositionHeroes, disableNotOwned, onCompositionHeroesChange }: MultifightDashboardResultsProps):JSX.Element {
+  
   const [heroStates, setHeroStates] = useState<Map<string,State>>(new Map());
   const [heroSelection, setHeroSelection] = useState<Map<Hero,string>>(new Map());
-  const [disableNotOwned, setDisableNotOwned] = useState<boolean>(false);
-  const [hasChanged, setHasChanged] = useState<boolean>(false);
 
   useEffect(() => {
     calculateHeroStates(disableNotOwned);
     calculateHeroSelection(disableNotOwned);
-    setHasChanged(true);
-  }, [compositionHeroes]);
-
-  function onChangeDisableNotOwned() {
-    const newValue = !disableNotOwned;
-    calculateHeroStates(newValue);
-    calculateHeroSelection(newValue);
-    setDisableNotOwned(newValue);
-  }
-
-  function onSave() {
-    updateProfile({
-      ...profile,
-      compositions: compositionHeroes
-    });
-    setHasChanged(false);
-  }
+  }, [compositionHeroes, disableNotOwned]);
 
   function onChange(compositionId:string, heroes:Array<Hero>) {
-    updateSelectedHeroesByComposition({
+    onCompositionHeroesChange({
       ...compositionHeroes,
       [compositionId]: heroes
     });
@@ -56,17 +37,16 @@ function MultifightDashboardResults({ profile, compositionHeroes, onCompositionH
 
   function addCustomComposition(){
     const customComposition = generateCustomComposition();
-    updateSelectedHeroesByComposition({
+    onCompositionHeroesChange({
       ...compositionHeroes,
       [customComposition.id]: []
     });
   }
-  
-  function updateSelectedHeroesByComposition(selection:CompositionHeroes) {
-    onCompositionHeroesChange(selection);
-    setHasChanged(true);
-    calculateHeroStates(disableNotOwned);
-    calculateHeroSelection(disableNotOwned);
+
+  function removeCustomComposition(compositionId:string) {
+    const res = {...compositionHeroes};
+    delete res[compositionId];
+    onCompositionHeroesChange(res);
   }
 
   const disabledHeroes = heroes.filter(h => !profile.heroCollection.includes(h.id));
@@ -102,24 +82,16 @@ function MultifightDashboardResults({ profile, compositionHeroes, onCompositionH
     .map(c => generateCustomComposition(c));
 
   const compositionBuilders = [...selectedCompositions, ...customCompositions].map(c => 
-    <CompositionBuilder key={c.id} composition={c} heroSelection={heroSelection} onChange={(v) => onChange(c.id, v)}/>
+    <CompositionBuilder key={c.id} composition={c} heroSelection={heroSelection} onChange={(v) => onChange(c.id, v)} onDelete={() => removeCustomComposition(c.id)}/>
   );
   
   return (
     <VStack>
-      <HStack>
-        <Switch id="disabled-not-owned" isChecked={disableNotOwned} onChange={onChangeDisableNotOwned}/>
-        <FormLabel htmlFor="disabled-not-owned" mb="0">
-          Disable heroes not owned
-        </FormLabel>
-        <Button colorScheme='red' onClick={onSave} disabled={!hasChanged}>Save</Button>
-      </HStack>
-
       <Accordion width="100%" allowToggle={true} allowMultiple={true}>
         {compositionBuilders}
       </Accordion>
       
-      <Button variant='outline' size="xs" leftIcon={<AddIcon/>} onClick={addCustomComposition}>Add a Custom composition</Button>
+      <Button variant='outline' size="xs" leftIcon={<Icon as={FiPlus} />} onClick={addCustomComposition}>Add a Custom composition</Button>
       <HeroList heroes={heroes} heroStates={heroStates}/>
     </VStack>
   );

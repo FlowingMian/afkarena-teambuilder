@@ -1,12 +1,12 @@
 import React from 'react';
-import { Alert, AlertIcon, Button, HStack, IconButton, Input, InputGroup, InputLeftElement, InputRightElement, Spinner, Text, VStack } from '@chakra-ui/react';
-import { CloseIcon, SearchIcon } from '@chakra-ui/icons';
+import { Alert, AlertIcon, Button, HStack, Icon, IconButton, Input, InputGroup, InputLeftElement, InputRightElement, Spinner, Text, VStack } from '@chakra-ui/react';
 import { Composition } from '../../model/compositions';
 import { useEffect, useState } from 'react';
 import compositions from '../../data/compositions';
 import { sendSearch } from '../../useTracking';
 import qs from 'qs';
 import { useHistory, useLocation } from 'react-router-dom';
+import { FiSearch, FiX } from 'react-icons/fi';
 
 type CompositionSearchProps = {
     onChange:(compositionIds:Array<string>) => void;
@@ -64,10 +64,10 @@ function CompositionSearch({onChange}:CompositionSearchProps):JSX.Element {
       <InputGroup width='100%'>
         {
         // eslint-disable-next-line react/no-children-prop
-        }<InputLeftElement pointerEvents="none" children={searching ? <Spinner size="sm"/> :<SearchIcon />}/>
+        }<InputLeftElement pointerEvents="none" children={searching ? <Spinner size="sm"/> : <Icon as={FiSearch} />}/>
         <Input placeholder="Search name, tag, hero, role,..." value={query} onChange={event => setQuery(event.target.value)}/>
         <InputRightElement>
-          <IconButton variant="ghost" size="xs" icon={<CloseIcon/>} aria-label="Clear" onClick={() => setQuery('')} />
+          <IconButton variant="ghost" size="xs" icon={<Icon as={FiX} />} aria-label="Clear" onClick={() => setQuery('')} />
         </InputRightElement>
       </InputGroup>
       <Alert status="info" fontSize="xs" p={1}>

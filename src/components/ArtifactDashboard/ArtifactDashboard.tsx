@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, FormControl, Heading, Switch, Text, VStack } from '@chakra-ui/react';
+import { Box, FormControl, Heading, Switch, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
-import HeroFiltersSelector from '../Characteristic/HeroFiltersSelector';
+import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
 import ArtifactDashboardHelp from './ArtifactDashboardHelp';
 import { setPageTitle } from '../utils';
 import { Profile } from '../../model/profile';
-import { HeroFilters } from '../Characteristic/HeroFilters';
+import { HeroFilters } from '../HeroFilters/HeroFilters';
 import Loader from '../Common/Loader';
 import LinkPopover from '../Common/LinkPopover';
 import { useLocation } from 'react-router';
@@ -16,6 +16,7 @@ import { Hero } from '../../model/heroes';
 import { ArtifactGuideHero } from '../../model/artifacts';
 import heroes from '../../data/heroes';
 import { Artifact } from '../../model/characteristics/characteristics';
+import ControlBar from '../Common/ControlBar';
 
 type ArtifactDashboardProps = {
   profile: Profile;
@@ -129,14 +130,14 @@ function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
   });
 
   return (<>
-    <VStack {...BoxControlsStyle} alignItems='stretch'>
-      <Box>
-        <Heading size='xs'>Artifact guides :</Heading>
-        {guideSwitchs}
-      </Box>
+    <ControlBar>
       <HeroFiltersSelector onChange={filterHeroes} displaySignature={false} displayFurniture={false}/>
       <ArtifactDashboardHelp/>
-    </VStack>
+    </ControlBar>
+    <Box {...BoxControlsStyle}>
+      <Heading size='xs'>Artifact guides :</Heading>
+      {guideSwitchs}
+    </Box>
     <Box {...BoxResultsStyle}>
       {artifactResult.size > 0 ? <ArtifactDashboardTable profile={profile} artifactResult={artifactResult} filters={filters}/> : <Loader/>}
     </Box>

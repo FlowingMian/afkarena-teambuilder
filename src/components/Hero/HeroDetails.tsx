@@ -30,7 +30,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
 
   return (
     <VStack {...BoxCardStyle}
-      width='20rem'
+      width='22rem'
       padding='0.25rem' 
       backgroundColor={isOwned ? 'green.100' : 'red.100'}
       spacing={1}
@@ -72,7 +72,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
           <Center>
             <VStack alignItems='start' spacing='0'>
               <Heading size='sm'>Signature</Heading>
-              {hero.signature.iconURL && hero.signature.iconURL()}
+              {hero.signature.iconURL?.()}
             </VStack>
           </Center>
         </GridItem>
@@ -81,8 +81,8 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
           <Center>
             <VStack alignItems='start' spacing='0'>
               <Heading size='sm'>Furniture</Heading>
-              <Text>3: {hero.furniture.F3.iconURL && hero.furniture.F3.iconURL()}</Text>
-              <Text>9: {hero.furniture.F9.iconURL && hero.furniture.F9.iconURL()}</Text>
+              <Text>3: {hero.furniture.F3.iconURL?.()}</Text>
+              <Text>9: {hero.furniture.F9.iconURL?.()}</Text>
             </VStack>
           </Center>
         </GridItem>

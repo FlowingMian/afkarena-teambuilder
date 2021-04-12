@@ -1,11 +1,11 @@
 import React from 'react';
 import HeroCategory from '../Hero/HeroCategory';
 import { UsageDashboardResult, Tier, GLOBAL_PERCENT_THRESHOLD, NICHE_PERCENT_THRESHOLD } from './model';
-import { Tooltip, VStack } from '@chakra-ui/react';
+import { Icon, Tooltip, VStack } from '@chakra-ui/react';
 import { heatGradient } from '../../theme/colors';
-import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
-import { InfoIcon } from '@chakra-ui/icons';
+import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import { Profile } from '../../model/profile';
+import { FiInfo } from 'react-icons/fi';
 
 type UsageDashboardTierListProps = {
   profile:Profile;
@@ -54,7 +54,7 @@ function UsageDashboardTierList({ profile, usageResult, filters }: UsageDashboar
   const tierRows = [globalFlex, coreOrFlex, coreOrNiche, flex, niche, neverUsed]
     .map(tier => {
       const description = <Tooltip label={tier.description} aria-label={tier.description}>
-        <InfoIcon/>
+        <Icon as={FiInfo} mx="2px" />
       </Tooltip>;
       return <HeroCategory key={tier.name} name={tier.name} adornment={description} heroes={tier.heroes} colorScheme={tier.variant}/>;});
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Thead, Th, Tbody, Tr } from '@chakra-ui/react';
-import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import { UsageDashboardResult } from './model';
 import UsageDashboardTableRow from './UsageDashboardTableRow';
 import { Profile } from '../../model/profile';

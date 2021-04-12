@@ -1,10 +1,11 @@
 import React from 'react';
-import { FormControl, Switch, Flex, VStack, HStack, Button, useDisclosure, Drawer, DrawerOverlay, DrawerCloseButton, DrawerHeader, DrawerContent, DrawerBody, DrawerFooter, Text, Heading } from '@chakra-ui/react';
+import { FormControl, Switch, Flex, VStack, HStack, Button, useDisclosure, Drawer, DrawerOverlay, DrawerCloseButton, DrawerHeader, DrawerContent, DrawerBody, DrawerFooter, Text, Heading, IconButton } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import compositions from '../../data/compositions';
 import { Composition } from '../../model/compositions';
 import CompositionBox from './CompositionBox';
 import CompositionSearch from './CompositionSearch';
+import { FiUsers } from 'react-icons/fi';
 
 type CompositionSelectorProps = {
   defaultSelection?: Array<string>;
@@ -64,12 +65,11 @@ function CompositionSelector({ defaultSelection, onValidate, openOnInit = false 
 
   return (
     <>
-      <Button onClick={onOpen}>
-      Select compositions ({selection.length})
-      </Button>
+      <IconButton icon={<FiUsers/>} aria-label='Select compositions' onClick={onOpen}/>
+
       <Drawer
         isOpen={isOpen}
-        placement="left"
+        placement="right"
         size="md"
         onClose={onClose}
       >

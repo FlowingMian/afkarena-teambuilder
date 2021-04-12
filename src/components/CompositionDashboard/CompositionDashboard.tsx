@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, VStack } from '@chakra-ui/react';
+import { Box, Heading, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import compositions from '../../data/compositions';
 import { Composition } from '../../model/compositions';
@@ -10,6 +10,7 @@ import CompositionDashboardHelp from './CompositionDashboardHelp';
 import { setPageTitle } from '../utils';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
+import ControlBar from '../Common/ControlBar';
 
 
 function CompositionDashboard():JSX.Element {
@@ -35,21 +36,21 @@ function CompositionDashboard():JSX.Element {
     setSelectedCompositions(compositions.filter(c => compositionIds.includes(c.id)));
   }
 
-  return (
-    <div>
-      <VStack {...BoxControlsStyle} alignItems='stretch'>
-        <CompositionSearch onChange={filterCompositions}/>
-        <CompositionDashboardHelp/>
-      </VStack>
-      
-      <VStack {...BoxResultsStyle} alignItems='stretch'>
-        {selectedCompositions.length === 0 && <Loader/>}
-        {selectedCompositions.length !== 0 && <>
-          <Heading size='md'>{selectedCompositions.length} compositions</Heading>
-          <CompositionDetailsList compositions={selectedCompositions}/>
-        </>}
-      </VStack>
-    </div>
+  return (<>
+    <ControlBar>
+      <CompositionDashboardHelp/>
+    </ControlBar>
+    <Box {...BoxControlsStyle}>
+      <CompositionSearch onChange={filterCompositions}/>
+    </Box>
+    <VStack {...BoxResultsStyle} alignItems='stretch'>
+      {selectedCompositions.length === 0 && <Loader/>}
+      {selectedCompositions.length !== 0 && <>
+        <Heading size='md'>{selectedCompositions.length} compositions</Heading>
+        <CompositionDetailsList compositions={selectedCompositions}/>
+      </>}
+    </VStack>
+  </>
   );
 }
 

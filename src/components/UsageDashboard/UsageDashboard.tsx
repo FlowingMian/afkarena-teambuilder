@@ -1,19 +1,21 @@
 import React from 'react';
-import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Link, ListItem, UnorderedList, VStack } from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Icon, ListItem, UnorderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
-import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
+import { BoxResultsStyle } from '../../theme/styles';
 import CompositionSelector from '../Composition/CompositionSelector';
 import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
 import heroes from '../../data/heroes';
-import HeroFiltersSelector from '../Characteristic/HeroFiltersSelector';
+import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
 import { sendViewItems } from '../../useTracking';
 import { setPageTitle } from '../utils';
-import { HeroFilters } from '../Characteristic/HeroFilters';
+import { HeroFilters } from '../HeroFilters/HeroFilters';
 import { Profile } from '../../model/profile';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
+import ControlBar from '../Common/ControlBar';
+import { FiFilter, FiUsers } from 'react-icons/fi';
 
 type UsageDashboardProps = {
   profile: Profile;
@@ -75,10 +77,10 @@ function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
   }
 
   return (<>
-    <VStack {...BoxControlsStyle} alignItems='stretch'>
+    <ControlBar>
       <CompositionSelector defaultSelection={Object.keys(profile.compositions)} onValidate={calculateHeroUsage}/>
       <HeroFiltersSelector onChange={filterHeroes}/>
-    </VStack>
+    </ControlBar>
     <Box {...BoxResultsStyle}>
       {!usageResult && <Center>
         <Alert 
@@ -91,9 +93,15 @@ function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
             <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
           </HStack>
           <UnorderedList>
-            <ListItem>Start by <b>selecting some compositions </b><Link href='/compositions'>(Click for more information)</Link></ListItem>
-            <ListItem>The tool will rank the heroes according to <b>their number of uses</b> in the compositions you have selected.</ListItem>
-            <ListItem>You can then <b>apply some filters</b> to narrow the results.</ListItem>
+            <ListItem>
+              Start by clicking on the <b>button <Icon as={FiUsers}/></b> to select some compositions
+            </ListItem>
+            <ListItem>
+              The tool will rank the heroes according to <b>their number of uses</b> in the compositions you have selected.
+            </ListItem>
+            <ListItem>
+              You can then <b>apply some filters <Icon as={FiFilter}/></b> to narrow the results.
+            </ListItem>
           </UnorderedList>
         </Alert>
       </Center>}

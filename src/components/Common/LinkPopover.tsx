@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Popover, PopoverTrigger, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, UnorderedList, ListItem, Link, LinkOverlay, LinkBox} from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Button, Popover, PopoverTrigger, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, UnorderedList, ListItem, Link, LinkOverlay, LinkBox, Icon} from '@chakra-ui/react';
 import { Link as LinkModel, } from '../../model/common';
+import { FiExternalLink } from 'react-icons/fi';
 
 type LinkPopoverProps = {
   links: Array<LinkModel>;
@@ -15,7 +15,7 @@ function LinkPopover({ links }: LinkPopoverProps):JSX.Element {
   }
   else if (links.length === 1) {
     content = <LinkBox>
-      <Button variant="outline" size="xs" rightIcon={<ExternalLinkIcon/>}>
+      <Button variant="outline" size="xs" rightIcon={<Icon as={FiExternalLink} />}>
         <LinkOverlay href={links[0].url} isExternal>
           Sources
         </LinkOverlay>
@@ -26,14 +26,14 @@ function LinkPopover({ links }: LinkPopoverProps):JSX.Element {
     const linkElements = links.map(link => (
       <ListItem key={link.label}>
         <Link href={link.url} isExternal>
-          {link.label} <ExternalLinkIcon mx="2px" />
+          {link.label} <Icon as={FiExternalLink} />
         </Link>
       </ListItem>
     ));
 
     content = <Popover>
       <PopoverTrigger>
-        <Button variant="outline" size="xs" rightIcon={<ExternalLinkIcon/>}>Sources</Button>
+        <Button variant="outline" size="xs" rightIcon={<Icon as={FiExternalLink} />}>Sources</Button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />
