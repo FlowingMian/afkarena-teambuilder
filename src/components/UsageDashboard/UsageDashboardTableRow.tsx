@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tr, Td, Text } from '@chakra-ui/react';
+import { Tr, Td, Text, HStack } from '@chakra-ui/react';
 import { HeroUsageDashboardResult } from './model';
 import HeroBox from '../Hero/HeroBox';
 import CompositionBoxListModal from '../Composition/CompositionBoxListModal';
@@ -11,7 +11,7 @@ type UsageDashboardTableRowProps = {
 
 function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDashboardTableRowProps):JSX.Element {
   const baseNumberStyle = {
-    fontSize:'sm',
+    fontSize:'xs',
     fontWeight:'semibold'
   };
   function getUsageNumberColor(heroUsageResult:HeroUsageDashboardResult):Record<string, unknown> {
@@ -55,7 +55,10 @@ function UsageDashboardTableRow({ heroUsageResult, compositionCount }: UsageDash
   </Text>;
 
   return <Tr key={heroUsageResult.hero.id}>
-    <Td><HeroBox hero={heroUsageResult.hero} /></Td>
+    <Td><HStack>
+      <HeroBox hero={heroUsageResult.hero} />
+      <Text fontSize='xs'>{heroUsageResult.hero.name}</Text>
+    </HStack></Td>
     <Td><Text {...getUsageNumberColor(heroUsageResult)}>
       {usageCount} ({usagePercent}%)
     </Text></Td>

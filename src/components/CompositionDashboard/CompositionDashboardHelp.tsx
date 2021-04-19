@@ -1,26 +1,35 @@
 import React from 'react';
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Box, IconButton, Link, Text, useDisclosure, Heading, Icon } from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Box, IconButton, Link, Text, useDisclosure, Heading, Icon, Button } from '@chakra-ui/react';
 import { FiExternalLink, FiHelpCircle } from 'react-icons/fi';
 import {HelpTitleStyle, HelpContentStyle } from '../../theme/styles';
 import { BoxQuoteStyle } from '../../theme/styles';
+import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
 
-function CompositionDashboardHelp():JSX.Element {
+type CompositionDashboardHelpProps = {
+  deviceStyle: DeviceStyle;
+}
+function CompositionDashboardHelp({deviceStyle}:CompositionDashboardHelpProps):JSX.Element {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const button = deviceStyle.buttonLabel ? (
+    <Button leftIcon={<Icon as={FiHelpCircle}/>} variant='outline' colorScheme='whiteAlpha' onClick={onOpen}>Help</Button>
+  ) : (
+    <IconButton icon={<Icon as={FiHelpCircle}/>} variant='outline' colorScheme='whiteAlpha' onClick={onOpen} aria-label='Help'/>
+  );
   return (<>
-    <IconButton icon={<Icon as={FiHelpCircle} color='white'/>} variant='ghost' aria-label='About' onClick={onOpen}/>
+    {button}
 
     <Drawer
       isOpen={isOpen}
-      placement="right"
-      size="md"
+      placement="left"
+      size="xs"
       onClose={onClose}
     >
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>About</DrawerHeader>
+          <DrawerHeader>Help</DrawerHeader>
           
           <DrawerBody>
             <Heading {...HelpTitleStyle}>What is a composition?</Heading>

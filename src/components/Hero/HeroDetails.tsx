@@ -3,6 +3,7 @@ import {HStack, Image, Tooltip, Link, Switch, Heading, VStack, Text, Grid, GridI
 import { Hero } from '../../model/heroes';
 import CharactericticBox from '../Characteristic/CharacteristicBox';
 import { BoxCardStyle } from '../../theme/styles';
+import { NotOwned, Owned } from '../../model/characteristics/collectionStatuses';
 
 type HeroDetailsProps = {
   hero: Hero;
@@ -16,9 +17,6 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
 
   const gridStyle= {
     width:'100%',
-    border: '1px solid',
-    borderColor: 'secondary.300',
-    borderRadius: 'md',
     background : 'primary.50',
     padding:1,
     gap:1,
@@ -30,13 +28,16 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
 
   return (
     <VStack {...BoxCardStyle}
-      width='22rem'
+      width='21.5rem'
       padding='0.25rem' 
       backgroundColor={isOwned ? 'green.100' : 'red.100'}
       spacing={1}
     >
-      <Switch value={hero.id} isChecked={isOwned} onChange={(e) => onChange(e, hero)}/>
-
+      <HStack>
+        <Switch value={hero.id} isChecked={isOwned} onChange={(e) => onChange(e, hero)}/>
+        {isOwned ? Owned?.iconURL?.() : NotOwned.iconURL?.()}
+      </HStack>
+      
       <Grid {...gridStyle}
         templateRows="repeat(6, 1fr)"
         templateColumns="repeat(9, 1fr)"
@@ -48,6 +49,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
               src={hero.portraitURL}
               alt={hero.name}
               boxSize={PORTRAIT_SIZE}
+              borderRadius="full"
             />
           </Tooltip>
         </GridItem>

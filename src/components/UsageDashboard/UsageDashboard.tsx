@@ -2,7 +2,6 @@ import React from 'react';
 import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Icon, ListItem, UnorderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { HeroUsageDashboardResult, UsageDashboardResult } from './model';
-import { BoxResultsStyle } from '../../theme/styles';
 import CompositionSelector from '../Composition/CompositionSelector';
 import UsageDashboardResults from './UsageDashboardResults';
 import compositions from '../../data/compositions';
@@ -16,6 +15,8 @@ import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
 import ControlBar from '../Common/ControlBar';
 import { FiFilter, FiUsers } from 'react-icons/fi';
+import getDeviceStyle from '../../theme/deviceStyle/deviceStyle';
+import UsageDashboardHelp from './UsageDashboardHelp';
 
 type UsageDashboardProps = {
   profile: Profile;
@@ -23,6 +24,7 @@ type UsageDashboardProps = {
 
 function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
 
+  const deviceStyle = getDeviceStyle();
   const [usageResult, setUsageResult] = useState<UsageDashboardResult>();
   const [filters, setFilters] = useState<HeroFilters>();
   
@@ -76,38 +78,41 @@ function UsageDashboard({profile}:UsageDashboardProps):JSX.Element {
     ));
   }
 
-  return (<>
-    <ControlBar>
-      <CompositionSelector defaultSelection={Object.keys(profile.compositions)} onValidate={calculateHeroUsage}/>
+  return (<HStack {...deviceStyle.viewport}>
+    <ControlBar deviceStyle={deviceStyle}>
+      <UsageDashboardHelp deviceStyle={deviceStyle}/>
+      <CompositionSelector deviceStyle={deviceStyle} defaultSelection={Object.keys(profile.compositions)} onValidate={calculateHeroUsage}/>
       <HeroFiltersSelector onChange={filterHeroes}/>
     </ControlBar>
-    <Box {...BoxResultsStyle}>
-      {!usageResult && <Center>
-        <Alert 
-          status="info" 
-          width={[null, '60rem']}
-          flexDirection="column"
-          alignItems="start"
-          fontSize="sm">
-          <HStack mb={3}>
-            <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
-          </HStack>
-          <UnorderedList>
-            <ListItem>
-              Start by clicking on the <b>button <Icon as={FiUsers}/></b> to select some compositions
-            </ListItem>
-            <ListItem>
-              The tool will rank the heroes according to <b>their number of uses</b> in the compositions you have selected.
-            </ListItem>
-            <ListItem>
-              You can then <b>apply some filters <Icon as={FiFilter}/></b> to narrow the results.
-            </ListItem>
-          </UnorderedList>
-        </Alert>
-      </Center>}
-      {usageResult && <UsageDashboardResults profile={profile} usageResult={usageResult} filters={filters}/>}
+    <Box {...deviceStyle.dashboard.viewport}>
+      <Box {...deviceStyle.dashboard.results}>
+        {!usageResult && <Center>
+          <Alert 
+            status="info" 
+            width={[null, '60rem']}
+            flexDirection="column"
+            alignItems="start"
+            fontSize="sm">
+            <HStack mb={3}>
+              <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
+            </HStack>
+            <UnorderedList>
+              <ListItem>
+                Start by clicking on the <b>button <Icon as={FiUsers}/></b> to select some compositions
+              </ListItem>
+              <ListItem>
+                The tool will rank the heroes according to <b>their number of uses</b> in the compositions you have selected.
+              </ListItem>
+              <ListItem>
+                You can then <b>apply some filters <Icon as={FiFilter}/></b> to narrow the results.
+              </ListItem>
+            </UnorderedList>
+          </Alert>
+        </Center>}
+        {usageResult && <UsageDashboardResults profile={profile} usageResult={usageResult} filters={filters}/>}
+      </Box>
     </Box>
-  </>);
+  </HStack>);
 }
 
 export default UsageDashboard;

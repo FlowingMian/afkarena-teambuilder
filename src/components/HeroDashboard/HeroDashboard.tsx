@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
-import { IconButton, Stack, StackDirection, useBreakpointValue, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box, HStack, Stack, Wrap, WrapItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { FiSave } from 'react-icons/fi';
 import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
-import { BoxResultsStyle } from '../../theme/styles';
 import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
 import HeroDashboardHelp from './HeroDashboardHelp';
@@ -16,6 +14,8 @@ import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
 import ControlBar from '../Common/ControlBar';
+import getDeviceStyle from '../../theme/deviceStyle/deviceStyle';
+import SaveButton from '../Common/SaveButton';
 
 type HeroDashboardProps = {
   profile: Profile;
@@ -23,7 +23,8 @@ type HeroDashboardProps = {
 
 function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
 
-  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' });
+  const deviceStyle = getDeviceStyle();
+  
   const {updateProfile} = useContext(ProfileContext);
   
   const [selectedHeroes, setSelectedHeroes] = useState<Array<Hero>>(heroes);
@@ -74,19 +75,21 @@ function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
     return <WrapItem key={h.id}><HeroDetails hero={h} isOwned={heroCollection.includes(h.id)} onChange={onChange}/></WrapItem>;
   });
 
-  return (<>
-    <ControlBar>
+  return (<HStack {...deviceStyle.viewport}>
+    <ControlBar deviceStyle={deviceStyle}>
+      <HeroDashboardHelp deviceStyle={deviceStyle}/>
+      <SaveButton deviceStyle={deviceStyle} onSave={onSave} disabled={!hasChanged}/>
       <HeroFiltersSelector onChange={filterHeroes}/>
-      <IconButton icon={<FiSave/>} aria-label='Save' onClick={onSave} colorScheme='red' disabled={!hasChanged}/>
-      <HeroDashboardHelp/>
     </ControlBar>
-    <Stack direction={stackDirection} alignItems='start' {...BoxResultsStyle} >
-      <HeroCharactericticsTable heroes={selectedHeroes} />
-      <Wrap flexDirection="row" flexWrap="wrap" spacing={1}>
-        {heroesList}
-      </Wrap>
-    </Stack>
-  </>);
+    <Box {...deviceStyle.dashboard.viewport}>
+      <Stack {...deviceStyle.dashboard.results} >
+        <HeroCharactericticsTable heroes={selectedHeroes} />
+        <Wrap spacing={1}>
+          {heroesList}
+        </Wrap>
+      </Stack>
+    </Box>
+  </HStack>);
 }
 
 export default HeroDashboard;

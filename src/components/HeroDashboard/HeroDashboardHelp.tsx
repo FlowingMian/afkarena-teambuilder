@@ -1,27 +1,37 @@
 import React from 'react';
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, Icon, IconButton, Link, Text, useDisclosure } from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, Icon, Button, Link, Text, useDisclosure, IconButton } from '@chakra-ui/react';
 import { FiExternalLink, FiHelpCircle } from 'react-icons/fi';
 import {HelpTitleStyle, HelpContentStyle } from '../../theme/styles';
+import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
 
-function HeroDashboardHelp():JSX.Element {
+type HeroDashboardHelpProps = {
+  deviceStyle: DeviceStyle;
+}
+
+function HeroDashboardHelp({deviceStyle}:HeroDashboardHelpProps):JSX.Element {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const button = deviceStyle.buttonLabel ? (
+    <Button leftIcon={<Icon as={FiHelpCircle}/>} variant='outline' colorScheme='whiteAlpha' onClick={onOpen}>Help</Button>
+  ) : (
+    <IconButton icon={<Icon as={FiHelpCircle}/>} variant='outline' colorScheme='whiteAlpha' onClick={onOpen} aria-label='Help'/>
+  );
   return (<>
-    <IconButton icon={<Icon as={FiHelpCircle} color='white'/>} variant='ghost' aria-label='About' onClick={onOpen}/>
+    {button}
 
     <Drawer
       isOpen={isOpen}
-      placement="right"
-      size="md"
+      placement="left"
+      size="xs"
       onClose={onClose}
     >
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>About</DrawerHeader>
+          <DrawerHeader>Help</DrawerHeader>
 
-          <DrawerBody p={1}>
+          <DrawerBody>
             <Heading {...HelpTitleStyle}>Furniture items :</Heading>
             <Text {...HelpContentStyle}><span>The source and in-depth explanations for each one come from the </span>
               <Link 

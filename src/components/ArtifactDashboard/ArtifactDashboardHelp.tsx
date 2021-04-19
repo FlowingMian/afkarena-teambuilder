@@ -1,25 +1,34 @@
 import React from 'react';
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, Icon, IconButton, Text, useDisclosure } from '@chakra-ui/react';
+import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, Icon, IconButton, Text, useDisclosure } from '@chakra-ui/react';
 import { FiHelpCircle } from 'react-icons/fi';
 import {HelpTitleStyle, HelpContentStyle } from '../../theme/styles';
+import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
 
-function ArtifactDashboardHelp():JSX.Element {
+type ArtifactDashboardHelpProps = {
+  deviceStyle: DeviceStyle;
+}
+function ArtifactDashboardHelp({deviceStyle}:ArtifactDashboardHelpProps):JSX.Element {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const button = deviceStyle.buttonLabel ? (
+    <Button leftIcon={<Icon as={FiHelpCircle}/>} variant='outline' colorScheme='whiteAlpha' onClick={onOpen}>Help</Button>
+  ) : (
+    <IconButton icon={<Icon as={FiHelpCircle}/>} variant='outline' colorScheme='whiteAlpha' onClick={onOpen} aria-label='Help'/>
+  );
   return (<>
-    <IconButton icon={<Icon as={FiHelpCircle} color='white'/>} variant='ghost' aria-label='About' onClick={onOpen}/>
+    {button}
 
     <Drawer
       isOpen={isOpen}
-      placement="right"
-      size="md"
+      placement="left"
+      size="xs"
       onClose={onClose}
     >
       <DrawerOverlay>
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>About</DrawerHeader>
+          <DrawerHeader>Help</DrawerHeader>
 
           <DrawerBody>
             <Heading {...HelpTitleStyle}>

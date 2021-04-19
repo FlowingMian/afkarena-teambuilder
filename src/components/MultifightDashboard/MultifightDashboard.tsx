@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Icon, IconButton, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Icon, ListItem, UnorderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { BoxResultsStyle } from '../../theme/styles';
 import CompositionSelector from '../Composition/CompositionSelector';
 import MultifightDashboardResults from './MultifightDashboardResults';
 import compositions from '../../data/compositions';
@@ -12,15 +11,19 @@ import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
 import { isCustomComposition } from '../../model/customComposition';
 import ControlBar from '../Common/ControlBar';
-import { FiSave, FiUsers } from 'react-icons/fi';
+import { FiUsers } from 'react-icons/fi';
 import { ProfileContext } from '../Profile/ProfileContext';
-import { NotOwned, Owned } from '../../model/characteristics/collectionStatuses';
+import getDeviceStyle from '../../theme/deviceStyle/deviceStyle';
+import SaveButton from '../Common/SaveButton';
+import CollectionStateButton from '../Common/CollectionStatusButton';
 
 type MultifightDashboardProps = {
   profile: Profile;
 };
 
 function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
+  
+  const deviceStyle = getDeviceStyle();
   const {updateProfile} = useContext(ProfileContext);
   const { pathname } = useLocation();
 
@@ -76,45 +79,41 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
   }
 
 
-  return (<>
-    <ControlBar>
-      <CompositionSelector defaultSelection={Object.keys(profile.compositions)} onValidate={filterCompositions}/>
-      <IconButton 
-        variant='outline' 
-        icon={disableNotOwned ? NotOwned.iconURL?.() : Owned?.iconURL?.()}
-        colorScheme={disableNotOwned ? 'red' : 'green'}
-        aria-label='Disabled not owned' 
-        onClick={onChangeDisableNotOwned}
-      />
-      <IconButton icon={<FiSave/>} aria-label='Save' onClick={onSave} colorScheme='red' disabled={!hasChanged}/>
+  return (<HStack {...deviceStyle.viewport}>
+    <ControlBar deviceStyle={deviceStyle}>
+      <CollectionStateButton deviceStyle={deviceStyle} onChange={onChangeDisableNotOwned} disableNotOwned={disableNotOwned}/>
+      <SaveButton deviceStyle={deviceStyle} onSave={onSave} disabled={!hasChanged}/>
+      <CompositionSelector deviceStyle={deviceStyle} defaultSelection={Object.keys(profile.compositions)} onValidate={filterCompositions}/>
     </ControlBar>
-    <Box {...BoxResultsStyle}>
-      {Object.keys(selectedCompositions).length === 0 && <Center>
-        <Alert 
-          status="info" 
-          width={[null, '60rem']}
-          flexDirection="column"
-          alignItems="start"
-          fontSize="sm">
-          <HStack mb={3}>
-            <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
-          </HStack>
-          <UnorderedList>
-            <ListItem>
+    <Box {...deviceStyle.dashboard.viewport}>
+      <Box {...deviceStyle.dashboard.results}>
+        {Object.keys(selectedCompositions).length === 0 && <Center>
+          <Alert 
+            status="info" 
+            width={[null, '60rem']}
+            flexDirection="column"
+            alignItems="start"
+            fontSize="sm">
+            <HStack mb={3}>
+              <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
+            </HStack>
+            <UnorderedList>
+              <ListItem>
               Start by clicking on the <b>button <Icon as={FiUsers}/></b> to select some compositions
-            </ListItem>
-            <ListItem>
+              </ListItem>
+              <ListItem>
               You can then <b>fill remaining spots</b> with heroes still available.
-            </ListItem>
-          </UnorderedList>
-        </Alert>
-      </Center>}
+              </ListItem>
+            </UnorderedList>
+          </Alert>
+        </Center>}
 
-      {Object.keys(selectedCompositions).length > 0 && 
+        {Object.keys(selectedCompositions).length > 0 && 
         <MultifightDashboardResults profile={profile} compositionHeroes={selectedCompositions} disableNotOwned={disableNotOwned} onCompositionHeroesChange={onCompositionHeroesChange}/>
-      }
+        }
+      </Box>
     </Box>
-  </>);
+  </HStack>);
 }
 
 export default MultifightDashboard;

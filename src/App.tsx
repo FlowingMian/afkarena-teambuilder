@@ -1,10 +1,7 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-
 import theme from './theme';
-import Navbar from './components/Common/Navbar';
-
 import UsageDashboard from './components/UsageDashboard/UsageDashboard';
 import HeroDashboard from './components/HeroDashboard/HeroDashboard';
 import CompositionDashboard from './components/CompositionDashboard/CompositionDashboard';
@@ -17,7 +14,6 @@ function App() {
   useTracking('G-F2JQMGEBKC');
 
   return (<>
-    <Navbar/>
     <ProfileContext.Consumer>
       {({profile}) => 
         <Switch>

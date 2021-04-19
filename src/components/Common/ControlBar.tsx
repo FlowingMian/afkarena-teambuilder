@@ -1,32 +1,31 @@
 import React from 'react';
-import { Flex, HStack, IconButton, Spacer } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Spacer, Stack } from '@chakra-ui/react';
 import { FiChevronsUp } from 'react-icons/fi';
-import { BoxControlBarStyle } from '../../theme/styles';
-import MainMenuButton from './MainMenuButton';
+import MainMenu from './MainMenu';
+import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
 
 type ControlBarProps = {
-  children: React.ReactNode
+  deviceStyle: DeviceStyle;
+  children: React.ReactNode;
 }
 
-function ControlBar({children}:ControlBarProps):JSX.Element {
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
+function ControlBar({deviceStyle, children}:ControlBarProps):JSX.Element {
 
   return (
-    <Flex {...BoxControlBarStyle}>
-      <MainMenuButton/>
-      <Spacer />
-      <HStack spacing='1rem'>
-        {children}
-      </HStack>
-      <Spacer />
-      <IconButton icon={<FiChevronsUp/>} colorScheme='whiteAlpha' variant='ghost' aria-label='Scroll to top' onClick={scrollToTop}/>
-    </Flex>
+    <Box {...deviceStyle.controlBar.viewport}>
+      <Flex {...deviceStyle.controlBar.box}>
+        <MainMenu deviceStyle={deviceStyle}/>
+
+        <Spacer />
+
+        <Stack  {...deviceStyle.controlBar.actionBar}>
+          {children}
+        </Stack>
+
+        {/* <Spacer /> */}
+        {/* <IconButton icon={<FiChevronsUp/>} colorScheme='whiteAlpha' variant='ghost' aria-label='Scroll to top' onClick={scrollToTop}/> */}
+      </Flex>
+    </Box>
   );
 }
 

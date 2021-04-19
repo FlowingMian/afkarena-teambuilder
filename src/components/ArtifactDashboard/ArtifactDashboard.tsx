@@ -1,7 +1,6 @@
-import React from 'react';
-import { Box, FormControl, Heading, Switch, Text } from '@chakra-ui/react';
+import React, { useRef } from 'react';
+import { Box, FormControl, Heading, HStack, Switch, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { BoxResultsStyle, BoxControlsStyle } from '../../theme/styles';
 import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
 import ArtifactDashboardHelp from './ArtifactDashboardHelp';
 import { setPageTitle } from '../utils';
@@ -17,12 +16,15 @@ import { ArtifactGuideHero } from '../../model/artifacts';
 import heroes from '../../data/heroes';
 import { Artifact } from '../../model/characteristics/characteristics';
 import ControlBar from '../Common/ControlBar';
+import getDeviceStyle from '../../theme/deviceStyle/deviceStyle';
 
 type ArtifactDashboardProps = {
   profile: Profile;
 };
 
 function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
+
+  const deviceStyle = getDeviceStyle();
 
   const defaultSelection = artifactGuides.map(g => g.id);
   const [selection, setSelection] = useState<Array<string>>(defaultSelection);
@@ -129,19 +131,21 @@ function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
     );
   });
 
-  return (<>
-    <ControlBar>
+  return (<HStack {...deviceStyle.viewport}>
+    <ControlBar deviceStyle={deviceStyle}>
+      <ArtifactDashboardHelp deviceStyle={deviceStyle}/>
       <HeroFiltersSelector onChange={filterHeroes} displaySignature={false} displayFurniture={false}/>
-      <ArtifactDashboardHelp/>
     </ControlBar>
-    <Box {...BoxControlsStyle}>
-      <Heading size='xs'>Artifact guides :</Heading>
-      {guideSwitchs}
+    <Box {...deviceStyle.dashboard.viewport}>
+      <Box {...deviceStyle.dashboard.controls}>
+        <Heading size='xs'>Artifact guides :</Heading>
+        {guideSwitchs}
+      </Box>
+      <Box {...deviceStyle.dashboard.results}>
+        {artifactResult.size > 0 ? <ArtifactDashboardTable profile={profile} artifactResult={artifactResult} filters={filters}/> : <Loader/>}
+      </Box>
     </Box>
-    <Box {...BoxResultsStyle}>
-      {artifactResult.size > 0 ? <ArtifactDashboardTable profile={profile} artifactResult={artifactResult} filters={filters}/> : <Loader/>}
-    </Box>
-  </>);
+  </HStack>);
 }
 
 export default ArtifactDashboard;

@@ -51,13 +51,11 @@ export class UsageDashboardResult {
 export class Tier {
     name: string;
     heroes: Array<Hero>;
-    description: string;
     variant: string;
 
-    constructor(name: string, description: string, variant: string) {
+    constructor(name: string, variant: string) {
       this.name = name;
       this.heroes = [];
-      this.description = description;
       this.variant = variant;
     }
 }
