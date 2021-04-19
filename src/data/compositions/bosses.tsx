@@ -10,8 +10,8 @@ import * as Dimensionals from '../heroes/dimensionals';
 
 const bosses: Composition = {
   id: 'BOSSES',
-  name: 'Bosses (Wrizz, Soren, TR)',
-  tags: ['Boss', 'Wrizz', 'Soren', 'TR' ],
+  name: 'Bosses ( Wrizz / Soren / TR )',
+  tags: ['Boss'],
   author: 'Multiple authors',
   updateDate: 'Dec 2020 - Feb 2021',
   links: [{

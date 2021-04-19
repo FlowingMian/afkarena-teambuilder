@@ -3,6 +3,7 @@ import {HStack, Image, Tooltip, Link, Switch, Heading, VStack, Text, Grid, GridI
 import { Hero } from '../../model/heroes';
 import CharactericticBox from '../Characteristic/CharacteristicBox';
 import { BoxCardStyle } from '../../theme/styles';
+import { NotOwned, Owned } from '../../model/characteristics/collectionStatuses';
 
 type HeroDetailsProps = {
   hero: Hero;
@@ -10,18 +11,29 @@ type HeroDetailsProps = {
   onChange:(e:React.ChangeEvent<HTMLInputElement>, hero:Hero) => void;
 };
 
-const PORTRAIT_SIZE = '4rem';
+const PORTRAIT_SIZE = '5rem';
 
 function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element {
 
   const gridStyle= {
     width:'100%',
-    border: '1px solid',
-    borderColor: 'secondary.300',
-    borderRadius: 'md',
     background : 'primary.50',
+    border: '1px solid',
+    borderColor: 'secondary.100',
+    borderRadius: 'md',
     padding:1,
     gap:1,
+  };
+
+  const recommendantionStyle= {
+    spacing: '0.25rem',
+    background : 'white',
+    border: '1px solid',
+    borderColor: 'secondary.100',
+    borderRadius: 'md',
+    boxShadow: 'md',
+    width: '100%',
+    height: '100%',
   };
 
   const artifacts = hero.artifacts && hero.artifacts.map(a => (
@@ -30,33 +42,39 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
 
   return (
     <VStack {...BoxCardStyle}
-      width='20rem'
+      width='21.5rem'
       padding='0.25rem' 
       backgroundColor={isOwned ? 'green.100' : 'red.100'}
       spacing={1}
+      textAlign='center'
     >
-      <Switch value={hero.id} isChecked={isOwned} onChange={(e) => onChange(e, hero)}/>
-
+      
       <Grid {...gridStyle}
-        templateRows="repeat(6, 1fr)"
+        templateRows="repeat(8, 1fr)"
         templateColumns="repeat(9, 1fr)"
       >
 
-        <GridItem rowSpan={3} colSpan={2} >
-          <Tooltip label={hero.name} aria-label={hero.name}>
-            <Image 
-              src={hero.portraitURL}
-              alt={hero.name}
-              boxSize={PORTRAIT_SIZE}
-            />
-          </Tooltip>
-        </GridItem>
-      
-        <GridItem rowSpan={1} colSpan={4} >
-          <Heading size='md'>{hero.name}</Heading>
+        <GridItem rowSpan={3} colSpan={3} >
+          <HStack>
+            <Switch value={hero.id} isChecked={isOwned} onChange={(e) => onChange(e, hero)}/>
+            {isOwned ? Owned?.iconURL?.() : NotOwned.iconURL?.()}
+          </HStack>
         </GridItem>
 
-        <GridItem rowSpan={1} colSpan={3} >
+        <GridItem rowSpan={3} colSpan={3} >
+          <Center>
+            <Tooltip label={hero.name} aria-label={hero.name}>
+              <Image 
+                src={hero.portraitURL}
+                alt={hero.name}
+                boxSize={PORTRAIT_SIZE}
+                borderRadius="full"
+              />
+            </Tooltip>
+          </Center>
+        </GridItem>
+      
+        <GridItem rowSpan={3} colSpan={3} >
           <HStack justifyContent='flex-end'>
             <CharactericticBox characterictic={hero.faction}/>
             <CharactericticBox characterictic={hero.class}/>
@@ -64,38 +82,36 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
           </HStack>
         </GridItem>
 
-        <GridItem rowSpan={2} colSpan={7}>
-          <Link href={`/compositions?query=${hero.name}`} fontSize="sm">View compositions</Link>
+        <GridItem rowSpan={1} colSpan={9} >
+          <Heading size='md'>{hero.name}</Heading>
         </GridItem>
 
         <GridItem rowSpan={3} colSpan={3}>
-          <Center>
-            <VStack alignItems='start' spacing='0'>
-              <Heading size='sm'>Signature</Heading>
-              {hero.signature.iconURL && hero.signature.iconURL()}
-            </VStack>
-          </Center>
+          <VStack {...recommendantionStyle}>
+            <Heading size='xs'>Signature</Heading>
+            {hero.signature.iconURL?.()}
+          </VStack>
         </GridItem>
 
         <GridItem rowSpan={3} colSpan={3} >
-          <Center>
-            <VStack alignItems='start' spacing='0'>
-              <Heading size='sm'>Furniture</Heading>
-              <Text>3: {hero.furniture.F3.iconURL && hero.furniture.F3.iconURL()}</Text>
-              <Text>9: {hero.furniture.F9.iconURL && hero.furniture.F9.iconURL()}</Text>
-            </VStack>
-          </Center>
+          <VStack {...recommendantionStyle}>
+            <Heading size='xs'>Furniture</Heading>
+            <Text>3: {hero.furniture.F3.iconURL?.()}</Text>
+            <Text>9: {hero.furniture.F9.iconURL?.()}</Text>
+          </VStack>
         </GridItem>
 
         <GridItem rowSpan={3} colSpan={3} >
-          <Center>
-            <VStack alignItems='start' spacing='0'>
-              <Heading size='sm'>Artifact</Heading>
-              <HStack spacing={0}>
-                {artifacts}
-              </HStack>
-            </VStack>
-          </Center>
+          <VStack {...recommendantionStyle}>
+            <Heading size='xs'>Artifact</Heading>
+            <HStack spacing={0}>
+              {artifacts}
+            </HStack>
+          </VStack>
+        </GridItem>
+
+        <GridItem rowSpan={1} colSpan={9}>
+          <Link href={`/compositions?query=${hero.name}`} fontSize="sm">View compositions</Link>
         </GridItem>
 
       </Grid>

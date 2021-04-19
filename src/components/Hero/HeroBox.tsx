@@ -1,8 +1,8 @@
 import React from 'react';
-import { AddIcon, CheckIcon, LockIcon } from '@chakra-ui/icons';
-import { Box, Center, Image, Tooltip } from '@chakra-ui/react';
+import { Box, Center, Icon, Image, Tooltip } from '@chakra-ui/react';
 import { State } from '../../model/common';
 import { Hero, isOpenSpot } from '../../model/heroes';
+import { FiCheck, FiLock, FiPlus } from 'react-icons/fi';
 
 type HeroBoxProps = {
   hero: Hero;
@@ -33,7 +33,7 @@ function HeroBox({ hero, state = State.AVAILABLE, onClick }: HeroBoxProps):JSX.E
         <Box>
           {isOpenSpot(hero) ? 
             <Center {...overlayStyle} background='rgba(0, 0, 0, 0.1)'>
-              <AddIcon color="orange.400" boxSize={['50%','50%']}/>
+              <Icon as={FiPlus} color="orange.400" boxSize={['50%','50%']}/>
             </Center>
             : <Image 
               src={hero.portraitURL}
@@ -41,8 +41,8 @@ function HeroBox({ hero, state = State.AVAILABLE, onClick }: HeroBoxProps):JSX.E
               boxSize={[SIZE_SM, SIZE]}
             />}
           <Center {...(state ? overlayStyle : null)} background='rgba(0, 0, 0, 0.6)'>
-            {state === State.SELECTED && <CheckIcon color="green.300" boxSize={['70%','70%']}/>}
-            {state === State.LOCKED && <LockIcon color="gray.300" boxSize={['50%','50%']}/>}
+            {state === State.SELECTED && <Icon as={FiCheck} color="green.300" boxSize={['70%','70%']}/>}
+            {state === State.LOCKED && <Icon as={FiLock} color="gray.300" boxSize={['50%','50%']}/>}
           </Center>
           {hero.recommended && 
             <Box {...overlayStyle} outline='3px solid gold' outlineOffset='-3px'>

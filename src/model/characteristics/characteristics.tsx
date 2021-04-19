@@ -6,7 +6,7 @@ import { staticDomain } from '../common';
 export interface Characterictic {
   id: string;
   name: string;
-  iconURL?:(size?:string) => JSX.Element
+  iconURL?:(size?:string) => JSX.Element;
 }
 
 export type Faction = Characterictic

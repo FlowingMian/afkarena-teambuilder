@@ -1,5 +1,5 @@
 import React from 'react';
-import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Divider, Heading, HStack, Switch, Tag, useDisclosure, VStack } from '@chakra-ui/react';
+import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Divider, Heading, HStack, Icon, IconButton, Switch, Tag, useDisclosure, VStack } from '@chakra-ui/react';
 import { generateOpenSpot, Hero, isOpenSpot } from '../../model/heroes';
 import { State } from '../../model/common';
 import { Composition } from '../../model/compositions';
@@ -9,14 +9,16 @@ import { Fragment } from 'react';
 import heroes from '../../data/heroes';
 import { isCustomComposition } from '../../model/customComposition';
 import LinkPopover from '../Common/LinkPopover';
+import { FiTrash2 } from 'react-icons/fi';
 
 type CompositionBuilderProps = {
   composition: Composition;
   heroSelection: Map<Hero, string>;
   onChange:(value: Array<Hero>) => void;
+  onDelete:() => void;
 };
 
-function CompositionBuilder({ composition, heroSelection, onChange }: CompositionBuilderProps):JSX.Element {
+function CompositionBuilder({ composition, heroSelection, onChange, onDelete }: CompositionBuilderProps):JSX.Element {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   
@@ -41,13 +43,13 @@ function CompositionBuilder({ composition, heroSelection, onChange }: Compositio
 
     const t = selectedHeroes
       .filter(h => !isOpenSpot(h))
-      .filter(h => h !== hero);
-    if (!selectedHeroes.includes(hero) && t.length < 5) {
+      .filter(h => h.id !== hero.id);
+    if (!selectedHeroes.map(h => h.id).includes(hero.id) && t.length < 5) {
       t.push(hero);
     }
     onChange(t);
   }
-  
+
   const heroStates = new Map(Array.from(heroSelection, ([h, cId]) => {
     return [h.id, cId === composition.id ? State.SELECTED : cId === 'DISABLED' ? State.DISABLED : State.LOCKED];
   }));
@@ -84,6 +86,7 @@ function CompositionBuilder({ composition, heroSelection, onChange }: Compositio
               <Heading size="xs">{composition.name}</Heading>
               {tags}
               <LinkPopover links={composition.links}/>
+              {isCustomComposition(composition.id) && <IconButton icon={<Icon as={FiTrash2}/>} variant='ghost' aria-label='Delete' onClick={onDelete}/>}
             </HStack>
             <HeroList heroes={selectedHeroes} onClick={onHeroClick}/>
           </VStack>

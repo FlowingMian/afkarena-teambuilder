@@ -9,7 +9,7 @@ export interface Hero {
   faction: Faction;
   attribute: Attribute;
   class: Class;
-  portraitURL?: string;
+  portraitURL?: string; //portraitURL?:(size?:string) => JSX.Element;
   signature: Signature;
   furniture: {
     F3 : Rating,

@@ -1,7 +1,6 @@
-import React from 'react';
-import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Link, ListItem, UnorderedList, VStack } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { Alert, AlertIcon, AlertTitle, Box, Center, HStack, Icon, ListItem, UnorderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { BoxControlsStyle, BoxResultsStyle } from '../../theme/styles';
 import CompositionSelector from '../Composition/CompositionSelector';
 import MultifightDashboardResults from './MultifightDashboardResults';
 import compositions from '../../data/compositions';
@@ -11,17 +10,28 @@ import { CompositionHeroes, Profile } from '../../model/profile';
 import Loader from '../Common/Loader';
 import { useLocation } from 'react-router';
 import { isCustomComposition } from '../../model/customComposition';
+import ControlBar from '../Common/ControlBar';
+import { FiUsers } from 'react-icons/fi';
+import { ProfileContext } from '../Profile/ProfileContext';
+import getDeviceStyle from '../../theme/deviceStyle/deviceStyle';
+import SaveButton from '../Common/SaveButton';
+import CollectionStateButton from '../Common/CollectionStatusButton';
 
 type MultifightDashboardProps = {
   profile: Profile;
 };
 
 function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
+  
+  const deviceStyle = getDeviceStyle();
+  const {updateProfile} = useContext(ProfileContext);
+  const { pathname } = useLocation();
 
   const [selectedCompositions, setSelectedCompositions] = useState<CompositionHeroes>(profile.compositions);
   
   const [rendering, setRendering] = useState<boolean>(true);
-  const { pathname } = useLocation();
+  const [disableNotOwned, setDisableNotOwned] = useState<boolean>(false);
+  const [hasChanged, setHasChanged] = useState<boolean>(false);
 
   useEffect(() => {
     setRendering(true);
@@ -35,7 +45,6 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
     return <Loader/>;
   }
 
-  
   function filterCompositions(compositionIds:Array<string>) {
     sendViewItems('composition', compositionIds);
 
@@ -52,32 +61,59 @@ function MultifightDashboard({profile}:MultifightDashboardProps):JSX.Element {
     setSelectedCompositions(result);
   }
 
-  return (<>
-    <VStack {...BoxControlsStyle} alignItems='stretch'>
-      <CompositionSelector defaultSelection={Object.keys(profile.compositions)} onValidate={filterCompositions}/>
-    </VStack>
-    <Box {...BoxResultsStyle}>
-      {Object.keys(selectedCompositions).length === 0 && <Center>
-        <Alert 
-          status="info" 
-          width={[null, '60rem']}
-          flexDirection="column"
-          alignItems="start"
-          fontSize="sm">
-          <HStack mb={3}>
-            <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
-          </HStack>
-          <UnorderedList>
-            <ListItem>Start by <b>selecting some compositions </b><Link href='/compositions'>(Click for more information)</Link></ListItem>
-            <ListItem>You can then <b>fill remaining spots</b> with heroes still available.</ListItem>
-          </UnorderedList>
-        </Alert>
-      </Center>}
-      {Object.keys(selectedCompositions).length > 0 && 
-        <MultifightDashboardResults profile={profile} compositionHeroes={selectedCompositions} onCompositionHeroesChange={setSelectedCompositions}/>
-      }
+  function onChangeDisableNotOwned() {
+    setDisableNotOwned(!disableNotOwned);
+  }
+
+  function onCompositionHeroesChange(compositionHeroes:CompositionHeroes) {
+    setSelectedCompositions(compositionHeroes);
+    setHasChanged(true);
+  }
+
+  function onSave() {
+    updateProfile({
+      ...profile,
+      compositions: selectedCompositions
+    });
+    setHasChanged(false);
+  }
+
+
+  return (<HStack {...deviceStyle.viewport}>
+    <ControlBar deviceStyle={deviceStyle}>
+      <CollectionStateButton deviceStyle={deviceStyle} onChange={onChangeDisableNotOwned} disableNotOwned={disableNotOwned}/>
+      <SaveButton deviceStyle={deviceStyle} onSave={onSave} disabled={!hasChanged}/>
+      <CompositionSelector deviceStyle={deviceStyle} defaultSelection={Object.keys(profile.compositions)} onValidate={filterCompositions}/>
+    </ControlBar>
+    <Box {...deviceStyle.dashboard.viewport}>
+      <Box {...deviceStyle.dashboard.results}>
+        {Object.keys(selectedCompositions).length === 0 && <Center>
+          <Alert 
+            status="info" 
+            width={[null, '60rem']}
+            flexDirection="column"
+            alignItems="start"
+            fontSize="sm">
+            <HStack mb={3}>
+              <AlertIcon /><AlertTitle>How does it work?</AlertTitle>
+            </HStack>
+            <UnorderedList>
+              <ListItem>
+              Start by clicking on the <b>button <Icon as={FiUsers}/></b> to select some compositions
+              </ListItem>
+              <ListItem>
+              You can then <b>fill remaining spots</b> with heroes still available.
+              </ListItem>
+            </UnorderedList>
+          </Alert>
+        </Center>}
+
+        {Object.keys(selectedCompositions).length > 0 && 
+        <MultifightDashboardResults profile={profile} compositionHeroes={selectedCompositions} disableNotOwned={disableNotOwned} onCompositionHeroesChange={onCompositionHeroesChange}/>
+        }
+      </Box>
     </Box>
-  </>);
+  </HStack>);
 }
 
 export default MultifightDashboard;

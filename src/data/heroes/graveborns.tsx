@@ -31,7 +31,7 @@ export const Shemira: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Mage,
   portraitURL: staticDomain+'graveborn/shemira.webp',
-  signature: Signature._30,
+  signature: Signature._10,
   furniture: {
     F3: Rating.Weak,
     F9: Rating.VeryWeak,

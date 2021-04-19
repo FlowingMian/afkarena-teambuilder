@@ -1,16 +1,17 @@
 import React from 'react';
-import { Divider, Flex, Heading, HStack, Spacer, Tag, Text, VStack, StackDirection, useBreakpointValue, Stack } from '@chakra-ui/react';
+import { Divider, Flex, Heading, HStack, Spacer, Tag, Text, VStack, Stack } from '@chakra-ui/react';
 import { Composition } from '../../model/compositions';
 import HeroCategory from '../Hero/HeroCategory';
 import LinkPopover from '../Common/LinkPopover';
 import { Fragment } from 'react';
+import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
 
 type CompositionDetailsProps = {
+  deviceStyle: DeviceStyle;
   composition: Composition;
 };
 
-function CompositionDetails({ composition }: CompositionDetailsProps):JSX.Element {
-  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' });
+function CompositionDetails({ deviceStyle, composition }: CompositionDetailsProps):JSX.Element {
   
   const tags = composition.tags.map(t => <Tag key={t} size="sm">{t}</Tag>);
   
@@ -29,7 +30,7 @@ function CompositionDetails({ composition }: CompositionDetailsProps):JSX.Elemen
       </HStack>
           
       <Flex direction="row" width="100%" alignItems="end">
-        <Stack direction={stackDirection} alignItems="start">
+        <Stack direction={deviceStyle.stackDirection} alignItems="start">
           <Text>by {composition.author}</Text>
           <LinkPopover links={composition.links}/>
         </Stack>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table, Thead, Th, Tbody, Tr, Stack, useBreakpointValue, StackDirection } from '@chakra-ui/react';
-import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { Table, Thead, Th, Tbody, Tr,  VStack } from '@chakra-ui/react';
+import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import ArtifactDashboardTableRow from './ArtifactDashboardTableRow';
 import { Profile } from '../../model/profile';
 import { Hero } from '../../model/heroes';
@@ -17,9 +17,7 @@ type ArtifactDashboardTableProps = {
 };
 
 function ArtifactDashboardTable({ profile, artifactResult , filters }: ArtifactDashboardTableProps):JSX.Element {
-
-  const stackDirection:StackDirection|undefined = useBreakpointValue({ base: 'column', lg: 'row' });
-
+  
   const selection = Array.from(artifactResult.entries())
     // Override artifacts filter to accept all heroes regardless of their best Artifact
     .filter(([hero]) => !filters || acceptHero({...filters, artifacts: Artifacts.map(a => a.id)}, profile, hero))
@@ -29,7 +27,7 @@ function ArtifactDashboardTable({ profile, artifactResult , filters }: ArtifactD
   const rows = selection.map(([hero, artifacts]) => <ArtifactDashboardTableRow key={hero.id} hero={hero} artifactResultRow={artifacts} displayBest={DISPLAY_BEST}/>);
 
   return (
-    <Stack direction={stackDirection} alignItems='start'>
+    <VStack alignItems='start'>
       <HeroCharactericticsTable heroes={Array.from(selection.map(a => a[0]))} />
       <Table size="sm" variant="striped">
         <Thead>
@@ -45,7 +43,7 @@ function ArtifactDashboardTable({ profile, artifactResult , filters }: ArtifactD
           {rows}
         </Tbody>
       </Table>
-    </Stack>
+    </VStack>
   );
 }
 

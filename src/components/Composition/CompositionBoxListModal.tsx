@@ -1,10 +1,10 @@
 import React from 'react';
 import { Composition } from '../../model/compositions';
-import {Modal, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, ModalContent, Button, useDisclosure } from '@chakra-ui/react';
+import {Modal, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, ModalContent, Button, useDisclosure, Icon } from '@chakra-ui/react';
 import { Fragment } from 'react';
-import { ViewIcon } from '@chakra-ui/icons';
 import { Role } from '../../model/characteristics/characteristics';
 import CompositionBoxList from './CompositionBoxList';
+import { FiEye } from 'react-icons/fi';
 
 type CompositionBoxListModalProps = {
   compositions: Map<Composition, Role>|Array<Composition>;
@@ -14,8 +14,10 @@ type CompositionBoxListModalProps = {
 function CompositionBoxListModal({ compositions, buttonLabel }: CompositionBoxListModalProps):JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  return <Fragment>
-    <Button variant='ghost' size="sm" px={0} rightIcon={<ViewIcon/>} onClick={onOpen}>{buttonLabel}</Button>
+  const array = compositions instanceof Map ? Array.from(compositions.keys()) : compositions;
+
+  return (<>
+    <Button variant='ghost' size="sm" px={0} rightIcon={array.length > 0 ? <Icon as={FiEye}/> : undefined} onClick={array.length > 0 ? onOpen : undefined}>{buttonLabel}</Button>
     <Modal size="lg" isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
@@ -26,7 +28,7 @@ function CompositionBoxListModal({ compositions, buttonLabel }: CompositionBoxLi
         </ModalBody>
       </ModalContent>
     </Modal>
-  </Fragment>;
+  </>);
 }
 
 export default CompositionBoxListModal;

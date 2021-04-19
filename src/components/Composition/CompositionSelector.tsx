@@ -1,18 +1,21 @@
 import React from 'react';
-import { FormControl, Switch, Flex, VStack, HStack, Button, useDisclosure, Drawer, DrawerOverlay, DrawerCloseButton, DrawerHeader, DrawerContent, DrawerBody, DrawerFooter, Text, Heading } from '@chakra-ui/react';
+import { FormControl, Switch, Flex, VStack, HStack, Button, useDisclosure, Drawer, DrawerOverlay, DrawerCloseButton, DrawerHeader, DrawerContent, DrawerBody, DrawerFooter, Text, Heading, IconButton, Icon } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import compositions from '../../data/compositions';
 import { Composition } from '../../model/compositions';
 import CompositionBox from './CompositionBox';
 import CompositionSearch from './CompositionSearch';
+import { FiUsers } from 'react-icons/fi';
+import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
 
 type CompositionSelectorProps = {
+  deviceStyle: DeviceStyle;
   defaultSelection?: Array<string>;
   onValidate:(compositionIds:Array<string>) => void;
   openOnInit?:boolean;
 };
 
-function CompositionSelector({ defaultSelection, onValidate, openOnInit = false }: CompositionSelectorProps):JSX.Element {
+function CompositionSelector({ deviceStyle, defaultSelection, onValidate, openOnInit = false }: CompositionSelectorProps):JSX.Element {
   const [displayedCompositions, setDisplayedCompositions] = useState<Array<Composition>>([]);
   const [selection, setSelection] = useState<Array<string>>(defaultSelection || []);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -62,45 +65,49 @@ function CompositionSelector({ defaultSelection, onValidate, openOnInit = false 
     </FormControl>
   );
 
-  return (
-    <>
-      <Button onClick={onOpen}>
-      Select compositions ({selection.length})
-      </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement="left"
-        size="md"
-        onClose={onClose}
-      >
-        <DrawerOverlay>
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Select compositions</DrawerHeader>
+  const button = deviceStyle.buttonLabel ? (
+    <Button leftIcon={<Icon as={FiUsers}/>} onClick={onOpen}>Select compositions</Button>
+  ) : (
+    <IconButton icon={<FiUsers/>}  onClick={onOpen} aria-label='Select compositions'/>
+  );
+  
+  return (<>
+    {button}
+      
+    <Drawer
+      isOpen={isOpen}
+      placement="left"
+      size="md"
+      onClose={onClose}
+    >
+      <DrawerOverlay>
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Select compositions</DrawerHeader>
 
-            <DrawerBody p={1}>
-              <VStack alignItems='stretch'>
-                <CompositionSearch onChange={filterCompositions}/>
-                <Heading size='xs'>{displayedCompositions.length} compositions</Heading>
-                <Flex flexDirection="row" wrap="wrap">
-                  {compositionBoxes}
-                </Flex>;
-              </VStack>
-            </DrawerBody>
+          <DrawerBody p={1}>
+            <VStack alignItems='stretch'>
+              <CompositionSearch onChange={filterCompositions}/>
+              <Heading size='xs'>{displayedCompositions.length} compositions</Heading>
+              <Flex flexDirection="row" wrap="wrap">
+                {compositionBoxes}
+              </Flex>;
+            </VStack>
+          </DrawerBody>
 
-            <DrawerFooter>
-              <HStack mt='1rem' wrap='wrap'>
-                <Text size='xs'>Select</Text>
-                <Button size="xs" px={1} variant='outline' onClick={selectNone}>None</Button>
-                <Button size="xs" px={1} variant='outline' onClick={selectAll}>All</Button>
-                <Button size="xs" px={1} variant='outline' onClick={selectResults}>Results ({displayedCompositions.length})</Button>
-                <Button size="sm" px={1} variant='solid' onClick={validateSelection}>Validate ({selection.length})</Button>
-              </HStack>
-            </DrawerFooter>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
-    </>
+          <DrawerFooter>
+            <HStack mt='1rem' wrap='wrap'>
+              <Text size='xs'>Select</Text>
+              <Button size="xs" px={1} variant='outline' onClick={selectNone}>None</Button>
+              <Button size="xs" px={1} variant='outline' onClick={selectAll}>All</Button>
+              <Button size="xs" px={1} variant='outline' onClick={selectResults}>Results ({displayedCompositions.length})</Button>
+              <Button size="sm" px={1} variant='solid' onClick={validateSelection}>Validate ({selection.length})</Button>
+            </HStack>
+          </DrawerFooter>
+        </DrawerContent>
+      </DrawerOverlay>
+    </Drawer>
+  </>
   );
 }
 

@@ -4,7 +4,7 @@ import UsageDashboardTierList from './UsageDashboardTierList';
 import UsageDashboardTable from './UsageDashboardTable';
 import { UsageDashboardResult } from './model';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
-import { HeroFilters, acceptHero } from '../Characteristic/HeroFilters';
+import { HeroFilters, acceptHero } from '../HeroFilters/HeroFilters';
 import { Profile } from '../../model/profile';
 
 type UsageDashboardResultsProps = {
