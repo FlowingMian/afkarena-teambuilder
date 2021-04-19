@@ -59,7 +59,7 @@ function CompositionDashboard():JSX.Element {
         {selectedCompositions.length === 0 && <Loader/>}
         {selectedCompositions.length !== 0 && <>
           <Heading size='md'>{selectedCompositions.length} compositions</Heading>
-          <Wrap spacing={1}>
+          <Wrap spacing={2}>
             {compositionBoxes}
           </Wrap>
         </>}

@@ -14,6 +14,7 @@ import lucretia from './lucretia';
 import gwyneth from './gwyneth';
 import skregInvade from './skreginvade';
 import classicDisrupt from './classicdisrupt';
+import alnaGrezhul from './alnagrezhul';
 
 const compositions: Array<Composition> = [
   thoran,
@@ -29,6 +30,7 @@ const compositions: Array<Composition> = [
   daimon,
   khazardWilders,
   stall,
-  portalParty
+  portalParty,
+  alnaGrezhul
 ];
 export default compositions;

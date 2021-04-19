@@ -55,7 +55,7 @@ export const Chaos:Artifact = {
   iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/chaos.webp', size),
 };
 export const Carnage:Artifact = {
-  id: 'carnage',
+  id: 'CARNAGE',
   name: 'Carnage',
   iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/carnage.webp', size),
 };
@@ -67,7 +67,7 @@ export const Shroud:Artifact = {
 };
 export const Longbow:Artifact = {
   id: 'LONBOW',
-  name: 'Longbow',
+  name: 'Verdant Longbow',
   iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/longbow.png', size),
 };
 

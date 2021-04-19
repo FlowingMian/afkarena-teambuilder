@@ -6,33 +6,43 @@ import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { staticDomain } from '../../model/common';
 import { DeviceStyle } from '../../theme/deviceStyle/deviceStyle';
+import colors from '../../theme/colors';
+
+const NavlinkActiveStyle = {
+  backgroundColor: colors.primary[700],
+  color: 'white'
+};
 
 export const navLinks = [
   {
     path: '/usages',
     icon: FiBarChart2,
-    label: 'Usages'
+    label: 'Usages',
+    new: false,
   },
   {
     path: '/multifight',
     icon: GiCrossedSwords,
     label: 'Multi-fight',
+    new: false,
   },
   {
     path: '/heroes',
     icon: FiUserCheck,
-    label: 'Heroes'
+    label: 'Heroes',
+    new: false,
   },
   {
     path: '/artifacts',
     icon: GiAbstract100,
     label: 'Artifacts',
-    new: true,
+    new: false,
   },
   {
     path: '/compositions',
     icon: FiUsers,
-    label: 'Compositions'
+    label: 'Compositions',
+    new: false,
   }
 ];
 type MainMenuButtonProps = {
@@ -48,18 +58,20 @@ function MainMenu({deviceStyle}:MainMenuButtonProps):JSX.Element {
     onClose();
   }, [pathname]);
 
+  const currentNavLink = navLinks.find(nl => nl.path === pathname);
 
-  const navLinkElements = navLinks.map(nl => 
-    <NavLink key={nl.label} to={nl.path}>
+  const navLinkElements = navLinks.map(nl => {
+    console.log(currentNavLink, nl);
+    
+    return <NavLink key={nl.label} to={nl.path} activeStyle={NavlinkActiveStyle}>
       <HStack p='3'>
         <Icon as={nl.icon}/>
         <Heading size="xs">{nl.label}</Heading>
         {nl.new && <Tag colorScheme="red">New feature!</Tag>}
       </HStack>
-    </NavLink>
-  );
+    </NavLink>;
+  });
 
-  const currentNavLink = navLinks.find(nl => nl.path === pathname);
 
   return (<>
     <HStack {...deviceStyle.controlBar.titlebar}>

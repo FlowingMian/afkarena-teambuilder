@@ -84,7 +84,7 @@ function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
     <Box {...deviceStyle.dashboard.viewport}>
       <Stack {...deviceStyle.dashboard.results} >
         <HeroCharactericticsTable heroes={selectedHeroes} />
-        <Wrap spacing={1}>
+        <Wrap spacing={2}>
           {heroesList}
         </Wrap>
       </Stack>
