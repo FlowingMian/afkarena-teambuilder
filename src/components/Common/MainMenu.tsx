@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Heading, HStack, Icon, IconButton, Image, Tag, Text, useDisclosure, VStack } from '@chakra-ui/react';
-import { FiBarChart2, FiMenu, FiUserCheck, FiUsers } from 'react-icons/fi';
+import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Heading, HStack, Icon, IconButton, Image, Spacer, Tag, Text, useDisclosure, VStack, Link, Center, Divider } from '@chakra-ui/react';
+import { FiBarChart2, FiExternalLink, FiMenu, FiUserCheck, FiUsers } from 'react-icons/fi';
 import { GiAbstract100, GiCrossedSwords } from 'react-icons/gi';
 import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
@@ -99,9 +99,34 @@ function MainMenu({deviceStyle}:MainMenuButtonProps):JSX.Element {
           </DrawerHeader>
 
           <DrawerBody p={1}>
-            <VStack alignItems='stretch'>
-              {navLinkElements}
-            </VStack>
+            <Flex direction='column' height='100%'> 
+              <VStack alignItems='stretch'>
+                {navLinkElements}
+              </VStack>
+
+              <Spacer/>
+
+              <VStack>
+                <Text fontSize='xs'>
+                  <span>This tool is provided to you by </span>
+                  <Link href="https://www.reddit.com/user/Mian_reddit" isExternal>
+                    /u/Mian_reddit
+                  </Link>
+                </Text>
+                <Divider/>
+                <Text fontSize='xs'>
+                  <span>AFK Team has no affiliation with </span><br/>
+                  <Link href="https://www.lilithgames.com/" isExternal>
+                    Lilith Games <Icon as={FiExternalLink} mx="2px" />
+                  </Link>
+                  <span> or </span>
+                  <Link href="https://www.afkarena.com/" isExternal>
+                    AFK Arena <Icon as={FiExternalLink} mx="2px" />
+                  </Link>
+                </Text>
+                <Text fontSize='xs'>Copyright © 2021</Text>
+              </VStack>
+            </Flex>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
