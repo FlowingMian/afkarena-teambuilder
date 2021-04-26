@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Heading, HStack, Icon, IconButton, Image, Spacer, Tag, Text, useDisclosure, VStack, Link, Center, Divider } from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Heading, HStack, Icon, IconButton, Image, Spacer, Tag, Text, useDisclosure, VStack, Link, Divider } from '@chakra-ui/react';
 import { FiBarChart2, FiExternalLink, FiMenu, FiUserCheck, FiUsers } from 'react-icons/fi';
-import { GiAbstract100, GiCrossedSwords } from 'react-icons/gi';
+import { GiAbstract100, GiCrossedSwords, GiSpikedHalo } from 'react-icons/gi';
 import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { staticDomain } from '../../model/common';
@@ -33,6 +33,18 @@ export const navLinks = [
     new: false,
   },
   {
+    path: '/signatureitems',
+    icon: GiSpikedHalo,
+    label: 'Signature items',
+    new: true,
+  },
+  // {
+  //   path: '/furnitureitems',
+  //   icon: GiWoodenChair,
+  //   label: 'Furniture items',
+  //   new: true,
+  // },
+  {
     path: '/artifacts',
     icon: GiAbstract100,
     label: 'Artifacts',
@@ -60,9 +72,7 @@ function MainMenu({deviceStyle}:MainMenuButtonProps):JSX.Element {
 
   const currentNavLink = navLinks.find(nl => nl.path === pathname);
 
-  const navLinkElements = navLinks.map(nl => {
-    console.log(currentNavLink, nl);
-    
+  const navLinkElements = navLinks.map(nl => {    
     return <NavLink key={nl.label} to={nl.path} activeStyle={NavlinkActiveStyle}>
       <HStack p='3'>
         <Icon as={nl.icon}/>

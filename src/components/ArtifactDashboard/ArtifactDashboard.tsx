@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Box, FormControl, Heading, HStack, Switch, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
