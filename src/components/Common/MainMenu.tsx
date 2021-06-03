@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Heading, HStack, Icon, IconButton, Image, Spacer, Tag, Text, useDisclosure, VStack, Link, Divider } from '@chakra-ui/react';
-import { FiBarChart2, FiExternalLink, FiMenu, FiUserCheck, FiUsers } from 'react-icons/fi';
+import { FiBarChart2, FiExternalLink, FiList, FiMenu, FiUserCheck, FiUsers } from 'react-icons/fi';
 import { GiAbstract100, GiCrossedSwords, GiSpikedHalo } from 'react-icons/gi';
 import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
@@ -32,12 +32,18 @@ export const navLinks = [
     label: 'Heroes',
     new: false,
   },
-  {
-    path: '/signatureitems',
-    icon: GiSpikedHalo,
-    label: 'Signature items',
-    new: true,
-  },
+  // {
+  //   path: '/wishlist',
+  //   icon: FiList,
+  //   label: 'Wishlist',
+  //   new: true,
+  // },
+  // {
+  //   path: '/signatureitems',
+  //   icon: GiSpikedHalo,
+  //   label: 'Signature items',
+  //   new: true,
+  // },
   // {
   //   path: '/furnitureitems',
   //   icon: GiWoodenChair,

@@ -3,8 +3,8 @@ import { ArtifactGuide } from '../../model/artifacts';
 import afkarenaboss from './artifacts-afkarenaboss';
 import silentbobus from './artifacts-silentbobus';
 
-const artifactGuides: Array<ArtifactGuide> = [
+const guides: Array<ArtifactGuide> = [
   afkarenaboss,
   silentbobus
 ];
-export default artifactGuides;
+export default guides;

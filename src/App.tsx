@@ -10,6 +10,7 @@ import MultifightDashboard from './components/MultifightDashboard/MultifightDash
 import { ProfileContext, ProfileContextProvider } from './components/Profile/ProfileContext';
 import ArtifactDashboard from './components/ArtifactDashboard/ArtifactDashboard';
 import SignatureItemsDashboard from './components/SignatureItemsDashboard/SignatureItemsDashboard';
+import WishlistDashboard from './components/Wishlistdashboard/WishlistDashboard';
 
 function App() {
   useTracking('G-F2JQMGEBKC');
@@ -30,9 +31,12 @@ function App() {
           <Route path="/compositions">
             <CompositionDashboard/>
           </Route>
+          {/* <Route path="/wishlist">
+            <WishlistDashboard profile={profile}/>
+          </Route>
           <Route path="/signatureItems">
             <SignatureItemsDashboard profile={profile}/>
-          </Route>
+          </Route> */}
           <Route path="/artifacts">
             <ArtifactDashboard profile={profile}/>
           </Route>

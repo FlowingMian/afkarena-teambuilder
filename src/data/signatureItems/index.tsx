@@ -2,7 +2,7 @@
 import { SignatureItemsGuide } from '../../model/signatureItems';
 import linker from './signatureItems-linker';
 
-const signatureItemsGuides: Array<SignatureItemsGuide> = [
+const guides: Array<SignatureItemsGuide> = [
   linker
 ];
-export default signatureItemsGuides;
+export default guides;

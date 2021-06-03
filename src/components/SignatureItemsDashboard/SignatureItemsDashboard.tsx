@@ -10,7 +10,7 @@ import Loader from '../Common/Loader';
 import LinkPopover from '../Common/LinkPopover';
 import { useLocation } from 'react-router';
 import SignatureItemsDashboardTable from './SignatureItemsDashboardTable';
-import signatureItemsGuides from '../../data/signatureItems';
+import guides from '../../data/signatureItems';
 import { Hero } from '../../model/heroes';
 import { SignatureItemsGuideHero } from '../../model/signatureItems';
 import ControlBar from '../Common/ControlBar';
@@ -24,7 +24,7 @@ function SignatureItemsDashboard({profile}:SignatureItemsDashboardProps):JSX.Ele
 
   const deviceStyle = getDeviceStyle();
 
-  const defaultSelection = signatureItemsGuides.map(g => g.id);
+  const defaultSelection = guides.map(g => g.id);
   const [selection, setSelection] = useState<Array<string>>(defaultSelection);
   const [signatureItemsResult, setSignatureItemsResult] = useState<Map<Hero, SignatureItemsGuideHero>>(new Map());
   const [filters, setFilters] = useState<HeroFilters>();
@@ -52,7 +52,7 @@ function SignatureItemsDashboard({profile}:SignatureItemsDashboardProps):JSX.Ele
   function calculateSignatureItems(selectedGuideIds:Array<string>) {
     setSignatureItemsResult(new Map());
     setTimeout(() => {
-      const result = signatureItemsGuides
+      const result = guides
         .filter(g => selectedGuideIds.includes(g.id))[0].signatureItems;
         
       // const result = new Map<Hero, SignatureItemsGuideHero>(
@@ -88,7 +88,7 @@ function SignatureItemsDashboard({profile}:SignatureItemsDashboardProps):JSX.Ele
     calculateSignatureItems(values);
   }
 
-  const guideSwitchs = signatureItemsGuides.map(g => {
+  const guideSwitchs = guides.map(g => {
     return (
       <FormControl key={g.id} display="flex" alignItems="center"> 
         <Switch value={g.id} isChecked={selection.includes(g.id)} mr="5px" onChange={onChange}/>
