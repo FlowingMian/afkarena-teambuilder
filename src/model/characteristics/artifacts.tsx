@@ -67,7 +67,7 @@ export const Carnage:Artifact = {
 export const Pauldron:Artifact = {
   id: 'PAULDRON',
   name: 'Pauldron of Burning Fury',
-  iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/pauldron.webp', size),
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/pauldron.jpg', size),
 };
 
 export const Shroud:Artifact = {
@@ -116,6 +116,7 @@ export const Artifacts: Array<Artifact> = [
   Limit,
   Chaos,
   Carnage,
+  Pauldron,
   Shroud,
   Longbow,
   Windbinder,
