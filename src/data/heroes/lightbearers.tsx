@@ -31,7 +31,7 @@ export const Belinda: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Mage,
   portraitURL: staticDomain+'lightbearer/belinda.webp',
-  signature: Signature._20,
+  signature: Signature._5,
   furniture: {
     F3: Rating.Weak,
     F9: Rating.Weak,
@@ -79,12 +79,12 @@ export const Lucius: Hero = {
   attribute: Attribute.Strength,
   class: Class.Tank,
   portraitURL: staticDomain+'lightbearer/lucius.webp',
-  signature: Signature._20,
+  signature: Signature._5,
   furniture: {
     F3: Rating.VeryWeak,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Waistband],
+  artifacts: [Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Thane: Hero = {
@@ -111,7 +111,7 @@ export const Hendrik: Hero = {
   attribute: Attribute.Strength,
   class: Class.Tank,
   portraitURL: staticDomain+'lightbearer/hendrik.webp',
-  signature: Signature._20,
+  signature: Signature._10,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Weak,
@@ -148,7 +148,7 @@ export const Gwyneth: Hero = {
     F3: Rating.Good,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  artifacts: [Artifact.Longbow, Artifact.Shroud],
 };
 
 export const Rosaline: Hero = {
@@ -164,7 +164,7 @@ export const Rosaline: Hero = {
     F3: Rating.Weak,
     F9: Rating.VeryWeak,
   },
-  artifacts: [Artifact.Eye],
+  artifacts: [Artifact.Eye, Artifact.Blade],
 };
 
 export const Cecilia: Hero = {
@@ -175,12 +175,12 @@ export const Cecilia: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'lightbearer/cecilia.webp',
-  signature: Signature._30,
+  signature: Signature._1,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Shroud],
+  artifacts: [Artifact.Shroud, Artifact.Eye],
 };
 
 export const Rigby: Hero = {
@@ -191,12 +191,12 @@ export const Rigby: Hero = {
   attribute: Attribute.Strength,
   class: Class.Warrior,
   portraitURL: staticDomain+'lightbearer/rigby.webp',
-  signature: Signature._10,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Chalice],
+  artifacts: [Artifact.Pauldron, Artifact.Chalice],
 };
 
 export const Oscar: Hero = {
@@ -212,7 +212,7 @@ export const Oscar: Hero = {
     F3: Rating.Weak,
     F9: Rating.Good,
   },
-  artifacts: [Artifact.Eye],
+  artifacts: [Artifact.Eye, Artifact.Shroud],
 };
 
 export const Eluard: Hero = {
@@ -223,12 +223,12 @@ export const Eluard: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Mage,
   portraitURL: staticDomain+'lightbearer/eluard.webp',
-  signature: Signature._30,
+  signature: Signature._15,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Call],
+  artifacts: [Artifact.Call, Artifact.Windbinder],
 };
 
 export const Peggy: Hero = {
@@ -239,12 +239,28 @@ export const Peggy: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Support,
   portraitURL: staticDomain+'lightbearer/peggy.png',
-  signature: Signature.Unknown,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Unknown,
     F9: Rating.Unknown,
   },
-  artifacts: [Artifact.Call],
+  artifacts: [Artifact.Call, Artifact.Tidebearer],
+};
+
+export const Walker: Hero = {
+  id: 'WALKER',
+  name: 'Walker',
+  nickname: [],
+  faction: Faction.Lightbearer,
+  attribute: Attribute.Strength,
+  class: Class.Warrior,
+  portraitURL: staticDomain+'lightbearer/walker.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.Unknown,
+    F9: Rating.Unknown,
+  },
+  artifacts: [],
 };
 
 const heroes: Array<Hero> = [
@@ -262,6 +278,7 @@ const heroes: Array<Hero> = [
   Rigby,
   Oscar,
   Eluard,
-  Peggy
+  Peggy,
+  Walker,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

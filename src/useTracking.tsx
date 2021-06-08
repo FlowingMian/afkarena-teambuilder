@@ -49,8 +49,18 @@ export const sendViewItems = (item_category:string, item_ids:Array<string>):void
   if (!window.gtag) return;
   window.gtag('event', 'view_item', {
     items: item_ids.map(item_id => ({
+      item_category,
       item_id,
-      item_category
+    })),
+  });
+};
+
+export const sendSelectContent = (content_type:string, item_ids:Array<string>):void => {
+  if (!window.gtag) return;
+  window.gtag('event', 'select_content', {
+    items: item_ids.map(item_id => ({
+      content_type,
+      item_id,
     })),
   });
 };

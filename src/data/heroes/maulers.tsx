@@ -52,7 +52,7 @@ export const Vurk: Hero = {
     F3: Rating.Strong,
     F9: Rating.Average,
   },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  artifacts: [Artifact.Longbow, Artifact.Eye, Artifact.Shroud],
 };
 
 export const Numisu: Hero = {
@@ -79,7 +79,7 @@ export const Skreg: Hero = {
   attribute: Attribute.Strength,
   class: Class.Tank,
   portraitURL: staticDomain+'mauler/skreg.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.TopTier,
     F9: Rating.TopTier,
@@ -95,12 +95,12 @@ export const Warek: Hero = {
   attribute: Attribute.Strength,
   class: Class.Warrior,
   portraitURL: staticDomain+'mauler/warek.webp',
-  signature: Signature._10,
+  signature: Signature._1,
   furniture: {
     F3: Rating.Weak,
     F9: Rating.VeryWeak,
   },
-  artifacts: [Artifact.Chaos],
+  artifacts: [Artifact.Pauldron, Artifact.Chaos],
 };
 
 export const Antandra: Hero = {
@@ -180,7 +180,7 @@ export const Drez: Hero = {
     F3: Rating.Strong,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Eye],
+  artifacts: [Artifact.Eye, Artifact.Shroud],
 };
 
 export const Skriath: Hero = {
@@ -191,12 +191,12 @@ export const Skriath: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Mage,
   portraitURL: staticDomain+'mauler/skriath.webp',
-  signature: Signature._10,
+  signature: Signature._30,
   furniture: {
     F3: Rating.TopTier,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Warden],
+  artifacts: [Artifact.Warden, Artifact.Windbinder],
 };
 
 export const Anoki: Hero = {
@@ -212,13 +212,13 @@ export const Anoki: Hero = {
     F3: Rating.Weak,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Waistband],
+  artifacts: [Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Kren: Hero = {
   id: 'KREN',
   name: 'Kren',
-  nickname: [],
+  nickname: ['Karen'],
   faction: Faction.Mauler,
   attribute: Attribute.Agility,
   class: Class.Ranger,
@@ -228,7 +228,7 @@ export const Kren: Hero = {
     F3: Rating.Average,
     F9: Rating.Good,
   },
-  artifacts: [Artifact.Eye],
+  artifacts: [Artifact.Eye, Artifact.Shroud],
 };
 
 const heroes: Array<Hero> = [

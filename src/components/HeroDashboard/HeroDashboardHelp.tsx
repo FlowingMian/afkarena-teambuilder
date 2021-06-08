@@ -43,15 +43,14 @@ function HeroDashboardHelp({deviceStyle}:HeroDashboardHelpProps):JSX.Element {
 
             <Heading {...HelpTitleStyle}>Signature items :</Heading>
             <Text {...HelpContentStyle}>
-              <span>Today, there is no up-to-date and easy to implement guide about Signature items. 
-            As I feel these informations were really missing in this tool, I tried to compile data from olders guides and reddit discussions, 
-            with the main source being </span>
+              <span>The main source is </span>
               <Link 
-                href="https://www.reddit.com/r/afkarena/comments/lnvdwa/prepare_for_endgame_campaign_with_this_signature/"
+                href="https://www.youtube.com/watch?v=_mBK47GIKlA"
                 isExternal>
-              Linker&apos;s latest guide (update : Feb 2020) <Icon as={FiExternalLink} mx="2px" />
-              </Link>.
-            But it will be replaced with some more legitimate data as soon as possible.
+              Linker&apos;s Signature Item Tierlist (update : Jun 2021) <Icon as={FiExternalLink} mx="2px" />
+              </Link>,
+              but with some small changes (recommending +30 instead of +20 when they are notably strong, and lower some for bottom tier heroes/SI).
+              I decided to do this while waiting for an additional guide to balance out a single opinion.
             </Text>
 
             <Heading {...HelpTitleStyle}>Artifacts :</Heading>

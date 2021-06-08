@@ -13,6 +13,7 @@ import { defaultFilter, HeroFilters } from './HeroFilters';
 import { Ratings } from '../../model/characteristics/ratings';
 import { Signatures } from '../../model/characteristics/signatures';
 import { Artifacts } from '../../model/characteristics/artifacts';
+import { sendSelectContent } from '../../useTracking';
 
 type HeroFiltersSelectorProps = {
   onChange:(value: HeroFilters) => void;
@@ -46,6 +47,7 @@ function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurnit
       [characteristic]: values, 
     };
     setSelection(newSelection);
+    sendSelectContent('filter', [characteristic]);
     onChange(newSelection);
   }
 

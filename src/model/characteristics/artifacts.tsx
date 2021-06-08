@@ -48,6 +48,11 @@ export const Waistband:Artifact = {
   name: 'Waistband of Resilience',
   iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/waistband.webp', size),
 };
+export const Limit:Artifact = {
+  id: 'LIFES_LIMIT',
+  name: 'Life\'s Limit',
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/limit.webp', size),
+};
 
 export const Chaos:Artifact = {
   id: 'CHAOS_BRINGER',
@@ -58,6 +63,11 @@ export const Carnage:Artifact = {
   id: 'CARNAGE',
   name: 'Carnage',
   iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/carnage.webp', size),
+};
+export const Pauldron:Artifact = {
+  id: 'PAULDRON',
+  name: 'Pauldron of Burning Fury',
+  iconURL: (size=DEFAULT_SIZE) => getImageIcon('artifact/pauldron.webp', size),
 };
 
 export const Shroud:Artifact = {
@@ -103,6 +113,7 @@ export const Artifacts: Array<Artifact> = [
   Conviction,
   Barricade,
   Waistband,
+  Limit,
   Chaos,
   Carnage,
   Shroud,

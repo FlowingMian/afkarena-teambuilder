@@ -79,12 +79,12 @@ export const Mezoth: Hero = {
   attribute: Attribute.Strength,
   class: Class.Tank,
   portraitURL: staticDomain+'hypogean/mezoth.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Strong,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Waistband],
+  artifacts: [Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Lucretia: Hero = {
@@ -119,6 +119,22 @@ export const Mortas: Hero = {
   artifacts: [Artifact.Tidebearer],
 };
 
+export const Leofric: Hero = {
+  id: 'LEOFRIC',
+  name: 'Leofric',
+  nickname: [],
+  faction: Faction.Hypogean,
+  attribute: Attribute.Intelligence,
+  class: Class.Support,
+  portraitURL: staticDomain+'hypogean/leofric.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.Unknown,
+    F9: Rating.Unknown,
+  },
+  artifacts: [Artifact.Call],
+};
+
 const heroes: Array<Hero> = [
   Ezizh,
   Mehira,
@@ -126,6 +142,7 @@ const heroes: Array<Hero> = [
   Khazard,
   Mezoth,
   Lucretia,
-  Mortas
+  Mortas,
+  Leofric
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

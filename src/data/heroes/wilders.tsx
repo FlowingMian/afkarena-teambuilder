@@ -31,7 +31,7 @@ export const Kaz: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'wilder/kaz.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Good,
     F9: Rating.Good,
@@ -52,7 +52,7 @@ export const Lyca: Hero = {
     F3: Rating.Good,
     F9: Rating.TopTier,
   },
-  artifacts: [Artifact.Longbow],
+  artifacts: [Artifact.Longbow, Artifact.Eye],
 };
 
 export const Tasi: Hero = {
@@ -79,12 +79,12 @@ export const Ulmus: Hero = {
   attribute: Attribute.Strength,
   class: Class.Tank,
   portraitURL: staticDomain+'wilder/ulmus.webp',
-  signature: Signature._30,
+  signature: Signature._1,
   furniture: {
     F3: Rating.VeryWeak,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Drape, Artifact.Waistband],
+  artifacts: [Artifact.Drape, Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Seirus: Hero = {
@@ -100,7 +100,7 @@ export const Seirus: Hero = {
     F3: Rating.Weak,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Chalice],
+  artifacts: [Artifact.Pauldron, Artifact.Chaos],
 };
 
 export const Eironn: Hero = {
@@ -116,7 +116,7 @@ export const Eironn: Hero = {
     F3: Rating.Strong,
     F9: Rating.Good,
   },
-  artifacts: [Artifact.Longbow, Artifact.Shroud],
+  artifacts: [Artifact.Longbow, Artifact.Call, Artifact.Shroud],
 };
 
 export const Gorvo: Hero = {
@@ -127,7 +127,7 @@ export const Gorvo: Hero = {
   attribute: Attribute.Strength,
   class: Class.Tank,
   portraitURL: staticDomain+'wilder/gorvo.webp',
-  signature: Signature._10,
+  signature: Signature._20,
   furniture: {
     F3: Rating.Good,
     F9: Rating.Average,
@@ -196,7 +196,7 @@ export const Pippa: Hero = {
     F3: Rating.Good,
     F9: Rating.Good,
   },
-  artifacts: [Artifact.Warden],
+  artifacts: [Artifact.Warden, Artifact.Windbinder],
 };
 
 export const Respen: Hero = {
@@ -207,12 +207,12 @@ export const Respen: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'wilder/respen.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Weak,
     F9: Rating.Good,
   },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  artifacts: [Artifact.Longbow, Artifact.Eye, Artifact.Shroud],
 };
 
 export const Raku: Hero = {
@@ -223,12 +223,12 @@ export const Raku: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'wilder/raku.png',
-  signature: Signature.Unknown,
+  signature: Signature._30,
   furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
+    F3: Rating.TopTier,
+    F9: Rating.Weak,
   },
-  artifacts: [Artifact.Longbow],
+  artifacts: [Artifact.Longbow, Artifact.Shroud],
 };
 
 const heroes: Array<Hero> = [

@@ -44,16 +44,17 @@ function CompositionSearch({onChange}:CompositionSearchProps):JSX.Element {
     let terms = [...composition.name.split(' ')];
     [composition.coreHeroes].forEach(c => {
       terms.push(...c.heroes
-        .flatMap(h => [h.name, ...h.nickname])
+        .flatMap(h => [h.id, ...h.name.split(' '), ...h.nickname])
         .flatMap(n => [n, n + '-' + c.role.name])
       );
     });
     [...composition.flexHeroes].forEach(c => {
       terms.push(...c.heroes
-        .flatMap(h => [h.name, ...h.nickname])
+        .flatMap(h => [h.id, ...h.name.split(' '), ...h.nickname])
         .flatMap(n => [n, n + '-' + c.role.name, n + '-flex']));
     });
     terms.push(...composition.tags);
+    terms.push(...composition.author.split(' '));
     terms = terms.map(t => t.toLowerCase());
         
     return searchTerms.every(st => terms.includes(st));

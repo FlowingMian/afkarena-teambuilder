@@ -15,18 +15,18 @@ export const Athalia: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'celestial/athalia.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Good,
     F9: Rating.Average,
   },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  artifacts: [Artifact.Longbow, Artifact.Eye, Artifact.Shroud],
 };
 
 export const ElijahLailah: Hero = {
   id: 'ELIJAHLAILAH',
-  name: 'Twins',
-  nickname: ['Elijah', 'Lailah'],
+  name: 'Elijah and Lailah',
+  nickname: ['Twins'],
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Support,
@@ -52,7 +52,7 @@ export const Orthos: Hero = {
     F3: Rating.TopTier,
     F9: Rating.Good,
   },
-  artifacts: [Artifact.Waistband],
+  artifacts: [Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Talene: Hero = {
@@ -73,8 +73,8 @@ export const Talene: Hero = {
 
 export const Wukong: Hero = {
   id: 'WUKONG',
-  name: 'WuKong',
-  nickname: [],
+  name: 'Wu Kong',
+  nickname: ['WuKong'],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Warrior,
@@ -111,7 +111,7 @@ export const Zaphrael: Hero = {
   attribute: Attribute.Intelligence,
   class: Class.Mage,
   portraitURL: staticDomain+'celestial/zaphrael.webp',
-  signature: Signature._30,
+  signature: Signature._1,
   furniture: {
     F3: Rating.Good,
     F9: Rating.TopTier,
@@ -135,6 +135,23 @@ export const Alna: Hero = {
   artifacts: [Artifact.Chaos],
 };
 
+export const Morael: Hero = {
+  id: 'MORAEL',
+  name: 'Morael',
+  nickname: [],
+  faction: Faction.Celestial,
+  attribute: Attribute.Intelligence,
+  class: Class.Mage,
+  portraitURL: staticDomain+'celestial/morael.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.Unknown,
+    F9: Rating.Unknown,
+  },
+  artifacts: [Artifact.Windbinder],
+};
+
+
 const heroes: Array<Hero> = [
   Athalia,
   ElijahLailah,
@@ -143,6 +160,7 @@ const heroes: Array<Hero> = [
   Wukong,
   Flora,
   Zaphrael,
-  Alna
+  Alna,
+  Morael,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;
