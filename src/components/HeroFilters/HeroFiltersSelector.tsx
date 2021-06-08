@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Box, Heading, IconButton, Wrap, WrapItem, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
 import { useState } from 'react';
 import { FiFilter } from 'react-icons/fi';
@@ -9,10 +9,11 @@ import { Factions } from '../../model/characteristics/factions';
 import { Classes } from '../../model/characteristics/classes';
 import { Attributes } from '../../model/characteristics/attributes';
 import { CollectionStatuses } from '../../model/characteristics/collectionStatuses';
-import { HeroFilters } from './HeroFilters';
+import { defaultFilter, HeroFilters } from './HeroFilters';
 import { Ratings } from '../../model/characteristics/ratings';
 import { Signatures } from '../../model/characteristics/signatures';
 import { Artifacts } from '../../model/characteristics/artifacts';
+import { sendSelectContent } from '../../useTracking';
 
 type HeroFiltersSelectorProps = {
   onChange:(value: HeroFilters) => void;
@@ -38,16 +39,7 @@ function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurnit
     ml: '0.1rem',
   };
 
-  const [selection, setSelection] = useState<HeroFilters>({
-    factionIds: Factions.map(c => c.id),
-    classIds: Classes.map(c => c.id),
-    attributeIds: Attributes.map(c => c.id),
-    collectionStatuses: CollectionStatuses.map(c => c.id),
-    signatures: Signatures.map(c => c.id),
-    furniture3Ratings: Ratings.map(c => c.id),
-    furniture9Ratings: Ratings.map(c => c.id),
-    artifacts: Artifacts.map(c => c.id),
-  });
+  const [selection, setSelection] = useState<HeroFilters>(defaultFilter);
 
   function onCharacteristicChange(characteristic:string, values:Array<string>) {
     const newSelection = {
@@ -55,6 +47,7 @@ function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurnit
       [characteristic]: values, 
     };
     setSelection(newSelection);
+    sendSelectContent('filter', [characteristic]);
     onChange(newSelection);
   }
 

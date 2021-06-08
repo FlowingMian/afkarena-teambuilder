@@ -36,7 +36,7 @@ export const Ukyo: Hero = {
     F3: Rating.Weak,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Chaos],
+  artifacts: [Artifact.Chaos, Artifact.Eye],
 };
 
 export const Nakoruru: Hero = {
@@ -47,7 +47,7 @@ export const Nakoruru: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'dimensional/nakoruru.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Average,
@@ -63,12 +63,12 @@ export const Ezio: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'dimensional/ezio.webp',
-  signature: Signature._20,
+  signature: Signature._25,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Call],
+  artifacts: [Artifact.Call, Artifact.Shroud],
 };
 
 export const Albedo: Hero = {
@@ -84,13 +84,13 @@ export const Albedo: Hero = {
     F3: Rating.Good,
     F9: Rating.Weak,
   },
-  artifacts: [Artifact.Waistband],
+  artifacts: [Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Ainz: Hero = {
   id: 'AINZ',
-  name: 'Ainz',
-  nickname: ['Ainz Ooal Gown'],
+  name: 'Ainz Ooal Gown',
+  nickname: [],
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
@@ -111,7 +111,7 @@ export const QUEEN: Hero = {
   attribute: Attribute.Strength,
   class: Class.Warrior,
   portraitURL: staticDomain+'dimensional/queen.webp',
-  signature: Signature._20,
+  signature: Signature._1,
   furniture: {
     F3: Rating.Strong,
     F9: Rating.Average,
@@ -135,6 +135,22 @@ export const JOKER: Hero = {
   artifacts: [Artifact.Shroud],
 };
 
+export const PrinceOfPersia: Hero = {
+  id: 'PRINCE_OF_PERSIA',
+  name: 'Prince Of Persia',
+  nickname: ['PoP'],
+  faction: Faction.Dimensional,
+  attribute: Attribute.Agility,
+  class: Class.Ranger,
+  portraitURL: staticDomain+'dimensional/pop.webp',
+  signature: Signature._20,
+  furniture: {
+    F3: Rating.Unknown,
+    F9: Rating.Unknown,
+  },
+  artifacts: [Artifact.Longbow, Artifact.Eye],
+};
+
 const heroes: Array<Hero> = [
   Arthur,
   Ukyo,
@@ -143,6 +159,7 @@ const heroes: Array<Hero> = [
   Albedo,
   Ainz,
   QUEEN,
-  JOKER
+  JOKER,
+  PrinceOfPersia,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

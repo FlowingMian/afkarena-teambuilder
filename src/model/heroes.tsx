@@ -17,6 +17,7 @@ export interface Hero {
   };
   artifacts: Array<Artifact>;
   recommended?: boolean;
+  score?:number;
 }
 
 const fakeCharacterictic = {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Box, FormControl, Heading, HStack, Switch, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
@@ -10,7 +10,7 @@ import Loader from '../Common/Loader';
 import LinkPopover from '../Common/LinkPopover';
 import { useLocation } from 'react-router';
 import ArtifactDashboardTable from './ArtifactDashboardTable';
-import artifactGuides from '../../data/artifacts';
+import guides from '../../data/artifacts';
 import { Hero } from '../../model/heroes';
 import { ArtifactGuideHero } from '../../model/artifacts';
 import heroes from '../../data/heroes';
@@ -26,7 +26,7 @@ function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
 
   const deviceStyle = getDeviceStyle();
 
-  const defaultSelection = artifactGuides.map(g => g.id);
+  const defaultSelection = guides.map(g => g.id);
   const [selection, setSelection] = useState<Array<string>>(defaultSelection);
   const [artifactResult, setArtifactResult] = useState<Map<Hero, ArtifactGuideHero>>(new Map());
   const [filters, setFilters] = useState<HeroFilters>();
@@ -82,7 +82,7 @@ function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
           .map(h => {
             // Build artifacts ranking
             const artifactsRanking:Array<Artifact> = [];
-            artifactGuides
+            guides
               .filter(g => selectedGuideIds.includes(g.id))
               .map(g => g.artifacts.get(h))
               .forEach(artifactGuideHero => {
@@ -121,7 +121,7 @@ function ArtifactDashboard({profile}:ArtifactDashboardProps):JSX.Element {
     calculateArtifact(values);
   }
 
-  const guideSwitchs = artifactGuides.map(g => {
+  const guideSwitchs = guides.map(g => {
     return (
       <FormControl key={g.id} display="flex" alignItems="center"> 
         <Switch value={g.id} isChecked={selection.includes(g.id)} mr="5px" onChange={onChange}/>

@@ -2,9 +2,11 @@
 import { ArtifactGuide } from '../../model/artifacts';
 import afkarenaboss from './artifacts-afkarenaboss';
 import silentbobus from './artifacts-silentbobus';
+import chinese from './artifacts-chinese';
 
-const artifactGuides: Array<ArtifactGuide> = [
+const guides: Array<ArtifactGuide> = [
   afkarenaboss,
-  silentbobus
+  silentbobus,
+  chinese
 ];
-export default artifactGuides;
+export default guides;

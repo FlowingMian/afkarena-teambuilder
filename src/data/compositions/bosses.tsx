@@ -15,17 +15,21 @@ const bosses: Composition = {
   author: 'Multiple authors',
   updateDate: 'Dec 2020 - Feb 2021',
   links: [{
-    label: 'Wrizz and Soren guide by 剑与远征攻略君 (Dec 2020)', 
-    url: 'https://www.reddit.com/r/afkarena/comments/kzdavv/wrizz_and_soren_visual_guide_credits_%E5%89%91%E4%B8%8E%E8%BF%9C%E5%BE%81%E6%94%BB%E7%95%A5%E5%90%9B/',
-  },
-  {
     label: 'Wrizz and Soren guide by MaxSu (Jan 2021)', 
     url: 'https://www.reddit.com/r/afkarena/comments/kdh6h7/ultimate_damage_to_wrizz_and_soren_15122020/',
   },
   {
     label: 'Twisted Realm guide by Scullicious (Feb 2021)', 
     url: 'https://www.reddit.com/r/afkarena/comments/ll0zm8/a_visual_guide_for_twisted_realm_team_comps/',
-  }],
+  },
+  {
+    label: 'Guild Hunt by AFK Analytica (May 2021)', 
+    url: 'https://www.afk-analytica.com/references/bosses/guild-hunt',
+  },
+  {
+    label: 'Twisted Realm by AFK Analytica (May 2021)', 
+    url: 'https://www.afk-analytica.com/references/bosses/twisted-realm',
+  },],
   coreHeroes: {
     role: Role.Core,
     heroes : [
@@ -60,9 +64,6 @@ const bosses: Composition = {
           ...Lightbearers.Rowan
         },
         {
-          ...Hypogeans.Ezizh
-        },
-        {
           ...Hypogeans.Mortas
         },
         {
@@ -77,6 +78,9 @@ const bosses: Composition = {
           ...Celestials.Talene
         },
         {
+          ...Celestials.Morael
+        },
+        {
           ...Lightbearers.Cecilia
         },
         {
@@ -84,6 +88,12 @@ const bosses: Composition = {
         },
         {
           ...Lightbearers.Belinda
+        },
+        {
+          ...Maulers.Antandra
+        },
+        {
+          ...Maulers.Skriath
         },
         {
           ...Graveborns.Shemira
@@ -98,7 +108,13 @@ const bosses: Composition = {
           ...Wilders.Tasi
         },
         {
+          ...Wilders.Raku
+        },
+        {
           ...Wilders.Lorsan
+        },
+        {
+          ...Hypogeans.Ezizh
         },
         {
           ...Hypogeans.Mehira

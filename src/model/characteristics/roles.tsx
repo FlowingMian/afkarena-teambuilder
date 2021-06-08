@@ -37,7 +37,7 @@ export const Enabler:Role = {
 
 export const Sustain:Role = {
   id: 'SUSTAIN',
-  name: 'Enhanced Sustain',
+  name: 'Sustain',
 };
 
 export const Displacement:Role = {

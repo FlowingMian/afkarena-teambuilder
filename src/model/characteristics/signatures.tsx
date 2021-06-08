@@ -5,6 +5,11 @@ import { Rating } from './characteristics';
 
 const DEFAULT_SIZE  = 'sm';
 
+export const _1:Rating = {
+  id: '1',
+  name: '1',
+  iconURL: (size=DEFAULT_SIZE) => <Tag size={size} colorScheme='purple' variant='solid'>1</Tag>
+};
 export const _5:Rating = {
   id: '5',
   name: '5',
@@ -42,6 +47,7 @@ export const Unknown:Rating = {
 };
 
 export const Signatures:Array<Rating> = [
+  _1,
   _5,
   _10,
   _15,

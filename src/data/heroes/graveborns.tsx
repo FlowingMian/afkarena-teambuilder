@@ -20,7 +20,7 @@ export const Grezhul: Hero = {
     F3: Rating.TopTier,
     F9: Rating.TopTier,
   },
-  artifacts: [Artifact.Chalice],
+  artifacts: [Artifact.Chalice, Artifact.Eye, Artifact.Limit],
 };
 
 export const Shemira: Hero = {
@@ -36,7 +36,7 @@ export const Shemira: Hero = {
     F3: Rating.Weak,
     F9: Rating.VeryWeak,
   },
-  artifacts: [Artifact.Windbinder],
+  artifacts: [Artifact.Windbinder, Artifact.Warden],
 };
 
 export const Thoran: Hero = {
@@ -68,7 +68,7 @@ export const Isabella: Hero = {
     F3: Rating.TopTier,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Eye],
+  artifacts: [Artifact.Eye, Artifact.Warden],
 };
 
 export const Nara: Hero = {
@@ -84,7 +84,7 @@ export const Nara: Hero = {
     F3: Rating.Good,
     F9: Rating.Average,
   },
-  artifacts: [Artifact.Chaos],
+  artifacts: [Artifact.Pauldron, Artifact.Chaos],
 };
 
 export const Ferael: Hero = {
@@ -111,12 +111,12 @@ export const Baden: Hero = {
   attribute: Attribute.Agility,
   class: Class.Warrior,
   portraitURL: staticDomain+'graveborn/baden.webp',
-  signature: Signature._20,
+  signature: Signature._5,
   furniture: {
     F3: Rating.VeryWeak,
     F9: Rating.Strong,
   },
-  artifacts: [Artifact.Chaos],
+  artifacts: [Artifact.Pauldron, Artifact.Chaos],
 };
 
 export const Kelthur: Hero = {
@@ -127,7 +127,7 @@ export const Kelthur: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'graveborn/kelthur.webp',
-  signature: Signature._20,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Average,
     F9: Rating.Good,
@@ -148,7 +148,7 @@ export const Silas: Hero = {
     F3: Rating.TopTier,
     F9: Rating.TopTier,
   },
-  artifacts: [Artifact.Blade, Artifact.Call],
+  artifacts: [Artifact.Blade, Artifact.Tidebearer, Artifact.Call],
 };
 
 export const Oden: Hero = {
@@ -180,7 +180,7 @@ export const Izold: Hero = {
     F3: Rating.TopTier,
     F9: Rating.Average,
   },
-  artifacts: [Artifact.Chaos],
+  artifacts: [Artifact.Pauldron, Artifact.Chaos],
 };
 
 export const Torne: Hero = {
@@ -196,7 +196,7 @@ export const Torne: Hero = {
     F3: Rating.Average,
     F9: Rating.Average,
   },
-  artifacts: [Artifact.Waistband],
+  artifacts: [Artifact.Waistband, Artifact.Barricade],
 };
 
 export const Daimon: Hero = {
@@ -223,12 +223,28 @@ export const Theowyn: Hero = {
   attribute: Attribute.Agility,
   class: Class.Ranger,
   portraitURL: staticDomain+'graveborn/theowyn.webp',
-  signature: Signature._10,
+  signature: Signature._30,
   furniture: {
     F3: Rating.Strong,
     F9: Rating.Good,
   },
   artifacts: [Artifact.Eye],
+};
+
+export const Desira: Hero = {
+  id: 'DESIRA',
+  name: 'Desira',
+  nickname: [],
+  faction: Faction.Graveborn,
+  attribute: Attribute.Intelligence,
+  class: Class.Support,
+  portraitURL: staticDomain+'graveborn/desira.webp',
+  signature: Signature._30,
+  furniture: {
+    F3: Rating.Unknown,
+    F9: Rating.Unknown,
+  },
+  artifacts: [Artifact.Call],
 };
 
 const heroes: Array<Hero> = [
@@ -245,6 +261,7 @@ const heroes: Array<Hero> = [
   Izold,
   Torne,
   Daimon,
-  Theowyn
+  Theowyn,
+  Desira,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

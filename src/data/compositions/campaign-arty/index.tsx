@@ -17,6 +17,7 @@ import classicDisrupt from './classicdisrupt';
 import alnaGrezhul from './alnagrezhul';
 
 const compositions: Array<Composition> = [
+  alnaGrezhul,
   thoran,
   lucretia,
   gwyneth,
@@ -31,6 +32,5 @@ const compositions: Array<Composition> = [
   khazardWilders,
   stall,
   portalParty,
-  alnaGrezhul
 ];
 export default compositions;

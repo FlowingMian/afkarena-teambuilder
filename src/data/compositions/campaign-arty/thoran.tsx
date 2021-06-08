@@ -11,11 +11,14 @@ const thoran: Composition = {
   id: 'CAMPAIGN-ARTY-THORAN',
   name: 'Thoran Cheese',
   tags: ['PvE'],
-  author: 'Arty and Alpattex',
+  author: 'Arty and Alpattex + CatCalledPippi',
   updateDate: 'Feb 2021',
   links: [{
-    label: 'Guide', 
+    label: 'Visual Guide to End Game PvE Formations by Arty and Alpattex', 
     url: 'https://preview.redd.it/off9mrptovf61.png?width=2480&format=png&auto=webp&s=70ee0f40dfcff132968b2f83663d0fc7cbb6b78e',
+  }, {
+    label: 'A Comprehensive Guide to Thoran Cheese (Even For the Haters)', 
+    url: 'https://www.reddit.com/r/afkarena/comments/m5wji8/a_comprehensive_guide_to_thoran_cheese_even_for/',
   }],
   coreHeroes: {
     role: Role.Core,
