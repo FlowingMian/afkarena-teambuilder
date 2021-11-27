@@ -81,7 +81,7 @@ const skregInvade: Composition = {
           ...Wilders.Gorvo
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
         {
           ...Wilders.Tasi

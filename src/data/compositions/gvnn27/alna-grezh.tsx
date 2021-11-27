@@ -3,96 +3,94 @@ import * as Role from '../../../model/characteristics/roles';
 import * as Lightbearers from '../../heroes/lightbearers';
 import * as Maulers from '../../heroes/maulers';
 import * as Wilders from '../../heroes/wilders';
+import * as Graveborns from '../../heroes/graveborns';
 import * as Celestials from '../../heroes/celestials';
 import * as Hypogeans from '../../heroes/hypogeans';
 import * as Dimensionals from '../../heroes/dimensionals';
 
-const dimensional: Composition = {
-  id: 'PVP-ARTY-DIMENSIONAL',
-  name: 'Dimensional',
-  tags: ['PvP'],
-  author: 'Arty and Alpattex',
-  updateDate: 'Jan 2021',
+const composition: Composition = {
+  id: 'GVNN27-ALNA-GREZH',
+  name: 'Alna-Grezh',
+  tags: ['PvE', 'Latest'],
+  author: 'Gvnn27',
+  updateDate: 'Sep 2021',
   links: [{
-    label: 'Guide', 
-    url: 'https://www.reddit.com/r/afkarena/comments/kvuvsp/comprehensive_pvp_guide_by_arty_alpattex/',
+    label: 'Top 5 comps with "ranking"', 
+    url: 'https://www.reddit.com/r/afkarena/comments/pujfpk/top_5_comps_with_ranking/',
   }],
   coreHeroes: {
     role: Role.Core,
     heroes : [
       {
-        ...Dimensionals.Ainz,
+        ...Graveborns.Grezhul,
         recommended: true
       },
       {
-        ...Dimensionals.Albedo,
-        recommended: true
-      },
-      {
-        ...Dimensionals.Arthur,
+        ...Celestials.Alna,
         recommended: true
       },
     ]
   },
   flexHeroes: [
     {
-      role: Role.Utility,
+      role: Role.Usually,
       heroes : [
         {
-          ...Wilders.Tasi,
+          ...Graveborns.Oden,
           recommended: true
         },
         {
-          ...Dimensionals.Ukyo
+          ...Graveborns.Ferael,
+          recommended: true
         },
         {
-          ...Celestials.Orthros
+          ...Hypogeans.Mortas,
+          recommended: true
+        },
+        {
+          ...Graveborns.Daimon,
+        },
+        {
+          ...Graveborns.Silas
         },
       ]
     },
     {
-      role: Role.Enabler,
+      role: Role.Variants,
       heroes : [
         {
-          ...Celestials.Talene,
+          ...Graveborns.Hodgkin
+        },
+        {
+          ...Graveborns.Desira
+        },
+        {
+          ...Lightbearers.Raine,
           recommended: true
         },
         {
-          ...Dimensionals.Ezio
-        },
-        {
-          ...Dimensionals.JOKER
-        },
-        {
-          ...Dimensionals.Nakoruru
-        },
-        {
-          ...Maulers.Numisu
-        },
-        {
-          ...Dimensionals.QUEEN
-        },
-        {
-          ...Celestials.Flora
+          ...Wilders.Raku
         },
       ]
-
     },
     {
-      role: Role.Energy,
+      role: Role.Other,
       heroes : [
         {
-          ...Hypogeans.Mortas
+          ...Wilders.Tasi
+        },
+        {
+          ...Hypogeans.Mehira
         },
         {
           ...Lightbearers.Rowan
         },
         {
-          ...Hypogeans.Ezizh
+          ...Dimensionals.PrinceOfPersia
         },
       ]
-    }
+    },
   ]
 };
 
-export default dimensional;
+export default composition;

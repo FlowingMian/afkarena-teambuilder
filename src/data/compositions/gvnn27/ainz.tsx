@@ -3,19 +3,20 @@ import * as Role from '../../../model/characteristics/roles';
 import * as Lightbearers from '../../heroes/lightbearers';
 import * as Maulers from '../../heroes/maulers';
 import * as Wilders from '../../heroes/wilders';
+import * as Graveborns from '../../heroes/graveborns';
 import * as Celestials from '../../heroes/celestials';
 import * as Hypogeans from '../../heroes/hypogeans';
 import * as Dimensionals from '../../heroes/dimensionals';
 
-const dimensional: Composition = {
-  id: 'PVP-ARTY-DIMENSIONAL',
-  name: 'Dimensional',
-  tags: ['PvP'],
-  author: 'Arty and Alpattex',
-  updateDate: 'Jan 2021',
+const composition: Composition = {
+  id: 'GVNN27-AINZ',
+  name: 'Ainz',
+  tags: ['PvE', 'Latest'],
+  author: 'Gvnn27',
+  updateDate: 'Sep 2021',
   links: [{
-    label: 'Guide', 
-    url: 'https://www.reddit.com/r/afkarena/comments/kvuvsp/comprehensive_pvp_guide_by_arty_alpattex/',
+    label: 'Top 5 comps with "ranking"', 
+    url: 'https://www.reddit.com/r/afkarena/comments/pujfpk/top_5_comps_with_ranking/',
   }],
   coreHeroes: {
     role: Role.Core,
@@ -29,70 +30,78 @@ const dimensional: Composition = {
         recommended: true
       },
       {
-        ...Dimensionals.Arthur,
+        ...Dimensionals.PrinceOfPersia,
         recommended: true
       },
     ]
   },
   flexHeroes: [
     {
-      role: Role.Utility,
+      role: Role.Usually,
       heroes : [
         {
-          ...Wilders.Tasi,
+          ...Dimensionals.JOKER,
           recommended: true
         },
         {
-          ...Dimensionals.Ukyo
+          ...Hypogeans.Mortas,
+          recommended: true
         },
         {
-          ...Celestials.Orthros
+          ...Dimensionals.Ezio,
+        },
+        {
+          ...Dimensionals.Arthur,
         },
       ]
     },
     {
-      role: Role.Enabler,
+      role: Role.Variants,
       heroes : [
         {
-          ...Celestials.Talene,
-          recommended: true
+          ...Graveborns.Ferael
         },
         {
-          ...Dimensionals.Ezio
+          ...Celestials.Alna
         },
         {
-          ...Dimensionals.JOKER
+          ...Lightbearers.Gwyneth
         },
         {
-          ...Dimensionals.Nakoruru
+          ...Maulers.Brutus
         },
         {
-          ...Maulers.Numisu
-        },
-        {
-          ...Dimensionals.QUEEN
-        },
-        {
-          ...Celestials.Flora
+          ...Wilders.Lyca
         },
       ]
-
     },
     {
-      role: Role.Energy,
+      role: Role.Other,
       heroes : [
         {
-          ...Hypogeans.Mortas
+          ...Celestials.Zaphrael
         },
         {
-          ...Lightbearers.Rowan
+          ...Lightbearers.Raine
+        },
+        {
+          ...Maulers.Granit
+        },
+        {
+          ...Hypogeans.Khazard
+        },
+        {
+          ...Celestials.Talene
+        },
+        {
+          ...Dimensionals.Merlin
         },
         {
           ...Hypogeans.Ezizh
         },
       ]
-    }
+    },
   ]
 };
 
-export default dimensional;
+export default composition;

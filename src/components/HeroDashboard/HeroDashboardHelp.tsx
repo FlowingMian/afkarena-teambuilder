@@ -53,14 +53,6 @@ function HeroDashboardHelp({deviceStyle}:HeroDashboardHelpProps):JSX.Element {
               I decided to do this while waiting for an additional guide to balance out a single opinion.
             </Text>
 
-            <Heading {...HelpTitleStyle}>Artifacts :</Heading>
-            <Text {...HelpContentStyle}>
-              <span>Artifacts displayed below are the first ranked from differents guides. For more details, please see the </span>
-              <Link 
-                href="/artifacts">
-              dedicated Artifact page
-              </Link>.
-            </Text>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>

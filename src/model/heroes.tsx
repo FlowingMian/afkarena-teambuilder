@@ -1,6 +1,7 @@
-import { Artifact, Attribute, Class, Faction, Rating, Signature} from './characteristics/characteristics';
+import { Artifact, Attribute, Class, Faction, Furniture, Rating, Signature} from './characteristics/characteristics';
 import * as Signatures from './characteristics/signatures';
-import * as Ratings from './characteristics/ratings';
+import * as Furnitures from './characteristics/furnitures';
+import * as Engravings from './characteristics/engravings';
 
 export interface Hero {
   id: string;
@@ -11,13 +12,10 @@ export interface Hero {
   class: Class;
   portraitURL?: string; //portraitURL?:(size?:string) => JSX.Element;
   signature: Signature;
-  furniture: {
-    F3 : Rating,
-    F9 : Rating,
-  };
+  furniture: Furniture;
+  engraving: Engraving;
   artifacts: Array<Artifact>;
   recommended?: boolean;
-  score?:number;
 }
 
 const fakeCharacterictic = {
@@ -35,10 +33,7 @@ export function generateOpenSpot():Hero {
     attribute:fakeCharacterictic,
     class: fakeCharacterictic,
     signature: Signatures.Unknown,
-    furniture : {
-      F3: Ratings.Unknown,
-      F9: Ratings.Unknown,
-    },
+    furniture : Furnitures.Unknown,
     artifacts: [],
   };
 }

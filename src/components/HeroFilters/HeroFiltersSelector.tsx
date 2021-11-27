@@ -14,6 +14,7 @@ import { Ratings } from '../../model/characteristics/ratings';
 import { Signatures } from '../../model/characteristics/signatures';
 import { Artifacts } from '../../model/characteristics/artifacts';
 import { sendSelectContent } from '../../useTracking';
+import { Furnitures } from '../../model/characteristics/furnitures';
 
 type HeroFiltersSelectorProps = {
   onChange:(value: HeroFilters) => void;
@@ -95,18 +96,10 @@ function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurnit
       </WrapItem>}
 
       {displayFurniture && <WrapItem {...itemStyle}>
-        <CharacteristicCheckboxGroup selection={selection.furniture3Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture3Ratings', v)}/>
+        <CharacteristicCheckboxGroup selection={selection.furnitures} characterictics={Furnitures} onChange={(v) => onCharacteristicChange('furnitures', v)}/>
         <Box>
-          <Heading {...headingStyle}>Furniture 3</Heading>
-          <CharacteristicTable characterictics={Ratings} displayName={false}/>
-        </Box>
-      </WrapItem>}
-
-      {displayFurniture && <WrapItem {...itemStyle}>
-        <CharacteristicCheckboxGroup selection={selection.furniture9Ratings} characterictics={Ratings} onChange={(v) => onCharacteristicChange('furniture9Ratings', v)}/>
-        <Box>
-          <Heading {...headingStyle}>Furniture 9</Heading>
-          <CharacteristicTable characterictics={Ratings} displayName={false}/>
+          <Heading {...headingStyle}>Furniture</Heading>
+          <CharacteristicTable characterictics={Furnitures} displayName={false}/>
         </Box>
       </WrapItem>}
 

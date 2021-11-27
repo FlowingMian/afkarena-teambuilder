@@ -1,5 +1,6 @@
 import { Composition} from '../../../model/compositions';
 import * as Role from '../../../model/characteristics/roles';
+import * as Lightbearers from '../../heroes/lightbearers';
 import * as Maulers from '../../heroes/maulers';
 import * as Wilders from '../../heroes/wilders';
 import * as Graveborns from '../../heroes/graveborns';
@@ -8,14 +9,14 @@ import * as Hypogeans from '../../heroes/hypogeans';
 import * as Dimensionals from '../../heroes/dimensionals';
 
 const composition: Composition = {
-  id: 'XAPYSLENDERMAN-LUCRETIA',
+  id: 'GVNN27-LUCRETIA',
   name: 'Lucretia',
-  tags: ['PvE'],
-  author: 'XapySlenderman',
-  updateDate: 'May 2021',
+  tags: ['PvE', 'Latest'],
+  author: 'Gvnn27',
+  updateDate: 'Sep 2021',
   links: [{
-    label: 'Comprehensive Review of Chapter 41 by CASUALS and XapySlenderman', 
-    url: 'https://www.reddit.com/r/afkarena/comments/nn09tm/comprehensive_review_of_chapter_41_by_casuals_and/',
+    label: 'Top 5 comps with "ranking"', 
+    url: 'https://www.reddit.com/r/afkarena/comments/pujfpk/top_5_comps_with_ranking/',
   }],
   coreHeroes: {
     role: Role.Core,
@@ -36,46 +37,64 @@ const composition: Composition = {
   },
   flexHeroes: [
     {
-      role: Role.Flex,
+      role: Role.Usually,
       heroes : [
         {
-          ...Celestials.Alna
+          ...Dimensionals.QUEEN,
+          recommended: true
         },
         {
-          ...Hypogeans.Leofric
+          ...Maulers.Granit,
+          recommended: true
         },
         {
-          ...Graveborns.Desira
+          ...Hypogeans.Zolrath,
         },
         {
-          ...Celestials.Orthros
-        },
-        {
-          ...Hypogeans.Zolrath
-        },
-        {
-          ...Wilders.Nemora
+          ...Maulers.Safiya,
         },
         {
           ...Wilders.Lyca
         },
+      ]
+    },
+    {
+      role: Role.Variants,
+      heroes : [
         {
-          ...Maulers.Safiya
-        },
-        {
-          ...Maulers.Tidus
-        },
-        {
-          ...Dimensionals.QUEEN
+          ...Wilders.Gorvo
         },
         {
           ...Maulers.Brutus
         },
         {
+          ...Maulers.Skreg
+        },
+        {
+          ...Maulers.Anoki
+        },
+        {
+          ...Dimensionals.PrinceOfPersia
+        },
+        {
+          ...Celestials.Orthros
+        },
+      ]
+    },
+    {
+      role: Role.Other,
+      heroes : [
+        {
+          ...Wilders.Lorsan
+        },
+        {
+          ...Maulers.Tidus
+        },
+        {
           ...Celestials.Zaphrael
         },
         {
-          ...Wilders.Lorsan
+          ...Hypogeans.Mortas
         },
       ]
     },

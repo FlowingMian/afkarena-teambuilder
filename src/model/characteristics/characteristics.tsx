@@ -23,9 +23,11 @@ export type Rating = Characterictic
 
 export type Signature = Characterictic
 
-export interface Artifact extends Characterictic {
-  score?:number
-}
+export type Furniture = Characterictic
+
+export type Engraving = Characterictic
+
+export type Artifact = Characterictic
 
 export function getImageIcon(path:string, boxSize:string):JSX.Element {
   return <Image src={`${staticDomain}${path}`} boxSize={boxSize} />;  

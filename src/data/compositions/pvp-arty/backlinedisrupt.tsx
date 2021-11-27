@@ -32,7 +32,7 @@ const backlineDisrupt: Composition = {
       role: Role.CrowdControl,
       heroes : [
         {
-          ...Celestials.Orthos,
+          ...Celestials.Orthros,
           recommended: true
         },
         {

@@ -32,30 +32,6 @@ export const navLinks = [
     label: 'Heroes',
     new: false,
   },
-  // {
-  //   path: '/wishlist',
-  //   icon: FiList,
-  //   label: 'Wishlist',
-  //   new: true,
-  // },
-  // {
-  //   path: '/signatureitems',
-  //   icon: GiSpikedHalo,
-  //   label: 'Signature items',
-  //   new: true,
-  // },
-  // {
-  //   path: '/furnitureitems',
-  //   icon: GiWoodenChair,
-  //   label: 'Furniture items',
-  //   new: true,
-  // },
-  {
-    path: '/artifacts',
-    icon: GiAbstract100,
-    label: 'Artifacts',
-    new: false,
-  },
   {
     path: '/compositions',
     icon: FiUsers,

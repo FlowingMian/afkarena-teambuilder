@@ -91,7 +91,7 @@ const fivePull: Composition = {
           ...Wilders.Gorvo
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
         {
           ...Wilders.Pippa

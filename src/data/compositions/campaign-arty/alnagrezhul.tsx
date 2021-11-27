@@ -76,7 +76,7 @@ const alnagrezhul: Composition = {
           ...Wilders.Pippa,
         },
         {
-          ...Celestials.Orthos,
+          ...Celestials.Orthros,
         },
         {
           ...Graveborns.Oden,

@@ -75,11 +75,11 @@ function CompositionSearch({onChange}:CompositionSearchProps):JSX.Element {
         <AlertIcon />
         <HStack wrap='wrap'>
           <Text>Syntax examples :</Text> 
+          <Button variant="link" size='xs' onClick={() => setQuery('Latest')}>Latest</Button>
           <Button variant="link" size='xs' onClick={() => setQuery('Portal')}>Portal</Button>
           <Button variant="link" size='xs' onClick={() => setQuery('PvE')}>PvE</Button>
           <Button variant="link" size='xs' onClick={() => setQuery('Eironn-core')}>Eironn-core</Button>
-          <Button variant="link" size='xs' onClick={() => setQuery('Rowan-flex Ezio')}>Rowan-flex Ezio</Button>
-          <Button variant="link" size='xs' onClick={() => setQuery('Silas-enabler')}>Silas-enabler</Button>
+          <Button variant="link" size='xs' onClick={() => setQuery('Rowan Ezio')}>Rowan Ezio</Button>
         </HStack>
       </Alert>
     </VStack>

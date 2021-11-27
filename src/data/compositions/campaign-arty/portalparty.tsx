@@ -92,7 +92,7 @@ const portalParty: Composition = {
           ...Dimensionals.Nakoruru
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
       ]
 

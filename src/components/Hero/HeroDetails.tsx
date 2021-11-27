@@ -96,8 +96,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
         <GridItem rowSpan={3} colSpan={3} >
           <VStack {...recommendantionStyle}>
             <Heading size='xs'>Furniture</Heading>
-            <Text>3: {hero.furniture.F3.iconURL?.()}</Text>
-            <Text>9: {hero.furniture.F9.iconURL?.()}</Text>
+            {hero.furniture.iconURL?.()}
           </VStack>
         </GridItem>
 

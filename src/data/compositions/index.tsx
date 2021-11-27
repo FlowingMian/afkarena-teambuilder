@@ -8,9 +8,11 @@ import slumber from './immrblueboy-slumber';
 import pvpArty from './pvp-arty';
 import yomanitos from './yomanitos';
 import xapyslenderman from './xapyslenderman';
+import gvnn27 from './gvnn27';
 
 const compositions: Array<Composition> = [
   bosses,
+  ...gvnn27,
   ...xapyslenderman,
   ...yomanitos,
   pettingzoo,

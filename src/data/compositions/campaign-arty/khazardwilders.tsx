@@ -98,7 +98,7 @@ const khazardWilders: Composition = {
           ...Wilders.Nemora
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         }
       ]
 
