@@ -1,4 +1,4 @@
-import { Artifact, Attribute, Class, Faction, Furniture, Rating, Signature} from './characteristics/characteristics';
+import { Artifact, Attribute, Class, Engraving, Faction, Furniture, Signature} from './characteristics/characteristics';
 import * as Signatures from './characteristics/signatures';
 import * as Furnitures from './characteristics/furnitures';
 import * as Engravings from './characteristics/engravings';
@@ -33,7 +33,8 @@ export function generateOpenSpot():Hero {
     attribute:fakeCharacterictic,
     class: fakeCharacterictic,
     signature: Signatures.Unknown,
-    furniture : Furnitures.Unknown,
+    furniture: Furnitures.Unknown,
+    engraving: Engravings.Unknown,
     artifacts: [],
   };
 }

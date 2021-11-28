@@ -3,7 +3,8 @@ import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
-import * as Rating from '../../model/characteristics/ratings';
+import * as Furniture from '../../model/characteristics/furnitures';
+import * as Engraving from '../../model/characteristics/engravings';
 import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
@@ -14,13 +15,11 @@ export const Ezizh: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
   class: Class.Support,
-  portraitURL: staticDomain+'hypogean/ezizh.webp',
-  signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Tidebearer],
+  portraitURL: staticDomain+'hypogean/ezizh.jpg',
+  signature: Signature._10,
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Tidebearer, Artifact.Call, Artifact.Seraphic],
 };
 
 export const Mehira: Hero = {
@@ -30,13 +29,11 @@ export const Mehira: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'hypogean/mehira.webp',
+  portraitURL: staticDomain+'hypogean/mehira.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Windbinder],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.WingedWarden, Artifact.Windbinder, Artifact.Call],
 };
 
 export const Zolrath: Hero = {
@@ -46,13 +43,11 @@ export const Zolrath: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'hypogean/zolrath.webp',
+  portraitURL: staticDomain+'hypogean/zolrath.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Carnage, Artifact.Chaos],
+  furniture: Furniture._3,
+  engraving: Engraving._31_59,
+  artifacts: [Artifact.Chaos, Artifact.Carnage, Artifact.Blade],
 };
 
 export const Khazard: Hero = {
@@ -62,13 +57,11 @@ export const Khazard: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'hypogean/khazard.webp',
+  portraitURL: staticDomain+'hypogean/khazard.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Windbinder],
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Eye, Artifact.Warden, Artifact.WingedWarden],
 };
 
 export const Mezoth: Hero = {
@@ -78,13 +71,11 @@ export const Mezoth: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'hypogean/mezoth.webp',
+  portraitURL: staticDomain+'hypogean/mezoth.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Waistband, Artifact.Barricade],
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Waistband, Artifact.Limit, Artifact.Barricade],
 };
 
 export const Lucretia: Hero = {
@@ -94,13 +85,11 @@ export const Lucretia: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'hypogean/lucretia.webp',
+  portraitURL: staticDomain+'hypogean/lucretia.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  furniture: Furniture._9,
+  engraving: Engraving._60,
+  artifacts: [Artifact.Longbow, Artifact.Eye, Artifact.Divinity],
 };
 
 export const Mortas: Hero = {
@@ -110,13 +99,11 @@ export const Mortas: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: staticDomain+'hypogean/mortas.webp',
+  portraitURL: staticDomain+'hypogean/mortas.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.VeryWeak,
-    F9: Rating.VeryWeak,
-  },
-  artifacts: [Artifact.Tidebearer],
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Eye, Artifact.Tidebearer, Artifact.Seraphic, Artifact.OceanicStrings, Artifact.Call],
 };
 
 export const Leofric: Hero = {
@@ -126,13 +113,25 @@ export const Leofric: Hero = {
   faction: Faction.Hypogean,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'hypogean/leofric.webp',
+  portraitURL: staticDomain+'hypogean/leofric.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
-  },
-  artifacts: [Artifact.Call],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Tidebearer, Artifact.Seraphic],
+};
+
+export const Zikis: Hero = {
+  id: 'ZIKIS',
+  name: 'Zikis',
+  nickname: [],
+  faction: Faction.Hypogean,
+  attribute: Attribute.Agility,
+  class: Class.Ranger,
+  portraitURL: staticDomain+'hypogean/zikis.jpg',
+  signature: Signature.Unknown,
+  furniture: Furniture.Unknown,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Shroud, Artifact.Longbow, Artifact.Eye],
 };
 
 const heroes: Array<Hero> = [
@@ -143,6 +142,7 @@ const heroes: Array<Hero> = [
   Mezoth,
   Lucretia,
   Mortas,
-  Leofric
+  Leofric,
+  Zikis,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

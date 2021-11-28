@@ -6,6 +6,7 @@ import { Classes } from '../../model/characteristics/classes';
 import { Attributes } from '../../model/characteristics/attributes';
 import { Signatures } from '../../model/characteristics/signatures';
 import { Furnitures } from '../../model/characteristics/furnitures';
+import { Engravings } from '../../model/characteristics/engravings';
 import { Artifacts } from '../../model/characteristics/artifacts';
 
 export interface HeroFilters {
@@ -15,6 +16,7 @@ export interface HeroFilters {
   collectionStatuses:Array<string>;
   signatures:Array<string>;
   furnitures:Array<string>;
+  engravings:Array<string>;
   artifacts:Array<string>;
 }
 
@@ -25,6 +27,7 @@ export const defaultFilter:HeroFilters = {
   collectionStatuses: CollectionStatuses.map(c => c.id),
   signatures: Signatures.map(c => c.id),
   furnitures: Furnitures.map(c => c.id),
+  engravings: Engravings.map(c => c.id),
   artifacts: Artifacts.map(c => c.id),
 };
 
@@ -36,6 +39,7 @@ export function acceptHero(heroFilters:HeroFilters, profile:Profile, hero:Hero):
         && heroFilters.collectionStatuses.includes(collectionStatus.id)
         && heroFilters.signatures.includes(hero.signature.id)
         && heroFilters.furnitures.includes(hero.furniture.id)
+        && heroFilters.engravings.includes(hero.engraving.id)
         && heroFilters.artifacts.some(artifactId => hero.artifacts.map(a => a.id).includes(artifactId))
   ;
 }

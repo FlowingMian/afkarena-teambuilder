@@ -3,7 +3,8 @@ import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
-import * as Rating from '../../model/characteristics/ratings';
+import * as Furniture from '../../model/characteristics/furnitures';
+import * as Engraving from '../../model/characteristics/engravings';
 import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
@@ -14,13 +15,11 @@ export const Arthur: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'dimensional/arthur.webp',
+  portraitURL: staticDomain+'dimensional/arthur.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.VeryWeak,
-  },
-  artifacts: [Artifact.Barricade],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Barricade, Artifact.Waistband],
 };
 
 export const Ukyo: Hero = {
@@ -30,13 +29,11 @@ export const Ukyo: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'dimensional/ukyo.webp',
+  portraitURL: staticDomain+'dimensional/ukyo.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Chaos, Artifact.Eye],
+  furniture: Furniture._0,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Chaos, Artifact.Eye, Artifact.Pauldron],
 };
 
 export const Nakoruru: Hero = {
@@ -46,13 +43,11 @@ export const Nakoruru: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/nakoruru.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Eye],
+  portraitURL: staticDomain+'dimensional/nakoruru.jpg',
+  signature: Signature._10,
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Shroud, Artifact.Longbow, Artifact.Eye],
 };
 
 export const Ezio: Hero = {
@@ -62,13 +57,11 @@ export const Ezio: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/ezio.webp',
+  portraitURL: staticDomain+'dimensional/ezio.jpg',
   signature: Signature._25,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Call, Artifact.Shroud],
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Shroud, Artifact.Grace],
 };
 
 export const Albedo: Hero = {
@@ -78,13 +71,11 @@ export const Albedo: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'dimensional/albedo.webp',
+  portraitURL: staticDomain+'dimensional/albedo.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Waistband, Artifact.Barricade],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Barricade, Artifact.Limit, Artifact.Eye, Artifact.Chalice],
 };
 
 export const Ainz: Hero = {
@@ -94,13 +85,11 @@ export const Ainz: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'dimensional/ainz.webp',
+  portraitURL: staticDomain+'dimensional/ainzooalgown.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Windbinder],
+  furniture: Furniture._9,
+  engraving: Engraving._60,
+  artifacts: [Artifact.Warden, Artifact.WingedWarden, Artifact.Call, Artifact.Blade],
 };
 
 export const QUEEN: Hero = {
@@ -110,13 +99,11 @@ export const QUEEN: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'dimensional/queen.webp',
-  signature: Signature._1,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Eye],
+  portraitURL: staticDomain+'dimensional/queen.jpg',
+  signature: Signature._10,
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Eye, Artifact.Chaos, Artifact.Carnage],
 };
 
 export const JOKER: Hero = {
@@ -126,13 +113,11 @@ export const JOKER: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/joker.webp',
+  portraitURL: staticDomain+'dimensional/joker.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Shroud],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Shroud, Artifact.Eye, Artifact.Longbow],
 };
 
 export const PrinceOfPersia: Hero = {
@@ -142,13 +127,39 @@ export const PrinceOfPersia: Hero = {
   faction: Faction.Dimensional,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'dimensional/pop.webp',
+  portraitURL: staticDomain+'dimensional/pop.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  furniture: Furniture._3,
+  engraving: Engraving._30,
+  artifacts: [Artifact.Eye, Artifact.Grace, Artifact.Shroud],
+};
+
+export const Merlin: Hero = {
+  id: 'MERLIN',
+  name: 'Merlin',
+  nickname: [],
+  faction: Faction.Dimensional,
+  attribute: Attribute.Intelligence,
+  class: Class.Support,
+  portraitURL: staticDomain+'dimensional/merlin.jpg',
+  signature: Signature._30,
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Tidebearer, Artifact.OceanicStrings],
+};
+
+export const Leonardo: Hero = {
+  id: 'LEONARDO',
+  name: 'Leonardo',
+  nickname: ['Leo', 'LDV'],
+  faction: Faction.Dimensional,
+  attribute: Attribute.Intelligence,
+  class: Class.Mage,
+  portraitURL: staticDomain+'dimensional/leonardo.jpg',
+  signature: Signature._30,
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Windbinder, Artifact.Warden, Artifact.WingedWarden],
 };
 
 const heroes: Array<Hero> = [
@@ -161,5 +172,7 @@ const heroes: Array<Hero> = [
   QUEEN,
   JOKER,
   PrinceOfPersia,
+  Merlin,
+  Leonardo,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

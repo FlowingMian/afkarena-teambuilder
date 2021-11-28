@@ -19,8 +19,6 @@ export type Role = Characterictic
 
 export type CollectionStatus = Characterictic
 
-export type Rating = Characterictic
-
 export type Signature = Characterictic
 
 export type Furniture = Characterictic

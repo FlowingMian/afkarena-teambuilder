@@ -10,20 +10,17 @@ import { Classes } from '../../model/characteristics/classes';
 import { Attributes } from '../../model/characteristics/attributes';
 import { CollectionStatuses } from '../../model/characteristics/collectionStatuses';
 import { defaultFilter, HeroFilters } from './HeroFilters';
-import { Ratings } from '../../model/characteristics/ratings';
 import { Signatures } from '../../model/characteristics/signatures';
 import { Artifacts } from '../../model/characteristics/artifacts';
 import { sendSelectContent } from '../../useTracking';
 import { Furnitures } from '../../model/characteristics/furnitures';
+import { Engravings } from '../../model/characteristics/engravings';
 
 type HeroFiltersSelectorProps = {
   onChange:(value: HeroFilters) => void;
-  displaySignature?:boolean;
-  displayFurniture?:boolean;
-  displayArtifact?:boolean;
 };
 
-function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurniture=true, displayArtifact=true}: HeroFiltersSelectorProps):JSX.Element {
+function HeroHeroFiltersSelector({onChange}: HeroFiltersSelectorProps):JSX.Element {
   
   const useDrawer = useBreakpointValue({ base: true, lg: false });
 
@@ -87,29 +84,37 @@ function HeroHeroFiltersSelector({onChange, displaySignature=true, displayFurnit
         </Box>
       </WrapItem>
 
-      {displaySignature && <WrapItem {...itemStyle}>
+      <WrapItem {...itemStyle}>
         <CharacteristicCheckboxGroup selection={selection.signatures} characterictics={Signatures} onChange={(v) => onCharacteristicChange('signatures', v)}/>
         <Box>
           <Heading {...headingStyle}>Signature</Heading>
           <CharacteristicTable characterictics={Signatures} displayName={false}/>
         </Box>
-      </WrapItem>}
+      </WrapItem>
 
-      {displayFurniture && <WrapItem {...itemStyle}>
+      <WrapItem {...itemStyle}>
         <CharacteristicCheckboxGroup selection={selection.furnitures} characterictics={Furnitures} onChange={(v) => onCharacteristicChange('furnitures', v)}/>
         <Box>
           <Heading {...headingStyle}>Furniture</Heading>
           <CharacteristicTable characterictics={Furnitures} displayName={false}/>
         </Box>
-      </WrapItem>}
+      </WrapItem>
 
-      {displayArtifact && <WrapItem {...itemStyle}>
+      <WrapItem {...itemStyle}>
+        <CharacteristicCheckboxGroup selection={selection.engravings} characterictics={Engravings} onChange={(v) => onCharacteristicChange('engravings', v)}/>
+        <Box>
+          <Heading {...headingStyle}>Engraving</Heading>
+          <CharacteristicTable characterictics={Engravings} displayName={false}/>
+        </Box>
+      </WrapItem>
+
+      <WrapItem {...itemStyle}>
         <CharacteristicCheckboxGroup selection={selection.artifacts} characterictics={Artifacts} onChange={(v) => onCharacteristicChange('artifacts', v)}/>
         <Box>
           <Heading {...headingStyle}>Artifacts</Heading>
           <CharacteristicTable characterictics={Artifacts}/>
         </Box>
-      </WrapItem>}
+      </WrapItem>
     </Wrap>
   );
   

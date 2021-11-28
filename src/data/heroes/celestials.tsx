@@ -3,7 +3,8 @@ import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
-import * as Rating from '../../model/characteristics/ratings';
+import * as Furniture from '../../model/characteristics/furnitures';
+import * as Engraving from '../../model/characteristics/engravings';
 import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
@@ -14,13 +15,11 @@ export const Athalia: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'celestial/athalia.webp',
+  portraitURL: staticDomain+'celestial/athalia.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Eye, Artifact.Shroud],
+  furniture: Furniture._3,
+  engraving: Engraving._60,
+  artifacts: [Artifact.Call, Artifact.Eye, Artifact.Shroud, Artifact.Longbow],
 };
 
 export const ElijahLailah: Hero = {
@@ -30,29 +29,25 @@ export const ElijahLailah: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'celestial/elijahlailah.webp',
+  portraitURL: staticDomain+'celestial/elijahlailah.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Tidebearer, Artifact.Call],
+  furniture: Furniture._3,
+  engraving: Engraving._31_59,
+  artifacts: [Artifact.Call, Artifact.Eye, Artifact.OceanicStrings],
 };
 
-export const Orthos: Hero = {
+export const Orthros: Hero = {
   id: 'ORTHOS',
-  name: 'Orthos',
+  name: 'Orthros',
   nickname: [],
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'celestial/orthos.webp',
+  portraitURL: staticDomain+'celestial/orthros.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Waistband, Artifact.Barricade],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Barricade, Artifact.Waistband, Artifact.Call],
 };
 
 export const Talene: Hero = {
@@ -62,13 +57,11 @@ export const Talene: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: staticDomain+'celestial/talene.webp',
+  portraitURL: staticDomain+'celestial/talene.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Blade],
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Tidebearer, Artifact.Eye, Artifact.Blade],
 };
 
 export const Wukong: Hero = {
@@ -78,13 +71,11 @@ export const Wukong: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'celestial/wukong.webp',
+  portraitURL: staticDomain+'celestial/wukong.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Chaos],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Eye, Artifact.Call, Artifact.Pauldron, Artifact.Chaos],
 };
 
 export const Flora: Hero = {
@@ -94,13 +85,11 @@ export const Flora: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/flora.webp',
+  portraitURL: staticDomain+'celestial/flora.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Eye],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Eye, Artifact.Warden],
 };
 
 export const Zaphrael: Hero = {
@@ -110,13 +99,11 @@ export const Zaphrael: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/zaphrael.webp',
-  signature: Signature._1,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Windbinder],
+  portraitURL: staticDomain+'celestial/zaphrael.jpg',
+  signature: Signature._0,
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Windbinder, Artifact.Eye, Artifact.Call],
 };
 
 export const Alna: Hero = {
@@ -126,13 +113,11 @@ export const Alna: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'celestial/alna.webp',
+  portraitURL: staticDomain+'celestial/alna.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Chaos],
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Chaos, Artifact.Carnage, Artifact.Call, Artifact.Eye, Artifact.Pauldron],
 };
 
 export const Morael: Hero = {
@@ -142,25 +127,52 @@ export const Morael: Hero = {
   faction: Faction.Celestial,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'celestial/morael.webp',
+  portraitURL: staticDomain+'celestial/morael.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
-  },
-  artifacts: [Artifact.Windbinder],
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Windbinder, Artifact.Eye, Artifact.Call],
 };
 
+export const Titus: Hero = {
+  id: 'TITUS',
+  name: 'Titus',
+  nickname: [],
+  faction: Faction.Celestial,
+  attribute: Attribute.Strength,
+  class: Class.Tank,
+  portraitURL: staticDomain+'celestial/titus.jpg',
+  signature: Signature.Unknown,
+  furniture: Furniture.Unknown,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Barricade, Artifact.Limit, Artifact.Waistband],
+};
+
+export const Haelus: Hero = {
+  id: 'HAELUS',
+  name: 'Haelus',
+  nickname: [],
+  faction: Faction.Celestial,
+  attribute: Attribute.Intelligence,
+  class: Class.Support,
+  portraitURL: staticDomain+'celestial/haelus.jpg',
+  signature: Signature._20,
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Seraphic, Artifact.Tidebearer, Artifact.OceanicStrings, Artifact.Call],
+};
 
 const heroes: Array<Hero> = [
   Athalia,
   ElijahLailah,
-  Orthos,
+  Orthros,
   Talene,
   Wukong,
   Flora,
   Zaphrael,
   Alna,
   Morael,
+  Titus,
+  Haelus,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;
