@@ -48,7 +48,7 @@ const composition: Composition = {
           ...Graveborns.Desira
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
         {
           ...Hypogeans.Zolrath

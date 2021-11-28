@@ -46,7 +46,7 @@ const dimensional: Composition = {
           ...Dimensionals.Ukyo
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
       ]
     },

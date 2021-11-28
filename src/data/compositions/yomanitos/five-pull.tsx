@@ -59,7 +59,7 @@ const composition: Composition = {
           ...Dimensionals.Ezio
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
       ]
     },

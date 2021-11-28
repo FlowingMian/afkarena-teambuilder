@@ -1,5 +1,5 @@
 import React from 'react';
-import {HStack, Image, Tooltip, Link, Switch, Heading, VStack, Text, Grid, GridItem, Center } from '@chakra-ui/react';
+import {HStack, Image, Tooltip, Link, Switch, Heading, VStack, Grid, GridItem, Center } from '@chakra-ui/react';
 import { Hero } from '../../model/heroes';
 import CharactericticBox from '../Characteristic/CharacteristicBox';
 import { BoxCardStyle } from '../../theme/styles';
@@ -25,7 +25,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
     gap:1,
   };
 
-  const recommendantionStyle= {
+  const recommendationStyle= {
     spacing: '0.25rem',
     background : 'white',
     border: '1px solid',
@@ -34,6 +34,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
     boxShadow: 'md',
     width: '100%',
     height: '100%',
+    paddingX: '1.25rem',
   };
 
   const artifacts = hero.artifacts && hero.artifacts.map(a => (
@@ -50,7 +51,7 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
     >
       
       <Grid {...gridStyle}
-        templateRows="repeat(8, 1fr)"
+        templateRows="repeat(9, 1fr)"
         templateColumns="repeat(9, 1fr)"
       >
 
@@ -86,28 +87,34 @@ function HeroDetails({ hero, isOwned, onChange }: HeroDetailsProps):JSX.Element 
           <Heading size='md'>{hero.name}</Heading>
         </GridItem>
 
-        <GridItem rowSpan={3} colSpan={3}>
-          <VStack {...recommendantionStyle}>
+        <GridItem rowSpan={2} colSpan={3}>
+          <VStack {...recommendationStyle}>
             <Heading size='xs'>Signature</Heading>
             {hero.signature.iconURL?.()}
           </VStack>
         </GridItem>
 
-        <GridItem rowSpan={3} colSpan={3} >
-          <VStack {...recommendantionStyle}>
+        <GridItem rowSpan={2} colSpan={3} >
+          <VStack {...recommendationStyle}>
             <Heading size='xs'>Furniture</Heading>
-            <Text>3: {hero.furniture.F3.iconURL?.()}</Text>
-            <Text>9: {hero.furniture.F9.iconURL?.()}</Text>
+            {hero.furniture.iconURL?.()}
           </VStack>
         </GridItem>
 
-        <GridItem rowSpan={3} colSpan={3} >
-          <VStack {...recommendantionStyle}>
+        <GridItem rowSpan={2} colSpan={3} >
+          <VStack {...recommendationStyle}>
+            <Heading size='xs'>Engraving</Heading>
+            {hero.engraving.iconURL?.()}
+          </VStack>
+        </GridItem>
+
+        <GridItem rowSpan={2} colSpan={9} >
+          <HStack {...recommendationStyle} spacing={2}>
             <Heading size='xs'>Artifact</Heading>
-            <HStack spacing={0}>
+            <HStack spacing={1}>
               {artifacts}
             </HStack>
-          </VStack>
+          </HStack>
         </GridItem>
 
         <GridItem rowSpan={1} colSpan={9}>

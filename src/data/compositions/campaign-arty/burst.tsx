@@ -85,7 +85,7 @@ const burst: Composition = {
           ...Wilders.Tasi
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
         {
           ...Dimensionals.Nakoruru

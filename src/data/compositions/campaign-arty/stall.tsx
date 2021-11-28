@@ -70,7 +70,7 @@ const stall: Composition = {
           recommended: true
         },
         {
-          ...Celestials.Orthos,
+          ...Celestials.Orthros,
           recommended: true
         },
         {

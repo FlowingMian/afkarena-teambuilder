@@ -70,6 +70,21 @@ export const Niche:Role = {
   name: 'Niche',
 };
 
+export const Usually:Role = {
+  id: 'USUALLY',
+  name: 'Usually',
+};
+
+export const Variants:Role = {
+  id: 'VARIANTS',
+  name: 'Variants',
+};
+
+export const Other:Role = {
+  id: 'OTHER',
+  name: 'Other',
+};
+
 export const Roles: Array<Role> = [
   Core,
   SubDPS,
@@ -85,4 +100,7 @@ export const Roles: Array<Role> = [
   Damage,
   Flex,
   Niche,
+  Usually,
+  Variants,
+  Other
 ];

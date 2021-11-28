@@ -3,7 +3,8 @@ import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
-import * as Rating from '../../model/characteristics/ratings';
+import * as Furniture from '../../model/characteristics/furnitures';
+import * as Engraving from '../../model/characteristics/engravings';
 import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
@@ -14,13 +15,11 @@ export const Estrilda: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'lightbearer/estrilda.webp',
-  signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Chaos],
+  portraitURL: staticDomain+'lightbearer/estrilda.jpg',
+  signature: Signature._10,
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Chaos, Artifact.Eye],
 };
 
 export const Belinda: Hero = {
@@ -30,13 +29,11 @@ export const Belinda: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'lightbearer/belinda.webp',
-  signature: Signature._5,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Windbinder],
+  portraitURL: staticDomain+'lightbearer/belinda.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Windbinder, Artifact.Eye, Artifact.Blade],
 };
 
 export const Raine: Hero = {
@@ -46,13 +43,11 @@ export const Raine: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/raine.webp',
+  portraitURL: staticDomain+'lightbearer/raine.jpg',
   signature: Signature._10,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.VeryWeak,
-  },
-  artifacts: [Artifact.Call],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Eye, Artifact.Tidebearer],
 };
 
 export const Fawkes: Hero = {
@@ -62,13 +57,11 @@ export const Fawkes: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/fawkes.webp',
-  signature: Signature._20,
-  furniture: {
-    F3: Rating.VeryWeak,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Eye],
+  portraitURL: staticDomain+'lightbearer/fawkes.jpg',
+  signature: Signature._10,
+  furniture: Furniture._0,
+  engraving: Engraving._30,
+  artifacts: [Artifact.Shroud, Artifact.Longbow],
 };
 
 export const Lucius: Hero = {
@@ -78,13 +71,11 @@ export const Lucius: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'lightbearer/lucius.webp',
-  signature: Signature._5,
-  furniture: {
-    F3: Rating.VeryWeak,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Waistband, Artifact.Barricade],
+  portraitURL: staticDomain+'lightbearer/lucius.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Waistband, Artifact.Barricade, Artifact.Limit],
 };
 
 export const Thane: Hero = {
@@ -94,13 +85,11 @@ export const Thane: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/thane.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  portraitURL: staticDomain+'lightbearer/thane.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Eye, Artifact.Grace, Artifact.Shroud],
 };
 
 export const Hendrik: Hero = {
@@ -110,13 +99,11 @@ export const Hendrik: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'lightbearer/hendrik.webp',
+  portraitURL: staticDomain+'lightbearer/hendrik.jpg',
   signature: Signature._10,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Barricade, Artifact.Waistband],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Waistband, Artifact.Barricade, Artifact.Limit],
 };
 
 export const Rowan: Hero = {
@@ -126,13 +113,11 @@ export const Rowan: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/rowan.webp',
+  portraitURL: staticDomain+'lightbearer/rowan.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.VeryWeak,
-  },
-  artifacts: [Artifact.Call],
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Tidebearer, Artifact.Seraphic],
 };
 
 export const Gwyneth: Hero = {
@@ -142,13 +127,11 @@ export const Gwyneth: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/gwyneth.webp',
-  signature: Signature._25,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Shroud],
+  portraitURL: staticDomain+'lightbearer/gwyneth.jpg',
+  signature: Signature._30,
+  furniture: Furniture._3,
+  engraving: Engraving._30,
+  artifacts: [Artifact.Shroud, Artifact.Call, Artifact.Eye, Artifact.Longbow],
 };
 
 export const Rosaline: Hero = {
@@ -158,13 +141,11 @@ export const Rosaline: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/rosaline.webp',
+  portraitURL: staticDomain+'lightbearer/rosaline.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.VeryWeak,
-  },
-  artifacts: [Artifact.Eye, Artifact.Blade],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Blade, Artifact.Eye, Artifact.Seraphic],
 };
 
 export const Cecilia: Hero = {
@@ -174,13 +155,11 @@ export const Cecilia: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/cecilia.webp',
-  signature: Signature._1,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Shroud, Artifact.Eye],
+  portraitURL: staticDomain+'lightbearer/cecilia.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Shroud, Artifact.Eye, Artifact.Longbow],
 };
 
 export const Rigby: Hero = {
@@ -190,13 +169,11 @@ export const Rigby: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'lightbearer/rigby.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Pauldron, Artifact.Chalice],
+  portraitURL: staticDomain+'lightbearer/rigby.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Pauldron, Artifact.Chalice, Artifact.Grace],
 };
 
 export const Oscar: Hero = {
@@ -206,13 +183,11 @@ export const Oscar: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'lightbearer/oscar.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Eye, Artifact.Shroud],
+  portraitURL: staticDomain+'lightbearer/oscar.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Eye, Artifact.Shroud, Artifact.Longbow],
 };
 
 export const Eluard: Hero = {
@@ -222,13 +197,11 @@ export const Eluard: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'lightbearer/eluard.webp',
+  portraitURL: staticDomain+'lightbearer/eluard.jpg',
   signature: Signature._15,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Call, Artifact.Windbinder],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Windbinder, Artifact.Eye],
 };
 
 export const Peggy: Hero = {
@@ -238,13 +211,11 @@ export const Peggy: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'lightbearer/peggy.png',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
-  },
-  artifacts: [Artifact.Call, Artifact.Tidebearer],
+  portraitURL: staticDomain+'lightbearer/peggy.jpg',
+  signature: Signature.Unknown,
+  furniture: Furniture.Unknown,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Tidebearer, Artifact.Eye],
 };
 
 export const Walker: Hero = {
@@ -254,13 +225,25 @@ export const Walker: Hero = {
   faction: Faction.Lightbearer,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'lightbearer/walker.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
-  },
-  artifacts: [],
+  portraitURL: staticDomain+'lightbearer/walker.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Chaos, Artifact.Eye, Artifact.Blade],
+};
+
+export const Morrow: Hero = {
+  id: 'MORROW',
+  name: 'Morrow',
+  nickname: [],
+  faction: Faction.Lightbearer,
+  attribute: Attribute.Intelligence,
+  class: Class.Mage,
+  portraitURL: staticDomain+'lightbearer/morrow.jpg',
+  signature: Signature._20,
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Windbinder, Artifact.Warden, Artifact.WingedWarden],
 };
 
 const heroes: Array<Hero> = [
@@ -280,5 +263,6 @@ const heroes: Array<Hero> = [
   Eluard,
   Peggy,
   Walker,
+  Morrow,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

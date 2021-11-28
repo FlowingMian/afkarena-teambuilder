@@ -5,7 +5,8 @@ import { Factions } from '../../model/characteristics/factions';
 import { Classes } from '../../model/characteristics/classes';
 import { Attributes } from '../../model/characteristics/attributes';
 import { Signatures } from '../../model/characteristics/signatures';
-import { Ratings } from '../../model/characteristics/ratings';
+import { Furnitures } from '../../model/characteristics/furnitures';
+import { Engravings } from '../../model/characteristics/engravings';
 import { Artifacts } from '../../model/characteristics/artifacts';
 
 export interface HeroFilters {
@@ -14,8 +15,8 @@ export interface HeroFilters {
   attributeIds:Array<string>;
   collectionStatuses:Array<string>;
   signatures:Array<string>;
-  furniture3Ratings:Array<string>;
-  furniture9Ratings:Array<string>;
+  furnitures:Array<string>;
+  engravings:Array<string>;
   artifacts:Array<string>;
 }
 
@@ -25,8 +26,8 @@ export const defaultFilter:HeroFilters = {
   attributeIds: Attributes.map(c => c.id),
   collectionStatuses: CollectionStatuses.map(c => c.id),
   signatures: Signatures.map(c => c.id),
-  furniture3Ratings: Ratings.map(c => c.id),
-  furniture9Ratings: Ratings.map(c => c.id),
+  furnitures: Furnitures.map(c => c.id),
+  engravings: Engravings.map(c => c.id),
   artifacts: Artifacts.map(c => c.id),
 };
 
@@ -37,8 +38,8 @@ export function acceptHero(heroFilters:HeroFilters, profile:Profile, hero:Hero):
         && heroFilters.attributeIds.includes(hero.attribute.id)
         && heroFilters.collectionStatuses.includes(collectionStatus.id)
         && heroFilters.signatures.includes(hero.signature.id)
-        && heroFilters.furniture3Ratings.includes(hero.furniture.F3.id)
-        && heroFilters.furniture9Ratings.includes(hero.furniture.F9.id)
+        && heroFilters.furnitures.includes(hero.furniture.id)
+        && heroFilters.engravings.includes(hero.engraving.id)
         && heroFilters.artifacts.some(artifactId => hero.artifacts.map(a => a.id).includes(artifactId))
   ;
 }

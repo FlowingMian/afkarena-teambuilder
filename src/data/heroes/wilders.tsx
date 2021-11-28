@@ -3,7 +3,8 @@ import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
-import * as Rating from '../../model/characteristics/ratings';
+import * as Furniture from '../../model/characteristics/furnitures';
+import * as Engraving from '../../model/characteristics/engravings';
 import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
@@ -14,13 +15,11 @@ export const Nemora: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'wilder/nemora.webp',
+  portraitURL: staticDomain+'wilder/nemora.jpg',
   signature: Signature._15,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Tidebearer],
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.OceanicStrings, Artifact.Tidebearer, Artifact.Grace],
 };
 
 export const Kaz: Hero = {
@@ -30,13 +29,11 @@ export const Kaz: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/kaz.webp',
+  portraitURL: staticDomain+'wilder/kaz.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Grace],
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Grace, Artifact.Shroud, Artifact.Eye],
 };
 
 export const Lyca: Hero = {
@@ -46,13 +43,11 @@ export const Lyca: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/lyca.webp',
+  portraitURL: staticDomain+'wilder/lyca.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Eye],
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Shroud, Artifact.Longbow, Artifact.Eye],
 };
 
 export const Tasi: Hero = {
@@ -62,13 +57,11 @@ export const Tasi: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'wilder/tasi.webp',
+  portraitURL: staticDomain+'wilder/tasi.jpg',
   signature: Signature._15,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Eye, Artifact.Call],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Eye, Artifact.Tidebearer],
 };
 
 export const Ulmus: Hero = {
@@ -78,13 +71,11 @@ export const Ulmus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'wilder/ulmus.webp',
-  signature: Signature._1,
-  furniture: {
-    F3: Rating.VeryWeak,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Drape, Artifact.Waistband, Artifact.Barricade],
+  portraitURL: staticDomain+'wilder/ulmus.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Waistband, Artifact.Limit, Artifact.Drape],
 };
 
 export const Seirus: Hero = {
@@ -94,13 +85,11 @@ export const Seirus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'wilder/seirus.webp',
-  signature: Signature._10,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Pauldron, Artifact.Chaos],
+  portraitURL: staticDomain+'wilder/seirus.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Pauldron, Artifact.Chalice, Artifact.Call],
 };
 
 export const Eironn: Hero = {
@@ -110,13 +99,11 @@ export const Eironn: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/eironn.webp',
+  portraitURL: staticDomain+'wilder/eironn.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Call, Artifact.Shroud],
+  furniture: Furniture._3,
+  engraving: Engraving._1_29,
+  artifacts: [Artifact.Call, Artifact.Shroud],
 };
 
 export const Gorvo: Hero = {
@@ -126,13 +113,11 @@ export const Gorvo: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'wilder/gorvo.webp',
-  signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Waistband],
+  portraitURL: staticDomain+'wilder/gorvo.jpg',
+  signature: Signature._10,
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Barricade, Artifact.Waistband],
 };
 
 export const Lorsan: Hero = {
@@ -142,13 +127,11 @@ export const Lorsan: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'wilder/lorsan.webp',
-  signature: Signature._20,
-  furniture: {
-    F3: Rating.VeryWeak,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Windbinder],
+  portraitURL: staticDomain+'wilder/lorsan.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Warden, Artifact.WingedWarden, Artifact.Windbinder],
 };
 
 export const Saurus: Hero = {
@@ -158,13 +141,11 @@ export const Saurus: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'wilder/saurus.webp',
+  portraitURL: staticDomain+'wilder/saurus.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Chaos],
+  furniture: Furniture._0,
+  engraving: Engraving._1_29,
+  artifacts: [Artifact.Chaos, Artifact.Blade, Artifact.Eye],
 };
 
 export const Solise: Hero = {
@@ -174,13 +155,11 @@ export const Solise: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'wilder/solise.webp',
+  portraitURL: staticDomain+'wilder/solise.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Windbinder],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Windbinder, Artifact.Eye, Artifact.Warden],
 };
 
 export const Pippa: Hero = {
@@ -190,13 +169,11 @@ export const Pippa: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'wilder/pippa.webp',
+  portraitURL: staticDomain+'wilder/pippa.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Warden, Artifact.Windbinder],
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Windbinder, Artifact.WingedWarden],
 };
 
 export const Respen: Hero = {
@@ -206,13 +183,11 @@ export const Respen: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/respen.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Eye, Artifact.Shroud],
+  portraitURL: staticDomain+'wilder/respen.jpg',
+  signature: Signature._0,
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Eye, Artifact.Shroud, Artifact.Call],
 };
 
 export const Raku: Hero = {
@@ -222,13 +197,25 @@ export const Raku: Hero = {
   faction: Faction.Wilder,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'wilder/raku.png',
+  portraitURL: staticDomain+'wilder/raku.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Longbow, Artifact.Shroud],
+  furniture: Furniture._3,
+  engraving: Engraving._31_59,
+  artifacts: [Artifact.Eye, Artifact.Longbow, Artifact.Shroud],
+};
+
+export const Mishka: Hero = {
+  id: 'MISHKA',
+  name: 'Mishka',
+  nickname: [],
+  faction: Faction.Wilder,
+  attribute: Attribute.Strength,
+  class: Class.Tank,
+  portraitURL: staticDomain+'wilder/mishka.jpg',
+  signature: Signature._20,
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Waistband, Artifact.Barricade, Artifact.Limit],
 };
 
 const heroes: Array<Hero> = [
@@ -245,6 +232,7 @@ const heroes: Array<Hero> = [
   Solise,
   Pippa,
   Respen,
-  Raku
+  Raku,
+  Mishka,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;

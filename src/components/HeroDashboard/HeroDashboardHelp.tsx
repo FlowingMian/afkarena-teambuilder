@@ -32,35 +32,93 @@ function HeroDashboardHelp({deviceStyle}:HeroDashboardHelpProps):JSX.Element {
           <DrawerHeader>Help</DrawerHeader>
 
           <DrawerBody>
-            <Heading {...HelpTitleStyle}>Furniture items :</Heading>
-            <Text {...HelpContentStyle}><span>The source and in-depth explanations for each one come from the </span>
+            <Text {...HelpContentStyle}>
+              Most informations on this page are coming from the <b>in-game encyclopedia from the Community Tab</b>, 
+              where a lot of content was created by some of our trusted Community Supporter&nbsp;
               <Link 
-                href="https://www.reddit.com/r/afkarena/comments/mc774q/visual_guide_to_furniture_priorities_indepth_by/"
+                href="https://www.reddit.com/r/afkarena/comments/owu53x/ingame_wiki_guides/"
                 isExternal>
-            Visual Guide to Furniture Priorities In-Depth by Arty & Alpattex (update : Mar 2021) <Icon as={FiExternalLink} mx="2px" />
+               (see related Reddit post)<Icon as={FiExternalLink} mx="2px" />
               </Link>.
+            </Text>
+
+            <Text {...HelpContentStyle}>
+              A majority of heroes have an In-depth Review, and for the one who didn&apos;t, I gathered informations elsewhere.
+            </Text>
+
+            <Text {...HelpContentStyle}>
+              So I&apos;m aware that there might be some errors (aggregating everything was tedious), so feel free to point them to me with a source.
             </Text>
 
             <Heading {...HelpTitleStyle}>Signature items :</Heading>
             <Text {...HelpContentStyle}>
-              <span>The main source is </span>
-              <Link 
-                href="https://www.youtube.com/watch?v=_mBK47GIKlA"
-                isExternal>
-              Linker&apos;s Signature Item Tierlist (update : Jun 2021) <Icon as={FiExternalLink} mx="2px" />
-              </Link>,
-              but with some small changes (recommending +30 instead of +20 when they are notably strong, and lower some for bottom tier heroes/SI).
-              I decided to do this while waiting for an additional guide to balance out a single opinion.
+              <ul>
+                <li>In-game encyclopedia</li>
+                <li><Link 
+                  href="https://www.afk-analytica.com/visual-guides"
+                  isExternal>
+                AFK Analytica Wishlist guide (update : Sep 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+                <li><Link 
+                  href="https://www.reddit.com/r/afkarena/comments/p7kh1h/endgame_pve_formations_by_umeymenetsiz/"
+                  isExternal>
+                Endgame PVE Formations by u/Meymenetsiz (update : Aug 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+                <li><Link 
+                  href="https://www.reddit.com/r/afkarena/comments/o65o24/investments_for_prince_of_persia_merlin_other_new/"
+                  isExternal>
+                Investments for Prince of Persia, Merlin, &amp; Other New Heroes by Arty (update : Jun 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+                <li><Link 
+                  href="https://www.youtube.com/watch?v=_mBK47GIKlA"
+                  isExternal>
+                Linker&apos;s Signature Item Tierlist (update : Jun 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+              </ul>
+            </Text>
+
+            <Heading {...HelpTitleStyle}>Furniture items :</Heading>
+            <Text {...HelpContentStyle}>
+              <ul>
+                <li>In-game encyclopedia</li>
+                <li><Link 
+                  href="https://www.reddit.com/r/afkarena/comments/mc774q/visual_guide_to_furniture_priorities_indepth_by/"
+                  isExternal>
+                  Visual Guide to Furniture Priorities In-Depth by Arty & Alpattex (update : Mar 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+              </ul>
+            </Text>
+
+            <Heading {...HelpTitleStyle}>Engravings :</Heading>
+            <Text {...HelpContentStyle}>
+              <ul>
+                <li>In-game encyclopedia</li>
+                <li><Link 
+                  href="https://www.afk-analytica.com/visual-guides/engravements"
+                  isExternal>
+                  AFK Analytica Engravings guide (update : Oct 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+                <li><Link 
+                  href="https://www.reddit.com/r/afkarena/comments/q3xly2/eternal_engravings_tierlist/"
+                  isExternal>
+                  Eternal Engravings Tierlist by XapySlenderMan (update : Oct 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+              </ul>
             </Text>
 
             <Heading {...HelpTitleStyle}>Artifacts :</Heading>
             <Text {...HelpContentStyle}>
-              <span>Artifacts displayed below are the first ranked from differents guides. For more details, please see the </span>
-              <Link 
-                href="/artifacts">
-              dedicated Artifact page
-              </Link>.
+              <ul>
+                <li>In-game encyclopedia</li>
+                <li><Link 
+                  href="https://www.reddit.com/r/afkarena/comments/kw5hko/crowdsourced_artifact_guide_new_class_specific/"
+                  isExternal>
+                  Crowdsourced Artifact Guide by SilentBobUS (update : Apr 2021) <Icon as={FiExternalLink} mx="2px" />
+                </Link></li>
+                <li>In-game Popularity hero data</li>
+              </ul>
             </Text>
+
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>

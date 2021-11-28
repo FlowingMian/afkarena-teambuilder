@@ -70,7 +70,7 @@ const daimon: Composition = {
           ...Celestials.Zaphrael
         },
         {
-          ...Celestials.Orthos
+          ...Celestials.Orthros
         },
         {
           ...Wilders.Eironn

@@ -3,7 +3,8 @@ import * as Faction from '../../model/characteristics/factions';
 import * as Attribute from '../../model/characteristics/attributes';
 import * as Class from '../../model/characteristics/classes';
 import * as Signature from '../../model/characteristics/signatures';
-import * as Rating from '../../model/characteristics/ratings';
+import * as Furniture from '../../model/characteristics/furnitures';
+import * as Engraving from '../../model/characteristics/engravings';
 import * as Artifact from '../../model/characteristics/artifacts';
 import { staticDomain } from '../../model/common';
 
@@ -14,13 +15,11 @@ export const Grezhul: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/grezhul.webp',
-  signature: Signature._20,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Chalice, Artifact.Eye, Artifact.Limit],
+  portraitURL: staticDomain+'graveborn/grezhul.jpg',
+  signature: Signature._30,
+  furniture: Furniture._9,
+  engraving: Engraving._60,
+  artifacts: [Artifact.Eye, Artifact.Barricade, Artifact.Waistband],
 };
 
 export const Shemira: Hero = {
@@ -30,13 +29,11 @@ export const Shemira: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'graveborn/shemira.webp',
+  portraitURL: staticDomain+'graveborn/shemira.jpg',
   signature: Signature._10,
-  furniture: {
-    F3: Rating.Weak,
-    F9: Rating.VeryWeak,
-  },
-  artifacts: [Artifact.Windbinder, Artifact.Warden],
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Windbinder, Artifact.Eye, Artifact.Blade],
 };
 
 export const Thoran: Hero = {
@@ -46,13 +43,11 @@ export const Thoran: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/thoran.webp',
+  portraitURL: staticDomain+'graveborn/thoran.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Call],
+  furniture: Furniture._3,
+  engraving: Engraving._1_29,
+  artifacts: [Artifact.Call, Artifact.Barricade, Artifact.Limit],
 };
 
 export const Isabella: Hero = {
@@ -62,13 +57,11 @@ export const Isabella: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'graveborn/isabella.webp',
+  portraitURL: staticDomain+'graveborn/isabella.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Eye, Artifact.Warden],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Eye, Artifact.Windbinder, Artifact.Warden],
 };
 
 export const Nara: Hero = {
@@ -78,13 +71,11 @@ export const Nara: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'graveborn/nara.webp',
+  portraitURL: staticDomain+'graveborn/nara.jpg',
   signature: Signature._15,
-  furniture: {
-    F3: Rating.Good,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Pauldron, Artifact.Chaos],
+  furniture: Furniture._3,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Chaos, Artifact.Pauldron, Artifact.Eye],
 };
 
 export const Ferael: Hero = {
@@ -94,13 +85,11 @@ export const Ferael: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'graveborn/ferael.webp',
+  portraitURL: staticDomain+'graveborn/ferael.jpg',
   signature: Signature._20,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Eye],
+  furniture: Furniture._9,
+  engraving: Engraving._60,
+  artifacts: [Artifact.Eye, Artifact.Shroud, Artifact.Blade],
 };
 
 export const Baden: Hero = {
@@ -110,13 +99,11 @@ export const Baden: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Warrior,
-  portraitURL: staticDomain+'graveborn/baden.webp',
-  signature: Signature._5,
-  furniture: {
-    F3: Rating.VeryWeak,
-    F9: Rating.Strong,
-  },
-  artifacts: [Artifact.Pauldron, Artifact.Chaos],
+  portraitURL: staticDomain+'graveborn/baden.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Pauldron, Artifact.Chaos, Artifact.Eye],
 };
 
 export const Kelthur: Hero = {
@@ -126,13 +113,11 @@ export const Kelthur: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'graveborn/kelthur.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Shroud],
+  portraitURL: staticDomain+'graveborn/kelthur.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Shroud, Artifact.Longbow],
 };
 
 export const Silas: Hero = {
@@ -142,13 +127,11 @@ export const Silas: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'graveborn/silas.webp',
+  portraitURL: staticDomain+'graveborn/silas.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.TopTier,
-  },
-  artifacts: [Artifact.Blade, Artifact.Tidebearer, Artifact.Call],
+  furniture: Furniture._9,
+  engraving: Engraving._60,
+  artifacts: [Artifact.Call, Artifact.Tidebearer, Artifact.Seraphic, Artifact.OceanicStrings],
 };
 
 export const Oden: Hero = {
@@ -158,13 +141,11 @@ export const Oden: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Mage,
-  portraitURL: staticDomain+'graveborn/oden.webp',
+  portraitURL: staticDomain+'graveborn/oden.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Windbinder],
+  furniture: Furniture._9,
+  engraving: Engraving._31_59,
+  artifacts: [Artifact.Windbinder, Artifact.Warden, Artifact.Eye, Artifact.WingedWarden],
 };
 
 export const Izold: Hero = {
@@ -174,13 +155,11 @@ export const Izold: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Warrior,
-  portraitURL: staticDomain+'graveborn/izold.webp',
+  portraitURL: staticDomain+'graveborn/izold.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Pauldron, Artifact.Chaos],
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Carnage, Artifact.Eye],
 };
 
 export const Torne: Hero = {
@@ -190,13 +169,11 @@ export const Torne: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/torne.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Average,
-    F9: Rating.Average,
-  },
-  artifacts: [Artifact.Waistband, Artifact.Barricade],
+  portraitURL: staticDomain+'graveborn/torne.jpg',
+  signature: Signature._0,
+  furniture: Furniture._0,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Waistband, Artifact.Limit, Artifact.Chalice],
 };
 
 export const Daimon: Hero = {
@@ -206,13 +183,11 @@ export const Daimon: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Strength,
   class: Class.Tank,
-  portraitURL: staticDomain+'graveborn/daimon.webp',
+  portraitURL: staticDomain+'graveborn/daimon.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.TopTier,
-    F9: Rating.Weak,
-  },
-  artifacts: [Artifact.Call],
+  furniture: Furniture._3,
+  engraving: Engraving._1_29,
+  artifacts: [Artifact.Call, Artifact.Barricade, Artifact.Waistband, Artifact.Eye, Artifact.Limit],
 };
 
 export const Theowyn: Hero = {
@@ -222,13 +197,11 @@ export const Theowyn: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Agility,
   class: Class.Ranger,
-  portraitURL: staticDomain+'graveborn/theowyn.webp',
+  portraitURL: staticDomain+'graveborn/theowyn.jpg',
   signature: Signature._30,
-  furniture: {
-    F3: Rating.Strong,
-    F9: Rating.Good,
-  },
-  artifacts: [Artifact.Eye],
+  furniture: Furniture._9,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Call, Artifact.Eye, Artifact.Shroud, Artifact.Divinity],
 };
 
 export const Desira: Hero = {
@@ -238,14 +211,41 @@ export const Desira: Hero = {
   faction: Faction.Graveborn,
   attribute: Attribute.Intelligence,
   class: Class.Support,
-  portraitURL: staticDomain+'graveborn/desira.webp',
-  signature: Signature._30,
-  furniture: {
-    F3: Rating.Unknown,
-    F9: Rating.Unknown,
-  },
-  artifacts: [Artifact.Call],
+  portraitURL: staticDomain+'graveborn/desira.jpg',
+  signature: Signature._20,
+  furniture: Furniture._3,
+  engraving: Engraving._1_29,
+  artifacts: [Artifact.Call, Artifact.OceanicStrings, Artifact.Seraphic],
 };
+
+export const Hodgkin: Hero = {
+  id: 'HODGKIN',
+  name: 'Hodgkin',
+  nickname: [],
+  faction: Faction.Graveborn,
+  attribute: Attribute.Strength,
+  class: Class.Tank,
+  portraitURL: staticDomain+'graveborn/hodgkin.jpg',
+  signature: Signature._20,
+  furniture: Furniture._9,
+  engraving: Engraving.Unknown,
+  artifacts: [Artifact.Call, Artifact.Waistband, Artifact.Barricade],
+};
+
+export const Treznor: Hero = {
+  id: 'Treznor',
+  name: 'Treznor',
+  nickname: [],
+  faction: Faction.Graveborn,
+  attribute: Attribute.Agility,
+  class: Class.Ranger,
+  portraitURL: staticDomain+'graveborn/treznor.jpg',
+  signature: Signature._20,
+  furniture: Furniture._3,
+  engraving: Engraving._0,
+  artifacts: [Artifact.Divinity, Artifact.Shroud],
+};
+
 
 const heroes: Array<Hero> = [
   Grezhul,
@@ -263,5 +263,7 @@ const heroes: Array<Hero> = [
   Daimon,
   Theowyn,
   Desira,
+  Hodgkin,
+  Treznor,
 ].sort((a, b) => a.name.localeCompare(b.name));
 export default heroes;
