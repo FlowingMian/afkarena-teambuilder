@@ -1,4 +1,4 @@
-export const staticDomain = 'https://static.appcraft.tk/';
+export const staticDomain = 'https://dzdmdy5u49iim.cloudfront.net/';
 
 export interface Link {
   label:string;
