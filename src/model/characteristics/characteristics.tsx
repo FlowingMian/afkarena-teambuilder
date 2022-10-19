@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Image } from '@chakra-ui/image';
 import { staticDomain } from '../common';
@@ -30,3 +29,11 @@ export type Artifact = Characterictic
 export function getImageIcon(path:string, boxSize:string):JSX.Element {
   return <Image src={`${staticDomain}${path}`} boxSize={boxSize} />;  
 } 
+
+export function getCharactericticByName(characterictic:Array<Characterictic>, name?:string):Characterictic {
+  const res = characterictic.find(c => c.name === name);
+  return res ? res : {
+    id : 'unknown',
+    name : 'unknown'
+  };
+}
