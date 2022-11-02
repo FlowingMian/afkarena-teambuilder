@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Box, Heading, IconButton, Wrap, WrapItem, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
 import { useState } from 'react';
 import { FiFilter } from 'react-icons/fi';

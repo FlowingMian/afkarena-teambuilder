@@ -8,42 +8,49 @@ import CompositionDashboard from './components/CompositionDashboard/CompositionD
 import { useTracking } from './useTracking';
 import MultifightDashboard from './components/MultifightDashboard/MultifightDashboard';
 import { ProfileContext, ProfileContextProvider } from './components/Profile/ProfileContext';
+import { DataSourceContext, DataSourceContextProvider } from './components/DataSource/DataSourceContext';
 
 function App() {
   useTracking('G-F2JQMGEBKC');
 
   return (<>
-    <ProfileContext.Consumer>
-      {({profile}) => 
-        <Switch>
-          <Route path="/usages">
-            <UsageDashboard profile={profile}/>
-          </Route>
-          <Route path="/multifight">
-            <MultifightDashboard profile={profile}/>
-          </Route>
-          <Route path="/heroes">
-            <HeroDashboard profile={profile}/>
-          </Route>
-          <Route path="/compositions">
-            <CompositionDashboard/>
-          </Route>
-          <Route path="/">
-            <Redirect to="/heroes" />
-          </Route>
-        </Switch>            
+    <DataSourceContext.Consumer>
+      {(datasource) => 
+        <ProfileContext.Consumer>
+          {({profile}) => 
+            <Switch>
+              <Route path="/usages">
+                <UsageDashboard profile={profile}/>
+              </Route>
+              <Route path="/multifight">
+                <MultifightDashboard profile={profile}/>
+              </Route>
+              <Route path="/heroes">
+                <HeroDashboard datasource={datasource} profile={profile}/>
+              </Route>
+              <Route path="/compositions">
+                <CompositionDashboard/>
+              </Route>
+              <Route path="/">
+                <Redirect to="/heroes" />
+              </Route>
+            </Switch>            
+          }
+        </ProfileContext.Consumer>
       }
-    </ProfileContext.Consumer>
+    </DataSourceContext.Consumer>
   </>);
 }
 
 function Wrapper():JSX.Element {
   return <ChakraProvider theme={theme}>
-    <ProfileContextProvider>
-      <Router>
-        <App/>
-      </Router>
-    </ProfileContextProvider>
+    <DataSourceContextProvider>
+      <ProfileContextProvider>
+        <Router>
+          <App/>
+        </Router>
+      </ProfileContextProvider>
+    </DataSourceContextProvider>
   </ChakraProvider>;
 }
 

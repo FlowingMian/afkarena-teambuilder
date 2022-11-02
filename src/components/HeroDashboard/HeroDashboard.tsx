@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Box, HStack, Stack, Wrap, WrapItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import heroes from '../../data/heroes';
 import { Hero } from '../../model/heroes';
 import HeroFiltersSelector from '../HeroFilters/HeroFiltersSelector';
 import HeroCharactericticsTable from '../Characteristic/HeroCharactericticsTable';
@@ -16,18 +15,19 @@ import { useLocation } from 'react-router';
 import ControlBar from '../Common/ControlBar';
 import getDeviceStyle from '../../theme/deviceStyle/deviceStyle';
 import SaveButton from '../Common/SaveButton';
+import { DataSource } from '../../model/datasource';
 
 type HeroDashboardProps = {
   profile: Profile;
+  datasource: DataSource;
 };
 
-function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
-
+function HeroDashboard({profile, datasource}:HeroDashboardProps):JSX.Element {
   const deviceStyle = getDeviceStyle();
-  
+
   const {updateProfile} = useContext(ProfileContext);
   
-  const [selectedHeroes, setSelectedHeroes] = useState<Array<Hero>>(heroes);
+  const [selectedHeroes, setSelectedHeroes] = useState<Array<Hero>>(datasource.heroes);
   const [heroCollection, setHeroCollection] = useState<Array<string>>(profile.heroCollection||[]);
   const [hasChanged, setHasChanged] = useState<boolean>(false);
 
@@ -47,7 +47,7 @@ function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
   }
 
   function filterHeroes(filters:HeroFilters) {
-    setSelectedHeroes(heroes.filter(h => acceptHero(filters, profile, h)));
+    setSelectedHeroes(datasource.heroes.filter(h => acceptHero(filters, profile, h)));
   }
   
   function onChange(e:React.ChangeEvent<HTMLInputElement>, hero:Hero) {
@@ -71,7 +71,9 @@ function HeroDashboard({profile}:HeroDashboardProps):JSX.Element {
     setHasChanged(false);
   }
 
+  console.log('selectedHeroes', selectedHeroes);
   const heroesList = selectedHeroes.map((h) => {
+    console.log(h);
     return <WrapItem key={h.id}><HeroDetails hero={h} isOwned={heroCollection.includes(h.id)} onChange={onChange}/></WrapItem>;
   });
 
